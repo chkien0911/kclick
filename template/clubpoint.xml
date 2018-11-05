@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<KScrips>
+  <KScript No="1">
+    <No>1</No>
+    <MouseKey>Left</MouseKey>
+    <X>536</X>
+    <Y>427</Y>
+    <Color>ffbdc2c7</Color>
+    <X2>0</X2>
+    <Y2>0</Y2>
+    <Color2></Color2>
+    <Delay>100</Delay>
+    <Class>Qt5QWindowIcon</Class>
+    <Name>NoxPlayer</Name>
+    <WHandle>20187610</WHandle>
+  </KScript>
+  <KScript No="1">
+    <No>2</No>
+    <MouseKey>Left</MouseKey>
+    <X>490</X>
+    <Y>323</Y>
+    <Color>ff18532b</Color>
+    <X2>0</X2>
+    <Y2>0</Y2>
+    <Color2></Color2>
+    <Delay>100</Delay>
+    <Class>Qt5QWindowIcon</Class>
+    <Name>NoxPlayer</Name>
+    <WHandle>20187610</WHandle>
+  </KScript>
+  <KScript No="1">
+    <No>3</No>
+    <MouseKey>Left</MouseKey>
+    <X>528</X>
+    <Y>323</Y>
+    <Color>ff9a3c3c</Color>
+    <X2>0</X2>
+    <Y2>0</Y2>
+    <Color2></Color2>
+    <Delay>100</Delay>
+    <Class>Qt5QWindowIcon</Class>
+    <Name>NoxPlayer</Name>
+    <WHandle>20187610</WHandle>
+  </KScript>
+  <KScript No="1">
+    <No>4</No>
+    <MouseKey>Left</MouseKey>
+    <X>530</X>
+    <Y>303</Y>
+    <Color>ff00a0e9</Color>
+    <X2>0</X2>
+    <Y2>0</Y2>
+    <Color2></Color2>
+    <Delay>100</Delay>
+    <Class>Qt5QWindowIcon</Class>
+    <Name>NoxPlayer</Name>
+    <WHandle>20187610</WHandle>
+  </KScript>
+  <KScript No="1">
+    <No>5</No>
+    <MouseKey>Left</MouseKey>
+    <X>532</X>
+    <Y>312</Y>
+    <Color>ff2e5529</Color>
+    <X2>0</X2>
+    <Y2>0</Y2>
+    <Color2></Color2>
+    <Delay>100</Delay>
+    <Class>Qt5QWindowIcon</Class>
+    <Name>NoxPlayer</Name>
+    <WHandle>20187610</WHandle>
+  </KScript>
+  <KScript No="1">
+    <No>6</No>
+    <MouseKey>Left</MouseKey>
+    <X>529</X>
+    <Y>424</Y>
+    <Color>ff18532b</Color>
+    <X2>0</X2>
+    <Y2>0</Y2>
+    <Color2></Color2>
+    <Delay>100</Delay>
+    <Class>Qt5QWindowIcon</Class>
+    <Name>NoxPlayer</Name>
+    <WHandle>20187610</WHandle>
+  </KScript>
+</KScrips>

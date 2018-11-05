@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<KScrips>
+  <KScript No="1">
+    <No>1</No>
+    <MouseKey>Left</MouseKey>
+    <X>705</X>
+    <Y>613</Y>
+    <Color>ff222222</Color>
+    <X2>751</X2>
+    <Y2>568</Y2>
+    <Color2>fff6f6f6</Color2>
+    <XIgnored>0</XIgnored>
+    <YIgnored>0</YIgnored>
+    <ColorIgnored></ColorIgnored>
+    <Delay>500</Delay>
+    <Class>Qt5QWindowIcon</Class>
+    <Name>NoxPlayer</Name>
+    <WHandle>134688</WHandle>
+    <IsSequential>false</IsSequential>
+  </KScript>
+</KScrips>

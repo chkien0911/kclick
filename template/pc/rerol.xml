@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<KScrips>
+  <KScript No="1">
+    <No>1</No>
+    <MouseKey>Left</MouseKey>
+    <X>577</X>
+    <Y>473</Y>
+    <Color>ff0018bb</Color>
+    <X2>563</X2>
+    <Y2>265</Y2>
+    <Color2>ffffe3b0</Color2>
+    <XIgnored>0</XIgnored>
+    <YIgnored>0</YIgnored>
+    <ColorIgnored></ColorIgnored>
+    <Delay>500</Delay>
+    <Class>Qt5QWindowIcon</Class>
+    <Name>NoxPlayer</Name>
+    <WHandle>134688</WHandle>
+    <IsSequential>false</IsSequential>
+  </KScript>
+  <KScript No="1">
+    <No>2</No>
+    <MouseKey>Left</MouseKey>
+    <X>446</X>
+    <Y>505</Y>
+    <Color>ff98e94c</Color>
+    <X2>543</X2>
+    <Y2>517</Y2>
+    <Color2>ff81ca40</Color2>
+    <XIgnored>0</XIgnored>
+    <YIgnored>0</YIgnored>
+    <ColorIgnored></ColorIgnored>
+    <Delay>500</Delay>
+    <Class>Qt5QWindowIcon</Class>
+    <Name>NoxPlayer</Name>
+    <WHandle>134688</WHandle>
+    <IsSequential>false</IsSequential>
+  </KScript>
+  <KScript No="1">
+    <No>3</No>
+    <MouseKey>Left</MouseKey>
+    <X>445</X>
+    <Y>422</Y>
+    <Color>ff95e749</Color>
+    <X2>530</X2>
+    <Y2>429</Y2>
+    <Color2>ff81ca40</Color2>
+    <XIgnored>0</XIgnored>
+    <YIgnored>0</YIgnored>
+    <ColorIgnored></ColorIgnored>
+    <Delay>500</Delay>
+    <Class>Qt5QWindowIcon</Class>
+    <Name>NoxPlayer</Name>
+    <WHandle>134688</WHandle>
+    <IsSequential>false</IsSequential>
+  </KScript>
+  <KScript No="1">
+    <No>4</No>
+    <MouseKey>Left</MouseKey>
+    <X>731</X>
+    <Y>607</Y>
+    <Color>fffdd233</Color>
+    <X2>776</X2>
+    <Y2>607</Y2>
+    <Color2>ff815a0f</Color2>
+    <XIgnored>0</XIgnored>
+    <YIgnored>0</YIgnored>
+    <ColorIgnored></ColorIgnored>
+    <Delay>500</Delay>
+    <Class>Qt5QWindowIcon</Class>
+    <Name>NoxPlayer</Name>
+    <WHandle>134688</WHandle>
+    <IsSequential>false</IsSequential>
+  </KScript>
+</KScrips>
