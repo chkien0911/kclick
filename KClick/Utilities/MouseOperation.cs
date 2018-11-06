@@ -68,8 +68,9 @@ namespace KClick.Utilities
         [DllImport("user32.dll", SetLastError = true)]
         public static extern bool SetWindowPos(IntPtr hWnd, IntPtr hWndInsertAfter, int X, int Y, int cx, int cy, uint uFlags);
 
-        public static Color GetColorAt(Point location)
+        public static async Task<Color> GetColorAt(Point location)
         {
+            await Task.Delay(10);
             using (Bitmap screenPixel = new Bitmap(1, 1, PixelFormat.Format32bppArgb))
             {
                 using (Graphics gdest = Graphics.FromImage(screenPixel))
@@ -102,13 +103,7 @@ namespace KClick.Utilities
             var y = yPos;//msg == (int)MouseEventFlags.MouseMove ? config.YPosMoved : config.YPos;
 
             var point = new Point(x, y);
-            var color = GetColorAt(point);
-
-            //if (color.Name != colorName)
-            //{
-            //    await Task.Delay(2000);
-            //    color = GetColorAt(new Point(xPos, yPos));
-            //}
+            var color = await GetColorAt(point);
 
             if (color.Name == colorName)
             {
@@ -122,7 +117,6 @@ namespace KClick.Utilities
                 int newx = x - rct.Left;
                 int newy = y - rct.Top;
 
-                await Task.Delay(100);
                 var result = SendMessage(wndHandle, msg, (IntPtr)wParam, (IntPtr)CreateLParam(newx, newy));
 
                 var error = GetLastError();
@@ -158,7 +152,7 @@ namespace KClick.Utilities
             if (config.XPosIgnored != 0 && config.YPosIgnored != 0 && !string.IsNullOrWhiteSpace(config.ColorIgnoredName))
             {
                 var ignoredPoint = new Point(config.XPosIgnored, config.YPosIgnored);
-                var ignoredColor = GetColorAt(ignoredPoint);
+                var ignoredColor = await GetColorAt(ignoredPoint);
                 if (ignoredColor.Name == config.ColorIgnoredName)
                 {
                     return 0;
@@ -166,7 +160,7 @@ namespace KClick.Utilities
             }
 
             var point = new Point(x, y);
-            var color = GetColorAt(point);
+            var color = await GetColorAt(point);
 
             if (color.Name == config.ColorName)
             {
@@ -174,7 +168,7 @@ namespace KClick.Utilities
                 if (config.X2Pos != 0 && config.Y2Pos != 0 && !string.IsNullOrWhiteSpace(config.Color2Name))
                 {
                     var point2 = new Point(config.X2Pos, config.Y2Pos);
-                    color2 = GetColorAt(point2);
+                    color2 = await GetColorAt(point2);
                 }
 
                 if (color2 == null || (color2.Value.Name == config.Color2Name))
@@ -190,7 +184,6 @@ namespace KClick.Utilities
                     int newx = x - rct.Left;
                     int newy = y - rct.Top;
 
-                    await Task.Delay(100);
                     var result = SendMessage(wndHandle, msg, (IntPtr) wParam, (IntPtr) CreateLParam(newx, newy));
 
                     var error = GetLastError();
@@ -221,7 +214,7 @@ namespace KClick.Utilities
             var y = yPos;//msg == (int)MouseEventFlags.MouseMove ? config.YPosMoved : config.YPos;
 
             var point = new Point(x, y);
-            var color = GetColorAt(point);
+            var color = await GetColorAt(point);
 
             int i = 0;
             while (color.Name != colorName)
@@ -233,15 +226,8 @@ namespace KClick.Utilities
                 }
 
                 await Task.Delay(100);
-                color = GetColorAt(point);
+                color = await GetColorAt(point);
             }
-
-
-            //if (color.Name != colorName)
-            //{
-            //    await Task.Delay(2000);
-            //    color = GetColorAt(new Point(xPos, yPos));
-            //}
 
             if (color.Name == colorName)
             {
@@ -255,7 +241,6 @@ namespace KClick.Utilities
                 int newx = x - rct.Left;
                 int newy = y - rct.Top;
 
-                await Task.Delay(100);
                 var result = SendMessage(wndHandle, msg, (IntPtr)wParam, (IntPtr)CreateLParam(newx, newy));
 
                 var error = GetLastError();
@@ -289,7 +274,7 @@ namespace KClick.Utilities
             if (config.XPosIgnored != 0 && config.YPosIgnored != 0 && !string.IsNullOrWhiteSpace(config.ColorIgnoredName))
             {
                 var ignoredPoint = new Point(config.XPosIgnored, config.YPosIgnored);
-                var ignoredColor = GetColorAt(ignoredPoint);
+                var ignoredColor = await GetColorAt(ignoredPoint);
                 if (ignoredColor.Name == config.ColorIgnoredName)
                 {
                     return 0;
@@ -298,7 +283,7 @@ namespace KClick.Utilities
 
 
             var point = new Point(x, y);
-            var color = GetColorAt(point);
+            var color = await GetColorAt(point);
 
             int i = 0;
             while (color.Name != config.ColorName)
@@ -310,15 +295,8 @@ namespace KClick.Utilities
                 }
 
                 await Task.Delay(100);
-                color = GetColorAt(point);
+                color = await GetColorAt(point);
             }
-
-
-            //if (color.Name != colorName)
-            //{
-            //    await Task.Delay(2000);
-            //    color = GetColorAt(new Point(xPos, yPos));
-            //}
 
             if (color.Name == config.ColorName)
             {
@@ -326,7 +304,7 @@ namespace KClick.Utilities
                 if (config.X2Pos != 0 && config.Y2Pos != 0 && !string.IsNullOrWhiteSpace(config.Color2Name))
                 {
                     var point2 = new Point(config.X2Pos, config.Y2Pos);
-                    color2 = GetColorAt(point2);
+                    color2 = await GetColorAt(point2);
                 }
 
                 if (color2 == null || (color2.Value.Name == config.Color2Name))
@@ -341,7 +319,6 @@ namespace KClick.Utilities
                     int newx = x - rct.Left;
                     int newy = y - rct.Top;
 
-                    await Task.Delay(100);
                     var result = SendMessage(wndHandle, msg, (IntPtr)wParam, (IntPtr)CreateLParam(newx, newy));
 
                     var error = GetLastError();

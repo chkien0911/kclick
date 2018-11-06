@@ -540,7 +540,6 @@ namespace KClick
 
             btnRun.Enabled = true;
             btnStop.Enabled = false;
-            await Task.Delay(100);
         }
 
         private async Task BtnRun_ClickAsync(object sender, EventArgs e)
@@ -561,8 +560,6 @@ namespace KClick
 
                 while (isRun)
                 {
-                    await Task.Delay(1000);
-
                     await RunAsync();
                 }
             }
@@ -577,8 +574,6 @@ namespace KClick
 
                     for (int i = 0; i < loop; i++)
                     {
-                        await Task.Delay(1000);
-
                         await RunAsync();
                     }
                     MessageBox.Show("Done!");
@@ -605,6 +600,8 @@ namespace KClick
 
         private async Task RunAsync(Configuration.Config config)
         {
+            //txtProgress.AppendText($"- Script No : {config.No}. Description: {config.Description}. {Environment.NewLine}");
+
             await Task.Delay(config.Delay);
 
             // Verify that Calculator is a running process.
@@ -630,12 +627,15 @@ namespace KClick
 
             if (LoadingConfigs != null && LoadingConfigs.Count > 0)
             {
+                
                 var loadingItem = LoadingConfigs[0];
-                var loadingColor = MouseOperation.GetColorAt(new Point(loadingItem.XPos, loadingItem.YPos));
+                var loadingColor = await MouseOperation.GetColorAt(new Point(loadingItem.XPos, loadingItem.YPos));
                 while (loadingColor.Name == loadingItem.ColorName)
                 {
-                    loadingColor = MouseOperation.GetColorAt(new Point(loadingItem.XPos, loadingItem.YPos));
-                    //await Task.Delay(config.Delay);
+                    //txtProgress.AppendText($"- Script No : {config.No}. Loading.... {Environment.NewLine}");
+
+                    loadingColor = await MouseOperation.GetColorAt(new Point(loadingItem.XPos, loadingItem.YPos));
+                    
                 }
             }
 

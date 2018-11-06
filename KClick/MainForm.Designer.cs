@@ -96,6 +96,8 @@
             this.label7 = new System.Windows.Forms.Label();
             this.txtColorMoved = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.txtProgress = new System.Windows.Forms.RichTextBox();
             this.pnlControl.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -104,6 +106,7 @@
             this.panel1.SuspendLayout();
             this.pnlGrid.SuspendLayout();
             this.contextMenuStrip1.SuspendLayout();
+            this.panel5.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnAdd
@@ -117,6 +120,7 @@
             // 
             // pnlControl
             // 
+            this.pnlControl.Controls.Add(this.panel5);
             this.pnlControl.Controls.Add(this.btnGetPositionMoved);
             this.pnlControl.Controls.Add(this.txtYMoved);
             this.pnlControl.Controls.Add(this.label6);
@@ -144,7 +148,7 @@
             this.pnlControl.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlControl.Location = new System.Drawing.Point(0, 0);
             this.pnlControl.Name = "pnlControl";
-            this.pnlControl.Size = new System.Drawing.Size(452, 437);
+            this.pnlControl.Size = new System.Drawing.Size(600, 437);
             this.pnlControl.TabIndex = 1;
             // 
             // chkDrag
@@ -617,7 +621,7 @@
             this.pnlGrid.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlGrid.Location = new System.Drawing.Point(0, 437);
             this.pnlGrid.Name = "pnlGrid";
-            this.pnlGrid.Size = new System.Drawing.Size(452, 172);
+            this.pnlGrid.Size = new System.Drawing.Size(600, 172);
             this.pnlGrid.TabIndex = 2;
             // 
             // lsvScripts
@@ -633,7 +637,7 @@
             this.lsvScripts.GridLines = true;
             this.lsvScripts.Location = new System.Drawing.Point(0, 0);
             this.lsvScripts.Name = "lsvScripts";
-            this.lsvScripts.Size = new System.Drawing.Size(452, 172);
+            this.lsvScripts.Size = new System.Drawing.Size(600, 172);
             this.lsvScripts.TabIndex = 0;
             this.lsvScripts.UseCompatibleStateImageBehavior = false;
             this.lsvScripts.View = System.Windows.Forms.View.Details;
@@ -731,18 +735,35 @@
             this.label8.TabIndex = 44;
             this.label8.Text = "Color (Optional)";
             // 
+            // panel5
+            // 
+            this.panel5.Controls.Add(this.txtProgress);
+            this.panel5.Location = new System.Drawing.Point(442, 12);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(155, 418);
+            this.panel5.TabIndex = 47;
+            // 
+            // txtProgress
+            // 
+            this.txtProgress.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtProgress.Location = new System.Drawing.Point(0, 0);
+            this.txtProgress.Name = "txtProgress";
+            this.txtProgress.Size = new System.Drawing.Size(155, 418);
+            this.txtProgress.TabIndex = 0;
+            this.txtProgress.Text = "";
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btnStop;
-            this.ClientSize = new System.Drawing.Size(452, 609);
+            this.ClientSize = new System.Drawing.Size(600, 609);
             this.Controls.Add(this.pnlGrid);
             this.Controls.Add(this.pnlControl);
             this.MaximizeBox = false;
-            this.MinimizeBox = false;
             this.Name = "MainForm";
             this.ShowIcon = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "KClick";
             this.pnlControl.ResumeLayout(false);
             this.pnlControl.PerformLayout();
@@ -757,6 +778,7 @@
             this.panel1.PerformLayout();
             this.pnlGrid.ResumeLayout(false);
             this.contextMenuStrip1.ResumeLayout(false);
+            this.panel5.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -830,6 +852,8 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox txtColorMoved;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.RichTextBox txtProgress;
     }
 }
 
