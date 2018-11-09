@@ -8,9 +8,11 @@ using System.Drawing;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml.Linq;
+using Gma.System.MouseKeyHook;
 using KClick.Configuration;
 
 namespace KClick
@@ -25,9 +27,76 @@ namespace KClick
         private static bool isRun = true;
         private static readonly object padlock = new object();
 
+
+        private IKeyboardMouseEvents m_GlobalHook;
+
+        public void Subscribe()
+        {
+            // Note: for the application hook, use the Hook.AppEvents() instead
+            m_GlobalHook = Hook.GlobalEvents();
+
+            m_GlobalHook.MouseDownExt += GlobalHookMouseDownExt;
+            m_GlobalHook.KeyPress += GlobalHookKeyPress;
+            m_GlobalHook.MouseDragStarted += M_GlobalHook_MouseDragStarted;
+            m_GlobalHook.MouseDragFinishedExt += M_GlobalHook_MouseDragFinishedExt;
+            m_GlobalHook.MouseDragFinished += M_GlobalHook_MouseDragFinished;
+            m_GlobalHook.MouseUp += M_GlobalHook_MouseUp;
+            //m_GlobalHook.MouseMove += M_GlobalHook_MouseMove;
+        }
+
+        private void M_GlobalHook_MouseUp(object sender, MouseEventArgs e)
+        {
+            txtProgress.AppendText(string.Format("MouseUp: \t{0}; \t Location: \t{1}", e.Button, e.Location));
+        }
+
+        //private void M_GlobalHook_MouseMove(object sender, MouseEventArgs e)
+        //{
+        //    txtProgress.AppendText(string.Format("MouseMove: \t{0}; \t Location: \t{1}", e.Button, e.Location));
+        //}
+
+        private void M_GlobalHook_MouseDragFinished(object sender, MouseEventArgs e)
+        {
+            txtProgress.AppendText(string.Format("MouseDragFinished: \t{0}; \t Location: \t{1}", e.Button, e.Location));
+        }
+
+        private void M_GlobalHook_MouseDragFinishedExt(object sender, MouseEventExtArgs e)
+        {
+            txtProgress.AppendText(string.Format("MouseDragFinishedExt: \t{0}; \t Location: \t{1}", e.Button, e.Location));
+        }
+
+        private void M_GlobalHook_MouseDragStarted(object sender, MouseEventArgs e)
+        {
+            txtProgress.AppendText(string.Format("MouseDragStarted: \t{0}; \t Location: \t{1}", e.Button, e.Location));
+        }
+
+        private void GlobalHookKeyPress(object sender, KeyPressEventArgs e)
+        {
+            txtProgress.Text = string.Format("KeyPress: \t{0}", e.KeyChar);
+        }
+
+        private void GlobalHookMouseDownExt(object sender, MouseEventExtArgs e)
+        {
+            txtProgress.Clear();
+            txtProgress.AppendText(string.Format("MouseDownExt: \t{0}; \t Location: \t{1}", e.Button, e.Location));
+
+            // uncommenting the following line will suppress the middle mouse button click
+            // if (e.Buttons == MouseButtons.Middle) { e.Handled = true; }
+        }
+
+        public void Unsubscribe()
+        {
+            m_GlobalHook.MouseDownExt -= GlobalHookMouseDownExt;
+            m_GlobalHook.KeyPress -= GlobalHookKeyPress;
+
+            //It is recommened to dispose it
+            m_GlobalHook.Dispose();
+        }
+
         public MainForm()
         {
             InitializeComponent();
+
+            Subscribe();
 
             btnAdd.Click += BtnAdd_Click;
             //btnFindControl.Click += BtnFindControl_Click;
@@ -68,9 +137,9 @@ namespace KClick
             rdoSpeed.CheckedChanged += RdoSpeed_CheckedChanged;
             rdoSequencial.CheckedChanged += RdoSequencial_CheckedChanged;
 
-            //lsvScripts.ItemSelectionChanged += LsvScripts_ItemSelectionChanged;
+            lsvScripts.ItemSelectionChanged += LsvScripts_ItemSelectionChanged;
 
-            //btnUpdateScript.Click += BtnUpdateScript_Click;
+            btnUpdateScript.Click += BtnUpdateScript_Click;
 
             chkDrag.CheckedChanged += ChkDrag_CheckedChanged;
 
@@ -96,68 +165,90 @@ namespace KClick
 
         private void BtnUpdateScript_Click(object sender, EventArgs e)
         {
-            //var isOk = int.TryParse(txtNo.Text, out int no);
-            //if (isOk)
-            //{
-            //    foreach (ListViewItem eachItem in lsvScripts.Items)
-            //    {
-            //        if (eachItem.SubItems[0].Text == no.ToString())
-            //        {
-            //            eachItem.SubItems[1].Text = txtDelay.Text;
-            //            eachItem.SubItems[2].Text = $"X1:{txtXPos.Text}, Y1:{txtYPos.Text}, Color1:{txtColor1.Text} | X2:{txtX2.Text}, Y2:{txtY2.Text}, Color2:{txtColor2.Text}";
-            //            eachItem.SubItems[3].Text = txtDescription.Text;
+            var isOk = int.TryParse(txtNo.Text, out int no);
+            if (isOk)
+            {
+                foreach (ListViewItem eachItem in lsvScripts.Items)
+                {
+                    if (eachItem.SubItems[0].Text == no.ToString())
+                    {
+                        eachItem.SubItems[1].Text = txtDelay.Text;
+                        eachItem.SubItems[2].Text = $"X1:{txtXPos.Text}, Y1:{txtYPos.Text}, Color1:{txtColor1.Text} | X2:{txtX2.Text}, Y2:{txtY2.Text}, Color2:{txtColor2.Text} | XMoved:{txtXMoved.Text}, YMoved:{txtYMoved.Text}, ColorMoved:{txtColorMoved.Text}";
+                        eachItem.SubItems[3].Text = txtDescription.Text;
 
-            //            break;
-            //        }
-            //    }
+                        break;
+                    }
+                }
 
-            //    foreach (var item in Configs)
-            //    {
-            //        if (item.No == no)
-            //        {
-            //            item.XPos = string.IsNullOrWhiteSpace(txtXPos.Text) ? 0 : int.Parse(txtXPos.Text);
-            //            item.XPosIgnored = string.IsNullOrWhiteSpace(txtXIgnored1.Text) ? 0 : int.Parse(txtXIgnored1.Text);
-            //            item.X2Pos = string.IsNullOrWhiteSpace(txtX2.Text) ? 0 : int.Parse(txtX2.Text);
-            //            item.YPos = string.IsNullOrWhiteSpace(txtYPos.Text) ? 0 : int.Parse(txtYPos.Text);
-            //            item.YPosIgnored = string.IsNullOrWhiteSpace(txtYIgnored1.Text) ? 0 : int.Parse(txtYIgnored1.Text);
-            //            item.Y2Pos = string.IsNullOrWhiteSpace(txtY2.Text) ? 0 : int.Parse(txtY2.Text);
-            //            item.ColorName = txtColor1.Text;
-            //            item.ColorIgnoredName = txtColorIgnored1.Text;
-            //            item.Color2Name = txtColor2.Text;
-            //            item.Description = txtDescription.Text;
-            //            item.IsDrag = chkDrag.Checked;
+                foreach (var item in Configs)
+                {
+                    if (item.No == no)
+                    {
+                        item.XPos = string.IsNullOrWhiteSpace(txtXPos.Text) ? 0 : int.Parse(txtXPos.Text);
+                        item.YPos = string.IsNullOrWhiteSpace(txtYPos.Text) ? 0 : int.Parse(txtYPos.Text);
+                        item.ColorName = txtColor1.Text;
 
-            //            break;
-            //        }
-            //    }
-            //}
+                        item.XPosIgnored = string.IsNullOrWhiteSpace(txtXIgnored1.Text) ? 0 : int.Parse(txtXIgnored1.Text);
+                        item.YPosIgnored = string.IsNullOrWhiteSpace(txtYIgnored1.Text) ? 0 : int.Parse(txtYIgnored1.Text);
+                        item.ColorIgnoredName = txtColorIgnored1.Text;
+
+                        item.X2Pos = string.IsNullOrWhiteSpace(txtX2.Text) ? 0 : int.Parse(txtX2.Text);
+                        item.Y2Pos = string.IsNullOrWhiteSpace(txtY2.Text) ? 0 : int.Parse(txtY2.Text);
+                        item.Color2Name = txtColor2.Text;
+
+                        item.IsDrag = chkDrag.Checked;
+                        item.XPosMoved = string.IsNullOrWhiteSpace(txtXMoved.Text) ? 0 : int.Parse(txtXMoved.Text);
+                        item.YPosMoved = string.IsNullOrWhiteSpace(txtYMoved.Text) ? 0 : int.Parse(txtYMoved.Text);
+                        item.ColorMovedName = txtColorMoved.Text;
+
+                        item.IsSequential = rdoSequencial.Checked;
+                        item.Description = txtDescription.Text;
+                        item.Delay = string.IsNullOrWhiteSpace(txtDelay.Text) ? 200 : int.Parse(txtDelay.Text);
+
+                        MessageBox.Show("Done!");
+
+                        break;
+                    }
+                }
+
+                //btnUpdateScript.Enabled = false;
+            }
         }
 
         private void LsvScripts_ItemSelectionChanged(object sender, ListViewItemSelectionChangedEventArgs e)
         {
-            //var no = int.Parse(e.Item.SubItems[0].Text);
-            //if (no > 0)
-            //{
-            //    var config = Configs.FirstOrDefault(s => s.No == no);
-            //    if (config != null)
-            //    {
-            //        txtXPos.Text = config.XPos.ToString();
-            //        txtYPos.Text = config.YPos.ToString();
-            //        txtColor1.Text = config.ColorName;
-            //        txtX2.Text = config.X2Pos.ToString();
-            //        txtY2.Text = config.Y2Pos.ToString();
-            //        txtColor2.Text = config.Color2Name;
+            var no = int.Parse(e.Item.SubItems[0].Text);
+            if (no > 0)
+            {
+                var config = Configs.FirstOrDefault(s => s.No == no);
+                if (config != null)
+                {
+                    txtXPos.Text = config.XPos.ToString();
+                    txtYPos.Text = config.YPos.ToString();
+                    txtColor1.Text = config.ColorName;
 
-            //        txtXIgnored1.Text = config.XPosIgnored.ToString();
-            //        txtYIgnored1.Text = config.YPosIgnored.ToString();
-            //        txtColorIgnored1.Text = config.ColorIgnoredName;
+                    txtX2.Text = config.X2Pos.ToString();
+                    txtY2.Text = config.Y2Pos.ToString();
+                    txtColor2.Text = config.Color2Name;
 
-            //        chkDrag.Checked = config.IsDrag;
-            //        txtDescription.Text = config.Description;
+                    txtXIgnored1.Text = config.XPosIgnored.ToString();
+                    txtYIgnored1.Text = config.YPosIgnored.ToString();
+                    txtColorIgnored1.Text = config.ColorIgnoredName;
 
-            //        txtNo.Text = no.ToString();
-            //    }
-            //}
+                    chkDrag.Checked = config.IsDrag;
+                    txtXMoved.Text = config.XPosMoved.ToString();
+                    txtYMoved.Text = config.YPosMoved.ToString();
+                    txtColorMoved.Text = config.ColorMovedName;
+                    
+                    txtDescription.Text = config.Description;
+                    rdoSequencial.Checked = config.IsSequential;
+                    txtDelay.Text = config.Delay.ToString();
+
+                    txtNo.Text = no.ToString();
+
+                    btnUpdateScript.Enabled = true;
+                }
+            }
         }
 
         private void RdoSequencial_CheckedChanged(object sender, EventArgs e)
@@ -258,7 +349,7 @@ namespace KClick
                         lsvScripts.Items.Add(item.Element("No").Value);
                         lsvScripts.Items[i].SubItems.Add(item.Element("Delay").Value);
                         lsvScripts.Items[i].SubItems.Add(
-                            $"X1:{item.Element("X").Value}, Y1:{item.Element("Y").Value}, Color1:{item.Element("Color").Value} | X2:{item.Element("X2").Value}, Y2:{item.Element("Y2").Value}, Color2:{item.Element("Color2").Value}"
+                            $"X1:{item.Element("X").Value}, Y1:{item.Element("Y").Value}, Color1:{item.Element("Color").Value} | X2:{item.Element("X2").Value}, Y2:{item.Element("Y2").Value}, Color2:{item.Element("Color2").Value} | XMoved:{item.Element("XMoved").Value}, YMoved:{item.Element("YMoved").Value}, ColorMoved:{item.Element("ColorMoved").Value}"
                         );
                         lsvScripts.Items[i].SubItems.Add(item.Element("Description").Value);
 
@@ -540,6 +631,7 @@ namespace KClick
 
             btnRun.Enabled = true;
             btnStop.Enabled = false;
+            await Task.Delay(100);
         }
 
         private async Task BtnRun_ClickAsync(object sender, EventArgs e)
@@ -576,7 +668,6 @@ namespace KClick
                     {
                         await RunAsync();
                     }
-                    MessageBox.Show("Done!");
                     btnRun.Enabled = true;
                     btnStop.Enabled = false;
                     isRun = false;
@@ -625,36 +716,30 @@ namespace KClick
             ClickOnPointTool.SetForegroundWindow(config.WindowHandle);
             //ClickOnPointTool.ShowActiveWindow(config.WindowHandle);
 
-            if (LoadingConfigs != null && LoadingConfigs.Count > 0)
-            {
-                
-                var loadingItem = LoadingConfigs[0];
-                var loadingColor = await MouseOperation.GetColorAt(new Point(loadingItem.XPos, loadingItem.YPos));
-                while (loadingColor.Name == loadingItem.ColorName)
-                {
-                    //txtProgress.AppendText($"- Script No : {config.No}. Loading.... {Environment.NewLine}");
+            //if (LoadingConfigs != null && LoadingConfigs.Count > 0)
+            //{
+            //    var loadingItem = LoadingConfigs[0];
+            //    var loadingColor = await MouseOperation.GetColorAt(new Point(loadingItem.XPos, loadingItem.YPos));
+            //    while (loadingColor.Name == loadingItem.ColorName)
+            //    {
+            //        txtProgress.AppendText($"- Script No : {config.No}. Loading.... {Environment.NewLine}");
 
-                    loadingColor = await MouseOperation.GetColorAt(new Point(loadingItem.XPos, loadingItem.YPos));
-                    
-                }
-            }
+            //        loadingColor = await MouseOperation.GetColorAt(new Point(loadingItem.XPos, loadingItem.YPos));
+
+            //    }
+            //}
 
             if (config.IsSequential)
             {
                 if (config.IsDrag)
                 {
-                    await MouseOperation.SendMessageAsync(config.WindowHandle,
-                        (int)MouseOperation.MouseEventFlags.LeftDown, 1, config.XPos, config.YPos, config.ColorName, LoadingConfigs);
-                    await MouseOperation.SendMessageAsync(config.WindowHandle,
-                        (int)MouseOperation.MouseEventFlags.MouseMove, 1, config.XPosMoved, config.YPosMoved, config.ColorMovedName, LoadingConfigs);
-                    await MouseOperation.SendMessageAsync(config.WindowHandle,
-                        (int)MouseOperation.MouseEventFlags.LeftUp, 0, config.XPosMoved, config.YPosMoved, config.ColorMovedName, LoadingConfigs);
+                    await ClickOnPointTool.ClickAndDragAsync(config.WindowHandle, new Point(config.XPos, config.YPos), config.ColorName, new Point(config.XPosMoved, config.YPosMoved), new Point(config.XPosIgnored, config.XPosIgnored), config.ColorMovedName);
                 }
                 else
                 {
-                    var dResult = await MouseOperation.SendMessageAsync(config.WindowHandle,
+                    await MouseOperation.SendMessageAsync(config.WindowHandle,
                         (int)MouseOperation.MouseEventFlags.LeftDown, 1, config, LoadingConfigs);
-                    var uResult = await MouseOperation.SendMessageAsync(config.WindowHandle,
+                    await MouseOperation.SendMessageAsync(config.WindowHandle,
                         (int)MouseOperation.MouseEventFlags.LeftUp, 0, config, LoadingConfigs);
                 }
             }
@@ -662,18 +747,13 @@ namespace KClick
             {
                 if (config.IsDrag)
                 {
-                    await MouseOperation.SendMessageSpeedModeAsync(config.WindowHandle,
-                        (int)MouseOperation.MouseEventFlags.LeftDown, 1, config.XPos, config.YPos, config.ColorName, LoadingConfigs);
-                    await MouseOperation.SendMessageSpeedModeAsync(config.WindowHandle,
-                        (int)MouseOperation.MouseEventFlags.MouseMove, 1, config.XPosMoved, config.YPosMoved, config.ColorMovedName, LoadingConfigs);
-                    await MouseOperation.SendMessageSpeedModeAsync(config.WindowHandle,
-                        (int)MouseOperation.MouseEventFlags.LeftUp, 0, config.XPosMoved, config.YPosMoved, config.ColorMovedName, LoadingConfigs);
+                    await ClickOnPointTool.ClickAndDragAsync(config.WindowHandle, new Point(config.XPos, config.YPos), config.ColorName, new Point(config.XPosMoved, config.YPosMoved), new Point(config.XPosIgnored, config.XPosIgnored), config.ColorMovedName);
                 }
                 else
                 {
-                    var dResult = await MouseOperation.SendMessageSpeedModeAsync(config.WindowHandle,
+                    await MouseOperation.SendMessageSpeedModeAsync(config.WindowHandle,
                         (int)MouseOperation.MouseEventFlags.LeftDown, 1, config, LoadingConfigs);
-                    var uResult = await MouseOperation.SendMessageSpeedModeAsync(config.WindowHandle,
+                    await MouseOperation.SendMessageSpeedModeAsync(config.WindowHandle,
                         (int)MouseOperation.MouseEventFlags.LeftUp, 0, config, LoadingConfigs);
                 }
             }
@@ -687,7 +767,7 @@ namespace KClick
                 var no = lsvScripts.Items.Count + 1;
                 ListViewItem item = new ListViewItem((no).ToString());
                 item.SubItems.Add(new ListViewItem.ListViewSubItem(item, txtDelay.Text));
-                item.SubItems.Add(new ListViewItem.ListViewSubItem(item, $"X1:{txtXPos.Text}, Y1:{txtYPos.Text}, Color1:{txtColor1.Text} | X2:{txtX2.Text}, Y2:{txtY2.Text}, Color2:{txtColor2.Text}"));
+                item.SubItems.Add(new ListViewItem.ListViewSubItem(item, $"X1:{txtXPos.Text}, Y1:{txtYPos.Text}, Color1:{txtColor1.Text} | X2:{txtX2.Text}, Y2:{txtY2.Text}, Color2:{txtColor2.Text} | XMoved:{txtXMoved.Text}, YMoved:{txtYMoved.Text}, ColorMoved:{txtColorMoved.Text}"));
                 item.SubItems.Add(new ListViewItem.ListViewSubItem(item, txtDescription.Text));
                 lsvScripts.Items.Add(item);
 
@@ -731,6 +811,14 @@ namespace KClick
                 txtXIgnored1.Clear();
                 txtYIgnored1.Clear();
                 txtColorIgnored1.Clear();
+
+                chkDrag.Checked = false;
+                btnGetPositionMoved.Enabled = false;
+                txtXMoved.Clear();
+                txtYMoved.Clear();
+                txtColorMoved.Clear();
+
+                btnUpdateScript.Enabled = false;
             }
             else
             {

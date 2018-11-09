@@ -12,6 +12,8 @@ namespace KClick.Utilities
 {
     public static class MouseOperation
     {
+        private static Dictionary<string, Color> Colors = new Dictionary<string, Color>();
+
         [Flags]
         public enum MouseEventFlags : uint
         {
@@ -70,6 +72,11 @@ namespace KClick.Utilities
 
         public static async Task<Color> GetColorAt(Point location)
         {
+            //var key = $"{location.X}-{location.Y}";
+
+            //var hasColor = Colors.ContainsKey(key);
+            //if (hasColor) return Colors[key];
+
             await Task.Delay(10);
             using (Bitmap screenPixel = new Bitmap(1, 1, PixelFormat.Format32bppArgb))
             {
@@ -79,13 +86,16 @@ namespace KClick.Utilities
                     {
                         IntPtr hSrcDC = gsrc.GetHdc();
                         IntPtr hDC = gdest.GetHdc();
-                        int retval = BitBlt(hDC, 0, 0, 1, 1, hSrcDC, location.X, location.Y, (int)CopyPixelOperation.SourceCopy);
+                        int retval = BitBlt(hDC, 0, 0, 1, 1, hSrcDC, location.X, location.Y,
+                            (int)CopyPixelOperation.SourceCopy);
                         gdest.ReleaseHdc();
                         gsrc.ReleaseHdc();
                     }
                 }
 
-                return screenPixel.GetPixel(0, 0);
+                var color = screenPixel.GetPixel(0, 0);
+                //Colors.Add(key, color);
+                return color;
             }
         }
 
@@ -107,15 +117,8 @@ namespace KClick.Utilities
 
             if (color.Name == colorName)
             {
-                RECT rct = new RECT();
-
-                if (!GetWindowRect(wndHandle, ref rct))
-                {
+                if (!GetCordPostition(wndHandle, x, y, out var newx, out var newy))
                     return 0;
-                }
-
-                int newx = x - rct.Left;
-                int newy = y - rct.Top;
 
                 var result = SendMessage(wndHandle, msg, (IntPtr)wParam, (IntPtr)CreateLParam(newx, newy));
 
@@ -132,6 +135,22 @@ namespace KClick.Utilities
             return 0;
         }
 
+        public static bool GetCordPostition(IntPtr wndHandle, int x, int y, out int newx, out int newy)
+        {
+            var rct = new RECT();
+
+            if (!GetWindowRect(wndHandle, ref rct))
+            {
+                newx = 0;
+                newy = 0;
+                return false;
+            }
+
+            newx = x - rct.Left;
+            newy = y - rct.Top;
+            return true;
+        }
+
         public static async Task<int> SendMessageSpeedModeAsync(
             IntPtr wndHandle,
             int msg,
@@ -142,11 +161,11 @@ namespace KClick.Utilities
             var x = config.XPos;//msg == (int) MouseEventFlags.MouseMove ? config.XPosMoved : config.XPos;
             var y = config.YPos; //msg == (int)MouseEventFlags.MouseMove ? config.YPosMoved : config.YPos;
 
-            if (msg == (int) MouseEventFlags.MouseMove)
+            if (msg == (int)MouseEventFlags.MouseMove)
             {
 
             }
-            
+
 
             //Cursor.Position = new Point(xPos, yPos);
             if (config.XPosIgnored != 0 && config.YPosIgnored != 0 && !string.IsNullOrWhiteSpace(config.ColorIgnoredName))
@@ -173,7 +192,7 @@ namespace KClick.Utilities
 
                 if (color2 == null || (color2.Value.Name == config.Color2Name))
                 {
-                    
+
                     RECT rct = new RECT();
 
                     if (!GetWindowRect(wndHandle, ref rct))
@@ -184,7 +203,7 @@ namespace KClick.Utilities
                     int newx = x - rct.Left;
                     int newy = y - rct.Top;
 
-                    var result = SendMessage(wndHandle, msg, (IntPtr) wParam, (IntPtr) CreateLParam(newx, newy));
+                    var result = SendMessage(wndHandle, msg, (IntPtr)wParam, (IntPtr)CreateLParam(newx, newy));
 
                     var error = GetLastError();
                     //string errorMessage = new Win32Exception(Marshal.GetLastWin32Error()).Message;

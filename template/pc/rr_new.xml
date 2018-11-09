@@ -3,101 +3,9 @@
   <KScript No="1">
     <No>1</No>
     <MouseKey>Left</MouseKey>
-    <X>327</X>
-    <Y>214</Y>
-    <Color>ffffebca</Color>
-    <X2>336</X2>
-    <Y2>218</Y2>
-    <Color2>ff1933d2</Color2>
-    <XMoved>0</XMoved>
-    <YMoved>0</YMoved>
-    <ColorMoved></ColorMoved>
-    <XIgnored>0</XIgnored>
-    <YIgnored>0</YIgnored>
-    <ColorIgnored></ColorIgnored>
-    <Delay>100</Delay>
-    <Class>Qt5QWindowIcon</Class>
-    <Name>NoxPlayer</Name>
-    <WHandle>528416</WHandle>
-    <IsSequential>false</IsSequential>
-    <IsDrag>false</IsDrag>
-    <Description></Description>
-  </KScript>
-  <KScript No="2">
-    <No>2</No>
-    <MouseKey>Left</MouseKey>
-    <X>340</X>
-    <Y>294</Y>
-    <Color>ff0017bd</Color>
-    <X2>351</X2>
-    <Y2>178</Y2>
-    <Color2>ffffd3a0</Color2>
-    <XMoved>0</XMoved>
-    <YMoved>0</YMoved>
-    <ColorMoved></ColorMoved>
-    <XIgnored>0</XIgnored>
-    <YIgnored>0</YIgnored>
-    <ColorIgnored></ColorIgnored>
-    <Delay>100</Delay>
-    <Class>Qt5QWindowIcon</Class>
-    <Name>NoxPlayer</Name>
-    <WHandle>528416</WHandle>
-    <IsSequential>false</IsSequential>
-    <IsDrag>false</IsDrag>
-    <Description></Description>
-  </KScript>
-  <KScript No="3">
-    <No>3</No>
-    <MouseKey>Left</MouseKey>
-    <X>439</X>
-    <Y>383</Y>
-    <Color>ffe8f0fe</Color>
-    <X2>456</X2>
-    <Y2>365</Y2>
-    <Color2>ffe8f0fe</Color2>
-    <XMoved>0</XMoved>
-    <YMoved>0</YMoved>
-    <ColorMoved></ColorMoved>
-    <XIgnored>0</XIgnored>
-    <YIgnored>0</YIgnored>
-    <ColorIgnored></ColorIgnored>
-    <Delay>100</Delay>
-    <Class>Qt5QWindowIcon</Class>
-    <Name>NoxPlayer</Name>
-    <WHandle>528416</WHandle>
-    <IsSequential>false</IsSequential>
-    <IsDrag>false</IsDrag>
-    <Description></Description>
-  </KScript>
-  <KScript No="4">
-    <No>4</No>
-    <MouseKey>Left</MouseKey>
-    <X>229</X>
-    <Y>225</Y>
-    <Color>fff0d525</Color>
-    <X2>235</X2>
-    <Y2>214</Y2>
-    <Color2>ff030302</Color2>
-    <XMoved>0</XMoved>
-    <YMoved>0</YMoved>
-    <ColorMoved></ColorMoved>
-    <XIgnored>0</XIgnored>
-    <YIgnored>0</YIgnored>
-    <ColorIgnored></ColorIgnored>
-    <Delay>100</Delay>
-    <Class>Qt5QWindowIcon</Class>
-    <Name>NoxPlayer</Name>
-    <WHandle>528416</WHandle>
-    <IsSequential>false</IsSequential>
-    <IsDrag>false</IsDrag>
-    <Description></Description>
-  </KScript>
-  <KScript No="5">
-    <No>5</No>
-    <MouseKey>Left</MouseKey>
-    <X>283</X>
-    <Y>230</Y>
-    <Color>ff6dc630</Color>
+    <X>345</X>
+    <Y>172</Y>
+    <Color>ffffd9b2</Color>
     <X2>0</X2>
     <Y2>0</Y2>
     <Color2></Color2>
@@ -110,13 +18,82 @@
     <Delay>100</Delay>
     <Class>Qt5QWindowIcon</Class>
     <Name>NoxPlayer</Name>
-    <WHandle>528416</WHandle>
+    <WHandle>1905862</WHandle>
     <IsSequential>false</IsSequential>
     <IsDrag>false</IsDrag>
     <Description></Description>
   </KScript>
-  <KScript No="6">
-    <No>6</No>
+  <KScript No="2">
+    <No>2</No>
+    <MouseKey>Left</MouseKey>
+    <X>421</X>
+    <Y>386</Y>
+    <Color>ffe9f1fe</Color>
+    <X2>443</X2>
+    <Y2>374</Y2>
+    <Color2>ffe9f1ff</Color2>
+    <XMoved>0</XMoved>
+    <YMoved>0</YMoved>
+    <ColorMoved></ColorMoved>
+    <XIgnored>0</XIgnored>
+    <YIgnored>0</YIgnored>
+    <ColorIgnored></ColorIgnored>
+    <Delay>100</Delay>
+    <Class>Qt5QWindowIcon</Class>
+    <Name>NoxPlayer</Name>
+    <WHandle>1905862</WHandle>
+    <IsSequential>false</IsSequential>
+    <IsDrag>false</IsDrag>
+    <Description></Description>
+  </KScript>
+  <KScript No="3">
+    <No>3</No>
+    <MouseKey>Left</MouseKey>
+    <X>225</X>
+    <Y>217</Y>
+    <Color>fff8eec5</Color>
+    <X2>293</X2>
+    <Y2>231</Y2>
+    <Color2>ff71c636</Color2>
+    <XMoved>0</XMoved>
+    <YMoved>0</YMoved>
+    <ColorMoved></ColorMoved>
+    <XIgnored>0</XIgnored>
+    <YIgnored>0</YIgnored>
+    <ColorIgnored></ColorIgnored>
+    <Delay>100</Delay>
+    <Class>Qt5QWindowIcon</Class>
+    <Name>NoxPlayer</Name>
+    <WHandle>1905862</WHandle>
+    <IsSequential>false</IsSequential>
+    <IsDrag>false</IsDrag>
+    <Description></Description>
+  </KScript>
+  <KScript No="4">
+    <No>4</No>
+    <MouseKey>Left</MouseKey>
+    <X>285</X>
+    <Y>229</Y>
+    <Color>ff6fc230</Color>
+    <X2>0</X2>
+    <Y2>0</Y2>
+    <Color2></Color2>
+    <XMoved>0</XMoved>
+    <YMoved>0</YMoved>
+    <ColorMoved></ColorMoved>
+    <XIgnored>0</XIgnored>
+    <YIgnored>0</YIgnored>
+    <ColorIgnored></ColorIgnored>
+    <Delay>100</Delay>
+    <Class>Qt5QWindowIcon</Class>
+    <Name>NoxPlayer</Name>
+    <WHandle>1905862</WHandle>
+    <IsSequential>false</IsSequential>
+    <IsDrag>false</IsDrag>
+    <Description></Description>
+  </KScript>
+  <KScript No="5">
+    <No>5</No>
     <MouseKey>Left</MouseKey>
     <X>275</X>
     <Y>233</Y>
@@ -125,61 +102,84 @@
     <Y2>0</Y2>
     <Color2></Color2>
     <XMoved>354</XMoved>
-    <YMoved>252</YMoved>
-    <ColorMoved>ff77cf59</ColorMoved>
+    <YMoved>253</YMoved>
+    <ColorMoved>ff76d555</ColorMoved>
     <XIgnored>0</XIgnored>
     <YIgnored>0</YIgnored>
     <ColorIgnored></ColorIgnored>
     <Delay>100</Delay>
     <Class>Qt5QWindowIcon</Class>
     <Name>NoxPlayer</Name>
-    <WHandle>528416</WHandle>
+    <WHandle>1905862</WHandle>
     <IsSequential>false</IsSequential>
     <IsDrag>true</IsDrag>
     <Description></Description>
   </KScript>
-  <KScript No="7">
-    <No>7</No>
+  <KScript No="6">
+    <No>6</No>
     <MouseKey>Left</MouseKey>
-    <X>420</X>
+    <X>431</X>
     <Y>123</Y>
-    <Color>ffedf3ff</Color>
-    <X2>450</X2>
-    <Y2>121</Y2>
-    <Color2>ffe4eeff</Color2>
-    <XMoved>354</XMoved>
-    <YMoved>252</YMoved>
-    <ColorMoved>ff77cf59</ColorMoved>
-    <XIgnored>0</XIgnored>
-    <YIgnored>0</YIgnored>
-    <ColorIgnored></ColorIgnored>
-    <Delay>100</Delay>
-    <Class>Qt5QWindowIcon</Class>
-    <Name>NoxPlayer</Name>
-    <WHandle>528416</WHandle>
-    <IsSequential>false</IsSequential>
-    <IsDrag>true</IsDrag>
-    <Description></Description>
-  </KScript>
-  <KScript No="8">
-    <No>8</No>
-    <MouseKey>Left</MouseKey>
-    <X>446</X>
-    <Y>130</Y>
-    <Color>ffe3edff</Color>
-    <X2>453</X2>
-    <Y2>112</Y2>
-    <Color2>ffe7effe</Color2>
+    <Color>ffe9f1ff</Color>
+    <X2>448</X2>
+    <Y2>105</Y2>
+    <Color2>ffe9f1ff</Color2>
     <XMoved>0</XMoved>
     <YMoved>0</YMoved>
     <ColorMoved></ColorMoved>
     <XIgnored>0</XIgnored>
     <YIgnored>0</YIgnored>
     <ColorIgnored></ColorIgnored>
-    <Delay>500</Delay>
+    <Delay>100</Delay>
     <Class>Qt5QWindowIcon</Class>
     <Name>NoxPlayer</Name>
-    <WHandle>528416</WHandle>
+    <WHandle>1905862</WHandle>
+    <IsSequential>false</IsSequential>
+    <IsDrag>false</IsDrag>
+    <Description></Description>
+  </KScript>
+  <KScript No="7">
+    <No>7</No>
+    <MouseKey>Left</MouseKey>
+    <X>386</X>
+    <Y>369</Y>
+    <Color>ff11226b</Color>
+    <X2>457</X2>
+    <Y2>364</Y2>
+    <Color2>ff211101</Color2>
+    <XMoved>0</XMoved>
+    <YMoved>0</YMoved>
+    <ColorMoved></ColorMoved>
+    <XIgnored>0</XIgnored>
+    <YIgnored>0</YIgnored>
+    <ColorIgnored></ColorIgnored>
+    <Delay>100</Delay>
+    <Class>Qt5QWindowIcon</Class>
+    <Name>NoxPlayer</Name>
+    <WHandle>1905862</WHandle>
+    <IsSequential>false</IsSequential>
+    <IsDrag>false</IsDrag>
+    <Description></Description>
+  </KScript>
+  <KScript No="8">
+    <No>8</No>
+    <MouseKey>Left</MouseKey>
+    <X>452</X>
+    <Y>371</Y>
+    <Color>ff62ac1b</Color>
+    <X2>457</X2>
+    <Y2>378</Y2>
+    <Color2>ff7cdd0c</Color2>
+    <XMoved>0</XMoved>
+    <YMoved>0</YMoved>
+    <ColorMoved></ColorMoved>
+    <XIgnored>0</XIgnored>
+    <YIgnored>0</YIgnored>
+    <ColorIgnored></ColorIgnored>
+    <Delay>100</Delay>
+    <Class>Qt5QWindowIcon</Class>
+    <Name>NoxPlayer</Name>
+    <WHandle>1905862</WHandle>
     <IsSequential>false</IsSequential>
     <IsDrag>false</IsDrag>
     <Description></Description>
@@ -187,22 +187,22 @@
   <KScript No="9">
     <No>9</No>
     <MouseKey>Left</MouseKey>
-    <X>387</X>
-    <Y>370</Y>
-    <Color>ff101d68</Color>
-    <X2>428</X2>
-    <Y2>313</Y2>
-    <Color2>ff106310</Color2>
+    <X>463</X>
+    <Y>302</Y>
+    <Color>ff301a08</Color>
+    <X2>470</X2>
+    <Y2>303</Y2>
+    <Color2>fff99a00</Color2>
     <XMoved>0</XMoved>
     <YMoved>0</YMoved>
     <ColorMoved></ColorMoved>
     <XIgnored>0</XIgnored>
     <YIgnored>0</YIgnored>
     <ColorIgnored></ColorIgnored>
-    <Delay>500</Delay>
+    <Delay>100</Delay>
     <Class>Qt5QWindowIcon</Class>
     <Name>NoxPlayer</Name>
-    <WHandle>528416</WHandle>
+    <WHandle>1905862</WHandle>
     <IsSequential>false</IsSequential>
     <IsDrag>false</IsDrag>
     <Description></Description>
@@ -210,57 +210,11 @@
   <KScript No="10">
     <No>10</No>
     <MouseKey>Left</MouseKey>
-    <X>455</X>
-    <Y>369</Y>
-    <Color>ffc4cbc4</Color>
-    <X2>475</X2>
-    <Y2>302</Y2>
-    <Color2>ff063806</Color2>
-    <XMoved>0</XMoved>
-    <YMoved>0</YMoved>
-    <ColorMoved></ColorMoved>
-    <XIgnored>0</XIgnored>
-    <YIgnored>0</YIgnored>
-    <ColorIgnored></ColorIgnored>
-    <Delay>500</Delay>
-    <Class>Qt5QWindowIcon</Class>
-    <Name>NoxPlayer</Name>
-    <WHandle>528416</WHandle>
-    <IsSequential>false</IsSequential>
-    <IsDrag>false</IsDrag>
-    <Description></Description>
-  </KScript>
-  <KScript No="11">
-    <No>11</No>
-    <MouseKey>Left</MouseKey>
-    <X>462</X>
-    <Y>300</Y>
-    <Color>ff261506</Color>
-    <X2>321</X2>
-    <Y2>354</Y2>
-    <Color2>ff106b10</Color2>
-    <XMoved>0</XMoved>
-    <YMoved>0</YMoved>
-    <ColorMoved></ColorMoved>
-    <XIgnored>0</XIgnored>
-    <YIgnored>0</YIgnored>
-    <ColorIgnored></ColorIgnored>
-    <Delay>500</Delay>
-    <Class>Qt5QWindowIcon</Class>
-    <Name>NoxPlayer</Name>
-    <WHandle>528416</WHandle>
-    <IsSequential>false</IsSequential>
-    <IsDrag>false</IsDrag>
-    <Description></Description>
-  </KScript>
-  <KScript No="12">
-    <No>12</No>
-    <MouseKey>Left</MouseKey>
-    <X>287</X>
-    <Y>279</Y>
-    <Color>fffbc76e</Color>
-    <X2>385</X2>
-    <Y2>272</Y2>
+    <X>285</X>
+    <Y>283</Y>
+    <Color>fff9b031</Color>
+    <X2>386</X2>
+    <Y2>273</Y2>
     <Color2>ff00a6e1</Color2>
     <XMoved>0</XMoved>
     <YMoved>0</YMoved>
@@ -268,10 +222,10 @@
     <XIgnored>0</XIgnored>
     <YIgnored>0</YIgnored>
     <ColorIgnored></ColorIgnored>
-    <Delay>500</Delay>
+    <Delay>100</Delay>
     <Class>Qt5QWindowIcon</Class>
     <Name>NoxPlayer</Name>
-    <WHandle>528416</WHandle>
+    <WHandle>1905862</WHandle>
     <IsSequential>false</IsSequential>
     <IsDrag>false</IsDrag>
     <Description></Description>

@@ -31,6 +31,15 @@
             this.components = new System.ComponentModel.Container();
             this.btnAdd = new System.Windows.Forms.Button();
             this.pnlControl = new System.Windows.Forms.Panel();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.txtProgress = new System.Windows.Forms.RichTextBox();
+            this.btnGetPositionMoved = new System.Windows.Forms.Button();
+            this.txtYMoved = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.txtXMoved = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.txtColorMoved = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
             this.chkDrag = new System.Windows.Forms.CheckBox();
             this.panel4 = new System.Windows.Forms.Panel();
             this.rdoSequencial = new System.Windows.Forms.RadioButton();
@@ -89,16 +98,9 @@
             this.colDescription = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.btnDelete = new System.Windows.Forms.ToolStripMenuItem();
-            this.btnGetPositionMoved = new System.Windows.Forms.Button();
-            this.txtYMoved = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.txtXMoved = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.txtColorMoved = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.txtProgress = new System.Windows.Forms.RichTextBox();
+            this.txtNo = new System.Windows.Forms.TextBox();
             this.pnlControl.SuspendLayout();
+            this.panel5.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -106,7 +108,6 @@
             this.panel1.SuspendLayout();
             this.pnlGrid.SuspendLayout();
             this.contextMenuStrip1.SuspendLayout();
-            this.panel5.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnAdd
@@ -150,6 +151,84 @@
             this.pnlControl.Name = "pnlControl";
             this.pnlControl.Size = new System.Drawing.Size(600, 437);
             this.pnlControl.TabIndex = 1;
+            // 
+            // panel5
+            // 
+            this.panel5.Controls.Add(this.txtProgress);
+            this.panel5.Location = new System.Drawing.Point(442, 12);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(155, 418);
+            this.panel5.TabIndex = 47;
+            // 
+            // txtProgress
+            // 
+            this.txtProgress.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtProgress.Location = new System.Drawing.Point(0, 0);
+            this.txtProgress.Name = "txtProgress";
+            this.txtProgress.Size = new System.Drawing.Size(155, 418);
+            this.txtProgress.TabIndex = 0;
+            this.txtProgress.Text = "";
+            // 
+            // btnGetPositionMoved
+            // 
+            this.btnGetPositionMoved.Enabled = false;
+            this.btnGetPositionMoved.Location = new System.Drawing.Point(155, 310);
+            this.btnGetPositionMoved.Name = "btnGetPositionMoved";
+            this.btnGetPositionMoved.Size = new System.Drawing.Size(56, 69);
+            this.btnGetPositionMoved.TabIndex = 43;
+            this.btnGetPositionMoved.Text = "Get Position";
+            this.btnGetPositionMoved.UseVisualStyleBackColor = true;
+            // 
+            // txtYMoved
+            // 
+            this.txtYMoved.Enabled = false;
+            this.txtYMoved.Location = new System.Drawing.Point(99, 334);
+            this.txtYMoved.Name = "txtYMoved";
+            this.txtYMoved.Size = new System.Drawing.Size(49, 20);
+            this.txtYMoved.TabIndex = 41;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(21, 334);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(62, 13);
+            this.label6.TabIndex = 46;
+            this.label6.Text = "Y (Optional)";
+            // 
+            // txtXMoved
+            // 
+            this.txtXMoved.Enabled = false;
+            this.txtXMoved.Location = new System.Drawing.Point(99, 311);
+            this.txtXMoved.Name = "txtXMoved";
+            this.txtXMoved.Size = new System.Drawing.Size(49, 20);
+            this.txtXMoved.TabIndex = 40;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(21, 311);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(62, 13);
+            this.label7.TabIndex = 45;
+            this.label7.Text = "X (Optional)";
+            // 
+            // txtColorMoved
+            // 
+            this.txtColorMoved.Enabled = false;
+            this.txtColorMoved.Location = new System.Drawing.Point(99, 358);
+            this.txtColorMoved.Name = "txtColorMoved";
+            this.txtColorMoved.Size = new System.Drawing.Size(49, 20);
+            this.txtColorMoved.TabIndex = 42;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(22, 358);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(79, 13);
+            this.label8.TabIndex = 44;
+            this.label8.Text = "Color (Optional)";
             // 
             // chkDrag
             // 
@@ -416,6 +495,7 @@
             // 
             // grbIgnore
             // 
+            this.grbIgnore.Controls.Add(this.txtNo);
             this.grbIgnore.Controls.Add(this.btnGetPositionIgnored1);
             this.grbIgnore.Controls.Add(this.txtYIgnored1);
             this.grbIgnore.Controls.Add(this.label2);
@@ -563,7 +643,7 @@
             this.txtDelay.Name = "txtDelay";
             this.txtDelay.Size = new System.Drawing.Size(50, 20);
             this.txtDelay.TabIndex = 3;
-            this.txtDelay.Text = "500";
+            this.txtDelay.Text = "100";
             // 
             // lblDelay
             // 
@@ -654,12 +734,12 @@
             // colInfo
             // 
             this.colInfo.Text = "Info";
-            this.colInfo.Width = 150;
+            this.colInfo.Width = 250;
             // 
             // colDescription
             // 
             this.colDescription.Text = "Description";
-            this.colDescription.Width = 200;
+            this.colDescription.Width = 150;
             // 
             // contextMenuStrip1
             // 
@@ -674,83 +754,12 @@
             this.btnDelete.Size = new System.Drawing.Size(107, 22);
             this.btnDelete.Text = "Delete";
             // 
-            // btnGetPositionMoved
+            // txtNo
             // 
-            this.btnGetPositionMoved.Enabled = false;
-            this.btnGetPositionMoved.Location = new System.Drawing.Point(155, 310);
-            this.btnGetPositionMoved.Name = "btnGetPositionMoved";
-            this.btnGetPositionMoved.Size = new System.Drawing.Size(56, 69);
-            this.btnGetPositionMoved.TabIndex = 43;
-            this.btnGetPositionMoved.Text = "Get Position";
-            this.btnGetPositionMoved.UseVisualStyleBackColor = true;
-            // 
-            // txtYMoved
-            // 
-            this.txtYMoved.Enabled = false;
-            this.txtYMoved.Location = new System.Drawing.Point(99, 334);
-            this.txtYMoved.Name = "txtYMoved";
-            this.txtYMoved.Size = new System.Drawing.Size(49, 20);
-            this.txtYMoved.TabIndex = 41;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(21, 334);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(62, 13);
-            this.label6.TabIndex = 46;
-            this.label6.Text = "Y (Optional)";
-            // 
-            // txtXMoved
-            // 
-            this.txtXMoved.Enabled = false;
-            this.txtXMoved.Location = new System.Drawing.Point(99, 311);
-            this.txtXMoved.Name = "txtXMoved";
-            this.txtXMoved.Size = new System.Drawing.Size(49, 20);
-            this.txtXMoved.TabIndex = 40;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(21, 311);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(62, 13);
-            this.label7.TabIndex = 45;
-            this.label7.Text = "X (Optional)";
-            // 
-            // txtColorMoved
-            // 
-            this.txtColorMoved.Enabled = false;
-            this.txtColorMoved.Location = new System.Drawing.Point(99, 358);
-            this.txtColorMoved.Name = "txtColorMoved";
-            this.txtColorMoved.Size = new System.Drawing.Size(49, 20);
-            this.txtColorMoved.TabIndex = 42;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(22, 358);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(79, 13);
-            this.label8.TabIndex = 44;
-            this.label8.Text = "Color (Optional)";
-            // 
-            // panel5
-            // 
-            this.panel5.Controls.Add(this.txtProgress);
-            this.panel5.Location = new System.Drawing.Point(442, 12);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(155, 418);
-            this.panel5.TabIndex = 47;
-            // 
-            // txtProgress
-            // 
-            this.txtProgress.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtProgress.Location = new System.Drawing.Point(0, 0);
-            this.txtProgress.Name = "txtProgress";
-            this.txtProgress.Size = new System.Drawing.Size(155, 418);
-            this.txtProgress.TabIndex = 0;
-            this.txtProgress.Text = "";
+            this.txtNo.Location = new System.Drawing.Point(303, 54);
+            this.txtNo.Name = "txtNo";
+            this.txtNo.Size = new System.Drawing.Size(100, 20);
+            this.txtNo.TabIndex = 31;
             // 
             // MainForm
             // 
@@ -767,6 +776,7 @@
             this.Text = "KClick";
             this.pnlControl.ResumeLayout(false);
             this.pnlControl.PerformLayout();
+            this.panel5.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             this.panel3.ResumeLayout(false);
@@ -778,7 +788,6 @@
             this.panel1.PerformLayout();
             this.pnlGrid.ResumeLayout(false);
             this.contextMenuStrip1.ResumeLayout(false);
-            this.panel5.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -854,6 +863,7 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.RichTextBox txtProgress;
+        private System.Windows.Forms.TextBox txtNo;
     }
 }
 
