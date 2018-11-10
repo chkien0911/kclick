@@ -69,6 +69,7 @@
             this.btnExport = new System.Windows.Forms.Button();
             this.btnImport = new System.Windows.Forms.Button();
             this.grbIgnore = new System.Windows.Forms.GroupBox();
+            this.txtNo = new System.Windows.Forms.TextBox();
             this.btnGetPositionIgnored1 = new System.Windows.Forms.Button();
             this.txtYIgnored1 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -98,7 +99,6 @@
             this.colDescription = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.btnDelete = new System.Windows.Forms.ToolStripMenuItem();
-            this.txtNo = new System.Windows.Forms.TextBox();
             this.pnlControl.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -149,7 +149,7 @@
             this.pnlControl.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlControl.Location = new System.Drawing.Point(0, 0);
             this.pnlControl.Name = "pnlControl";
-            this.pnlControl.Size = new System.Drawing.Size(600, 437);
+            this.pnlControl.Size = new System.Drawing.Size(444, 437);
             this.pnlControl.TabIndex = 1;
             // 
             // panel5
@@ -511,6 +511,15 @@
             this.grbIgnore.TabStop = false;
             this.grbIgnore.Text = "Successful Color (If matching this click point, mouse clicking will be ignored)";
             // 
+            // txtNo
+            // 
+            this.txtNo.Enabled = false;
+            this.txtNo.Location = new System.Drawing.Point(303, 54);
+            this.txtNo.Name = "txtNo";
+            this.txtNo.Size = new System.Drawing.Size(100, 20);
+            this.txtNo.TabIndex = 31;
+            this.txtNo.Visible = false;
+            // 
             // btnGetPositionIgnored1
             // 
             this.btnGetPositionIgnored1.Location = new System.Drawing.Point(142, 19);
@@ -701,7 +710,7 @@
             this.pnlGrid.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlGrid.Location = new System.Drawing.Point(0, 437);
             this.pnlGrid.Name = "pnlGrid";
-            this.pnlGrid.Size = new System.Drawing.Size(600, 172);
+            this.pnlGrid.Size = new System.Drawing.Size(444, 224);
             this.pnlGrid.TabIndex = 2;
             // 
             // lsvScripts
@@ -717,7 +726,7 @@
             this.lsvScripts.GridLines = true;
             this.lsvScripts.Location = new System.Drawing.Point(0, 0);
             this.lsvScripts.Name = "lsvScripts";
-            this.lsvScripts.Size = new System.Drawing.Size(600, 172);
+            this.lsvScripts.Size = new System.Drawing.Size(444, 224);
             this.lsvScripts.TabIndex = 0;
             this.lsvScripts.UseCompatibleStateImageBehavior = false;
             this.lsvScripts.View = System.Windows.Forms.View.Details;
@@ -754,19 +763,12 @@
             this.btnDelete.Size = new System.Drawing.Size(107, 22);
             this.btnDelete.Text = "Delete";
             // 
-            // txtNo
-            // 
-            this.txtNo.Location = new System.Drawing.Point(303, 54);
-            this.txtNo.Name = "txtNo";
-            this.txtNo.Size = new System.Drawing.Size(100, 20);
-            this.txtNo.TabIndex = 31;
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btnStop;
-            this.ClientSize = new System.Drawing.Size(600, 609);
+            this.ClientSize = new System.Drawing.Size(444, 661);
             this.Controls.Add(this.pnlGrid);
             this.Controls.Add(this.pnlControl);
             this.MaximizeBox = false;

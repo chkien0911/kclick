@@ -5,14 +5,57 @@ using System.Diagnostics;
 using System.Drawing;
 using System.Drawing.Imaging;
 using System.Runtime.InteropServices;
+using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace KClick.Utilities
 {
+
     public static class MouseOperation
     {
-        private static Dictionary<string, Color> Colors = new Dictionary<string, Color>();
+        enum SystemMetric
+        {
+            SM_CXSCREEN = 0,
+            SM_CYSCREEN = 1,
+        }
+
+        [DllImport("user32.dll")]
+        static extern int GetSystemMetrics(SystemMetric smIndex);
+
+        public static int CalculateAbsoluteCoordinateX(int x)
+        {
+            return (x * 65536) / GetSystemMetrics(SystemMetric.SM_CXSCREEN);
+        }
+
+        public static int CalculateAbsoluteCoordinateY(int y)
+        {
+            return (y * 65536) / GetSystemMetrics(SystemMetric.SM_CYSCREEN);
+        }
+
+
+        internal struct INPUT
+        {
+            public UInt32 Type;
+            public MOUSEKEYBDHARDWAREINPUT Data;
+        }
+
+        [StructLayout(LayoutKind.Explicit)]
+        internal struct MOUSEKEYBDHARDWAREINPUT
+        {
+            [FieldOffset(0)]
+            public MOUSEINPUT Mouse;
+        }
+
+        internal struct MOUSEINPUT
+        {
+            public Int32 X;
+            public Int32 Y;
+            public UInt32 MouseData;
+            public UInt32 Flags;
+            public UInt32 Time;
+            public IntPtr ExtraInfo;
+        }
 
         [Flags]
         public enum MouseEventFlags : uint
@@ -29,6 +72,20 @@ namespace KClick.Utilities
             MouseMove = 0x0200,
         }
 
+
+        [DllImport("User32.dll", SetLastError = true)]
+        public static extern IntPtr WindowFromPoint(POINT p);
+        
+        // Activate an application window.
+        [DllImport("USER32.DLL", SetLastError = true)]
+        public static extern bool SetForegroundWindow(IntPtr hWnd);
+
+        [DllImport("user32.dll", SetLastError = true, CharSet = CharSet.Auto)]
+        public static extern IntPtr GetClassName(IntPtr hwnd, StringBuilder lpClassName, int nMaxCount);
+        
+        // Get a handle to an application window.
+        [DllImport("USER32.DLL", SetLastError = true, CharSet = CharSet.Unicode)]
+        public static extern IntPtr FindWindow(string lpClassName, string lpWindowName);
 
         [DllImport("user32.dll")]
         public static extern bool ScreenToClient(IntPtr hWnd, ref Point lpPoint);
@@ -51,12 +108,6 @@ namespace KClick.Utilities
         [DllImport("user32.dll", EntryPoint = "PostMessageA", SetLastError = true)]
         public static extern bool PostMessage(IntPtr WindowHandle, int Msg, int wParam, int lParam);
 
-        //[DllImport("user32.dll", SetLastError = true)]
-        //public static extern int SendMessage(IntPtr hWnd, int Msg, int wParam, int lParam);
-
-        [DllImport("user32.dll", SetLastError = true)]
-        private static extern IntPtr FindWindow(string lpClassName, string lpWindowName);
-
         [DllImport("user32.dll", SetLastError = true)]
         private static extern IntPtr FindWindowEx(IntPtr hwndParent, IntPtr hwndChildAfter, string lpszClass, string lpszWindow);
 
@@ -70,7 +121,11 @@ namespace KClick.Utilities
         [DllImport("user32.dll", SetLastError = true)]
         public static extern bool SetWindowPos(IntPtr hWnd, IntPtr hWndInsertAfter, int X, int Y, int cx, int cy, uint uFlags);
 
-        public static async Task<Color> GetColorAt(Point location)
+
+        [DllImport("user32.dll", SetLastError = true)]
+        internal static extern uint SendInput(uint nInputs, [MarshalAs(UnmanagedType.LPArray), In] INPUT[] pInputs, int cbSize);
+
+        public static async Task<Color> GetColorAtAsync(Point location)
         {
             //var key = $"{location.X}-{location.Y}";
 
@@ -99,21 +154,90 @@ namespace KClick.Utilities
             }
         }
 
+        public static async Task ClickAndDragAsync(IntPtr wndHandle, Point clientPoint, string color1, Point clientPoint2, Point ignoredPoint, string ignoredColor)
+        {
+            var allPoints = Line.GetPoints(clientPoint, clientPoint2, 10);
+
+            var oldPos = Cursor.Position;
+
+            ClientToScreen(wndHandle, ref clientPoint2);
+
+            if (ignoredPoint.X != 0 && ignoredPoint.Y != 0 && !string.IsNullOrWhiteSpace(ignoredColor))
+            {
+                //var ignoredPoint = new Point(config.XPosIgnored, config.YPosIgnored);
+                //ClientToScreen(wndHandle, ref ignoredPoint);
+                var newIgnoredColor = await GetColorAtAsync(ignoredPoint);
+                if (newIgnoredColor.Name == ignoredColor)
+                {
+                    return;
+                }
+            }
+            
+            var colorClientPoint = clientPoint;
+            ClientToScreen(wndHandle, ref colorClientPoint);
+            var color = await GetColorAtAsync(colorClientPoint);
+
+            if (color.Name == color1)
+            {
+                var inputMouseDown = new INPUT();
+                inputMouseDown.Type = 0;
+                inputMouseDown.Data.Mouse.X = CalculateAbsoluteCoordinateX(clientPoint.X);
+                inputMouseDown.Data.Mouse.Y = CalculateAbsoluteCoordinateY(clientPoint.Y);
+                inputMouseDown.Data.Mouse.Flags = 0x0002;
+
+                var inputMouseMove = new INPUT();
+                inputMouseMove.Type = 0;
+                inputMouseMove.Data.Mouse.X = CalculateAbsoluteCoordinateX(clientPoint.X);
+                inputMouseMove.Data.Mouse.Y = CalculateAbsoluteCoordinateY(clientPoint.Y);
+                inputMouseMove.Data.Mouse.Flags = 0x8000 | 0x0001; //0x8000 | 0x0001;//0x0001;
+                
+                var inputs = new INPUT[] { inputMouseMove, inputMouseDown };
+                SendInput((uint)inputs.Length, inputs, Marshal.SizeOf(typeof(INPUT)));
+                await Task.Delay(10);
+
+                for (int i = 0; i < allPoints.Length; i++)
+                {
+                    var point = allPoints[i];
+                    
+                    var inputMouseMove1 = new INPUT();
+                    inputMouseMove1.Type = 0;
+                    inputMouseMove1.Data.Mouse.X = CalculateAbsoluteCoordinateX(point.X);
+                    inputMouseMove1.Data.Mouse.Y = CalculateAbsoluteCoordinateY(point.Y);
+                    inputMouseMove1.Data.Mouse.Flags = 0x8000 | 0x0001; //0x8000 | 0x0001;//0x0001;
+
+                    var inputs1 = new INPUT[] { inputMouseMove1 };
+                    SendInput((uint)inputs1.Length, inputs1, Marshal.SizeOf(typeof(INPUT)));
+                    await Task.Delay(10);
+
+
+                }
+                var inputMouseUp = new INPUT();
+                inputMouseUp.Type = 0;
+                inputMouseUp.Data.Mouse.Flags = 0x0004;
+
+                var inputs3 = new INPUT[] { inputMouseUp };
+                SendInput((uint)inputs3.Length, inputs3, Marshal.SizeOf(typeof(INPUT)));
+                await Task.Delay(10);
+                
+                Cursor.Position = oldPos;
+            }
+        }
+
+
         public static async Task<int> SendMessageSpeedModeAsync(
             IntPtr wndHandle,
             int msg,
             int wParam,
             int xPos,
             int yPos,
-            string colorName,
-            List<Configuration.Config> loadingConfigs)
+            string colorName)
         {
 
             var x = xPos;//msg == (int)MouseEventFlags.MouseMove ? config.XPosMoved : config.XPos;
             var y = yPos;//msg == (int)MouseEventFlags.MouseMove ? config.YPosMoved : config.YPos;
 
             var point = new Point(x, y);
-            var color = await GetColorAt(point);
+            var color = await GetColorAtAsync(point);
 
             if (color.Name == colorName)
             {
@@ -155,8 +279,7 @@ namespace KClick.Utilities
             IntPtr wndHandle,
             int msg,
             int wParam,
-            Configuration.Config config,
-            List<Configuration.Config> loadingConfigs)
+            Configuration.Config config)
         {
             var x = config.XPos;//msg == (int) MouseEventFlags.MouseMove ? config.XPosMoved : config.XPos;
             var y = config.YPos; //msg == (int)MouseEventFlags.MouseMove ? config.YPosMoved : config.YPos;
@@ -171,7 +294,7 @@ namespace KClick.Utilities
             if (config.XPosIgnored != 0 && config.YPosIgnored != 0 && !string.IsNullOrWhiteSpace(config.ColorIgnoredName))
             {
                 var ignoredPoint = new Point(config.XPosIgnored, config.YPosIgnored);
-                var ignoredColor = await GetColorAt(ignoredPoint);
+                var ignoredColor = await GetColorAtAsync(ignoredPoint);
                 if (ignoredColor.Name == config.ColorIgnoredName)
                 {
                     return 0;
@@ -179,7 +302,7 @@ namespace KClick.Utilities
             }
 
             var point = new Point(x, y);
-            var color = await GetColorAt(point);
+            var color = await GetColorAtAsync(point);
 
             if (color.Name == config.ColorName)
             {
@@ -187,7 +310,7 @@ namespace KClick.Utilities
                 if (config.X2Pos != 0 && config.Y2Pos != 0 && !string.IsNullOrWhiteSpace(config.Color2Name))
                 {
                     var point2 = new Point(config.X2Pos, config.Y2Pos);
-                    color2 = await GetColorAt(point2);
+                    color2 = await GetColorAtAsync(point2);
                 }
 
                 if (color2 == null || (color2.Value.Name == config.Color2Name))
@@ -233,7 +356,7 @@ namespace KClick.Utilities
             var y = yPos;//msg == (int)MouseEventFlags.MouseMove ? config.YPosMoved : config.YPos;
 
             var point = new Point(x, y);
-            var color = await GetColorAt(point);
+            var color = await GetColorAtAsync(point);
 
             int i = 0;
             while (color.Name != colorName)
@@ -245,7 +368,7 @@ namespace KClick.Utilities
                 }
 
                 await Task.Delay(100);
-                color = await GetColorAt(point);
+                color = await GetColorAtAsync(point);
             }
 
             if (color.Name == colorName)
@@ -293,7 +416,7 @@ namespace KClick.Utilities
             if (config.XPosIgnored != 0 && config.YPosIgnored != 0 && !string.IsNullOrWhiteSpace(config.ColorIgnoredName))
             {
                 var ignoredPoint = new Point(config.XPosIgnored, config.YPosIgnored);
-                var ignoredColor = await GetColorAt(ignoredPoint);
+                var ignoredColor = await GetColorAtAsync(ignoredPoint);
                 if (ignoredColor.Name == config.ColorIgnoredName)
                 {
                     return 0;
@@ -302,7 +425,7 @@ namespace KClick.Utilities
 
 
             var point = new Point(x, y);
-            var color = await GetColorAt(point);
+            var color = await GetColorAtAsync(point);
 
             int i = 0;
             while (color.Name != config.ColorName)
@@ -314,7 +437,7 @@ namespace KClick.Utilities
                 }
 
                 await Task.Delay(100);
-                color = await GetColorAt(point);
+                color = await GetColorAtAsync(point);
             }
 
             if (color.Name == config.ColorName)
@@ -323,7 +446,7 @@ namespace KClick.Utilities
                 if (config.X2Pos != 0 && config.Y2Pos != 0 && !string.IsNullOrWhiteSpace(config.Color2Name))
                 {
                     var point2 = new Point(config.X2Pos, config.Y2Pos);
-                    color2 = await GetColorAt(point2);
+                    color2 = await GetColorAtAsync(point2);
                 }
 
                 if (color2 == null || (color2.Value.Name == config.Color2Name))

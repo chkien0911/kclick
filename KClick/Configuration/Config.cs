@@ -19,11 +19,39 @@ namespace KClick.Configuration
         public int X2Pos { get; set; }
         public int YPos { get; set; }
         public int YPosMoved { get; set; }
+        public bool IsPosition2Valid
+        {
+            get
+            {
+                return X2Pos != 0 && Y2Pos != 0 && !string.IsNullOrWhiteSpace(Color2Name);
+            }
+        }
+        public bool IsPositionMovedValid
+        {
+            get
+            {
+                return XPosMoved != 0 && YPosMoved != 0 && !string.IsNullOrWhiteSpace(ColorMovedName);
+            }
+        }
+        public bool IsPositionIgnoredValid
+        {
+            get
+            {
+                return XPosIgnored != 0 && YPosIgnored != 0 && !string.IsNullOrWhiteSpace(ColorIgnoredName);
+            }
+        }
+        public bool IsPosition1Valid
+        {
+            get
+            {
+                return XPos != 0 && YPos != 0 && !string.IsNullOrWhiteSpace(ColorName);
+            }
+        }
         public int YPosIgnored { get; set; }
         public int Y2Pos { get; set; }
         public IntPtr WindowHandle { get; set; }
         //public IntPtr ControlHandle { get; set; }
-        public int Delay { get; set; } = 500;
+        public int Delay { get; set; } = 50;
         
         public string ColorName { get; set; }
         public string ColorMovedName { get; set; }

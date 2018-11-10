@@ -26,8 +26,10 @@ namespace KClick
 
         private static bool isRun = true;
         private static readonly object padlock = new object();
-        
+
         private IKeyboardMouseEvents m_GlobalHook;
+
+        #region Global key
 
         public void Subscribe()
         {
@@ -83,12 +85,13 @@ namespace KClick
             //It is recommened to dispose it
             m_GlobalHook.Dispose();
         }
+        #endregion
 
         public MainForm()
         {
             InitializeComponent();
 
-            Subscribe();
+            //Subscribe();
 
             btnAdd.Click += BtnAdd_Click;
             //btnFindControl.Click += BtnFindControl_Click;
@@ -138,7 +141,33 @@ namespace KClick
             btnGetPositionMoved.MouseUp += BtnGetPositionMoved_MouseUp;
             btnGetPositionMoved.MouseDown += BtnGetPosition_MouseDown;
             btnGetPositionMoved.MouseHover += BtnGetPosition_MouseHover;
+
+            txtXPos.KeyUp += async (sender, e) => await TxtXPos_KeyUpAsync(sender, e);
+            txtYPos.KeyUp += async (sender, e) => await TxtYPos_KeyUpAsync(sender, e);
         }
+
+        private async Task TxtXPos_KeyUpAsync(object sender, KeyEventArgs e)
+        {
+            var isXOK = int.TryParse(txtXPos.Text, out int x);
+            var isYOK = int.TryParse(txtYPos.Text, out int y);
+            if (isXOK && isYOK)
+            {
+                var color = await MouseOperation.GetColorAtAsync(new Point(x, y));
+                txtColor1.Text = color.Name;
+            }
+        }
+
+        private async Task TxtYPos_KeyUpAsync(object sender, KeyEventArgs e)
+        {
+            var isXOK = int.TryParse(txtXPos.Text, out int x);
+            var isYOK = int.TryParse(txtYPos.Text, out int y);
+            if (isXOK && isYOK)
+            {
+                var color = await MouseOperation.GetColorAtAsync(new Point(x, y));
+                txtColor1.Text = color.Name;
+            }
+        }
+
 
         private void ChkDrag_CheckedChanged(object sender, EventArgs e)
         {
@@ -282,8 +311,10 @@ namespace KClick
 
         private void BtnFixControl_Click(object sender, EventArgs e)
         {
-            const uint SWP_NOSIZE = 0x0001;
-            const uint SWP_NOZORDER = 0x0004;
+            const short SWP_NOMOVE = 0X2;
+            const short SWP_NOSIZE = 1;
+            const short SWP_NOZORDER = 0X4;
+            const int SWP_SHOWWINDOW = 0x0040;
 
             if (!string.IsNullOrWhiteSpace(txtClass.Text))
             {
@@ -299,7 +330,7 @@ namespace KClick
 
                     // Move the window to (0,0) without changing its size or position
                     // in the Z order.
-                    MouseOperation.SetWindowPos(wHandle, IntPtr.Zero, 0, 0, 0, 0, SWP_NOSIZE | SWP_NOZORDER);
+                    MouseOperation.SetWindowPos(wHandle, IntPtr.Zero, 0, 0, 400, 300, SWP_NOZORDER | SWP_SHOWWINDOW);
                 }
             }
             else
@@ -345,8 +376,8 @@ namespace KClick
                         );
                         lsvScripts.Items[i].SubItems.Add(item.Element("Description").Value);
 
-                        txtClass.Text = item.Element("Class").Value;
-                        txtName.Text = item.Element("Name").Value;
+                        //txtClass.Text = item.Element("Class").Value;
+                        //txtName.Text = item.Element("Name").Value;
 
                         Configs.Add(new Configuration.Config
                         {
@@ -367,9 +398,9 @@ namespace KClick
                             YPosMoved = int.Parse(item.Element("YMoved").Value),
                             ColorMovedName = item.Element("ColorMoved").Value,
 
-                            WindowClass = item.Element("Class").Value,
-                            WindowName = item.Element("Name").Value,
-                            WindowHandle = (IntPtr)int.Parse(item.Element("WHandle").Value),
+                            //WindowClass = item.Element("Class").Value,
+                            //WindowName = item.Element("Name").Value,
+                            //WindowHandle = (IntPtr)int.Parse(item.Element("WHandle").Value),
                             Description = (item.Element("Description").Value),
                             Delay = int.Parse(item.Element("Delay").Value),
                             IsSequential = bool.Parse(item.Element("IsSequential").Value),
@@ -563,21 +594,29 @@ namespace KClick
                     var isSuccessMain = ghkMain.Register();
                     //if (isSuccess || isSuccessMain)
                     //MessageBox.Show("Hotkey registered.");
-                    LoadingConfigs = new List<Configuration.Config>()
-            {
-                new Configuration.Config
-                {
-                    No = 1, Delay = 500, XPos = 439, YPos = 387, ColorName = "ff222222",
-                    WindowClass = txtClass.Text, WindowName =txtName.Text, WindowHandle = hWndParent
-                }
-            };
+
+                    if (Configs.Count > 0)
+                    {
+                        foreach (var config in Configs)
+                        {
+                            config.WindowClass = txtClass.Text;
+                            config.WindowName = txtName.Text;
+                            config.WindowHandle = hWndParent;
+                        }
+                    }
+            //        LoadingConfigs = new List<Configuration.Config>()
+            //{
+            //    new Configuration.Config
+            //    {
+            //        No = 1, Delay = 500, XPos = 439, YPos = 387, ColorName = "ff222222",
+            //        WindowClass = txtClass.Text, WindowName =txtName.Text, WindowHandle = hWndParent
+            //    }
+            //};
 
                 }
             }
 
             Cursor.Current = Cursors.Default;
-
-
         }
 
         protected override void WndProc(ref Message m)
@@ -628,13 +667,19 @@ namespace KClick
 
         private async Task BtnRun_ClickAsync(object sender, EventArgs e)
         {
+            // Verify that Calculator is a running process.
+            if (string.IsNullOrWhiteSpace(txtName.Text) || string.IsNullOrWhiteSpace(txtClass.Text))
+            {
+                MessageBox.Show("Application not found.");
+                return;
+            }
+
             if (Configs.Count == 0)
             {
                 MessageBox.Show("No scripts found!");
                 return;
             }
-
-
+            
             //var x = 1;
             if (rdoInfinity.Checked)
             {
@@ -681,6 +726,7 @@ namespace KClick
             foreach (var config in Configs)
             {
                 tasks.Add(RunAsync(config));
+                //await RunAsync(config);
             }
 
             await Task.WhenAll(tasks);
@@ -749,9 +795,9 @@ namespace KClick
                 else
                 {
                     await MouseOperation.SendMessageSpeedModeAsync(config.WindowHandle,
-                        (int)MouseOperation.MouseEventFlags.LeftDown, 1, config, LoadingConfigs);
+                        (int)MouseOperation.MouseEventFlags.LeftDown, 1, config);
                     await MouseOperation.SendMessageSpeedModeAsync(config.WindowHandle,
-                        (int)MouseOperation.MouseEventFlags.LeftUp, 0, config, LoadingConfigs);
+                        (int)MouseOperation.MouseEventFlags.LeftUp, 0, config);
                 }
             }
         }
