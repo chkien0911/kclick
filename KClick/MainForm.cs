@@ -26,8 +26,7 @@ namespace KClick
 
         private static bool isRun = true;
         private static readonly object padlock = new object();
-
-
+        
         private IKeyboardMouseEvents m_GlobalHook;
 
         public void Subscribe()
@@ -39,7 +38,6 @@ namespace KClick
             m_GlobalHook.KeyPress += GlobalHookKeyPress;
             m_GlobalHook.MouseDragStarted += M_GlobalHook_MouseDragStarted;
             m_GlobalHook.MouseDragFinishedExt += M_GlobalHook_MouseDragFinishedExt;
-            m_GlobalHook.MouseDragFinished += M_GlobalHook_MouseDragFinished;
             m_GlobalHook.MouseUp += M_GlobalHook_MouseUp;
             //m_GlobalHook.MouseMove += M_GlobalHook_MouseMove;
         }
@@ -49,14 +47,9 @@ namespace KClick
             txtProgress.AppendText(string.Format("MouseUp: \t{0}; \t Location: \t{1}", e.Button, e.Location));
         }
 
-        //private void M_GlobalHook_MouseMove(object sender, MouseEventArgs e)
-        //{
-        //    txtProgress.AppendText(string.Format("MouseMove: \t{0}; \t Location: \t{1}", e.Button, e.Location));
-        //}
-
-        private void M_GlobalHook_MouseDragFinished(object sender, MouseEventArgs e)
+        private void M_GlobalHook_MouseMove(object sender, MouseEventArgs e)
         {
-            txtProgress.AppendText(string.Format("MouseDragFinished: \t{0}; \t Location: \t{1}", e.Button, e.Location));
+            txtProgress.AppendText(string.Format("MouseMove: \t{0}; \t Location: \t{1}", e.Button, e.Location));
         }
 
         private void M_GlobalHook_MouseDragFinishedExt(object sender, MouseEventExtArgs e)
@@ -71,14 +64,13 @@ namespace KClick
 
         private void GlobalHookKeyPress(object sender, KeyPressEventArgs e)
         {
-            txtProgress.Text = string.Format("KeyPress: \t{0}", e.KeyChar);
+            //txtProgress.AppendText(string.Format("KeyPress:: \t{0}; \t Location: \t{1}", e.KeyChar));
         }
 
         private void GlobalHookMouseDownExt(object sender, MouseEventExtArgs e)
         {
             txtProgress.Clear();
             txtProgress.AppendText(string.Format("MouseDownExt: \t{0}; \t Location: \t{1}", e.Button, e.Location));
-
             // uncommenting the following line will suppress the middle mouse button click
             // if (e.Buttons == MouseButtons.Middle) { e.Handled = true; }
         }
@@ -239,7 +231,7 @@ namespace KClick
                     txtXMoved.Text = config.XPosMoved.ToString();
                     txtYMoved.Text = config.YPosMoved.ToString();
                     txtColorMoved.Text = config.ColorMovedName;
-                    
+
                     txtDescription.Text = config.Description;
                     rdoSequencial.Checked = config.IsSequential;
                     txtDelay.Text = config.Delay.ToString();
@@ -681,12 +673,17 @@ namespace KClick
             }
         }
 
+
         private async Task RunAsync()
         {
+            List<Task> tasks = new List<Task>();
+
             foreach (var config in Configs)
             {
-                await RunAsync(config);
+                tasks.Add(RunAsync(config));
             }
+
+            await Task.WhenAll(tasks);
         }
 
         private async Task RunAsync(Configuration.Config config)

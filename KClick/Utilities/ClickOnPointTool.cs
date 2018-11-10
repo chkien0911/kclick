@@ -124,7 +124,7 @@ namespace KClick.Utilities
         public static extern IntPtr GetClassName(IntPtr hwnd, StringBuilder lpClassName, int nMaxCount);
 
         [DllImport("user32.dll", SetLastError = true, CharSet = CharSet.Auto)]
-        public   static extern IntPtr GetWindowText(IntPtr hwnd, StringBuilder lpString, int cch);
+        public static extern IntPtr GetWindowText(IntPtr hwnd, StringBuilder lpString, int cch);
 
         [DllImport("User32.dll")]
         public static extern IntPtr GetParent(IntPtr hwnd);
@@ -289,16 +289,38 @@ namespace KClick.Utilities
         //    Cursor.Position = oldPos;
         //}
 
+        enum SystemMetric
+        {
+            SM_CXSCREEN = 0,
+            SM_CYSCREEN = 1,
+        }
+
+        [DllImport("user32.dll")]
+        static extern int GetSystemMetrics(SystemMetric smIndex);
+
+        public static int CalculateAbsoluteCoordinateX(int x)
+        {
+            return (x * 65536) / GetSystemMetrics(SystemMetric.SM_CXSCREEN);
+        }
+
+        public static int CalculateAbsoluteCoordinateY(int y)
+        {
+            return (y * 65536) / GetSystemMetrics(SystemMetric.SM_CYSCREEN);
+        }
+
         public static async Task ClickAndDragAsync(IntPtr wndHandle, Point clientPoint, string color1, Point clientPoint2, Point ignoredPoint, string ignoredColor)
         {
+            var allPoints = Line.GetPoints(clientPoint, clientPoint2, 10);
+
             var oldPos = Cursor.Position;
             //// get screen coordinates
-            ClientToScreen(wndHandle, ref clientPoint);
+            
             ClientToScreen(wndHandle, ref clientPoint2);
 
             if (ignoredPoint.X != 0 && ignoredPoint.Y != 0 && !string.IsNullOrWhiteSpace(ignoredColor))
             {
                 //var ignoredPoint = new Point(config.XPosIgnored, config.YPosIgnored);
+                //ClientToScreen(wndHandle, ref ignoredPoint);
                 var newIgnoredColor = GetColorAt(ignoredPoint);
                 if (newIgnoredColor.Name == ignoredColor)
                 {
@@ -308,111 +330,122 @@ namespace KClick.Utilities
 
             //pointA.X = pointA.X + 20;
             //pointA.Y = pointA.Y + 20;
-            var color = GetColorAt(clientPoint);
 
-            if (color.Name == color1)
+            var colorClientPoint = clientPoint;
+            ClientToScreen(wndHandle, ref colorClientPoint);
+            var color = GetColorAt(colorClientPoint);
+
+            //if (color.Name == color1)
+            //{
+            var inputMouseDown = new INPUT();
+            inputMouseDown.Type = 0;
+            inputMouseDown.Data.Mouse.X = CalculateAbsoluteCoordinateX(clientPoint.X);
+            inputMouseDown.Data.Mouse.Y = CalculateAbsoluteCoordinateY(clientPoint.Y);
+            inputMouseDown.Data.Mouse.Flags = 0x0002;
+
+            var inputMouseMove = new INPUT();
+            inputMouseMove.Type = 0;
+            inputMouseMove.Data.Mouse.X = CalculateAbsoluteCoordinateX(clientPoint.X);
+            inputMouseMove.Data.Mouse.Y = CalculateAbsoluteCoordinateY(clientPoint.Y);
+            inputMouseMove.Data.Mouse.Flags = 0x8000 | 0x0001; //0x8000 | 0x0001;//0x0001;
+
+            //mouse_event((int)(MouseEventFlags.LEFTUP), 0, 0, 0, 0);
+            //Cursor.Position = new Point(clientPoint.X, clientPoint.Y);
+            //await Task.Delay(500);
+
+            //mouse_event((int)(MouseEventFlags.LEFTDOWN), 0, 0, 0, 0);
+
+            var inputs = new INPUT[] { inputMouseMove, inputMouseDown };
+            SendInput((uint)inputs.Length, inputs, Marshal.SizeOf(typeof(INPUT)));
+            await Task.Delay(10);
+
+            for (int i = 0; i < allPoints.Length; i++)
             {
-                var inputMouseDown = new INPUT();
-                inputMouseDown.Type = 0;
-                inputMouseDown.Data.Mouse.Flags = 0x0002;
+                var point = allPoints[i];
 
-                var inputMouseMove = new INPUT();
-                inputMouseMove.Type = 0;
-                //inputMouseMove.Data.Mouse.X = clientPoint2.X;
-                //inputMouseMove.Data.Mouse.Y = clientPoint2.Y;
-                inputMouseMove.Data.Mouse.Flags = 0x8000 | 0x0001; //0x8000 | 0x0001;//0x0001;
 
-                //mouse_event((int)(MouseEventFlags.LEFTUP), 0, 0, 0, 0);
-                Cursor.Position = new Point(clientPoint.X, clientPoint.Y);
-                await Task.Delay(500);
-
-                //mouse_event((int)(MouseEventFlags.LEFTDOWN), 0, 0, 0, 0);
-
-                var inputs = new INPUT[] { inputMouseMove, inputMouseDown };
-                SendInput((uint) inputs.Length, inputs, Marshal.SizeOf(typeof(INPUT)));
-                await Task.Delay(500);
-
-                Cursor.Position = new Point(clientPoint2.X, clientPoint2.Y);
-                await Task.Delay(500);
+                //Cursor.Position = new Point(point.X, point.Y);
+                //await Task.Delay(500);
 
                 var inputMouseMove1 = new INPUT();
                 inputMouseMove1.Type = 0;
-                //inputMouseMove1.Data.Mouse.X = clientPoint.X;
-                //inputMouseMove1.Data.Mouse.Y = clientPoint.Y;
+                inputMouseMove1.Data.Mouse.X = CalculateAbsoluteCoordinateX(point.X);
+                inputMouseMove1.Data.Mouse.Y = CalculateAbsoluteCoordinateY(point.Y);
                 inputMouseMove1.Data.Mouse.Flags = 0x8000 | 0x0001; //0x8000 | 0x0001;//0x0001;
 
                 var inputs1 = new INPUT[] { inputMouseMove1 };
-                SendInput((uint) inputs1.Length, inputs1, Marshal.SizeOf(typeof(INPUT)));
-                await Task.Delay(500);
-
-                var inputMouseUp = new INPUT();
-                inputMouseUp.Type = 0;
-                //inputMouseUp.Data.Mouse.X = clientPoint2.X;
-                //inputMouseUp.Data.Mouse.Y = clientPoint2.Y;
-                inputMouseUp.Data.Mouse.Flags = 0x0004;
-
-                var inputs3 = new INPUT[] {inputMouseUp};
-                SendInput((uint) inputs3.Length, inputs3, Marshal.SizeOf(typeof(INPUT)));
-                await Task.Delay(500);
-
-                //for (var i = 0; i < 10; i++)
-                //{
-                //    pointA.X = pointA.X - 10;
-                //    Cursor.Position = ConvertToScreenPixel(pointA);
-                //    System.Threading.Thread.Sleep(200);
-                //    mouse_event((int)(MouseEventFlags.MOVE), 0, 0, 0, 0);
-                //}
+                SendInput((uint)inputs1.Length, inputs1, Marshal.SizeOf(typeof(INPUT)));
+                await Task.Delay(10);
 
 
-                //mouse_event((int)(MouseEventFlags.LEFTUP), 0, 0, 0, 0);
-
-
-                Cursor.Position = oldPos;
-                //var oldPos = Cursor.Position;
-
-                //// get screen coordinates
-                //ClientToScreen(wndHandle, ref clientPoint);
-                //ClientToScreen(wndHandle, ref clientPoint2);
-
-                //Cursor.Position = new Point(clientPoint.X, clientPoint.Y);
-
-                //var inputMouseMove1 = new INPUT();
-                //inputMouseMove1.Type = 0;
-                //inputMouseMove1.Data.Mouse.X = clientPoint.X;
-                //inputMouseMove1.Data.Mouse.Y = clientPoint.Y;
-                //inputMouseMove1.Data.Mouse.Flags = 0x8000 | 0x0002 | 0x0001;//0x0001;
-
-                //var inputMouseDown = new INPUT();
-                //inputMouseDown.Type = 0; 
-                //inputMouseDown.Data.Mouse.Flags = 0x0002;
-
-                //var inputs2 = new INPUT[] { inputMouseMove1, inputMouseDown };
-                //SendInput((uint)inputs2.Length, inputs2, Marshal.SizeOf(typeof(INPUT)));
-                //Thread.Sleep(100);
-
-                //var inputMouseMove = new INPUT();
-                //inputMouseMove.Type = 0;
-                //inputMouseMove.Data.Mouse.X = clientPoint2.X;
-                //inputMouseMove.Data.Mouse.Y = clientPoint2.Y;
-                //inputMouseMove.Data.Mouse.Flags = 0x8000 | 0x0002 | 0x0001;//0x0001;
-
-                //var inputs1 = new INPUT[] { inputMouseMove };
-                //SendInput((uint)inputs1.Length, inputs1, Marshal.SizeOf(typeof(INPUT)));
-                //Thread.Sleep(100);
-
-                //Cursor.Position = new Point(clientPoint2.X, clientPoint2.Y);
-
-                //var inputMouseUp = new INPUT();
-                //inputMouseUp.Type = 0; 
-                //inputMouseUp.Data.Mouse.X = clientPoint2.X;
-                //inputMouseUp.Data.Mouse.Y = clientPoint2.Y;
-                //inputMouseUp.Data.Mouse.Flags = 0x0004; 
-
-                //var inputs3 = new INPUT[] { inputMouseUp };
-                //SendInput((uint)inputs3.Length, inputs3, Marshal.SizeOf(typeof(INPUT)));
-
-                //Cursor.Position = oldPos;
             }
+            var inputMouseUp = new INPUT();
+            inputMouseUp.Type = 0;
+            //inputMouseUp.Data.Mouse.X = clientPoint2.X;
+            //inputMouseUp.Data.Mouse.Y = clientPoint2.Y;
+            inputMouseUp.Data.Mouse.Flags = 0x0004;
+
+            var inputs3 = new INPUT[] { inputMouseUp };
+            SendInput((uint)inputs3.Length, inputs3, Marshal.SizeOf(typeof(INPUT)));
+            await Task.Delay(10);
+            //for (var i = 0; i < 10; i++)
+            //{
+            //    pointA.X = pointA.X - 10;
+            //    Cursor.Position = ConvertToScreenPixel(pointA);
+            //    System.Threading.Thread.Sleep(200);
+            //    mouse_event((int)(MouseEventFlags.MOVE), 0, 0, 0, 0);
+            //}
+
+
+            //mouse_event((int)(MouseEventFlags.LEFTUP), 0, 0, 0, 0);
+
+
+            Cursor.Position = oldPos;
+            //var oldPos = Cursor.Position;
+
+            //// get screen coordinates
+            //ClientToScreen(wndHandle, ref clientPoint);
+            //ClientToScreen(wndHandle, ref clientPoint2);
+
+            //Cursor.Position = new Point(clientPoint.X, clientPoint.Y);
+
+            //var inputMouseMove1 = new INPUT();
+            //inputMouseMove1.Type = 0;
+            //inputMouseMove1.Data.Mouse.X = clientPoint.X;
+            //inputMouseMove1.Data.Mouse.Y = clientPoint.Y;
+            //inputMouseMove1.Data.Mouse.Flags = 0x8000 | 0x0002 | 0x0001;//0x0001;
+
+            //var inputMouseDown = new INPUT();
+            //inputMouseDown.Type = 0; 
+            //inputMouseDown.Data.Mouse.Flags = 0x0002;
+
+            //var inputs2 = new INPUT[] { inputMouseMove1, inputMouseDown };
+            //SendInput((uint)inputs2.Length, inputs2, Marshal.SizeOf(typeof(INPUT)));
+            //Thread.Sleep(100);
+
+            //var inputMouseMove = new INPUT();
+            //inputMouseMove.Type = 0;
+            //inputMouseMove.Data.Mouse.X = clientPoint2.X;
+            //inputMouseMove.Data.Mouse.Y = clientPoint2.Y;
+            //inputMouseMove.Data.Mouse.Flags = 0x8000 | 0x0002 | 0x0001;//0x0001;
+
+            //var inputs1 = new INPUT[] { inputMouseMove };
+            //SendInput((uint)inputs1.Length, inputs1, Marshal.SizeOf(typeof(INPUT)));
+            //Thread.Sleep(100);
+
+            //Cursor.Position = new Point(clientPoint2.X, clientPoint2.Y);
+
+            //var inputMouseUp = new INPUT();
+            //inputMouseUp.Type = 0; 
+            //inputMouseUp.Data.Mouse.X = clientPoint2.X;
+            //inputMouseUp.Data.Mouse.Y = clientPoint2.Y;
+            //inputMouseUp.Data.Mouse.Flags = 0x0004; 
+
+            //var inputs3 = new INPUT[] { inputMouseUp };
+            //SendInput((uint)inputs3.Length, inputs3, Marshal.SizeOf(typeof(INPUT)));
+
+            //Cursor.Position = oldPos;
+            //}
         }
 
     }
