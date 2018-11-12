@@ -1,24 +1,20 @@
-﻿using KClick.Utilities;
+﻿using Gma.System.MouseKeyHook;
+using KClick.Utilities;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
-using System.Runtime.InteropServices;
 using System.Text;
-using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml.Linq;
-using Gma.System.MouseKeyHook;
-using KClick.Configuration;
 
 namespace KClick
 {
     public partial class MainForm : Form
     {
+
+        private static Configuration.GlobalConfig GlobalConfig = new Configuration.GlobalConfig();
         private static List<Configuration.Config> Configs = new List<Configuration.Config>();
         private static List<Configuration.Config> LoadingConfigs = new List<Configuration.Config>();
         private GlobalHotkey ghk;
@@ -144,6 +140,115 @@ namespace KClick
 
             txtXPos.KeyUp += async (sender, e) => await TxtXPos_KeyUpAsync(sender, e);
             txtYPos.KeyUp += async (sender, e) => await TxtYPos_KeyUpAsync(sender, e);
+
+            btnTryClick.Click += async (sender, e) => await btnTryClick_ClickAsync(sender, e);
+            btnGetMousePosition.Click += BtnGetMousePosition_Click;
+
+            btnClear1.Click += BtnClear1_Click;
+            btnClear2.Click += BtnClear2_Click;
+            btnClearIgnored.Click += BtnClearIgnored_Click;
+            btnClearMoved.Click += BtnClearMoved_Click;
+
+            btnClearAll.Click += BtnClearAll_Click;
+        }
+
+        private void BtnClearAll_Click(object sender, EventArgs e)
+        {
+            txtXPos.Clear();
+            txtYPos.Clear();
+            txtColor1.Clear();
+
+            txtX2.Clear();
+            txtY2.Clear();
+            txtColor2.Clear();
+
+            txtXIgnored1.Clear();
+            txtYIgnored1.Clear();
+            txtColorIgnored1.Clear();
+
+            txtXMoved.Clear();
+            txtYMoved.Clear();
+            txtColorMoved.Clear();
+            chkDrag.Checked = false;
+            btnGetPositionMoved.Enabled = false;
+
+            txtDelay.Text = "100";
+            txtDescription.Clear();
+            chkIsStartIcon.Checked = false;
+            chkRunOnce.Checked = false;
+
+            txtNo.Clear();
+        }
+
+        private void BtnClearMoved_Click(object sender, EventArgs e)
+        {
+            txtXMoved.Clear();
+            txtYMoved.Clear();
+            txtColorMoved.Clear();
+            chkDrag.Checked = false;
+            btnGetPositionMoved.Enabled = false;
+        }
+
+        private void BtnClearIgnored_Click(object sender, EventArgs e)
+        {
+            txtXIgnored1.Clear();
+            txtYIgnored1.Clear();
+            txtColorIgnored1.Clear();
+        }
+        private void BtnClear2_Click(object sender, EventArgs e)
+        {
+            txtX2.Clear();
+            txtY2.Clear();
+            txtColor2.Clear();
+        }
+        private void BtnClear1_Click(object sender, EventArgs e)
+        {
+            txtXPos.Clear();
+            txtYPos.Clear();
+            txtColor1.Clear();
+        }
+
+        private void BtnGetMousePosition_Click(object sender, EventArgs e)
+        {
+            if (lsvScripts.SelectedItems.Count > 0)
+            {
+                var no = int.Parse(lsvScripts.SelectedItems[0].SubItems[0].Text);
+                if (no > 0)
+                {
+                    var config = Configs.FirstOrDefault(s => s.No == no);
+                    if (config != null)
+                    {
+                        Cursor.Position = new Point(config.XPos, config.YPos);
+                    }
+                }
+            }
+        }
+
+        private async Task btnTryClick_ClickAsync(object sender, EventArgs e)
+        {
+            if (lsvScripts.SelectedItems.Count > 0)
+            {
+                var no = int.Parse(lsvScripts.SelectedItems[0].SubItems[0].Text);
+                if (no > 0)
+                {
+                    var config = Configs.FirstOrDefault(s => s.No == no);
+                    if (config != null)
+                    {
+                        if (config.IsDisabledTemp)
+                        {
+                            MessageBox.Show("Script was disabled temporarily!");
+                        }
+                        else
+                        {
+                            var isOk = await MouseOperation.ClickSpeedModeAsync(config.WindowHandle, config);
+                            if (!isOk)
+                            {
+                                MessageBox.Show("Position not found!");
+                            }
+                        }
+                    }
+                }
+            }
         }
 
         private async Task TxtXPos_KeyUpAsync(object sender, KeyEventArgs e)
@@ -152,7 +257,7 @@ namespace KClick
             var isYOK = int.TryParse(txtYPos.Text, out int y);
             if (isXOK && isYOK)
             {
-                var color = await MouseOperation.GetColorAtAsync(new Point(x, y));
+                var color = MouseOperation.GetColorAt(new Point(x, y));
                 txtColor1.Text = color.Name;
             }
         }
@@ -163,7 +268,7 @@ namespace KClick
             var isYOK = int.TryParse(txtYPos.Text, out int y);
             if (isXOK && isYOK)
             {
-                var color = await MouseOperation.GetColorAtAsync(new Point(x, y));
+                var color = MouseOperation.GetColorAt(new Point(x, y));
                 txtColor1.Text = color.Name;
             }
         }
@@ -226,13 +331,38 @@ namespace KClick
                         item.Description = txtDescription.Text;
                         item.Delay = string.IsNullOrWhiteSpace(txtDelay.Text) ? 200 : int.Parse(txtDelay.Text);
 
+                        item.IsStartIcon = chkIsStartIcon.Checked;
+                        item.RunOnce = chkRunOnce.Checked;
+
                         MessageBox.Show("Done!");
 
                         break;
                     }
                 }
 
-                //btnUpdateScript.Enabled = false;
+                // Reset click points
+                txtXPos.Clear();
+                txtYPos.Clear();
+                txtColor1.Clear();
+                txtX2.Clear();
+                txtY2.Clear();
+                txtColor2.Clear();
+                txtXIgnored1.Clear();
+                txtYIgnored1.Clear();
+                txtColorIgnored1.Clear();
+
+                chkDrag.Checked = false;
+                btnGetPositionMoved.Enabled = false;
+                txtXMoved.Clear();
+                txtYMoved.Clear();
+                txtColorMoved.Clear();
+
+                txtDescription.Clear();
+
+                chkIsStartIcon.Checked = false;
+                chkRunOnce.Checked = false;
+
+                btnUpdateScript.Enabled = false;
             }
         }
 
@@ -264,6 +394,9 @@ namespace KClick
                     txtDescription.Text = config.Description;
                     rdoSequencial.Checked = config.IsSequential;
                     txtDelay.Text = config.Delay.ToString();
+
+                    chkIsStartIcon.Checked = config.IsStartIcon;
+                    chkRunOnce.Checked = config.RunOnce;
 
                     txtNo.Text = no.ToString();
 
@@ -311,8 +444,6 @@ namespace KClick
 
         private void BtnFixControl_Click(object sender, EventArgs e)
         {
-            const short SWP_NOMOVE = 0X2;
-            const short SWP_NOSIZE = 1;
             const short SWP_NOZORDER = 0X4;
             const int SWP_SHOWWINDOW = 0x0040;
 
@@ -330,7 +461,7 @@ namespace KClick
 
                     // Move the window to (0,0) without changing its size or position
                     // in the Z order.
-                    MouseOperation.SetWindowPos(wHandle, IntPtr.Zero, 0, 0, 400, 300, SWP_NOZORDER | SWP_SHOWWINDOW);
+                    MouseOperation.SetWindowPos(wHandle, IntPtr.Zero, 0, 0, 500, 400, SWP_NOZORDER | SWP_SHOWWINDOW);
                 }
             }
             else
@@ -361,6 +492,9 @@ namespace KClick
                 {
                     lsvScripts.Items.Clear();
                     Configs.Clear();
+
+                    txtClass.Clear();
+                    txtName.Clear();
 
                     XDocument xml = XDocument.Load(openFileDialog.FileName);
 
@@ -405,6 +539,9 @@ namespace KClick
                             Delay = int.Parse(item.Element("Delay").Value),
                             IsSequential = bool.Parse(item.Element("IsSequential").Value),
                             IsDrag = bool.Parse(item.Element("IsDrag").Value),
+                            IsStartIcon = item.Element("IsStartIcon") == null ? false : bool.Parse(item.Element("IsStartIcon").Value),
+                            RunOnce = item.Element("RunOnce") == null ? false : bool.Parse(item.Element("RunOnce").Value),
+
                         });
 
 
@@ -464,7 +601,9 @@ namespace KClick
                         new XElement("WHandle", config.WindowHandle),
                             new XElement("IsSequential", config.IsSequential),
                             new XElement("IsDrag", config.IsDrag),
-                            new XElement("Description", config.Description)
+                            new XElement("Description", config.Description),
+                            new XElement("IsStartIcon", config.IsStartIcon),
+                            new XElement("RunOnce", config.RunOnce)
                         );
 
                         script.SetAttributeValue("No", config.No);
@@ -604,14 +743,14 @@ namespace KClick
                             config.WindowHandle = hWndParent;
                         }
                     }
-            //        LoadingConfigs = new List<Configuration.Config>()
-            //{
-            //    new Configuration.Config
-            //    {
-            //        No = 1, Delay = 500, XPos = 439, YPos = 387, ColorName = "ff222222",
-            //        WindowClass = txtClass.Text, WindowName =txtName.Text, WindowHandle = hWndParent
-            //    }
-            //};
+                    //        LoadingConfigs = new List<Configuration.Config>()
+                    //{
+                    //    new Configuration.Config
+                    //    {
+                    //        No = 1, Delay = 500, XPos = 439, YPos = 387, ColorName = "ff222222",
+                    //        WindowClass = txtClass.Text, WindowName =txtName.Text, WindowHandle = hWndParent
+                    //    }
+                    //};
 
                 }
             }
@@ -679,7 +818,7 @@ namespace KClick
                 MessageBox.Show("No scripts found!");
                 return;
             }
-            
+
             //var x = 1;
             if (rdoInfinity.Checked)
             {
@@ -721,12 +860,19 @@ namespace KClick
 
         private async Task RunAsync()
         {
+
+            //foreach (var config in Configs)
+            //{
+            //    await RunAsync(config);
+            //}
             List<Task> tasks = new List<Task>();
 
             foreach (var config in Configs)
             {
-                tasks.Add(RunAsync(config));
-                //await RunAsync(config);
+                if (config.IsDisabledTemp == false)
+                {
+                    tasks.Add(RunAsync(config));
+                }
             }
 
             await Task.WhenAll(tasks);
@@ -737,13 +883,6 @@ namespace KClick
             //txtProgress.AppendText($"- Script No : {config.No}. Description: {config.Description}. {Environment.NewLine}");
 
             await Task.Delay(config.Delay);
-
-            // Verify that Calculator is a running process.
-            if (config.WindowHandle == IntPtr.Zero)
-            {
-                MessageBox.Show("Application not found.");
-                return;
-            }
 
             lock (padlock)
             {
@@ -794,10 +933,15 @@ namespace KClick
                 }
                 else
                 {
-                    await MouseOperation.SendMessageSpeedModeAsync(config.WindowHandle,
-                        (int)MouseOperation.MouseEventFlags.LeftDown, 1, config);
-                    await MouseOperation.SendMessageSpeedModeAsync(config.WindowHandle,
-                        (int)MouseOperation.MouseEventFlags.LeftUp, 0, config);
+                    var isOk = await MouseOperation.ClickSpeedModeAsync(config.WindowHandle, config);
+                    if (isOk)
+                    {
+                        // Do something else
+                        if (config.RunOnce)
+                        {
+                            config.IsDisabledTemp = true;
+                        }
+                    }
                 }
             }
         }
@@ -842,6 +986,8 @@ namespace KClick
                     Delay = string.IsNullOrWhiteSpace(txtDelay.Text) ? 200 : int.Parse(txtDelay.Text),
                     IsDrag = chkDrag.Checked,
 
+                    IsStartIcon = chkIsStartIcon.Checked,
+                    RunOnce = chkRunOnce.Checked,
                 });
 
                 // Reset click points
@@ -860,6 +1006,10 @@ namespace KClick
                 txtXMoved.Clear();
                 txtYMoved.Clear();
                 txtColorMoved.Clear();
+                txtDescription.Clear();
+
+                chkIsStartIcon.Checked = false;
+                chkRunOnce.Checked = false;
 
                 btnUpdateScript.Enabled = false;
             }

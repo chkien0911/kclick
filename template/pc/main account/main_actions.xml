@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<KScrips>
+  <KScript No="1">
+    <No>1</No>
+    <MouseKey>Left</MouseKey>
+    <X>406</X>
+    <Y>211</Y>
+    <Color>fffef4e6</Color>
+    <X2>416</X2>
+    <Y2>215</Y2>
+    <Color2>ff1029cc</Color2>
+    <XMoved>0</XMoved>
+    <YMoved>0</YMoved>
+    <ColorMoved></ColorMoved>
+    <XIgnored>0</XIgnored>
+    <YIgnored>0</YIgnored>
+    <ColorIgnored></ColorIgnored>
+    <Delay>100</Delay>
+    <Class />
+    <Name />
+    <WHandle>0</WHandle>
+    <IsSequential>false</IsSequential>
+    <IsDrag>false</IsDrag>
+    <Description>click on icon to start game</Description>
+    <IsStartIcon>true</IsStartIcon>
+<RunOnce>false</RunOnce>
+  </KScript>
+  <KScript No="2">
+    <No>2</No>
+    <MouseKey>Left</MouseKey>
+    <X>386</X>
+    <Y>290</Y>
+    <Color>ff0018bb</Color>
+    <X2>346</X2>
+    <Y2>169</Y2>
+    <Color2>ffffdcaa</Color2>
+    <XMoved>0</XMoved>
+    <YMoved>0</YMoved>
+    <ColorMoved></ColorMoved>
+    <XIgnored>0</XIgnored>
+    <YIgnored>0</YIgnored>
+    <ColorIgnored></ColorIgnored>
+    <Delay>100</Delay>
+    <Class />
+    <Name />
+    <WHandle>0</WHandle>
+    <IsSequential>false</IsSequential>
+    <IsDrag>false</IsDrag>
+    <Description>click on screen to start game</Description>
+    <IsStartIcon>false</IsStartIcon>
+<RunOnce>false</RunOnce>
+  </KScript>
+</KScrips>

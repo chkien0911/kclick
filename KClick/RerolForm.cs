@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -75,7 +76,7 @@ namespace KClick
                     if (config.IsPosition1Valid)
                     {
                         var point1 = new Point(config.XPos, config.YPos);
-                        var color1 = await MouseOperation.GetColorAtAsync(point1);
+                        var color1 = MouseOperation.GetColorAt(point1);
                         if (color1.IsKnownColor)
                         {
                             config.ColorName = color1.Name;
@@ -85,7 +86,7 @@ namespace KClick
                     if (config.IsPosition2Valid)
                     {
                         var point2 = new Point(config.X2Pos, config.Y2Pos);
-                        var color2 = await MouseOperation.GetColorAtAsync(point2);
+                        var color2 = MouseOperation.GetColorAt(point2);
                         if (color2.IsKnownColor)
                         {
                             config.Color2Name = color2.Name;
@@ -95,7 +96,7 @@ namespace KClick
                     if (config.IsPositionIgnoredValid)
                     {
                         var pointIgnored = new Point(config.XPosIgnored, config.YPosIgnored);
-                        var colorIgnored = await MouseOperation.GetColorAtAsync(pointIgnored);
+                        var colorIgnored = MouseOperation.GetColorAt(pointIgnored);
                         if (colorIgnored.IsKnownColor)
                         {
                             config.ColorIgnoredName = colorIgnored.Name;
@@ -105,7 +106,7 @@ namespace KClick
                     if (config.IsPositionMovedValid)
                     {
                         var pointMoved = new Point(config.XPosMoved, config.YPosMoved);
-                        var colorMoved = await MouseOperation.GetColorAtAsync(pointMoved);
+                        var colorMoved = MouseOperation.GetColorAt(pointMoved);
                         if (colorMoved.IsKnownColor)
                         {
                             config.ColorMovedName = colorMoved.Name;
@@ -302,6 +303,11 @@ namespace KClick
                     IntPtr hWndParent = ClickOnPointTool.GetParent(hwnd);
                     if (hWndParent.ToInt64() > 0)
                     {
+                        if (string.IsNullOrWhiteSpace(GlobalConfig.WindowName))
+                        {
+                            Text += "(" + ClickOnPointTool.GetCaptionOfWindow(hWndParent) + ")";
+                        }
+
                         GlobalConfig.WindowClass = ClickOnPointTool.GetClassNameOfWindow(hWndParent);
                         GlobalConfig.WindowName = ClickOnPointTool.GetCaptionOfWindow(hWndParent);
                         GlobalConfig.WindowHandle = hWndParent;
@@ -318,9 +324,6 @@ namespace KClick
                                 config.WindowHandle = GlobalConfig.WindowHandle;
                             }
                         }
-
-                        Text += "(" + GlobalConfig.WindowName + ")";
-
                     }
                     else
                     {
@@ -360,7 +363,7 @@ namespace KClick
                     if (wHandle != IntPtr.Zero)
                     {
                         // Move the window to (0,0)
-                        MouseOperation.SetWindowPos(wHandle, IntPtr.Zero, 0, 0, 500, 400, SWP_NOZORDER | SWP_SHOWWINDOW);
+                        MouseOperation.SetWindowPos(wHandle, IntPtr.Zero, 0, 0, GlobalConfig.WindowWidth, GlobalConfig.WindowHigh, SWP_NOZORDER | SWP_SHOWWINDOW);
                     }
                     else
                     {
@@ -411,7 +414,7 @@ namespace KClick
                 btnStop.Enabled = true;
                 while (isRun)
                 {
-                    await RunAsync().ConfigureAwait(false);
+                    await RunAsync();
                 }
 
             }
@@ -423,20 +426,20 @@ namespace KClick
 
         private async Task RunAsync()
         {
-            //List<Task> tasks = new List<Task>();
+            List<Task> tasks = new List<Task>();
 
             foreach (var config in Configs)
             {
-                //tasks.Add(RunAsync(config));
-                await RunAsync(config).ConfigureAwait(false);
+                tasks.Add(RunAsync(config));
+                //await RunAsync(config);
             }
 
-           // await Task.WhenAll(tasks).ConfigureAwait(false);
+            await Task.WhenAll(tasks);
         }
 
         private async Task RunAsync(Configuration.Config config)
         {
-            await Task.Delay(config.Delay).ConfigureAwait(false);
+            await Task.Delay(config.Delay);
 
             lock (padlock)
             {
@@ -468,10 +471,24 @@ namespace KClick
             }
             else
             {
-                await MouseOperation.SendMessageSpeedModeAsync(config.WindowHandle,
-                    (int)MouseOperation.MouseEventFlags.LeftDown, 1, config);
-                await MouseOperation.SendMessageSpeedModeAsync(config.WindowHandle,
-                    (int)MouseOperation.MouseEventFlags.LeftUp, 0, config);
+                var isOk = await MouseOperation.ClickSpeedModeAsync(config.WindowHandle, config);
+
+                if (isOk)
+                {
+                    // do something else
+
+                }
+                //await MouseOperation.SendMessageSpeedModeAsync(config.WindowHandle,
+                //    (int)MouseOperation.MouseEventFlags.LeftDown, 1, config);
+
+                //Debug.WriteLine($"- Script No : {config.No}. Left down");
+                //await MouseOperation.SendMessageSpeedModeAsync(config.WindowHandle,
+                //    (int)MouseOperation.MouseEventFlags.LeftUp, 0, config);
+
+                //Debug.WriteLine($"- Script No : {config.No}. Left up");
+
+                //await Task.Delay(100);
+
             }
         }
 
@@ -487,7 +504,7 @@ namespace KClick
 
             btnRun.Enabled = true;
             btnStop.Enabled = false;
-            await Task.Delay(100).ConfigureAwait(false);
+            await Task.Delay(100);
         }
     }
 }

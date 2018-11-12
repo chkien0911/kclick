@@ -32,9 +32,12 @@
             this.btnFixControl = new System.Windows.Forms.Button();
             this.btnFindControl = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btnClearScripts = new System.Windows.Forms.Button();
+            this.btnExport = new System.Windows.Forms.Button();
             this.btnRun = new System.Windows.Forms.Button();
             this.btnStop = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnFixColor = new System.Windows.Forms.Button();
             this.btnImport = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.lsvScripts = new System.Windows.Forms.ListView();
@@ -43,9 +46,6 @@
             this.colDescription = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.btnDelete = new System.Windows.Forms.ToolStripMenuItem();
-            this.btnExport = new System.Windows.Forms.Button();
-            this.btnFixColor = new System.Windows.Forms.Button();
-            this.btnClearScripts = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -77,14 +77,32 @@
             this.panel2.Controls.Add(this.btnRun);
             this.panel2.Controls.Add(this.btnStop);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(0, 87);
+            this.panel2.Location = new System.Drawing.Point(0, 67);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(352, 89);
+            this.panel2.Size = new System.Drawing.Size(352, 65);
             this.panel2.TabIndex = 35;
+            // 
+            // btnClearScripts
+            // 
+            this.btnClearScripts.Location = new System.Drawing.Point(273, 6);
+            this.btnClearScripts.Name = "btnClearScripts";
+            this.btnClearScripts.Size = new System.Drawing.Size(69, 50);
+            this.btnClearScripts.TabIndex = 16;
+            this.btnClearScripts.Text = "Clear Scripts";
+            this.btnClearScripts.UseVisualStyleBackColor = true;
+            // 
+            // btnExport
+            // 
+            this.btnExport.Location = new System.Drawing.Point(198, 6);
+            this.btnExport.Name = "btnExport";
+            this.btnExport.Size = new System.Drawing.Size(69, 50);
+            this.btnExport.TabIndex = 6;
+            this.btnExport.Text = "Save Script";
+            this.btnExport.UseVisualStyleBackColor = true;
             // 
             // btnRun
             // 
-            this.btnRun.Location = new System.Drawing.Point(12, 13);
+            this.btnRun.Location = new System.Drawing.Point(12, 6);
             this.btnRun.Name = "btnRun";
             this.btnRun.Size = new System.Drawing.Size(69, 50);
             this.btnRun.TabIndex = 14;
@@ -95,7 +113,7 @@
             // 
             this.btnStop.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnStop.Enabled = false;
-            this.btnStop.Location = new System.Drawing.Point(87, 13);
+            this.btnStop.Location = new System.Drawing.Point(87, 6);
             this.btnStop.Name = "btnStop";
             this.btnStop.Size = new System.Drawing.Size(69, 50);
             this.btnStop.TabIndex = 5;
@@ -111,8 +129,18 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(352, 87);
+            this.panel1.Size = new System.Drawing.Size(352, 67);
             this.panel1.TabIndex = 36;
+            // 
+            // btnFixColor
+            // 
+            this.btnFixColor.Enabled = false;
+            this.btnFixColor.Location = new System.Drawing.Point(273, 12);
+            this.btnFixColor.Name = "btnFixColor";
+            this.btnFixColor.Size = new System.Drawing.Size(69, 50);
+            this.btnFixColor.TabIndex = 4;
+            this.btnFixColor.Text = "Fix Color";
+            this.btnFixColor.UseVisualStyleBackColor = true;
             // 
             // btnImport
             // 
@@ -127,9 +155,9 @@
             // 
             this.panel3.Controls.Add(this.lsvScripts);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel3.Location = new System.Drawing.Point(0, 176);
+            this.panel3.Location = new System.Drawing.Point(0, 132);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(352, 110);
+            this.panel3.Size = new System.Drawing.Size(352, 154);
             this.panel3.TabIndex = 37;
             // 
             // lsvScripts
@@ -144,7 +172,7 @@
             this.lsvScripts.GridLines = true;
             this.lsvScripts.Location = new System.Drawing.Point(0, 0);
             this.lsvScripts.Name = "lsvScripts";
-            this.lsvScripts.Size = new System.Drawing.Size(352, 110);
+            this.lsvScripts.Size = new System.Drawing.Size(352, 154);
             this.lsvScripts.TabIndex = 1;
             this.lsvScripts.UseCompatibleStateImageBehavior = false;
             this.lsvScripts.View = System.Windows.Forms.View.Details;
@@ -176,34 +204,6 @@
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(107, 22);
             this.btnDelete.Text = "Delete";
-            // 
-            // btnExport
-            // 
-            this.btnExport.Location = new System.Drawing.Point(198, 13);
-            this.btnExport.Name = "btnExport";
-            this.btnExport.Size = new System.Drawing.Size(69, 50);
-            this.btnExport.TabIndex = 6;
-            this.btnExport.Text = "Save Script";
-            this.btnExport.UseVisualStyleBackColor = true;
-            // 
-            // btnFixColor
-            // 
-            this.btnFixColor.Enabled = false;
-            this.btnFixColor.Location = new System.Drawing.Point(273, 12);
-            this.btnFixColor.Name = "btnFixColor";
-            this.btnFixColor.Size = new System.Drawing.Size(69, 50);
-            this.btnFixColor.TabIndex = 4;
-            this.btnFixColor.Text = "Fix Color";
-            this.btnFixColor.UseVisualStyleBackColor = true;
-            // 
-            // btnClearScripts
-            // 
-            this.btnClearScripts.Location = new System.Drawing.Point(273, 13);
-            this.btnClearScripts.Name = "btnClearScripts";
-            this.btnClearScripts.Size = new System.Drawing.Size(69, 50);
-            this.btnClearScripts.TabIndex = 16;
-            this.btnClearScripts.Text = "Clear Scripts";
-            this.btnClearScripts.UseVisualStyleBackColor = true;
             // 
             // RerolForm
             // 

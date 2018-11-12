@@ -6,8 +6,9 @@ namespace KClick.Configuration
 {
     public class Config
     {
-        //public bool Infinity { get; set; }
-        //public int NumberOfRun { get; set; } = 1;
+        public bool RunOnce { get; set; }
+        public bool IsDisabledTemp { get; set; }
+        public bool IsStartIcon { get; set; }
         public int No { get; set; }
         public string WindowClass { get; set; }
         //public string ControlClass { get; set; }
@@ -51,7 +52,7 @@ namespace KClick.Configuration
         public int Y2Pos { get; set; }
         public IntPtr WindowHandle { get; set; }
         //public IntPtr ControlHandle { get; set; }
-        public int Delay { get; set; } = 50;
+        public int Delay { get; set; } = 100;
         
         public string ColorName { get; set; }
         public string ColorMovedName { get; set; }

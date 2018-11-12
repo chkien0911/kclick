@@ -8,6 +8,7 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using KClick.Configuration;
 
 namespace KClick.Utilities
 {
@@ -125,14 +126,13 @@ namespace KClick.Utilities
         [DllImport("user32.dll", SetLastError = true)]
         internal static extern uint SendInput(uint nInputs, [MarshalAs(UnmanagedType.LPArray), In] INPUT[] pInputs, int cbSize);
 
-        public static async Task<Color> GetColorAtAsync(Point location)
+        public static Color GetColorAt(Point location)
         {
             //var key = $"{location.X}-{location.Y}";
 
             //var hasColor = Colors.ContainsKey(key);
             //if (hasColor) return Colors[key];
 
-            await Task.Delay(10);
             using (Bitmap screenPixel = new Bitmap(1, 1, PixelFormat.Format32bppArgb))
             {
                 using (Graphics gdest = Graphics.FromImage(screenPixel))
@@ -166,7 +166,7 @@ namespace KClick.Utilities
             {
                 //var ignoredPoint = new Point(config.XPosIgnored, config.YPosIgnored);
                 //ClientToScreen(wndHandle, ref ignoredPoint);
-                var newIgnoredColor = await GetColorAtAsync(ignoredPoint);
+                var newIgnoredColor = GetColorAt(ignoredPoint);
                 if (newIgnoredColor.Name == ignoredColor)
                 {
                     return;
@@ -175,7 +175,7 @@ namespace KClick.Utilities
             
             var colorClientPoint = clientPoint;
             ClientToScreen(wndHandle, ref colorClientPoint);
-            var color = await GetColorAtAsync(colorClientPoint);
+            var color = GetColorAt(colorClientPoint);
 
             if (color.Name == color1)
             {
@@ -237,7 +237,7 @@ namespace KClick.Utilities
             var y = yPos;//msg == (int)MouseEventFlags.MouseMove ? config.YPosMoved : config.YPos;
 
             var point = new Point(x, y);
-            var color = await GetColorAtAsync(point);
+            var color = GetColorAt(point);
 
             if (color.Name == colorName)
             {
@@ -275,7 +275,7 @@ namespace KClick.Utilities
             return true;
         }
 
-        public static async Task<int> SendMessageSpeedModeAsync(
+        public static bool SendMessageSpeedMode(
             IntPtr wndHandle,
             int msg,
             int wParam,
@@ -283,26 +283,20 @@ namespace KClick.Utilities
         {
             var x = config.XPos;//msg == (int) MouseEventFlags.MouseMove ? config.XPosMoved : config.XPos;
             var y = config.YPos; //msg == (int)MouseEventFlags.MouseMove ? config.YPosMoved : config.YPos;
-
-            if (msg == (int)MouseEventFlags.MouseMove)
-            {
-
-            }
-
-
+            
             //Cursor.Position = new Point(xPos, yPos);
             if (config.XPosIgnored != 0 && config.YPosIgnored != 0 && !string.IsNullOrWhiteSpace(config.ColorIgnoredName))
             {
                 var ignoredPoint = new Point(config.XPosIgnored, config.YPosIgnored);
-                var ignoredColor = await GetColorAtAsync(ignoredPoint);
+                var ignoredColor = GetColorAt(ignoredPoint);
                 if (ignoredColor.Name == config.ColorIgnoredName)
                 {
-                    return 0;
+                    return false;
                 }
             }
 
             var point = new Point(x, y);
-            var color = await GetColorAtAsync(point);
+            var color = GetColorAt(point);
 
             if (color.Name == config.ColorName)
             {
@@ -310,7 +304,7 @@ namespace KClick.Utilities
                 if (config.X2Pos != 0 && config.Y2Pos != 0 && !string.IsNullOrWhiteSpace(config.Color2Name))
                 {
                     var point2 = new Point(config.X2Pos, config.Y2Pos);
-                    color2 = await GetColorAtAsync(point2);
+                    color2 = GetColorAt(point2);
                 }
 
                 if (color2 == null || (color2.Value.Name == config.Color2Name))
@@ -320,26 +314,20 @@ namespace KClick.Utilities
 
                     if (!GetWindowRect(wndHandle, ref rct))
                     {
-                        return 0;
+                        return false;
                     }
 
                     int newx = x - rct.Left;
                     int newy = y - rct.Top;
 
-                    var result = SendMessage(wndHandle, msg, (IntPtr)wParam, (IntPtr)CreateLParam(newx, newy));
-
-                    var error = GetLastError();
-                    //string errorMessage = new Win32Exception(Marshal.GetLastWin32Error()).Message;
-                    if (error != 0)
-                    {
-
-                    }
-
-                    return result;
+                    SendMessage(wndHandle, msg, (IntPtr)wParam, (IntPtr)CreateLParam(newx, newy));
+                   
+                    
+                    return true;
                 }
             }
 
-            return 0;
+            return false;
         }
 
         public static async Task<int> SendMessageAsync(
@@ -356,7 +344,7 @@ namespace KClick.Utilities
             var y = yPos;//msg == (int)MouseEventFlags.MouseMove ? config.YPosMoved : config.YPos;
 
             var point = new Point(x, y);
-            var color = await GetColorAtAsync(point);
+            var color = GetColorAt(point);
 
             int i = 0;
             while (color.Name != colorName)
@@ -368,7 +356,7 @@ namespace KClick.Utilities
                 }
 
                 await Task.Delay(100);
-                color = await GetColorAtAsync(point);
+                color = GetColorAt(point);
             }
 
             if (color.Name == colorName)
@@ -416,7 +404,7 @@ namespace KClick.Utilities
             if (config.XPosIgnored != 0 && config.YPosIgnored != 0 && !string.IsNullOrWhiteSpace(config.ColorIgnoredName))
             {
                 var ignoredPoint = new Point(config.XPosIgnored, config.YPosIgnored);
-                var ignoredColor = await GetColorAtAsync(ignoredPoint);
+                var ignoredColor = GetColorAt(ignoredPoint);
                 if (ignoredColor.Name == config.ColorIgnoredName)
                 {
                     return 0;
@@ -425,7 +413,7 @@ namespace KClick.Utilities
 
 
             var point = new Point(x, y);
-            var color = await GetColorAtAsync(point);
+            var color = GetColorAt(point);
 
             int i = 0;
             while (color.Name != config.ColorName)
@@ -437,7 +425,7 @@ namespace KClick.Utilities
                 }
 
                 await Task.Delay(100);
-                color = await GetColorAtAsync(point);
+                color = GetColorAt(point);
             }
 
             if (color.Name == config.ColorName)
@@ -446,7 +434,7 @@ namespace KClick.Utilities
                 if (config.X2Pos != 0 && config.Y2Pos != 0 && !string.IsNullOrWhiteSpace(config.Color2Name))
                 {
                     var point2 = new Point(config.X2Pos, config.Y2Pos);
-                    color2 = await GetColorAtAsync(point2);
+                    color2 = GetColorAt(point2);
                 }
 
                 if (color2 == null || (color2.Value.Name == config.Color2Name))
@@ -496,6 +484,26 @@ namespace KClick.Utilities
         [DllImport("user32.dll")]
         [return: MarshalAs(UnmanagedType.Bool)]
         public static extern bool GetWindowRect(IntPtr hWnd, ref RECT lpRect);
+
+        public static async Task<bool> ClickSpeedModeAsync(IntPtr windowHandle, Config config)
+        {
+            var isOk = false;
+
+            isOk = SendMessageSpeedMode(config.WindowHandle,
+                (int)MouseEventFlags.LeftDown, 1, config);
+
+            Debug.WriteLine($"- Script No : {config.No}. Left down");
+            isOk = SendMessageSpeedMode(config.WindowHandle,
+                (int)MouseEventFlags.LeftUp, 0, config);
+
+            Debug.WriteLine($"- Script No : {config.No}. Left up");
+
+            await Task.Delay(10);
+
+            Debug.WriteLine($"- Script No : {config.No}. Ok: {isOk}");
+
+            return isOk;
+        }
 
         [StructLayout(LayoutKind.Sequential)]
         public struct RECT
