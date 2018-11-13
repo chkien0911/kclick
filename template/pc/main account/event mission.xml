@@ -16,14 +16,12 @@
     <YIgnored>0</YIgnored>
     <ColorIgnored></ColorIgnored>
     <Delay>100</Delay>
-    <Class>Qt5QWindowIcon</Class>
-    <Name>NoxPlayer</Name>
-    <WHandle>1377546</WHandle>
     <IsSequential>false</IsSequential>
     <IsDrag>false</IsDrag>
     <Description>click on icon to start game</Description>
-    <IsStartIcon>true</IsStartIcon>
+    <IsStartIcon>false</IsStartIcon>
     <RunOnce>false</RunOnce>
+    <EndWholeScripts>false</EndWholeScripts>
   </KScript>
   <KScript No="2">
     <No>2</No>
@@ -41,14 +39,12 @@
     <YIgnored>0</YIgnored>
     <ColorIgnored></ColorIgnored>
     <Delay>100</Delay>
-    <Class>Qt5QWindowIcon</Class>
-    <Name>NoxPlayer</Name>
-    <WHandle>1377546</WHandle>
     <IsSequential>false</IsSequential>
     <IsDrag>false</IsDrag>
     <Description>click on screen to start game</Description>
     <IsStartIcon>false</IsStartIcon>
     <RunOnce>false</RunOnce>
+    <EndWholeScripts>false</EndWholeScripts>
   </KScript>
   <KScript No="3">
     <No>3</No>
@@ -66,14 +62,12 @@
     <YIgnored>0</YIgnored>
     <ColorIgnored></ColorIgnored>
     <Delay>100</Delay>
-    <Class>Qt5QWindowIcon</Class>
-    <Name>NoxPlayer</Name>
-    <WHandle>1377546</WHandle>
     <IsSequential>false</IsSequential>
     <IsDrag>false</IsDrag>
     <Description>click on misson</Description>
     <IsStartIcon>false</IsStartIcon>
     <RunOnce>false</RunOnce>
+    <EndWholeScripts>false</EndWholeScripts>
   </KScript>
   <KScript No="4">
     <No>4</No>
@@ -91,14 +85,12 @@
     <YIgnored>0</YIgnored>
     <ColorIgnored></ColorIgnored>
     <Delay>100</Delay>
-    <Class>Qt5QWindowIcon</Class>
-    <Name>NoxPlayer</Name>
-    <WHandle>1377546</WHandle>
     <IsSequential>false</IsSequential>
     <IsDrag>false</IsDrag>
     <Description>click on Events</Description>
     <IsStartIcon>false</IsStartIcon>
     <RunOnce>false</RunOnce>
+    <EndWholeScripts>false</EndWholeScripts>
   </KScript>
   <KScript No="5">
     <No>5</No>
@@ -116,14 +108,12 @@
     <YIgnored>0</YIgnored>
     <ColorIgnored></ColorIgnored>
     <Delay>100</Delay>
-    <Class>Qt5QWindowIcon</Class>
-    <Name>NoxPlayer</Name>
-    <WHandle>1377546</WHandle>
     <IsSequential>false</IsSequential>
     <IsDrag>false</IsDrag>
     <Description>click on accept all</Description>
     <IsStartIcon>false</IsStartIcon>
     <RunOnce>false</RunOnce>
+    <EndWholeScripts>false</EndWholeScripts>
   </KScript>
   <KScript No="6">
     <No>6</No>
@@ -141,14 +131,12 @@
     <YIgnored>0</YIgnored>
     <ColorIgnored></ColorIgnored>
     <Delay>100</Delay>
-    <Class>Qt5QWindowIcon</Class>
-    <Name>NoxPlayer</Name>
-    <WHandle>1377546</WHandle>
     <IsSequential>false</IsSequential>
     <IsDrag>false</IsDrag>
     <Description>click on OK (1 button)</Description>
     <IsStartIcon>false</IsStartIcon>
     <RunOnce>false</RunOnce>
+    <EndWholeScripts>false</EndWholeScripts>
   </KScript>
   <KScript No="7">
     <No>7</No>
@@ -166,14 +154,12 @@
     <YIgnored>0</YIgnored>
     <ColorIgnored></ColorIgnored>
     <Delay>100</Delay>
-    <Class>Qt5QWindowIcon</Class>
-    <Name>NoxPlayer</Name>
-    <WHandle>1377546</WHandle>
     <IsSequential>false</IsSequential>
     <IsDrag>false</IsDrag>
     <Description>click on 1st misson</Description>
     <IsStartIcon>false</IsStartIcon>
     <RunOnce>false</RunOnce>
+    <EndWholeScripts>false</EndWholeScripts>
   </KScript>
   <KScript No="8">
     <No>8</No>
@@ -191,14 +177,12 @@
     <YIgnored>0</YIgnored>
     <ColorIgnored></ColorIgnored>
     <Delay>100</Delay>
-    <Class>Qt5QWindowIcon</Class>
-    <Name>NoxPlayer</Name>
-    <WHandle>1377546</WHandle>
     <IsSequential>false</IsSequential>
     <IsDrag>false</IsDrag>
     <Description>clear explain (general)</Description>
     <IsStartIcon>false</IsStartIcon>
     <RunOnce>false</RunOnce>
+    <EndWholeScripts>false</EndWholeScripts>
   </KScript>
   <KScript No="9">
     <No>9</No>
@@ -216,14 +200,12 @@
     <YIgnored>0</YIgnored>
     <ColorIgnored></ColorIgnored>
     <Delay>100</Delay>
-    <Class>Qt5QWindowIcon</Class>
-    <Name>NoxPlayer</Name>
-    <WHandle>1377546</WHandle>
     <IsSequential>false</IsSequential>
     <IsDrag>false</IsDrag>
     <Description>click Got it (general)</Description>
     <IsStartIcon>false</IsStartIcon>
     <RunOnce>false</RunOnce>
+    <EndWholeScripts>false</EndWholeScripts>
   </KScript>
   <KScript No="10">
     <No>10</No>
@@ -241,14 +223,12 @@
     <YIgnored>0</YIgnored>
     <ColorIgnored></ColorIgnored>
     <Delay>100</Delay>
-    <Class>Qt5QWindowIcon</Class>
-    <Name>NoxPlayer</Name>
-    <WHandle>1377546</WHandle>
     <IsSequential>false</IsSequential>
     <IsDrag>false</IsDrag>
     <Description>click on Play (club)</Description>
     <IsStartIcon>false</IsStartIcon>
     <RunOnce>true</RunOnce>
+    <EndWholeScripts>false</EndWholeScripts>
   </KScript>
   <KScript No="11">
     <No>11</No>
@@ -266,14 +246,12 @@
     <YIgnored>364</YIgnored>
     <ColorIgnored>ffbeed77</ColorIgnored>
     <Delay>100</Delay>
-    <Class>Qt5QWindowIcon</Class>
-    <Name>NoxPlayer</Name>
-    <WHandle>1377546</WHandle>
     <IsSequential>false</IsSequential>
     <IsDrag>false</IsDrag>
     <Description>tab screen (panel shootout)</Description>
     <IsStartIcon>false</IsStartIcon>
     <RunOnce>false</RunOnce>
+    <EndWholeScripts>false</EndWholeScripts>
   </KScript>
   <KScript No="12">
     <No>12</No>
@@ -291,14 +269,12 @@
     <YIgnored>0</YIgnored>
     <ColorIgnored></ColorIgnored>
     <Delay>100</Delay>
-    <Class>Qt5QWindowIcon</Class>
-    <Name>NoxPlayer</Name>
-    <WHandle>1377546</WHandle>
     <IsSequential>false</IsSequential>
     <IsDrag>false</IsDrag>
     <Description>Panel shootout select 5</Description>
     <IsStartIcon>false</IsStartIcon>
     <RunOnce>false</RunOnce>
+    <EndWholeScripts>false</EndWholeScripts>
   </KScript>
   <KScript No="13">
     <No>13</No>
@@ -316,14 +292,12 @@
     <YIgnored>0</YIgnored>
     <ColorIgnored></ColorIgnored>
     <Delay>100</Delay>
-    <Class>Qt5QWindowIcon</Class>
-    <Name>NoxPlayer</Name>
-    <WHandle>1377546</WHandle>
     <IsSequential>false</IsSequential>
     <IsDrag>false</IsDrag>
     <Description>click OK (panel shootout)</Description>
     <IsStartIcon>false</IsStartIcon>
     <RunOnce>false</RunOnce>
+    <EndWholeScripts>false</EndWholeScripts>
   </KScript>
   <KScript No="14">
     <No>14</No>
@@ -341,14 +315,12 @@
     <YIgnored>0</YIgnored>
     <ColorIgnored></ColorIgnored>
     <Delay>100</Delay>
-    <Class>Qt5QWindowIcon</Class>
-    <Name>NoxPlayer</Name>
-    <WHandle>1377546</WHandle>
     <IsSequential>false</IsSequential>
     <IsDrag>false</IsDrag>
     <Description>back (panel shootout)</Description>
     <IsStartIcon>false</IsStartIcon>
     <RunOnce>false</RunOnce>
+    <EndWholeScripts>false</EndWholeScripts>
   </KScript>
   <KScript No="15">
     <No>15</No>
@@ -365,15 +337,13 @@
     <XIgnored>0</XIgnored>
     <YIgnored>0</YIgnored>
     <ColorIgnored></ColorIgnored>
-    <Delay>1000</Delay>
-    <Class>Qt5QWindowIcon</Class>
-    <Name>NoxPlayer</Name>
-    <WHandle>1377546</WHandle>
+    <Delay>2000</Delay>
     <IsSequential>false</IsSequential>
     <IsDrag>false</IsDrag>
     <Description>back (end panel shootout) 1s</Description>
     <IsStartIcon>false</IsStartIcon>
     <RunOnce>false</RunOnce>
+    <EndWholeScripts>false</EndWholeScripts>
   </KScript>
   <KScript No="16">
     <No>16</No>
@@ -391,14 +361,12 @@
     <YIgnored>0</YIgnored>
     <ColorIgnored></ColorIgnored>
     <Delay>100</Delay>
-    <Class>Qt5QWindowIcon</Class>
-    <Name>NoxPlayer</Name>
-    <WHandle>1377546</WHandle>
     <IsSequential>false</IsSequential>
     <IsDrag>false</IsDrag>
     <Description>click on Regular (cup)</Description>
     <IsStartIcon>false</IsStartIcon>
     <RunOnce>false</RunOnce>
+    <EndWholeScripts>false</EndWholeScripts>
   </KScript>
   <KScript No="17">
     <No>17</No>
@@ -416,14 +384,12 @@
     <YIgnored>0</YIgnored>
     <ColorIgnored></ColorIgnored>
     <Delay>100</Delay>
-    <Class>Qt5QWindowIcon</Class>
-    <Name>NoxPlayer</Name>
-    <WHandle>1377546</WHandle>
     <IsSequential>false</IsSequential>
     <IsDrag>false</IsDrag>
     <Description>click on Play (cup)</Description>
     <IsStartIcon>false</IsStartIcon>
-    <RunOnce>true</RunOnce>
+    <RunOnce>false</RunOnce>
+    <EndWholeScripts>false</EndWholeScripts>
   </KScript>
   <KScript No="18">
     <No>18</No>
@@ -441,14 +407,12 @@
     <YIgnored>0</YIgnored>
     <ColorIgnored></ColorIgnored>
     <Delay>100</Delay>
-    <Class>Qt5QWindowIcon</Class>
-    <Name>NoxPlayer</Name>
-    <WHandle>1377546</WHandle>
     <IsSequential>false</IsSequential>
     <IsDrag>false</IsDrag>
     <Description>click on Matching</Description>
     <IsStartIcon>false</IsStartIcon>
     <RunOnce>true</RunOnce>
+    <EndWholeScripts>false</EndWholeScripts>
   </KScript>
   <KScript No="19">
     <No>19</No>
@@ -466,14 +430,12 @@
     <YIgnored>0</YIgnored>
     <ColorIgnored></ColorIgnored>
     <Delay>100</Delay>
-    <Class>Qt5QWindowIcon</Class>
-    <Name>NoxPlayer</Name>
-    <WHandle>1377546</WHandle>
     <IsSequential>false</IsSequential>
     <IsDrag>false</IsDrag>
     <Description>tap screen (end cup game)</Description>
     <IsStartIcon>false</IsStartIcon>
     <RunOnce>false</RunOnce>
+    <EndWholeScripts>false</EndWholeScripts>
   </KScript>
   <KScript No="20">
     <No>20</No>
@@ -491,14 +453,12 @@
     <YIgnored>0</YIgnored>
     <ColorIgnored></ColorIgnored>
     <Delay>100</Delay>
-    <Class>Qt5QWindowIcon</Class>
-    <Name>NoxPlayer</Name>
-    <WHandle>1377546</WHandle>
     <IsSequential>false</IsSequential>
     <IsDrag>false</IsDrag>
     <Description>go to online home cup</Description>
     <IsStartIcon>false</IsStartIcon>
     <RunOnce>false</RunOnce>
+    <EndWholeScripts>false</EndWholeScripts>
   </KScript>
   <KScript No="21">
     <No>21</No>
@@ -515,15 +475,13 @@
     <XIgnored>0</XIgnored>
     <YIgnored>0</YIgnored>
     <ColorIgnored></ColorIgnored>
-    <Delay>1000</Delay>
-    <Class>Qt5QWindowIcon</Class>
-    <Name>NoxPlayer</Name>
-    <WHandle>1377546</WHandle>
+    <Delay>2000</Delay>
     <IsSequential>false</IsSequential>
     <IsDrag>false</IsDrag>
     <Description>Home (tsu cup) 1s</Description>
     <IsStartIcon>false</IsStartIcon>
     <RunOnce>false</RunOnce>
+    <EndWholeScripts>false</EndWholeScripts>
   </KScript>
   <KScript No="22">
     <No>22</No>
@@ -540,15 +498,13 @@
     <XIgnored>0</XIgnored>
     <YIgnored>0</YIgnored>
     <ColorIgnored></ColorIgnored>
-    <Delay>1000</Delay>
-    <Class>Qt5QWindowIcon</Class>
-    <Name>NoxPlayer</Name>
-    <WHandle>1377546</WHandle>
+    <Delay>100</Delay>
     <IsSequential>false</IsSequential>
     <IsDrag>false</IsDrag>
     <Description>training - select 1st player</Description>
     <IsStartIcon>false</IsStartIcon>
     <RunOnce>true</RunOnce>
+    <EndWholeScripts>false</EndWholeScripts>
   </KScript>
   <KScript No="23">
     <No>23</No>
@@ -566,14 +522,12 @@
     <YIgnored>0</YIgnored>
     <ColorIgnored></ColorIgnored>
     <Delay>100</Delay>
-    <Class>Qt5QWindowIcon</Class>
-    <Name>NoxPlayer</Name>
-    <WHandle>1377546</WHandle>
     <IsSequential>false</IsSequential>
     <IsDrag>false</IsDrag>
     <Description>training - click on 1st box</Description>
     <IsStartIcon>false</IsStartIcon>
-    <RunOnce>true</RunOnce>
+    <RunOnce>false</RunOnce>
+    <EndWholeScripts>false</EndWholeScripts>
   </KScript>
   <KScript No="24">
     <No>24</No>
@@ -591,14 +545,12 @@
     <YIgnored>0</YIgnored>
     <ColorIgnored></ColorIgnored>
     <Delay>100</Delay>
-    <Class>Qt5QWindowIcon</Class>
-    <Name>NoxPlayer</Name>
-    <WHandle>1377546</WHandle>
     <IsSequential>false</IsSequential>
     <IsDrag>false</IsDrag>
     <Description>training - select 1st SR coaching item</Description>
     <IsStartIcon>false</IsStartIcon>
     <RunOnce>false</RunOnce>
+    <EndWholeScripts>false</EndWholeScripts>
   </KScript>
   <KScript No="25">
     <No>25</No>
@@ -616,14 +568,12 @@
     <YIgnored>0</YIgnored>
     <ColorIgnored></ColorIgnored>
     <Delay>100</Delay>
-    <Class>Qt5QWindowIcon</Class>
-    <Name>NoxPlayer</Name>
-    <WHandle>1377546</WHandle>
     <IsSequential>false</IsSequential>
     <IsDrag>false</IsDrag>
     <Description>training - select 1st SSR coaching item</Description>
     <IsStartIcon>false</IsStartIcon>
     <RunOnce>false</RunOnce>
+    <EndWholeScripts>false</EndWholeScripts>
   </KScript>
   <KScript No="26">
     <No>26</No>
@@ -641,14 +591,12 @@
     <YIgnored>0</YIgnored>
     <ColorIgnored></ColorIgnored>
     <Delay>100</Delay>
-    <Class>Qt5QWindowIcon</Class>
-    <Name>NoxPlayer</Name>
-    <WHandle>1377546</WHandle>
     <IsSequential>false</IsSequential>
     <IsDrag>false</IsDrag>
     <Description>training - select 1st UR coaching item</Description>
     <IsStartIcon>false</IsStartIcon>
     <RunOnce>false</RunOnce>
+    <EndWholeScripts>false</EndWholeScripts>
   </KScript>
   <KScript No="27">
     <No>27</No>
@@ -666,14 +614,12 @@
     <YIgnored>0</YIgnored>
     <ColorIgnored></ColorIgnored>
     <Delay>100</Delay>
-    <Class>Qt5QWindowIcon</Class>
-    <Name>NoxPlayer</Name>
-    <WHandle>1377546</WHandle>
     <IsSequential>false</IsSequential>
     <IsDrag>false</IsDrag>
     <Description>training - select 1st SR enhance item</Description>
     <IsStartIcon>false</IsStartIcon>
     <RunOnce>false</RunOnce>
+    <EndWholeScripts>false</EndWholeScripts>
   </KScript>
   <KScript No="28">
     <No>28</No>
@@ -691,14 +637,12 @@
     <YIgnored>0</YIgnored>
     <ColorIgnored></ColorIgnored>
     <Delay>100</Delay>
-    <Class>Qt5QWindowIcon</Class>
-    <Name>NoxPlayer</Name>
-    <WHandle>1377546</WHandle>
     <IsSequential>false</IsSequential>
     <IsDrag>false</IsDrag>
     <Description>training - select 1st SSR enhance item</Description>
     <IsStartIcon>false</IsStartIcon>
     <RunOnce>false</RunOnce>
+    <EndWholeScripts>false</EndWholeScripts>
   </KScript>
   <KScript No="29">
     <No>29</No>
@@ -716,14 +660,12 @@
     <YIgnored>0</YIgnored>
     <ColorIgnored></ColorIgnored>
     <Delay>100</Delay>
-    <Class>Qt5QWindowIcon</Class>
-    <Name>NoxPlayer</Name>
-    <WHandle>1377546</WHandle>
     <IsSequential>false</IsSequential>
     <IsDrag>false</IsDrag>
     <Description>training - select 1st UR enhance item</Description>
     <IsStartIcon>false</IsStartIcon>
     <RunOnce>false</RunOnce>
+    <EndWholeScripts>false</EndWholeScripts>
   </KScript>
   <KScript No="30">
     <No>30</No>
@@ -741,14 +683,12 @@
     <YIgnored>0</YIgnored>
     <ColorIgnored></ColorIgnored>
     <Delay>100</Delay>
-    <Class>Qt5QWindowIcon</Class>
-    <Name>NoxPlayer</Name>
-    <WHandle>1377546</WHandle>
     <IsSequential>false</IsSequential>
     <IsDrag>false</IsDrag>
     <Description>training - click on OK after select item</Description>
     <IsStartIcon>false</IsStartIcon>
     <RunOnce>false</RunOnce>
+    <EndWholeScripts>false</EndWholeScripts>
   </KScript>
   <KScript No="31">
     <No>31</No>
@@ -766,14 +706,12 @@
     <YIgnored>0</YIgnored>
     <ColorIgnored></ColorIgnored>
     <Delay>100</Delay>
-    <Class>Qt5QWindowIcon</Class>
-    <Name>NoxPlayer</Name>
-    <WHandle>1377546</WHandle>
     <IsSequential>false</IsSequential>
     <IsDrag>false</IsDrag>
     <Description>traing - begin training</Description>
     <IsStartIcon>false</IsStartIcon>
     <RunOnce>false</RunOnce>
+    <EndWholeScripts>false</EndWholeScripts>
   </KScript>
   <KScript No="32">
     <No>32</No>
@@ -791,14 +729,12 @@
     <YIgnored>0</YIgnored>
     <ColorIgnored></ColorIgnored>
     <Delay>100</Delay>
-    <Class>Qt5QWindowIcon</Class>
-    <Name>NoxPlayer</Name>
-    <WHandle>1377546</WHandle>
     <IsSequential>false</IsSequential>
     <IsDrag>false</IsDrag>
     <Description>training - click on OK after begin</Description>
     <IsStartIcon>false</IsStartIcon>
     <RunOnce>false</RunOnce>
+    <EndWholeScripts>false</EndWholeScripts>
   </KScript>
   <KScript No="33">
     <No>33</No>
@@ -816,14 +752,12 @@
     <YIgnored>0</YIgnored>
     <ColorIgnored></ColorIgnored>
     <Delay>100</Delay>
-    <Class>Qt5QWindowIcon</Class>
-    <Name>NoxPlayer</Name>
-    <WHandle>1377546</WHandle>
     <IsSequential>false</IsSequential>
     <IsDrag>false</IsDrag>
     <Description>training - click on OK after training success</Description>
     <IsStartIcon>false</IsStartIcon>
     <RunOnce>false</RunOnce>
+    <EndWholeScripts>false</EndWholeScripts>
   </KScript>
   <KScript No="34">
     <No>34</No>
@@ -840,15 +774,13 @@
     <XIgnored>0</XIgnored>
     <YIgnored>0</YIgnored>
     <ColorIgnored></ColorIgnored>
-    <Delay>1000</Delay>
-    <Class>Qt5QWindowIcon</Class>
-    <Name>NoxPlayer</Name>
-    <WHandle>1377546</WHandle>
+    <Delay>2000</Delay>
     <IsSequential>false</IsSequential>
     <IsDrag>false</IsDrag>
     <Description>training - home after training 1s</Description>
     <IsStartIcon>false</IsStartIcon>
     <RunOnce>false</RunOnce>
+    <EndWholeScripts>false</EndWholeScripts>
   </KScript>
   <KScript No="35">
     <No>35</No>
@@ -865,15 +797,13 @@
     <XIgnored>0</XIgnored>
     <YIgnored>0</YIgnored>
     <ColorIgnored></ColorIgnored>
-    <Delay>1000</Delay>
-    <Class>Qt5QWindowIcon</Class>
-    <Name>NoxPlayer</Name>
-    <WHandle>1377546</WHandle>
+    <Delay>100</Delay>
     <IsSequential>false</IsSequential>
     <IsDrag>false</IsDrag>
     <Description>league - click on play match</Description>
     <IsStartIcon>false</IsStartIcon>
     <RunOnce>true</RunOnce>
+    <EndWholeScripts>false</EndWholeScripts>
   </KScript>
   <KScript No="36">
     <No>36</No>
@@ -890,14 +820,725 @@
     <XIgnored>0</XIgnored>
     <YIgnored>0</YIgnored>
     <ColorIgnored></ColorIgnored>
-    <Delay>1000</Delay>
-    <Class>Qt5QWindowIcon</Class>
-    <Name>NoxPlayer</Name>
-    <WHandle>1377546</WHandle>
+    <Delay>100</Delay>
     <IsSequential>false</IsSequential>
     <IsDrag>false</IsDrag>
     <Description>league - Cancel if out of energy</Description>
     <IsStartIcon>false</IsStartIcon>
     <RunOnce>false</RunOnce>
+    <EndWholeScripts>true</EndWholeScripts>
+  </KScript>
+  <KScript No="37">
+    <No>37</No>
+    <MouseKey>Left</MouseKey>
+    <X>460</X>
+    <Y>336</Y>
+    <Color>ff3a434a</Color>
+    <X2>458</X2>
+    <Y2>387</Y2>
+    <Color2>ff3ca428</Color2>
+    <XMoved>0</XMoved>
+    <YMoved>0</YMoved>
+    <ColorMoved></ColorMoved>
+    <XIgnored>0</XIgnored>
+    <YIgnored>0</YIgnored>
+    <ColorIgnored></ColorIgnored>
+    <Delay>100</Delay>
+    <IsSequential>false</IsSequential>
+    <IsDrag>false</IsDrag>
+    <Description>training - skip increasing step by step</Description>
+    <IsStartIcon>false</IsStartIcon>
+    <RunOnce>false</RunOnce>
+    <EndWholeScripts>false</EndWholeScripts>
+  </KScript>
+  <KScript No="38">
+    <No>38</No>
+    <MouseKey>Left</MouseKey>
+    <X>388</X>
+    <Y>236</Y>
+    <Color>ffffffff</Color>
+    <X2>159</X2>
+    <Y2>117</Y2>
+    <Color2>ff2c87ea</Color2>
+    <XMoved>0</XMoved>
+    <YMoved>0</YMoved>
+    <ColorMoved></ColorMoved>
+    <XIgnored>0</XIgnored>
+    <YIgnored>0</YIgnored>
+    <ColorIgnored></ColorIgnored>
+    <Delay>100</Delay>
+    <IsSequential>false</IsSequential>
+    <IsDrag>false</IsDrag>
+    <Description>league - select weakness opponent</Description>
+    <IsStartIcon>false</IsStartIcon>
+    <RunOnce>false</RunOnce>
+    <EndWholeScripts>false</EndWholeScripts>
+  </KScript>
+  <KScript No="39">
+    <No>39</No>
+    <MouseKey>Left</MouseKey>
+    <X>219</X>
+    <Y>280</Y>
+    <Color>ff4fe0f1</Color>
+    <X2>369</X2>
+    <Y2>283</Y2>
+    <Color2>fffff7b4</Color2>
+    <XMoved>0</XMoved>
+    <YMoved>0</YMoved>
+    <ColorMoved></ColorMoved>
+    <XIgnored>0</XIgnored>
+    <YIgnored>0</YIgnored>
+    <ColorIgnored></ColorIgnored>
+    <Delay>100</Delay>
+    <IsSequential>false</IsSequential>
+    <IsDrag>false</IsDrag>
+    <Description>league - select increasing stamina</Description>
+    <IsStartIcon>false</IsStartIcon>
+    <RunOnce>false</RunOnce>
+    <EndWholeScripts>false</EndWholeScripts>
+  </KScript>
+  <KScript No="40">
+    <No>40</No>
+    <MouseKey>Left</MouseKey>
+    <X>67</X>
+    <Y>283</Y>
+    <Color>ffd461b8</Color>
+    <X2>367</X2>
+    <Y2>281</Y2>
+    <Color2>ffffe29f</Color2>
+    <XMoved>0</XMoved>
+    <YMoved>0</YMoved>
+    <ColorMoved></ColorMoved>
+    <XIgnored>0</XIgnored>
+    <YIgnored>0</YIgnored>
+    <ColorIgnored></ColorIgnored>
+    <Delay>100</Delay>
+    <IsSequential>false</IsSequential>
+    <IsDrag>false</IsDrag>
+    <Description>league - select increasing point</Description>
+    <IsStartIcon>false</IsStartIcon>
+    <RunOnce>false</RunOnce>
+    <EndWholeScripts>false</EndWholeScripts>
+  </KScript>
+  <KScript No="41">
+    <No>41</No>
+    <MouseKey>Left</MouseKey>
+    <X>266</X>
+    <Y>384</Y>
+    <Color>ff626877</Color>
+    <X2>368</X2>
+    <Y2>284</Y2>
+    <Color2>ffffe1a2</Color2>
+    <XMoved>0</XMoved>
+    <YMoved>0</YMoved>
+    <ColorMoved></ColorMoved>
+    <XIgnored>0</XIgnored>
+    <YIgnored>0</YIgnored>
+    <ColorIgnored></ColorIgnored>
+    <Delay>100</Delay>
+    <IsSequential>false</IsSequential>
+    <IsDrag>false</IsDrag>
+    <Description>league - select Auto mode</Description>
+    <IsStartIcon>false</IsStartIcon>
+    <RunOnce>false</RunOnce>
+    <EndWholeScripts>false</EndWholeScripts>
+  </KScript>
+  <KScript No="42">
+    <No>42</No>
+    <MouseKey>Left</MouseKey>
+    <X>332</X>
+    <Y>385</Y>
+    <Color>ffffdc2f</Color>
+    <X2>368</X2>
+    <Y2>279</Y2>
+    <Color2>ffffe193</Color2>
+    <XMoved>0</XMoved>
+    <YMoved>0</YMoved>
+    <ColorMoved></ColorMoved>
+    <XIgnored>0</XIgnored>
+    <YIgnored>0</YIgnored>
+    <ColorIgnored></ColorIgnored>
+    <Delay>100</Delay>
+    <IsSequential>false</IsSequential>
+    <IsDrag>false</IsDrag>
+    <Description>league - select fast mode</Description>
+    <IsStartIcon>false</IsStartIcon>
+    <RunOnce>false</RunOnce>
+    <EndWholeScripts>false</EndWholeScripts>
+  </KScript>
+  <KScript No="43">
+    <No>43</No>
+    <MouseKey>Left</MouseKey>
+    <X>467</X>
+    <Y>386</Y>
+    <Color>ff899aa8</Color>
+    <X2>366</X2>
+    <Y2>278</Y2>
+    <Color2>ffffe596</Color2>
+    <XMoved>0</XMoved>
+    <YMoved>0</YMoved>
+    <ColorMoved></ColorMoved>
+    <XIgnored>0</XIgnored>
+    <YIgnored>0</YIgnored>
+    <ColorIgnored></ColorIgnored>
+    <Delay>100</Delay>
+    <IsSequential>false</IsSequential>
+    <IsDrag>false</IsDrag>
+    <Description>league - select Skip mode</Description>
+    <IsStartIcon>false</IsStartIcon>
+    <RunOnce>false</RunOnce>
+    <EndWholeScripts>false</EndWholeScripts>
+  </KScript>
+  <KScript No="44">
+    <No>44</No>
+    <MouseKey>Left</MouseKey>
+    <X>414</X>
+    <Y>283</Y>
+    <Color>fffefefe</Color>
+    <X2>429</X2>
+    <Y2>268</Y2>
+    <Color2>fffff2af</Color2>
+    <XMoved>0</XMoved>
+    <YMoved>0</YMoved>
+    <ColorMoved></ColorMoved>
+    <XIgnored>0</XIgnored>
+    <YIgnored>0</YIgnored>
+    <ColorIgnored></ColorIgnored>
+    <Delay>100</Delay>
+    <IsSequential>false</IsSequential>
+    <IsDrag>false</IsDrag>
+    <Description>league - Kick off</Description>
+    <IsStartIcon>false</IsStartIcon>
+    <RunOnce>false</RunOnce>
+    <EndWholeScripts>false</EndWholeScripts>
+  </KScript>
+  <KScript No="45">
+    <No>45</No>
+    <MouseKey>Left</MouseKey>
+    <X>92</X>
+    <Y>386</Y>
+    <Color>ffdb6512</Color>
+    <X2>432</X2>
+    <Y2>372</Y2>
+    <Color2>ffe79122</Color2>
+    <XMoved>0</XMoved>
+    <YMoved>0</YMoved>
+    <ColorMoved></ColorMoved>
+    <XIgnored>0</XIgnored>
+    <YIgnored>0</YIgnored>
+    <ColorIgnored></ColorIgnored>
+    <Delay>2000</Delay>
+    <IsSequential>false</IsSequential>
+    <IsDrag>false</IsDrag>
+    <Description>league - Click on Home screen</Description>
+    <IsStartIcon>false</IsStartIcon>
+    <RunOnce>false</RunOnce>
+    <EndWholeScripts>false</EndWholeScripts>
+  </KScript>
+  <KScript No="46">
+    <No>46</No>
+    <MouseKey>Left</MouseKey>
+    <X>430</X>
+    <Y>370</Y>
+    <Color>ffd69033</Color>
+    <X2>126</X2>
+    <Y2>345</Y2>
+    <Color2>fff6ed5b</Color2>
+    <XMoved>0</XMoved>
+    <YMoved>0</YMoved>
+    <ColorMoved></ColorMoved>
+    <XIgnored>0</XIgnored>
+    <YIgnored>0</YIgnored>
+    <ColorIgnored></ColorIgnored>
+    <Delay>100</Delay>
+    <IsSequential>false</IsSequential>
+    <IsDrag>false</IsDrag>
+    <Description>league - click on play match</Description>
+    <IsStartIcon>false</IsStartIcon>
+    <RunOnce>true</RunOnce>
+    <EndWholeScripts>false</EndWholeScripts>
+  </KScript>
+  <KScript No="47">
+    <No>47</No>
+    <MouseKey>Left</MouseKey>
+    <X>224</X>
+    <Y>306</Y>
+    <Color>ffd15d43</Color>
+    <X2>128</X2>
+    <Y2>167</Y2>
+    <Color2>fffd343f</Color2>
+    <XMoved>0</XMoved>
+    <YMoved>0</YMoved>
+    <ColorMoved></ColorMoved>
+    <XIgnored>0</XIgnored>
+    <YIgnored>0</YIgnored>
+    <ColorIgnored></ColorIgnored>
+    <Delay>100</Delay>
+    <IsSequential>false</IsSequential>
+    <IsDrag>false</IsDrag>
+    <Description>league - Cancel if out of energy</Description>
+    <IsStartIcon>false</IsStartIcon>
+    <RunOnce>false</RunOnce>
+    <EndWholeScripts>true</EndWholeScripts>
+  </KScript>
+  <KScript No="48">
+    <No>48</No>
+    <MouseKey>Left</MouseKey>
+    <X>388</X>
+    <Y>236</Y>
+    <Color>ffffffff</Color>
+    <X2>159</X2>
+    <Y2>117</Y2>
+    <Color2>ff2c87ea</Color2>
+    <XMoved>0</XMoved>
+    <YMoved>0</YMoved>
+    <ColorMoved></ColorMoved>
+    <XIgnored>0</XIgnored>
+    <YIgnored>0</YIgnored>
+    <ColorIgnored></ColorIgnored>
+    <Delay>100</Delay>
+    <IsSequential>false</IsSequential>
+    <IsDrag>false</IsDrag>
+    <Description>league - select weakness opponent</Description>
+    <IsStartIcon>false</IsStartIcon>
+    <RunOnce>false</RunOnce>
+    <EndWholeScripts>false</EndWholeScripts>
+  </KScript>
+  <KScript No="49">
+    <No>49</No>
+    <MouseKey>Left</MouseKey>
+    <X>219</X>
+    <Y>280</Y>
+    <Color>ff4fe0f1</Color>
+    <X2>369</X2>
+    <Y2>283</Y2>
+    <Color2>fffff7b4</Color2>
+    <XMoved>0</XMoved>
+    <YMoved>0</YMoved>
+    <ColorMoved></ColorMoved>
+    <XIgnored>0</XIgnored>
+    <YIgnored>0</YIgnored>
+    <ColorIgnored></ColorIgnored>
+    <Delay>100</Delay>
+    <IsSequential>false</IsSequential>
+    <IsDrag>false</IsDrag>
+    <Description>league - select increasing stamina</Description>
+    <IsStartIcon>false</IsStartIcon>
+    <RunOnce>false</RunOnce>
+    <EndWholeScripts>false</EndWholeScripts>
+  </KScript>
+  <KScript No="50">
+    <No>50</No>
+    <MouseKey>Left</MouseKey>
+    <X>67</X>
+    <Y>283</Y>
+    <Color>ffd461b8</Color>
+    <X2>367</X2>
+    <Y2>281</Y2>
+    <Color2>ffffe29f</Color2>
+    <XMoved>0</XMoved>
+    <YMoved>0</YMoved>
+    <ColorMoved></ColorMoved>
+    <XIgnored>0</XIgnored>
+    <YIgnored>0</YIgnored>
+    <ColorIgnored></ColorIgnored>
+    <Delay>100</Delay>
+    <IsSequential>false</IsSequential>
+    <IsDrag>false</IsDrag>
+    <Description>league - select increasing point</Description>
+    <IsStartIcon>false</IsStartIcon>
+    <RunOnce>false</RunOnce>
+    <EndWholeScripts>false</EndWholeScripts>
+  </KScript>
+  <KScript No="51">
+    <No>51</No>
+    <MouseKey>Left</MouseKey>
+    <X>266</X>
+    <Y>384</Y>
+    <Color>ff626877</Color>
+    <X2>368</X2>
+    <Y2>284</Y2>
+    <Color2>ffffe1a2</Color2>
+    <XMoved>0</XMoved>
+    <YMoved>0</YMoved>
+    <ColorMoved></ColorMoved>
+    <XIgnored>0</XIgnored>
+    <YIgnored>0</YIgnored>
+    <ColorIgnored></ColorIgnored>
+    <Delay>100</Delay>
+    <IsSequential>false</IsSequential>
+    <IsDrag>false</IsDrag>
+    <Description>league - select Auto mode</Description>
+    <IsStartIcon>false</IsStartIcon>
+    <RunOnce>false</RunOnce>
+    <EndWholeScripts>false</EndWholeScripts>
+  </KScript>
+  <KScript No="52">
+    <No>52</No>
+    <MouseKey>Left</MouseKey>
+    <X>332</X>
+    <Y>385</Y>
+    <Color>ffffdc2f</Color>
+    <X2>368</X2>
+    <Y2>279</Y2>
+    <Color2>ffffe193</Color2>
+    <XMoved>0</XMoved>
+    <YMoved>0</YMoved>
+    <ColorMoved></ColorMoved>
+    <XIgnored>0</XIgnored>
+    <YIgnored>0</YIgnored>
+    <ColorIgnored></ColorIgnored>
+    <Delay>100</Delay>
+    <IsSequential>false</IsSequential>
+    <IsDrag>false</IsDrag>
+    <Description>league - select fast mode</Description>
+    <IsStartIcon>false</IsStartIcon>
+    <RunOnce>false</RunOnce>
+    <EndWholeScripts>false</EndWholeScripts>
+  </KScript>
+  <KScript No="53">
+    <No>53</No>
+    <MouseKey>Left</MouseKey>
+    <X>467</X>
+    <Y>386</Y>
+    <Color>ff899aa8</Color>
+    <X2>366</X2>
+    <Y2>278</Y2>
+    <Color2>ffffe596</Color2>
+    <XMoved>0</XMoved>
+    <YMoved>0</YMoved>
+    <ColorMoved></ColorMoved>
+    <XIgnored>0</XIgnored>
+    <YIgnored>0</YIgnored>
+    <ColorIgnored></ColorIgnored>
+    <Delay>100</Delay>
+    <IsSequential>false</IsSequential>
+    <IsDrag>false</IsDrag>
+    <Description>league - select Skip mode</Description>
+    <IsStartIcon>false</IsStartIcon>
+    <RunOnce>false</RunOnce>
+    <EndWholeScripts>false</EndWholeScripts>
+  </KScript>
+  <KScript No="54">
+    <No>54</No>
+    <MouseKey>Left</MouseKey>
+    <X>414</X>
+    <Y>283</Y>
+    <Color>fffefefe</Color>
+    <X2>429</X2>
+    <Y2>268</Y2>
+    <Color2>fffff2af</Color2>
+    <XMoved>0</XMoved>
+    <YMoved>0</YMoved>
+    <ColorMoved></ColorMoved>
+    <XIgnored>0</XIgnored>
+    <YIgnored>0</YIgnored>
+    <ColorIgnored></ColorIgnored>
+    <Delay>100</Delay>
+    <IsSequential>false</IsSequential>
+    <IsDrag>false</IsDrag>
+    <Description>league - Kick off</Description>
+    <IsStartIcon>false</IsStartIcon>
+    <RunOnce>false</RunOnce>
+    <EndWholeScripts>false</EndWholeScripts>
+  </KScript>
+  <KScript No="55">
+    <No>55</No>
+    <MouseKey>Left</MouseKey>
+    <X>92</X>
+    <Y>384</Y>
+    <Color>ffe26d17</Color>
+    <X2>431</X2>
+    <Y2>374</Y2>
+    <Color2>ffe68d1c</Color2>
+    <XMoved>0</XMoved>
+    <YMoved>0</YMoved>
+    <ColorMoved></ColorMoved>
+    <XIgnored>0</XIgnored>
+    <YIgnored>0</YIgnored>
+    <ColorIgnored></ColorIgnored>
+    <Delay>2000</Delay>
+    <IsSequential>false</IsSequential>
+    <IsDrag>false</IsDrag>
+    <Description>league - Click on Home screen</Description>
+    <IsStartIcon>false</IsStartIcon>
+    <RunOnce>false</RunOnce>
+    <EndWholeScripts>false</EndWholeScripts>
+  </KScript>
+  <KScript No="56">
+    <No>56</No>
+    <MouseKey>Left</MouseKey>
+    <X>430</X>
+    <Y>370</Y>
+    <Color>ffd69033</Color>
+    <X2>126</X2>
+    <Y2>345</Y2>
+    <Color2>fff6ed5b</Color2>
+    <XMoved>0</XMoved>
+    <YMoved>0</YMoved>
+    <ColorMoved></ColorMoved>
+    <XIgnored>0</XIgnored>
+    <YIgnored>0</YIgnored>
+    <ColorIgnored></ColorIgnored>
+    <Delay>100</Delay>
+    <IsSequential>false</IsSequential>
+    <IsDrag>false</IsDrag>
+    <Description>league - click on play match</Description>
+    <IsStartIcon>false</IsStartIcon>
+    <RunOnce>true</RunOnce>
+    <EndWholeScripts>false</EndWholeScripts>
+  </KScript>
+  <KScript No="57">
+    <No>57</No>
+    <MouseKey>Left</MouseKey>
+    <X>224</X>
+    <Y>306</Y>
+    <Color>ffd15d43</Color>
+    <X2>128</X2>
+    <Y2>167</Y2>
+    <Color2>fffd343f</Color2>
+    <XMoved>0</XMoved>
+    <YMoved>0</YMoved>
+    <ColorMoved></ColorMoved>
+    <XIgnored>0</XIgnored>
+    <YIgnored>0</YIgnored>
+    <ColorIgnored></ColorIgnored>
+    <Delay>100</Delay>
+    <IsSequential>false</IsSequential>
+    <IsDrag>false</IsDrag>
+    <Description>league - Cancel if out of energy</Description>
+    <IsStartIcon>false</IsStartIcon>
+    <RunOnce>false</RunOnce>
+    <EndWholeScripts>true</EndWholeScripts>
+  </KScript>
+  <KScript No="58">
+    <No>58</No>
+    <MouseKey>Left</MouseKey>
+    <X>388</X>
+    <Y>236</Y>
+    <Color>ffffffff</Color>
+    <X2>159</X2>
+    <Y2>117</Y2>
+    <Color2>ff2c87ea</Color2>
+    <XMoved>0</XMoved>
+    <YMoved>0</YMoved>
+    <ColorMoved></ColorMoved>
+    <XIgnored>0</XIgnored>
+    <YIgnored>0</YIgnored>
+    <ColorIgnored></ColorIgnored>
+    <Delay>100</Delay>
+    <IsSequential>false</IsSequential>
+    <IsDrag>false</IsDrag>
+    <Description>league - select weakness opponent</Description>
+    <IsStartIcon>false</IsStartIcon>
+    <RunOnce>false</RunOnce>
+    <EndWholeScripts>false</EndWholeScripts>
+  </KScript>
+  <KScript No="59">
+    <No>59</No>
+    <MouseKey>Left</MouseKey>
+    <X>219</X>
+    <Y>280</Y>
+    <Color>ff4fe0f1</Color>
+    <X2>369</X2>
+    <Y2>283</Y2>
+    <Color2>fffff7b4</Color2>
+    <XMoved>0</XMoved>
+    <YMoved>0</YMoved>
+    <ColorMoved></ColorMoved>
+    <XIgnored>0</XIgnored>
+    <YIgnored>0</YIgnored>
+    <ColorIgnored></ColorIgnored>
+    <Delay>100</Delay>
+    <IsSequential>false</IsSequential>
+    <IsDrag>false</IsDrag>
+    <Description>league - select increasing stamina</Description>
+    <IsStartIcon>false</IsStartIcon>
+    <RunOnce>false</RunOnce>
+    <EndWholeScripts>false</EndWholeScripts>
+  </KScript>
+  <KScript No="60">
+    <No>60</No>
+    <MouseKey>Left</MouseKey>
+    <X>67</X>
+    <Y>283</Y>
+    <Color>ffd461b8</Color>
+    <X2>367</X2>
+    <Y2>281</Y2>
+    <Color2>ffffe29f</Color2>
+    <XMoved>0</XMoved>
+    <YMoved>0</YMoved>
+    <ColorMoved></ColorMoved>
+    <XIgnored>0</XIgnored>
+    <YIgnored>0</YIgnored>
+    <ColorIgnored></ColorIgnored>
+    <Delay>100</Delay>
+    <IsSequential>false</IsSequential>
+    <IsDrag>false</IsDrag>
+    <Description>league - select increasing point</Description>
+    <IsStartIcon>false</IsStartIcon>
+    <RunOnce>false</RunOnce>
+    <EndWholeScripts>false</EndWholeScripts>
+  </KScript>
+  <KScript No="61">
+    <No>61</No>
+    <MouseKey>Left</MouseKey>
+    <X>266</X>
+    <Y>384</Y>
+    <Color>ff626877</Color>
+    <X2>368</X2>
+    <Y2>284</Y2>
+    <Color2>ffffe1a2</Color2>
+    <XMoved>0</XMoved>
+    <YMoved>0</YMoved>
+    <ColorMoved></ColorMoved>
+    <XIgnored>0</XIgnored>
+    <YIgnored>0</YIgnored>
+    <ColorIgnored></ColorIgnored>
+    <Delay>100</Delay>
+    <IsSequential>false</IsSequential>
+    <IsDrag>false</IsDrag>
+    <Description>league - select Auto mode</Description>
+    <IsStartIcon>false</IsStartIcon>
+    <RunOnce>false</RunOnce>
+    <EndWholeScripts>false</EndWholeScripts>
+  </KScript>
+  <KScript No="62">
+    <No>62</No>
+    <MouseKey>Left</MouseKey>
+    <X>332</X>
+    <Y>385</Y>
+    <Color>ffffdc2f</Color>
+    <X2>368</X2>
+    <Y2>279</Y2>
+    <Color2>ffffe193</Color2>
+    <XMoved>0</XMoved>
+    <YMoved>0</YMoved>
+    <ColorMoved></ColorMoved>
+    <XIgnored>0</XIgnored>
+    <YIgnored>0</YIgnored>
+    <ColorIgnored></ColorIgnored>
+    <Delay>100</Delay>
+    <IsSequential>false</IsSequential>
+    <IsDrag>false</IsDrag>
+    <Description>league - select fast mode</Description>
+    <IsStartIcon>false</IsStartIcon>
+    <RunOnce>false</RunOnce>
+    <EndWholeScripts>false</EndWholeScripts>
+  </KScript>
+  <KScript No="63">
+    <No>63</No>
+    <MouseKey>Left</MouseKey>
+    <X>467</X>
+    <Y>386</Y>
+    <Color>ff899aa8</Color>
+    <X2>366</X2>
+    <Y2>278</Y2>
+    <Color2>ffffe596</Color2>
+    <XMoved>0</XMoved>
+    <YMoved>0</YMoved>
+    <ColorMoved></ColorMoved>
+    <XIgnored>0</XIgnored>
+    <YIgnored>0</YIgnored>
+    <ColorIgnored></ColorIgnored>
+    <Delay>100</Delay>
+    <IsSequential>false</IsSequential>
+    <IsDrag>false</IsDrag>
+    <Description>league - select Skip mode</Description>
+    <IsStartIcon>false</IsStartIcon>
+    <RunOnce>false</RunOnce>
+    <EndWholeScripts>false</EndWholeScripts>
+  </KScript>
+  <KScript No="64">
+    <No>64</No>
+    <MouseKey>Left</MouseKey>
+    <X>414</X>
+    <Y>283</Y>
+    <Color>fffefefe</Color>
+    <X2>429</X2>
+    <Y2>268</Y2>
+    <Color2>fffff2af</Color2>
+    <XMoved>0</XMoved>
+    <YMoved>0</YMoved>
+    <ColorMoved></ColorMoved>
+    <XIgnored>0</XIgnored>
+    <YIgnored>0</YIgnored>
+    <ColorIgnored></ColorIgnored>
+    <Delay>100</Delay>
+    <IsSequential>false</IsSequential>
+    <IsDrag>false</IsDrag>
+    <Description>league - Kick off</Description>
+    <IsStartIcon>false</IsStartIcon>
+    <RunOnce>false</RunOnce>
+    <EndWholeScripts>false</EndWholeScripts>
+  </KScript>
+  <KScript No="65">
+    <No>65</No>
+    <MouseKey>Left</MouseKey>
+    <X>93</X>
+    <Y>385</Y>
+    <Color>ffdf6a15</Color>
+    <X2>432</X2>
+    <Y2>375</Y2>
+    <Color2>ffe68b1a</Color2>
+    <XMoved>0</XMoved>
+    <YMoved>0</YMoved>
+    <ColorMoved></ColorMoved>
+    <XIgnored>0</XIgnored>
+    <YIgnored>0</YIgnored>
+    <ColorIgnored></ColorIgnored>
+    <Delay>2000</Delay>
+    <IsSequential>false</IsSequential>
+    <IsDrag>false</IsDrag>
+    <Description>league - Click on Home screen</Description>
+    <IsStartIcon>false</IsStartIcon>
+    <RunOnce>false</RunOnce>
+    <EndWholeScripts>false</EndWholeScripts>
+  </KScript>
+  <KScript No="66">
+    <No>66</No>
+    <MouseKey>Left</MouseKey>
+    <X>451</X>
+    <Y>71</Y>
+    <Color>ff294678</Color>
+    <X2>466</X2>
+    <Y2>101</Y2>
+    <Color2>ff7cd3f0</Color2>
+    <XMoved>0</XMoved>
+    <YMoved>0</YMoved>
+    <ColorMoved></ColorMoved>
+    <XIgnored>0</XIgnored>
+    <YIgnored>0</YIgnored>
+    <ColorIgnored></ColorIgnored>
+    <Delay>100</Delay>
+    <IsSequential>false</IsSequential>
+    <IsDrag>false</IsDrag>
+    <Description>Cick on Events</Description>
+    <IsStartIcon>false</IsStartIcon>
+    <RunOnce>false</RunOnce>
+    <EndWholeScripts>false</EndWholeScripts>
+  </KScript>
+  <KScript No="67">
+    <No>67</No>
+    <MouseKey>Left</MouseKey>
+    <X>317</X>
+    <Y>264</Y>
+    <Color>ff537d44</Color>
+    <X2>487</X2>
+    <Y2>384</Y2>
+    <Color2>ff111111</Color2>
+    <XMoved>0</XMoved>
+    <YMoved>0</YMoved>
+    <ColorMoved></ColorMoved>
+    <XIgnored>0</XIgnored>
+    <YIgnored>0</YIgnored>
+    <ColorIgnored></ColorIgnored>
+    <Delay>100</Delay>
+    <IsSequential>false</IsSequential>
+    <IsDrag>false</IsDrag>
+    <Description>Retry connection</Description>
+    <IsStartIcon>false</IsStartIcon>
+    <RunOnce>false</RunOnce>
+    <EndWholeScripts>false</EndWholeScripts>
   </KScript>
 </KScrips>

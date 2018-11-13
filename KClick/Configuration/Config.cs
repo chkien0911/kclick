@@ -6,8 +6,10 @@ namespace KClick.Configuration
 {
     public class Config
     {
+        public bool EndWholeScripts { get; set; }
         public bool RunOnce { get; set; }
         public bool IsDisabledTemp { get; set; }
+        public bool IsDisabledWholeScripts { get; set; }
         public bool IsStartIcon { get; set; }
         public int No { get; set; }
         public string WindowClass { get; set; }

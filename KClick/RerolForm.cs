@@ -132,6 +132,8 @@ namespace KClick
 
                 IsStartIcon = config.IsStartIcon,
                 RunOnce = config.RunOnce,
+
+                EndWholeScripts = config.EndWholeScripts,
             });
         }
 
@@ -181,6 +183,8 @@ namespace KClick
                     item.IsStartIcon = config.IsStartIcon;
                     item.RunOnce = config.RunOnce;
 
+                    item.EndWholeScripts = config.EndWholeScripts;
+
                     break;
                 }
             }
@@ -229,7 +233,7 @@ namespace KClick
                         }
                         else
                         {
-                            var isOk = await MouseOperation.ClickSpeedModeAsync(config.WindowHandle, config);
+                            var isOk = await MouseOperation.ClickSpeedModeAsync(GlobalConfig.WindowHandle, config);
                             if (!isOk)
                             {
                                 MessageBox.Show("Position not found!");
@@ -377,7 +381,10 @@ namespace KClick
                         new XElement("Delay", config.Delay),
                             new XElement("IsSequential", config.IsSequential),
                             new XElement("IsDrag", config.IsDrag),
-                            new XElement("Description", config.Description)
+                            new XElement("Description", config.Description),
+                            new XElement("IsStartIcon", config.IsStartIcon),
+                            new XElement("RunOnce", config.RunOnce),
+                            new XElement("EndWholeScripts", config.EndWholeScripts)
                         );
 
                         script.SetAttributeValue("No", config.No);
@@ -449,6 +456,9 @@ namespace KClick
                                 Delay = int.Parse(item.Element("Delay").Value),
                                 IsSequential = bool.Parse(item.Element("IsSequential").Value),
                                 IsDrag = bool.Parse(item.Element("IsDrag").Value),
+                                IsStartIcon = item.Element("IsStartIcon") == null ? false : bool.Parse(item.Element("IsStartIcon").Value),
+                                RunOnce = item.Element("RunOnce") == null ? false : bool.Parse(item.Element("RunOnce").Value),
+                                EndWholeScripts = item.Element("EndWholeScripts") == null ? false : bool.Parse(item.Element("EndWholeScripts").Value),
                             });
 
                             i++;
@@ -606,6 +616,12 @@ namespace KClick
                 while (isRun)
                 {
                     await RunAsync();
+
+                    if (Configs.Any(s => s.IsDisabledWholeScripts))
+                    {
+                        isRun = false;
+                        MessageBox.Show("The End!");
+                    }
                 }
 
             }
@@ -621,7 +637,12 @@ namespace KClick
 
             foreach (var config in Configs)
             {
-                if (config.IsDisabledTemp == false)
+                if (config.IsDisabledWholeScripts)
+                {
+                    tasks.Clear();
+                    return;
+                }
+                else if (config.IsDisabledTemp == false)
                 {
                     tasks.Add(RunAsync(config));
                 }
@@ -644,7 +665,7 @@ namespace KClick
             }
 
             // Make Calculator the foreground application and send it 
-            MouseOperation.SetForegroundWindow(config.WindowHandle);
+            MouseOperation.SetForegroundWindow(GlobalConfig.WindowHandle);
 
             //if (LoadingConfigs != null && LoadingConfigs.Count > 0)
             //{
@@ -661,11 +682,11 @@ namespace KClick
 
             if (config.IsDrag)
             {
-                await MouseOperation.ClickAndDragAsync(config.WindowHandle, new Point(config.XPos, config.YPos), config.ColorName, new Point(config.XPosMoved, config.YPosMoved), new Point(config.XPosIgnored, config.XPosIgnored), config.ColorMovedName);
+                await MouseOperation.ClickAndDragAsync(GlobalConfig.WindowHandle, new Point(config.XPos, config.YPos), config.ColorName, new Point(config.XPosMoved, config.YPosMoved), new Point(config.XPosIgnored, config.XPosIgnored), config.ColorMovedName);
             }
             else
             {
-                var isOk = await MouseOperation.ClickSpeedModeAsync(config.WindowHandle, config);
+                var isOk = await MouseOperation.ClickSpeedModeAsync(GlobalConfig.WindowHandle, config);
 
                 if (isOk)
                 {
@@ -673,6 +694,10 @@ namespace KClick
                     if (config.RunOnce)
                     {
                         config.IsDisabledTemp = true;
+                    }
+                    if (config.EndWholeScripts)
+                    {
+                        config.IsDisabledWholeScripts = true;
                     }
                 }
             }

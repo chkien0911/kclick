@@ -201,6 +201,8 @@ namespace KClick
 
                     IsStartIcon = chkIsStartIcon.Checked,
                     RunOnce = chkRunOnce.Checked,
+
+                    EndWholeScripts = chkEndWholeScripts.Checked,
                 });
             }
             else
@@ -232,6 +234,8 @@ namespace KClick
 
                     IsStartIcon = chkIsStartIcon.Checked,
                     RunOnce = chkRunOnce.Checked,
+
+                    EndWholeScripts = chkEndWholeScripts.Checked,
                 });
             }
 
@@ -262,6 +266,8 @@ namespace KClick
 
             chkIsStartIcon.Checked = Config.IsStartIcon;
             chkRunOnce.Checked = Config.RunOnce;
+
+            chkEndWholeScripts.Checked = Config.EndWholeScripts;
         }
     }
 }

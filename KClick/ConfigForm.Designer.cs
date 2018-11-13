@@ -72,9 +72,10 @@
             this.txtDelay = new System.Windows.Forms.TextBox();
             this.lblDelay = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btnSave = new System.Windows.Forms.Button();
-            this.btnCancel = new System.Windows.Forms.Button();
             this.btnReload = new System.Windows.Forms.Button();
+            this.btnCancel = new System.Windows.Forms.Button();
+            this.btnSave = new System.Windows.Forms.Button();
+            this.chkEndWholeScripts = new System.Windows.Forms.CheckBox();
             this.panel3.SuspendLayout();
             this.grbIgnore.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -332,6 +333,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.chkEndWholeScripts);
             this.groupBox1.Controls.Add(this.chkRunOnce);
             this.groupBox1.Controls.Add(this.btnClearMoved);
             this.groupBox1.Controls.Add(this.chkIsStartIcon);
@@ -402,7 +404,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(6, 58);
+            this.label6.Location = new System.Drawing.Point(9, 57);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(36, 13);
             this.label6.TabIndex = 60;
@@ -419,7 +421,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(6, 35);
+            this.label7.Location = new System.Drawing.Point(9, 34);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(36, 13);
             this.label7.TabIndex = 59;
@@ -436,7 +438,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(7, 82);
+            this.label8.Location = new System.Drawing.Point(10, 81);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(53, 13);
             this.label8.TabIndex = 58;
@@ -445,7 +447,7 @@
             // chkDrag
             // 
             this.chkDrag.AutoSize = true;
-            this.chkDrag.Location = new System.Drawing.Point(2, 17);
+            this.chkDrag.Location = new System.Drawing.Point(12, 17);
             this.chkDrag.Name = "chkDrag";
             this.chkDrag.Size = new System.Drawing.Size(49, 17);
             this.chkDrag.TabIndex = 53;
@@ -498,14 +500,14 @@
             this.panel1.Size = new System.Drawing.Size(440, 45);
             this.panel1.TabIndex = 43;
             // 
-            // btnSave
+            // btnReload
             // 
-            this.btnSave.Location = new System.Drawing.Point(280, 3);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(75, 32);
-            this.btnSave.TabIndex = 0;
-            this.btnSave.Text = "Save";
-            this.btnSave.UseVisualStyleBackColor = true;
+            this.btnReload.Location = new System.Drawing.Point(7, 3);
+            this.btnReload.Name = "btnReload";
+            this.btnReload.Size = new System.Drawing.Size(75, 32);
+            this.btnReload.TabIndex = 2;
+            this.btnReload.Text = "Reload";
+            this.btnReload.UseVisualStyleBackColor = true;
             // 
             // btnCancel
             // 
@@ -517,14 +519,24 @@
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
             // 
-            // btnReload
+            // btnSave
             // 
-            this.btnReload.Location = new System.Drawing.Point(7, 3);
-            this.btnReload.Name = "btnReload";
-            this.btnReload.Size = new System.Drawing.Size(75, 32);
-            this.btnReload.TabIndex = 2;
-            this.btnReload.Text = "Reload";
-            this.btnReload.UseVisualStyleBackColor = true;
+            this.btnSave.Location = new System.Drawing.Point(280, 3);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(75, 32);
+            this.btnSave.TabIndex = 0;
+            this.btnSave.Text = "Save";
+            this.btnSave.UseVisualStyleBackColor = true;
+            // 
+            // chkEndWholeScripts
+            // 
+            this.chkEndWholeScripts.AutoSize = true;
+            this.chkEndWholeScripts.Location = new System.Drawing.Point(231, 98);
+            this.chkEndWholeScripts.Name = "chkEndWholeScripts";
+            this.chkEndWholeScripts.Size = new System.Drawing.Size(99, 17);
+            this.chkEndWholeScripts.TabIndex = 62;
+            this.chkEndWholeScripts.Text = "End if matching";
+            this.chkEndWholeScripts.UseVisualStyleBackColor = true;
             // 
             // ConfigForm
             // 
@@ -605,5 +617,6 @@
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Button btnReload;
+        private System.Windows.Forms.CheckBox chkEndWholeScripts;
     }
 }
