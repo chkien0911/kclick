@@ -31,6 +31,9 @@
             this.components = new System.ComponentModel.Container();
             this.btnAdd = new System.Windows.Forms.Button();
             this.pnlControl = new System.Windows.Forms.Panel();
+            this.chkRunOnce = new System.Windows.Forms.CheckBox();
+            this.btnClearMoved = new System.Windows.Forms.Button();
+            this.chkIsStartIcon = new System.Windows.Forms.CheckBox();
             this.panel5 = new System.Windows.Forms.Panel();
             this.txtProgress = new System.Windows.Forms.RichTextBox();
             this.btnGetPositionMoved = new System.Windows.Forms.Button();
@@ -45,6 +48,8 @@
             this.rdoSequencial = new System.Windows.Forms.RadioButton();
             this.rdoSpeed = new System.Windows.Forms.RadioButton();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.btnClear2 = new System.Windows.Forms.Button();
+            this.btnClear1 = new System.Windows.Forms.Button();
             this.btnGetPosition = new System.Windows.Forms.Button();
             this.lblXPos = new System.Windows.Forms.Label();
             this.txtXPos = new System.Windows.Forms.TextBox();
@@ -62,6 +67,7 @@
             this.txtDescription = new System.Windows.Forms.RichTextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btnClearAll = new System.Windows.Forms.Button();
             this.btnUpdateScript = new System.Windows.Forms.Button();
             this.btnClearScripts = new System.Windows.Forms.Button();
             this.btnRun = new System.Windows.Forms.Button();
@@ -69,6 +75,7 @@
             this.btnExport = new System.Windows.Forms.Button();
             this.btnImport = new System.Windows.Forms.Button();
             this.grbIgnore = new System.Windows.Forms.GroupBox();
+            this.btnClearIgnored = new System.Windows.Forms.Button();
             this.txtNo = new System.Windows.Forms.TextBox();
             this.btnGetPositionIgnored1 = new System.Windows.Forms.Button();
             this.txtYIgnored1 = new System.Windows.Forms.TextBox();
@@ -99,15 +106,8 @@
             this.colDescription = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.btnDelete = new System.Windows.Forms.ToolStripMenuItem();
-            this.chkIsStartIcon = new System.Windows.Forms.CheckBox();
             this.btnGetMousePosition = new System.Windows.Forms.ToolStripMenuItem();
             this.btnTryClick = new System.Windows.Forms.ToolStripMenuItem();
-            this.btnClear1 = new System.Windows.Forms.Button();
-            this.btnClear2 = new System.Windows.Forms.Button();
-            this.btnClearIgnored = new System.Windows.Forms.Button();
-            this.btnClearMoved = new System.Windows.Forms.Button();
-            this.btnClearAll = new System.Windows.Forms.Button();
-            this.chkRunOnce = new System.Windows.Forms.CheckBox();
             this.pnlControl.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -163,6 +163,35 @@
             this.pnlControl.Name = "pnlControl";
             this.pnlControl.Size = new System.Drawing.Size(444, 437);
             this.pnlControl.TabIndex = 1;
+            // 
+            // chkRunOnce
+            // 
+            this.chkRunOnce.AutoSize = true;
+            this.chkRunOnce.Location = new System.Drawing.Point(333, 357);
+            this.chkRunOnce.Name = "chkRunOnce";
+            this.chkRunOnce.Size = new System.Drawing.Size(73, 17);
+            this.chkRunOnce.TabIndex = 48;
+            this.chkRunOnce.Text = "Run once";
+            this.chkRunOnce.UseVisualStyleBackColor = true;
+            // 
+            // btnClearMoved
+            // 
+            this.btnClearMoved.Location = new System.Drawing.Point(157, 357);
+            this.btnClearMoved.Name = "btnClearMoved";
+            this.btnClearMoved.Size = new System.Drawing.Size(54, 21);
+            this.btnClearMoved.TabIndex = 34;
+            this.btnClearMoved.Text = "Clear";
+            this.btnClearMoved.UseVisualStyleBackColor = true;
+            // 
+            // chkIsStartIcon
+            // 
+            this.chkIsStartIcon.AutoSize = true;
+            this.chkIsStartIcon.Location = new System.Drawing.Point(246, 357);
+            this.chkIsStartIcon.Name = "chkIsStartIcon";
+            this.chkIsStartIcon.Size = new System.Drawing.Size(83, 17);
+            this.chkIsStartIcon.TabIndex = 32;
+            this.chkIsStartIcon.Text = "Is Start Icon";
+            this.chkIsStartIcon.UseVisualStyleBackColor = true;
             // 
             // panel5
             // 
@@ -305,6 +334,24 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(423, 90);
             this.panel3.TabIndex = 37;
+            // 
+            // btnClear2
+            // 
+            this.btnClear2.Location = new System.Drawing.Point(362, 59);
+            this.btnClear2.Name = "btnClear2";
+            this.btnClear2.Size = new System.Drawing.Size(54, 21);
+            this.btnClear2.TabIndex = 33;
+            this.btnClear2.Text = "Clear";
+            this.btnClear2.UseVisualStyleBackColor = true;
+            // 
+            // btnClear1
+            // 
+            this.btnClear1.Location = new System.Drawing.Point(144, 60);
+            this.btnClear1.Name = "btnClear1";
+            this.btnClear1.Size = new System.Drawing.Size(54, 21);
+            this.btnClear1.TabIndex = 32;
+            this.btnClear1.Text = "Clear";
+            this.btnClear1.UseVisualStyleBackColor = true;
             // 
             // btnGetPosition
             // 
@@ -452,6 +499,15 @@
             this.panel2.Size = new System.Drawing.Size(426, 41);
             this.panel2.TabIndex = 34;
             // 
+            // btnClearAll
+            // 
+            this.btnClearAll.Location = new System.Drawing.Point(112, 4);
+            this.btnClearAll.Name = "btnClearAll";
+            this.btnClearAll.Size = new System.Drawing.Size(40, 34);
+            this.btnClearAll.TabIndex = 31;
+            this.btnClearAll.Text = "Clear";
+            this.btnClearAll.UseVisualStyleBackColor = true;
+            // 
             // btnUpdateScript
             // 
             this.btnUpdateScript.Location = new System.Drawing.Point(57, 4);
@@ -472,7 +528,7 @@
             // 
             // btnRun
             // 
-            this.btnRun.Location = new System.Drawing.Point(160, 4);
+            this.btnRun.Location = new System.Drawing.Point(159, 4);
             this.btnRun.Name = "btnRun";
             this.btnRun.Size = new System.Drawing.Size(51, 34);
             this.btnRun.TabIndex = 1;
@@ -483,7 +539,7 @@
             // 
             this.btnStop.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnStop.Enabled = false;
-            this.btnStop.Location = new System.Drawing.Point(217, 3);
+            this.btnStop.Location = new System.Drawing.Point(216, 4);
             this.btnStop.Name = "btnStop";
             this.btnStop.Size = new System.Drawing.Size(55, 34);
             this.btnStop.TabIndex = 2;
@@ -526,6 +582,15 @@
             this.grbIgnore.TabIndex = 33;
             this.grbIgnore.TabStop = false;
             this.grbIgnore.Text = "Successful Color (If matching this click point, mouse clicking will be ignored)";
+            // 
+            // btnClearIgnored
+            // 
+            this.btnClearIgnored.Location = new System.Drawing.Point(142, 66);
+            this.btnClearIgnored.Name = "btnClearIgnored";
+            this.btnClearIgnored.Size = new System.Drawing.Size(54, 21);
+            this.btnClearIgnored.TabIndex = 33;
+            this.btnClearIgnored.Text = "Clear";
+            this.btnClearIgnored.UseVisualStyleBackColor = true;
             // 
             // txtNo
             // 
@@ -781,16 +846,6 @@
             this.btnDelete.Size = new System.Drawing.Size(138, 22);
             this.btnDelete.Text = "Delete";
             // 
-            // chkIsStartIcon
-            // 
-            this.chkIsStartIcon.AutoSize = true;
-            this.chkIsStartIcon.Location = new System.Drawing.Point(246, 357);
-            this.chkIsStartIcon.Name = "chkIsStartIcon";
-            this.chkIsStartIcon.Size = new System.Drawing.Size(83, 17);
-            this.chkIsStartIcon.TabIndex = 32;
-            this.chkIsStartIcon.Text = "Is Start Icon";
-            this.chkIsStartIcon.UseVisualStyleBackColor = true;
-            // 
             // btnGetMousePosition
             // 
             this.btnGetMousePosition.Name = "btnGetMousePosition";
@@ -802,61 +857,6 @@
             this.btnTryClick.Name = "btnTryClick";
             this.btnTryClick.Size = new System.Drawing.Size(138, 22);
             this.btnTryClick.Text = "Try Click";
-            // 
-            // btnClear1
-            // 
-            this.btnClear1.Location = new System.Drawing.Point(144, 60);
-            this.btnClear1.Name = "btnClear1";
-            this.btnClear1.Size = new System.Drawing.Size(54, 21);
-            this.btnClear1.TabIndex = 32;
-            this.btnClear1.Text = "Clear";
-            this.btnClear1.UseVisualStyleBackColor = true;
-            // 
-            // btnClear2
-            // 
-            this.btnClear2.Location = new System.Drawing.Point(362, 59);
-            this.btnClear2.Name = "btnClear2";
-            this.btnClear2.Size = new System.Drawing.Size(54, 21);
-            this.btnClear2.TabIndex = 33;
-            this.btnClear2.Text = "Clear";
-            this.btnClear2.UseVisualStyleBackColor = true;
-            // 
-            // btnClearIgnored
-            // 
-            this.btnClearIgnored.Location = new System.Drawing.Point(142, 66);
-            this.btnClearIgnored.Name = "btnClearIgnored";
-            this.btnClearIgnored.Size = new System.Drawing.Size(54, 21);
-            this.btnClearIgnored.TabIndex = 33;
-            this.btnClearIgnored.Text = "Clear";
-            this.btnClearIgnored.UseVisualStyleBackColor = true;
-            // 
-            // btnClearMoved
-            // 
-            this.btnClearMoved.Location = new System.Drawing.Point(157, 357);
-            this.btnClearMoved.Name = "btnClearMoved";
-            this.btnClearMoved.Size = new System.Drawing.Size(54, 21);
-            this.btnClearMoved.TabIndex = 34;
-            this.btnClearMoved.Text = "Clear";
-            this.btnClearMoved.UseVisualStyleBackColor = true;
-            // 
-            // btnClearAll
-            // 
-            this.btnClearAll.Location = new System.Drawing.Point(112, 4);
-            this.btnClearAll.Name = "btnClearAll";
-            this.btnClearAll.Size = new System.Drawing.Size(40, 34);
-            this.btnClearAll.TabIndex = 31;
-            this.btnClearAll.Text = "Clear";
-            this.btnClearAll.UseVisualStyleBackColor = true;
-            // 
-            // chkRunOnce
-            // 
-            this.chkRunOnce.AutoSize = true;
-            this.chkRunOnce.Location = new System.Drawing.Point(333, 357);
-            this.chkRunOnce.Name = "chkRunOnce";
-            this.chkRunOnce.Size = new System.Drawing.Size(73, 17);
-            this.chkRunOnce.TabIndex = 48;
-            this.chkRunOnce.Text = "Run once";
-            this.chkRunOnce.UseVisualStyleBackColor = true;
             // 
             // MainForm
             // 

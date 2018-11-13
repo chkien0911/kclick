@@ -44,9 +44,191 @@ namespace KClick
             btnExport.Click += BtnExport_Click;
 
             btnDelete.Click += BtnDelete_Click;
+            btnNewScript.Click += BtnNewScript_Click;
+            btnEditScript.Click += BtnEditScript_Click;
+
             btnClearScripts.Click += BtnClearScripts_Click;
 
+            btnTryClick.Click += async (sender, e) => await btnTryClick_ClickAsync(sender, e);
+            btnGetMousePosition.Click += BtnGetMousePosition_Click;
+
+
+            lsvScripts.DoubleClick += LsvScripts_DoubleClick;
             //btnFixColor.Click += async (sender, e) => await BtnFixColor_ClickAsync(sender, e);//BtnFixColor_Click;
+        }
+
+        private void BtnEditScript_Click(object sender, EventArgs e)
+        {
+            if (lsvScripts.SelectedItems.Count > 0)
+            {
+                var no = int.Parse(lsvScripts.SelectedItems[0].SubItems[0].Text);
+                if (no > 0)
+                {
+                    var config = Configs.FirstOrDefault(s => s.No == no);
+                    if (config != null)
+                    {
+                        using (var form = new ConfigForm())
+                        {
+                            form.RerolForm = this;
+                            form.Config = config;
+                            form.GlobalConfig = GlobalConfig;
+                            form.ShowDialog();
+                        }
+                    }
+                }
+            }
+        }
+
+        private void BtnNewScript_Click(object sender, EventArgs e)
+        {
+            using (var form = new ConfigForm())
+            {
+                form.RerolForm = this;
+                form.GlobalConfig = GlobalConfig;
+                form.ShowDialog();
+            }
+        }
+
+        public void AddScript(Configuration.Config config)
+        {
+            var no = lsvScripts.Items.Count + 1;
+            ListViewItem item = new ListViewItem((no).ToString());
+            item.SubItems.Add(new ListViewItem.ListViewSubItem(item, $"X1:{config.XPos}, Y1:{config.YPos}, Color1:{config.ColorName} | X2:{config.X2Pos}, Y2:{config.Y2Pos}, Color2:{config.Color2Name} | XMoved:{config.XPosMoved}, YMoved:{config.YPosMoved}, ColorMoved:{config.ColorMovedName}"));
+            item.SubItems.Add(new ListViewItem.ListViewSubItem(item, config.Description));
+            lsvScripts.Items.Add(item);
+
+            Configs.Add(new Configuration.Config
+            {
+                No = no,
+
+                XPos = config.XPos,
+                YPos = config.YPos,
+                ColorName = config.ColorName,
+
+                X2Pos = config.X2Pos,
+                Y2Pos = config.Y2Pos,
+                Color2Name = config.Color2Name,
+
+                XPosIgnored = config.XPosIgnored,
+                YPosIgnored = config.YPosIgnored,
+                ColorIgnoredName = config.ColorIgnoredName,
+
+                XPosMoved = config.XPosMoved,
+                YPosMoved = config.YPosMoved,
+                ColorMovedName = config.ColorMovedName,
+
+                Description = config.Description,
+                Delay = config.Delay,
+                IsDrag = config.IsDrag,
+
+                IsStartIcon = config.IsStartIcon,
+                RunOnce = config.RunOnce,
+            });
+        }
+
+        public void UpdateScript(Configuration.Config config)
+        {
+            if (config.No <= 0)
+            {
+                return;
+            }
+
+            foreach (ListViewItem eachItem in lsvScripts.Items)
+            {
+                if (eachItem.SubItems[0].Text == config.No.ToString())
+                {
+                    eachItem.SubItems[1].Text = $"X1:{config.XPos}, Y1:{config.YPos}, Color1:{config.ColorName} | X2:{config.X2Pos}, Y2:{config.Y2Pos}, Color2:{config.Color2Name} | XMoved:{config.XPosMoved}, YMoved:{config.YPosMoved}, ColorMoved:{config.ColorMovedName}";
+                    eachItem.SubItems[2].Text = config.Description;
+
+                    break;
+                }
+            }
+
+            foreach (var item in Configs)
+            {
+                if (item.No == config.No)
+                {
+                    item.XPos = config.XPos;
+                    item.YPos = config.YPos;
+                    item.ColorName = config.ColorName;
+
+                    item.XPosIgnored = config.XPosIgnored;
+                    item.YPosIgnored = config.YPosIgnored;
+                    item.ColorIgnoredName = config.ColorIgnoredName;
+
+                    item.X2Pos = config.X2Pos;
+                    item.Y2Pos = config.Y2Pos;
+                    item.Color2Name = config.Color2Name;
+
+                    item.IsDrag = config.IsDrag;
+                    item.XPosMoved = config.XPosMoved;
+                    item.YPosMoved = config.YPosMoved;
+                    item.ColorMovedName = config.ColorMovedName;
+
+                    item.IsSequential = config.IsSequential;
+                    item.Description = config.Description;
+                    item.Delay = config.Delay;
+
+                    item.IsStartIcon = config.IsStartIcon;
+                    item.RunOnce = config.RunOnce;
+
+                    break;
+                }
+            }
+        }
+
+        private void LsvScripts_DoubleClick(object sender, EventArgs e)
+        {
+            btnEditScript.PerformClick();
+        }
+
+        public sealed override Size MaximumSize
+        {
+            get => base.MaximumSize;
+            set => base.MaximumSize = value;
+        }
+
+        private void BtnGetMousePosition_Click(object sender, EventArgs e)
+        {
+            if (lsvScripts.SelectedItems.Count > 0)
+            {
+                var no = int.Parse(lsvScripts.SelectedItems[0].SubItems[0].Text);
+                if (no > 0)
+                {
+                    var config = Configs.FirstOrDefault(s => s.No == no);
+                    if (config != null)
+                    {
+                        Cursor.Position = new Point(config.XPos, config.YPos);
+                    }
+                }
+            }
+        }
+
+        private async Task btnTryClick_ClickAsync(object sender, EventArgs e)
+        {
+            if (lsvScripts.SelectedItems.Count > 0)
+            {
+                var no = int.Parse(lsvScripts.SelectedItems[0].SubItems[0].Text);
+                if (no > 0)
+                {
+                    var config = Configs.FirstOrDefault(s => s.No == no);
+                    if (config != null)
+                    {
+                        if (config.IsDisabledTemp)
+                        {
+                            MessageBox.Show("Script was disabled temporarily!");
+                        }
+                        else
+                        {
+                            var isOk = await MouseOperation.ClickSpeedModeAsync(config.WindowHandle, config);
+                            if (!isOk)
+                            {
+                                MessageBox.Show("Position not found!");
+                            }
+                        }
+                    }
+                }
+            }
         }
 
         private void BtnClearScripts_Click(object sender, EventArgs e)
@@ -430,7 +612,10 @@ namespace KClick
 
             foreach (var config in Configs)
             {
-                tasks.Add(RunAsync(config));
+                if (config.IsDisabledTemp == false)
+                {
+                    tasks.Add(RunAsync(config));
+                }
                 //await RunAsync(config);
             }
 
@@ -475,8 +660,11 @@ namespace KClick
 
                 if (isOk)
                 {
-                    // do something else
-
+                    // Do something else
+                    if (config.RunOnce)
+                    {
+                        config.IsDisabledTemp = true;
+                    }
                 }
                 //await MouseOperation.SendMessageSpeedModeAsync(config.WindowHandle,
                 //    (int)MouseOperation.MouseEventFlags.LeftDown, 1, config);

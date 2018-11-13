@@ -48,6 +48,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ConfigForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ConfigForm.Designer.cs">
+      <DependentUpon>ConfigForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Configuration\Config.cs" />
     <Compile Include="Configuration\GlobalConfig.cs" />
     <Compile Include="Configuration\MouseKey.cs" />
@@ -72,6 +78,9 @@
     <Compile Include="Utilities\NativeMethods.cs" />
     <Compile Include="Utilities\Win32.cs" />
     <Compile Include="Utilities\WindowHandleInfo.cs" />
+    <EmbeddedResource Include="ConfigForm.resx">
+      <DependentUpon>ConfigForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>

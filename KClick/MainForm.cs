@@ -107,6 +107,10 @@ namespace KClick
             btnGetPositionIgnored1.MouseDown += BtnGetPosition_MouseDown;
             btnGetPositionIgnored1.MouseHover += BtnGetPosition_MouseHover;
 
+            btnGetPositionMoved.MouseUp += BtnGetPositionMoved_MouseUp;
+            btnGetPositionMoved.MouseDown += BtnGetPosition_MouseDown;
+            btnGetPositionMoved.MouseHover += BtnGetPosition_MouseHover;
+
             btnRun.Click += async (sender, e) => await BtnRun_ClickAsync(sender, e);
             btnStop.Click += async (sender, e) => await BtnStop_ClickAsync(sender, e);
 
@@ -133,10 +137,6 @@ namespace KClick
             btnUpdateScript.Click += BtnUpdateScript_Click;
 
             chkDrag.CheckedChanged += ChkDrag_CheckedChanged;
-
-            btnGetPositionMoved.MouseUp += BtnGetPositionMoved_MouseUp;
-            btnGetPositionMoved.MouseDown += BtnGetPosition_MouseDown;
-            btnGetPositionMoved.MouseHover += BtnGetPosition_MouseHover;
 
             txtXPos.KeyUp += async (sender, e) => await TxtXPos_KeyUpAsync(sender, e);
             txtYPos.KeyUp += async (sender, e) => await TxtYPos_KeyUpAsync(sender, e);
@@ -978,9 +978,6 @@ namespace KClick
                     YPosMoved = string.IsNullOrWhiteSpace(txtYMoved.Text) ? 0 : int.Parse(txtYMoved.Text),
                     ColorMovedName = txtColorMoved.Text,
 
-                    WindowClass = txtClass.Text,
-                    WindowName = txtName.Text,
-                    WindowHandle = wHandle,
                     IsSequential = rdoSequencial.Checked,
                     Description = txtDescription.Text,
                     Delay = string.IsNullOrWhiteSpace(txtDelay.Text) ? 200 : int.Parse(txtDelay.Text),

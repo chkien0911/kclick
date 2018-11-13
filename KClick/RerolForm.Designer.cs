@@ -46,6 +46,11 @@
             this.colDescription = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.btnDelete = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnGetMousePosition = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnTryClick = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnNewScript = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnEditScript = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -195,15 +200,49 @@
             // contextMenuStrip1
             // 
             this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.btnDelete});
+            this.btnNewScript,
+            this.btnEditScript,
+            this.btnDelete,
+            this.toolStripSeparator2,
+            this.btnGetMousePosition,
+            this.btnTryClick});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(108, 26);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(181, 142);
             // 
             // btnDelete
             // 
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(107, 22);
+            this.btnDelete.Size = new System.Drawing.Size(180, 22);
             this.btnDelete.Text = "Delete";
+            // 
+            // btnGetMousePosition
+            // 
+            this.btnGetMousePosition.Name = "btnGetMousePosition";
+            this.btnGetMousePosition.Size = new System.Drawing.Size(180, 22);
+            this.btnGetMousePosition.Text = "Get Mouse Position";
+            // 
+            // btnTryClick
+            // 
+            this.btnTryClick.Name = "btnTryClick";
+            this.btnTryClick.Size = new System.Drawing.Size(180, 22);
+            this.btnTryClick.Text = "Try Click";
+            // 
+            // btnNewScript
+            // 
+            this.btnNewScript.Name = "btnNewScript";
+            this.btnNewScript.Size = new System.Drawing.Size(180, 22);
+            this.btnNewScript.Text = "New";
+            // 
+            // btnEditScript
+            // 
+            this.btnEditScript.Name = "btnEditScript";
+            this.btnEditScript.Size = new System.Drawing.Size(180, 22);
+            this.btnEditScript.Text = "Edit";
+            // 
+            // toolStripSeparator2
+            // 
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(177, 6);
             // 
             // RerolForm
             // 
@@ -246,5 +285,10 @@
         private System.Windows.Forms.Button btnExport;
         private System.Windows.Forms.Button btnFixColor;
         private System.Windows.Forms.Button btnClearScripts;
+        private System.Windows.Forms.ToolStripMenuItem btnGetMousePosition;
+        private System.Windows.Forms.ToolStripMenuItem btnTryClick;
+        private System.Windows.Forms.ToolStripMenuItem btnNewScript;
+        private System.Windows.Forms.ToolStripMenuItem btnEditScript;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
     }
 }

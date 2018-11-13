@@ -102,6 +102,13 @@ namespace KClick.Utilities
         [return: MarshalAs(UnmanagedType.Bool)]
         public static extern bool GetCursorPos(out MousePoint lpMousePoint);
 
+        /// <summary>
+        /// Retrieves the cursor's position, in screen coordinates.
+        /// </summary>
+        /// <see>See MSDN documentation for further information.</see>
+        [DllImport("user32.dll")]
+        public static extern bool GetCursorPos(out POINT lpPoint);
+
         [DllImport("user32.dll", CharSet = CharSet.Auto, CallingConvention = CallingConvention.StdCall)]
         public static extern void mouse_event(uint dwFlags, int dx, int dy, uint cButtons, int dwExtraInfo);
 
@@ -309,7 +316,6 @@ namespace KClick.Utilities
 
                 if (color2 == null || (color2.Value.Name == config.Color2Name))
                 {
-
                     RECT rct = new RECT();
 
                     if (!GetWindowRect(wndHandle, ref rct))
@@ -322,7 +328,6 @@ namespace KClick.Utilities
 
                     SendMessage(wndHandle, msg, (IntPtr)wParam, (IntPtr)CreateLParam(newx, newy));
                    
-                    
                     return true;
                 }
             }
@@ -534,26 +539,12 @@ namespace KClick.Utilities
             SetCursorPos(point.X, point.Y);
         }
 
-        public static MousePoint GetCursorPosition()
+        public static Point GetCursorPosition()
         {
-            MousePoint currentMousePoint;
-            var gotPoint = GetCursorPos(out currentMousePoint);
-            if (!gotPoint) { currentMousePoint = new MousePoint(0, 0); }
-            return currentMousePoint;
-        }
+            POINT lpPoint;
+            GetCursorPos(out lpPoint);
 
-        public static void MouseEvent(MouseEventFlags value)
-        {
-            MousePoint position = GetCursorPosition();
-
-
-            mouse_event
-                ((uint)value,
-                 position.X,
-                 position.Y,
-                 0,
-                 0)
-                ;
+            return lpPoint;
         }
 
         public static void MouseEvent(MouseEventFlags value, int xPos, int yPost)
