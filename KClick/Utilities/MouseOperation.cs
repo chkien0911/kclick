@@ -494,11 +494,11 @@ namespace KClick.Utilities
         {
             var isOk = false;
 
-            isOk = SendMessageSpeedMode(config.WindowHandle,
+            isOk = SendMessageSpeedMode(windowHandle,
                 (int)MouseEventFlags.LeftDown, 1, config);
 
             Debug.WriteLine($"- Script No : {config.No}. Left down");
-            isOk = SendMessageSpeedMode(config.WindowHandle,
+            isOk = SendMessageSpeedMode(windowHandle,
                 (int)MouseEventFlags.LeftUp, 0, config);
 
             Debug.WriteLine($"- Script No : {config.No}. Left up");

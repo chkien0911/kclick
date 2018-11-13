@@ -19,7 +19,7 @@
     <IsSequential>false</IsSequential>
     <IsDrag>false</IsDrag>
     <Description>click on icon to start game</Description>
-    <IsStartIcon>false</IsStartIcon>
+    <IsStartIcon>true</IsStartIcon>
     <RunOnce>false</RunOnce>
     <EndWholeScripts>false</EndWholeScripts>
   </KScript>
