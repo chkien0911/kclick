@@ -17,6 +17,8 @@ namespace KClick
 
     public partial class RerolForm : Form
     {
+        public ZMainForm ZMainForm { get; set; }
+
         private static Configuration.GlobalConfig GlobalConfig = new Configuration.GlobalConfig();
         private static List<Configuration.Config> Configs = new List<Configuration.Config>();
 
@@ -55,6 +57,13 @@ namespace KClick
 
             lsvScripts.DoubleClick += LsvScripts_DoubleClick;
             //btnFixColor.Click += async (sender, e) => await BtnFixColor_ClickAsync(sender, e);//BtnFixColor_Click;
+
+            Closed += RerolForm_Closed;
+        }
+
+        private void RerolForm_Closed(object sender, EventArgs e)
+        {
+            ZMainForm.Show();
         }
 
         private void BtnEditScript_Click(object sender, EventArgs e)
@@ -666,17 +675,6 @@ namespace KClick
                         config.IsDisabledTemp = true;
                     }
                 }
-                //await MouseOperation.SendMessageSpeedModeAsync(config.WindowHandle,
-                //    (int)MouseOperation.MouseEventFlags.LeftDown, 1, config);
-
-                //Debug.WriteLine($"- Script No : {config.No}. Left down");
-                //await MouseOperation.SendMessageSpeedModeAsync(config.WindowHandle,
-                //    (int)MouseOperation.MouseEventFlags.LeftUp, 0, config);
-
-                //Debug.WriteLine($"- Script No : {config.No}. Left up");
-
-                //await Task.Delay(100);
-
             }
         }
 

@@ -45,12 +45,12 @@
             this.colInfo = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.colDescription = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.btnDelete = new System.Windows.Forms.ToolStripMenuItem();
-            this.btnGetMousePosition = new System.Windows.Forms.ToolStripMenuItem();
-            this.btnTryClick = new System.Windows.Forms.ToolStripMenuItem();
             this.btnNewScript = new System.Windows.Forms.ToolStripMenuItem();
             this.btnEditScript = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnDelete = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.btnGetMousePosition = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnTryClick = new System.Windows.Forms.ToolStripMenuItem();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -207,42 +207,42 @@
             this.btnGetMousePosition,
             this.btnTryClick});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(181, 142);
-            // 
-            // btnDelete
-            // 
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(180, 22);
-            this.btnDelete.Text = "Delete";
-            // 
-            // btnGetMousePosition
-            // 
-            this.btnGetMousePosition.Name = "btnGetMousePosition";
-            this.btnGetMousePosition.Size = new System.Drawing.Size(180, 22);
-            this.btnGetMousePosition.Text = "Get Mouse Position";
-            // 
-            // btnTryClick
-            // 
-            this.btnTryClick.Name = "btnTryClick";
-            this.btnTryClick.Size = new System.Drawing.Size(180, 22);
-            this.btnTryClick.Text = "Try Click";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(178, 120);
             // 
             // btnNewScript
             // 
             this.btnNewScript.Name = "btnNewScript";
-            this.btnNewScript.Size = new System.Drawing.Size(180, 22);
+            this.btnNewScript.Size = new System.Drawing.Size(177, 22);
             this.btnNewScript.Text = "New";
             // 
             // btnEditScript
             // 
             this.btnEditScript.Name = "btnEditScript";
-            this.btnEditScript.Size = new System.Drawing.Size(180, 22);
+            this.btnEditScript.Size = new System.Drawing.Size(177, 22);
             this.btnEditScript.Text = "Edit";
+            // 
+            // btnDelete
+            // 
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(177, 22);
+            this.btnDelete.Text = "Delete";
             // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(177, 6);
+            this.toolStripSeparator2.Size = new System.Drawing.Size(174, 6);
+            // 
+            // btnGetMousePosition
+            // 
+            this.btnGetMousePosition.Name = "btnGetMousePosition";
+            this.btnGetMousePosition.Size = new System.Drawing.Size(177, 22);
+            this.btnGetMousePosition.Text = "Get Mouse Position";
+            // 
+            // btnTryClick
+            // 
+            this.btnTryClick.Name = "btnTryClick";
+            this.btnTryClick.Size = new System.Drawing.Size(177, 22);
+            this.btnTryClick.Text = "Try Click";
             // 
             // RerolForm
             // 
@@ -257,7 +257,7 @@
             this.Name = "RerolForm";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Rerol";
+            this.Text = "Reroll";
             this.panel2.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel3.ResumeLayout(false);

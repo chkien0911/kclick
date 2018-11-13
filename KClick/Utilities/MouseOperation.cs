@@ -288,11 +288,11 @@ namespace KClick.Utilities
             int wParam,
             Configuration.Config config)
         {
-            var x = config.XPos;//msg == (int) MouseEventFlags.MouseMove ? config.XPosMoved : config.XPos;
-            var y = config.YPos; //msg == (int)MouseEventFlags.MouseMove ? config.YPosMoved : config.YPos;
+            var x = config.XPos;
+            var y = config.YPos;
             
             //Cursor.Position = new Point(xPos, yPos);
-            if (config.XPosIgnored != 0 && config.YPosIgnored != 0 && !string.IsNullOrWhiteSpace(config.ColorIgnoredName))
+            if (config.IsPositionIgnoredValid)
             {
                 var ignoredPoint = new Point(config.XPosIgnored, config.YPosIgnored);
                 var ignoredColor = GetColorAt(ignoredPoint);
@@ -308,7 +308,7 @@ namespace KClick.Utilities
             if (color.Name == config.ColorName)
             {
                 Color? color2 = null;
-                if (config.X2Pos != 0 && config.Y2Pos != 0 && !string.IsNullOrWhiteSpace(config.Color2Name))
+                if (config.IsPosition2Valid)
                 {
                     var point2 = new Point(config.X2Pos, config.Y2Pos);
                     color2 = GetColorAt(point2);

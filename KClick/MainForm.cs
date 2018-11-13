@@ -13,6 +13,7 @@ namespace KClick
 {
     public partial class MainForm : Form
     {
+        public ZMainForm ZMainForm { get; set; }
 
         private static Configuration.GlobalConfig GlobalConfig = new Configuration.GlobalConfig();
         private static List<Configuration.Config> Configs = new List<Configuration.Config>();
@@ -150,6 +151,13 @@ namespace KClick
             btnClearMoved.Click += BtnClearMoved_Click;
 
             btnClearAll.Click += BtnClearAll_Click;
+
+            Closed += MainForm_Closed;
+        }
+
+        private void MainForm_Closed(object sender, EventArgs e)
+        {
+            ZMainForm.Show();
         }
 
         private void BtnClearAll_Click(object sender, EventArgs e)
