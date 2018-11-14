@@ -146,6 +146,7 @@
             this.btnFixColor.TabIndex = 4;
             this.btnFixColor.Text = "Fix Color";
             this.btnFixColor.UseVisualStyleBackColor = true;
+            this.btnFixColor.Visible = false;
             // 
             // btnImport
             // 

@@ -37,6 +37,7 @@
             this.btnEventMission = new System.Windows.Forms.Button();
             this.btnGlobalJoin = new System.Windows.Forms.Button();
             this.btnClubJoin = new System.Windows.Forms.Button();
+            this.btnScriptMaking = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnGetPosition
@@ -120,11 +121,21 @@
             this.btnClubJoin.Text = "Club Join";
             this.btnClubJoin.UseVisualStyleBackColor = true;
             // 
+            // btnScriptMaking
+            // 
+            this.btnScriptMaking.Location = new System.Drawing.Point(272, 71);
+            this.btnScriptMaking.Name = "btnScriptMaking";
+            this.btnScriptMaking.Size = new System.Drawing.Size(96, 53);
+            this.btnScriptMaking.TabIndex = 9;
+            this.btnScriptMaking.Text = "Script Making";
+            this.btnScriptMaking.UseVisualStyleBackColor = true;
+            // 
             // ZMainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(380, 261);
+            this.Controls.Add(this.btnScriptMaking);
             this.Controls.Add(this.btnClubJoin);
             this.Controls.Add(this.btnGlobalJoin);
             this.Controls.Add(this.btnEventMission);
@@ -154,5 +165,6 @@
         private System.Windows.Forms.Button btnEventMission;
         private System.Windows.Forms.Button btnGlobalJoin;
         private System.Windows.Forms.Button btnClubJoin;
+        private System.Windows.Forms.Button btnScriptMaking;
     }
 }

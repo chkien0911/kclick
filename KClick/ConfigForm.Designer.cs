@@ -56,6 +56,7 @@
             this.txtColorIgnored1 = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.chkEndWholeScripts = new System.Windows.Forms.CheckBox();
             this.chkRunOnce = new System.Windows.Forms.CheckBox();
             this.btnClearMoved = new System.Windows.Forms.Button();
             this.chkIsStartIcon = new System.Windows.Forms.CheckBox();
@@ -75,7 +76,8 @@
             this.btnReload = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
-            this.chkEndWholeScripts = new System.Windows.Forms.CheckBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.cboRunAfterScript = new System.Windows.Forms.ComboBox();
             this.panel3.SuspendLayout();
             this.grbIgnore.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -354,6 +356,16 @@
             this.groupBox1.TabIndex = 40;
             this.groupBox1.TabStop = false;
             // 
+            // chkEndWholeScripts
+            // 
+            this.chkEndWholeScripts.AutoSize = true;
+            this.chkEndWholeScripts.Location = new System.Drawing.Point(231, 98);
+            this.chkEndWholeScripts.Name = "chkEndWholeScripts";
+            this.chkEndWholeScripts.Size = new System.Drawing.Size(99, 17);
+            this.chkEndWholeScripts.TabIndex = 62;
+            this.chkEndWholeScripts.Text = "End if matching";
+            this.chkEndWholeScripts.UseVisualStyleBackColor = true;
+            // 
             // chkRunOnce
             // 
             this.chkRunOnce.AutoSize = true;
@@ -456,16 +468,16 @@
             // 
             // txtDescription
             // 
-            this.txtDescription.Location = new System.Drawing.Point(232, 35);
+            this.txtDescription.Location = new System.Drawing.Point(244, 35);
             this.txtDescription.Name = "txtDescription";
-            this.txtDescription.Size = new System.Drawing.Size(188, 43);
+            this.txtDescription.Size = new System.Drawing.Size(176, 43);
             this.txtDescription.TabIndex = 52;
             this.txtDescription.Text = "";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(229, 17);
+            this.label5.Location = new System.Drawing.Point(241, 18);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(121, 13);
             this.label5.TabIndex = 51;
@@ -473,7 +485,7 @@
             // 
             // txtDelay
             // 
-            this.txtDelay.Location = new System.Drawing.Point(89, 344);
+            this.txtDelay.Location = new System.Drawing.Point(16, 360);
             this.txtDelay.MaxLength = 10;
             this.txtDelay.Name = "txtDelay";
             this.txtDelay.Size = new System.Drawing.Size(50, 20);
@@ -483,7 +495,7 @@
             // lblDelay
             // 
             this.lblDelay.AutoSize = true;
-            this.lblDelay.Location = new System.Drawing.Point(9, 345);
+            this.lblDelay.Location = new System.Drawing.Point(13, 344);
             this.lblDelay.Name = "lblDelay";
             this.lblDelay.Size = new System.Drawing.Size(56, 13);
             this.lblDelay.TabIndex = 42;
@@ -495,7 +507,7 @@
             this.panel1.Controls.Add(this.btnCancel);
             this.panel1.Controls.Add(this.btnSave);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(0, 370);
+            this.panel1.Location = new System.Drawing.Point(0, 391);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(440, 45);
             this.panel1.TabIndex = 43;
@@ -528,15 +540,22 @@
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = true;
             // 
-            // chkEndWholeScripts
+            // label1
             // 
-            this.chkEndWholeScripts.AutoSize = true;
-            this.chkEndWholeScripts.Location = new System.Drawing.Point(231, 98);
-            this.chkEndWholeScripts.Name = "chkEndWholeScripts";
-            this.chkEndWholeScripts.Size = new System.Drawing.Size(99, 17);
-            this.chkEndWholeScripts.TabIndex = 62;
-            this.chkEndWholeScripts.Text = "End if matching";
-            this.chkEndWholeScripts.UseVisualStyleBackColor = true;
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(88, 344);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(101, 13);
+            this.label1.TabIndex = 45;
+            this.label1.Text = "Only run after script:";
+            // 
+            // cboRunAfterScript
+            // 
+            this.cboRunAfterScript.FormattingEnabled = true;
+            this.cboRunAfterScript.Location = new System.Drawing.Point(89, 360);
+            this.cboRunAfterScript.Name = "cboRunAfterScript";
+            this.cboRunAfterScript.Size = new System.Drawing.Size(338, 21);
+            this.cboRunAfterScript.TabIndex = 46;
             // 
             // ConfigForm
             // 
@@ -544,7 +563,9 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btnCancel;
-            this.ClientSize = new System.Drawing.Size(440, 415);
+            this.ClientSize = new System.Drawing.Size(440, 436);
+            this.Controls.Add(this.cboRunAfterScript);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.txtDelay);
             this.Controls.Add(this.lblDelay);
@@ -618,5 +639,7 @@
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Button btnReload;
         private System.Windows.Forms.CheckBox chkEndWholeScripts;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ComboBox cboRunAfterScript;
     }
 }

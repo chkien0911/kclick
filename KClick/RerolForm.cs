@@ -80,6 +80,7 @@ namespace KClick
                         {
                             form.RerolForm = this;
                             form.Config = config;
+                            form.Configs = Configs;
                             form.GlobalConfig = GlobalConfig;
                             form.ShowDialog();
                         }
@@ -93,6 +94,7 @@ namespace KClick
             using (var form = new ConfigForm())
             {
                 form.RerolForm = this;
+                form.Configs = Configs;
                 form.GlobalConfig = GlobalConfig;
                 form.ShowDialog();
             }
@@ -106,35 +108,8 @@ namespace KClick
             item.SubItems.Add(new ListViewItem.ListViewSubItem(item, config.Description));
             lsvScripts.Items.Add(item);
 
-            Configs.Add(new Configuration.Config
-            {
-                No = no,
-
-                XPos = config.XPos,
-                YPos = config.YPos,
-                ColorName = config.ColorName,
-
-                X2Pos = config.X2Pos,
-                Y2Pos = config.Y2Pos,
-                Color2Name = config.Color2Name,
-
-                XPosIgnored = config.XPosIgnored,
-                YPosIgnored = config.YPosIgnored,
-                ColorIgnoredName = config.ColorIgnoredName,
-
-                XPosMoved = config.XPosMoved,
-                YPosMoved = config.YPosMoved,
-                ColorMovedName = config.ColorMovedName,
-
-                Description = config.Description,
-                Delay = config.Delay,
-                IsDrag = config.IsDrag,
-
-                IsStartIcon = config.IsStartIcon,
-                RunOnce = config.RunOnce,
-
-                EndWholeScripts = config.EndWholeScripts,
-            });
+            config.No = no;
+            Configs.Add(config);
         }
 
         public void UpdateScript(Configuration.Config config)
@@ -153,6 +128,12 @@ namespace KClick
 
                     break;
                 }
+            }
+
+            var c = Configs.FirstOrDefault(s => s.No == config.No);
+            if (c != null)
+            {
+                c = config;
             }
 
             foreach (var item in Configs)
@@ -184,6 +165,7 @@ namespace KClick
                     item.RunOnce = config.RunOnce;
 
                     item.EndWholeScripts = config.EndWholeScripts;
+                    item.RunAfterScript = config.RunAfterScript;
 
                     break;
                 }
@@ -384,7 +366,8 @@ namespace KClick
                             new XElement("Description", config.Description),
                             new XElement("IsStartIcon", config.IsStartIcon),
                             new XElement("RunOnce", config.RunOnce),
-                            new XElement("EndWholeScripts", config.EndWholeScripts)
+                            new XElement("EndWholeScripts", config.EndWholeScripts),
+                            new XElement("RunAfterScript", config.RunAfterScript)
                         );
 
                         script.SetAttributeValue("No", config.No);
@@ -459,6 +442,7 @@ namespace KClick
                                 IsStartIcon = item.Element("IsStartIcon") == null ? false : bool.Parse(item.Element("IsStartIcon").Value),
                                 RunOnce = item.Element("RunOnce") == null ? false : bool.Parse(item.Element("RunOnce").Value),
                                 EndWholeScripts = item.Element("EndWholeScripts") == null ? false : bool.Parse(item.Element("EndWholeScripts").Value),
+                                RunAfterScript = item.Element("RunAfterScript") == null ? 0 : int.Parse(item.Element("RunAfterScript").Value),
                             });
 
                             i++;
@@ -635,18 +619,17 @@ namespace KClick
         {
             List<Task> tasks = new List<Task>();
 
+            if (Configs.Any(s => s.IsDisabledWholeScripts))
+            {
+                return;
+            }
+
             foreach (var config in Configs)
             {
-                if (config.IsDisabledWholeScripts)
-                {
-                    tasks.Clear();
-                    return;
-                }
-                else if (config.IsDisabledTemp == false)
+                if (config.IsDisabledTemp == false && config.CanRun)
                 {
                     tasks.Add(RunAsync(config));
                 }
-                //await RunAsync(config);
             }
 
             await Task.WhenAll(tasks);
@@ -695,9 +678,24 @@ namespace KClick
                     {
                         config.IsDisabledTemp = true;
                     }
+
                     if (config.EndWholeScripts)
                     {
                         config.IsDisabledWholeScripts = true;
+                    }
+
+                    var configs = Configs.Where(s => s.RunAfterScript == config.No).ToList();
+                    if (configs.Count > 0)
+                    {
+                        foreach (var config1 in configs)
+                        {
+                            config1.CanRun = true;
+                        }
+                    }
+
+                    if (config.CanRun && config.RunAfterScript > 0)
+                    {
+                        config.CanRun = false;
                     }
                 }
             }

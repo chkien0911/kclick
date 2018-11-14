@@ -15,6 +15,7 @@ namespace KClick
     public partial class ConfigForm : Form
     {
         public RerolForm RerolForm { get; set; }
+        public List<Config> Configs { get; set; } = new List<Config>();
         public Configuration.Config Config { get; set; } = new Config();
         public Configuration.GlobalConfig GlobalConfig { get; set; } = new GlobalConfig();
 
@@ -52,7 +53,6 @@ namespace KClick
             chkDrag.CheckedChanged += ChkDrag_CheckedChanged;
 
             btnReload.Click += BtnReload_Click;
-
         }
 
         private void ChkDrag_CheckedChanged(object sender, EventArgs e)
@@ -203,6 +203,8 @@ namespace KClick
                     RunOnce = chkRunOnce.Checked,
 
                     EndWholeScripts = chkEndWholeScripts.Checked,
+
+                    RunAfterScript = ((Config)(cboRunAfterScript.SelectedItem)).No != 0 ? ((Config)(cboRunAfterScript.SelectedItem)).No : 0
                 });
             }
             else
@@ -236,6 +238,8 @@ namespace KClick
                     RunOnce = chkRunOnce.Checked,
 
                     EndWholeScripts = chkEndWholeScripts.Checked,
+
+                    RunAfterScript = ((Config)(cboRunAfterScript.SelectedItem)).No != 0 ? ((Config)(cboRunAfterScript.SelectedItem)).No : 0
                 });
             }
 
@@ -268,6 +272,13 @@ namespace KClick
             chkRunOnce.Checked = Config.RunOnce;
 
             chkEndWholeScripts.Checked = Config.EndWholeScripts;
+
+            var source = Configs.ToList();
+            source.Insert(0, new Config());
+            cboRunAfterScript.DataSource = source;
+            cboRunAfterScript.ValueMember = "No";
+            cboRunAfterScript.DisplayMember = "DisplayMember";
+            cboRunAfterScript.SelectedItem = Configs.FirstOrDefault(s => s.No == Config.RunAfterScript);
         }
     }
 }

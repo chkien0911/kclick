@@ -22,6 +22,7 @@
     <IsStartIcon>true</IsStartIcon>
     <RunOnce>false</RunOnce>
     <EndWholeScripts>false</EndWholeScripts>
+    <RunAfterScript>0</RunAfterScript>
   </KScript>
   <KScript No="2">
     <No>2</No>
@@ -45,6 +46,7 @@
     <IsStartIcon>false</IsStartIcon>
     <RunOnce>false</RunOnce>
     <EndWholeScripts>false</EndWholeScripts>
+    <RunAfterScript>0</RunAfterScript>
   </KScript>
   <KScript No="3">
     <No>3</No>
@@ -68,6 +70,7 @@
     <IsStartIcon>false</IsStartIcon>
     <RunOnce>false</RunOnce>
     <EndWholeScripts>false</EndWholeScripts>
+    <RunAfterScript>0</RunAfterScript>
   </KScript>
   <KScript No="4">
     <No>4</No>
@@ -91,6 +94,7 @@
     <IsStartIcon>false</IsStartIcon>
     <RunOnce>false</RunOnce>
     <EndWholeScripts>false</EndWholeScripts>
+    <RunAfterScript>0</RunAfterScript>
   </KScript>
   <KScript No="5">
     <No>5</No>
@@ -114,6 +118,7 @@
     <IsStartIcon>false</IsStartIcon>
     <RunOnce>false</RunOnce>
     <EndWholeScripts>false</EndWholeScripts>
+    <RunAfterScript>0</RunAfterScript>
   </KScript>
   <KScript No="6">
     <No>6</No>
@@ -137,6 +142,7 @@
     <IsStartIcon>false</IsStartIcon>
     <RunOnce>false</RunOnce>
     <EndWholeScripts>false</EndWholeScripts>
+    <RunAfterScript>0</RunAfterScript>
   </KScript>
   <KScript No="7">
     <No>7</No>
@@ -160,6 +166,7 @@
     <IsStartIcon>false</IsStartIcon>
     <RunOnce>false</RunOnce>
     <EndWholeScripts>false</EndWholeScripts>
+    <RunAfterScript>0</RunAfterScript>
   </KScript>
   <KScript No="8">
     <No>8</No>
@@ -183,6 +190,7 @@
     <IsStartIcon>false</IsStartIcon>
     <RunOnce>false</RunOnce>
     <EndWholeScripts>false</EndWholeScripts>
+    <RunAfterScript>0</RunAfterScript>
   </KScript>
   <KScript No="9">
     <No>9</No>
@@ -206,6 +214,7 @@
     <IsStartIcon>false</IsStartIcon>
     <RunOnce>false</RunOnce>
     <EndWholeScripts>false</EndWholeScripts>
+    <RunAfterScript>0</RunAfterScript>
   </KScript>
   <KScript No="10">
     <No>10</No>
@@ -229,6 +238,7 @@
     <IsStartIcon>false</IsStartIcon>
     <RunOnce>true</RunOnce>
     <EndWholeScripts>false</EndWholeScripts>
+    <RunAfterScript>0</RunAfterScript>
   </KScript>
   <KScript No="11">
     <No>11</No>
@@ -252,6 +262,7 @@
     <IsStartIcon>false</IsStartIcon>
     <RunOnce>false</RunOnce>
     <EndWholeScripts>false</EndWholeScripts>
+    <RunAfterScript>0</RunAfterScript>
   </KScript>
   <KScript No="12">
     <No>12</No>
@@ -275,6 +286,7 @@
     <IsStartIcon>false</IsStartIcon>
     <RunOnce>false</RunOnce>
     <EndWholeScripts>false</EndWholeScripts>
+    <RunAfterScript>0</RunAfterScript>
   </KScript>
   <KScript No="13">
     <No>13</No>
@@ -298,6 +310,7 @@
     <IsStartIcon>false</IsStartIcon>
     <RunOnce>false</RunOnce>
     <EndWholeScripts>false</EndWholeScripts>
+    <RunAfterScript>0</RunAfterScript>
   </KScript>
   <KScript No="14">
     <No>14</No>
@@ -321,6 +334,7 @@
     <IsStartIcon>false</IsStartIcon>
     <RunOnce>false</RunOnce>
     <EndWholeScripts>false</EndWholeScripts>
+    <RunAfterScript>0</RunAfterScript>
   </KScript>
   <KScript No="15">
     <No>15</No>
@@ -337,13 +351,14 @@
     <XIgnored>0</XIgnored>
     <YIgnored>0</YIgnored>
     <ColorIgnored></ColorIgnored>
-    <Delay>2000</Delay>
+    <Delay>1000</Delay>
     <IsSequential>false</IsSequential>
     <IsDrag>false</IsDrag>
     <Description>back (end panel shootout) 1s</Description>
     <IsStartIcon>false</IsStartIcon>
     <RunOnce>false</RunOnce>
     <EndWholeScripts>false</EndWholeScripts>
+    <RunAfterScript>10</RunAfterScript>
   </KScript>
   <KScript No="16">
     <No>16</No>
@@ -367,6 +382,7 @@
     <IsStartIcon>false</IsStartIcon>
     <RunOnce>false</RunOnce>
     <EndWholeScripts>false</EndWholeScripts>
+    <RunAfterScript>0</RunAfterScript>
   </KScript>
   <KScript No="17">
     <No>17</No>
@@ -390,6 +406,7 @@
     <IsStartIcon>false</IsStartIcon>
     <RunOnce>false</RunOnce>
     <EndWholeScripts>false</EndWholeScripts>
+    <RunAfterScript>0</RunAfterScript>
   </KScript>
   <KScript No="18">
     <No>18</No>
@@ -413,6 +430,7 @@
     <IsStartIcon>false</IsStartIcon>
     <RunOnce>true</RunOnce>
     <EndWholeScripts>false</EndWholeScripts>
+    <RunAfterScript>0</RunAfterScript>
   </KScript>
   <KScript No="19">
     <No>19</No>
@@ -436,6 +454,7 @@
     <IsStartIcon>false</IsStartIcon>
     <RunOnce>false</RunOnce>
     <EndWholeScripts>false</EndWholeScripts>
+    <RunAfterScript>0</RunAfterScript>
   </KScript>
   <KScript No="20">
     <No>20</No>
@@ -459,6 +478,7 @@
     <IsStartIcon>false</IsStartIcon>
     <RunOnce>false</RunOnce>
     <EndWholeScripts>false</EndWholeScripts>
+    <RunAfterScript>0</RunAfterScript>
   </KScript>
   <KScript No="21">
     <No>21</No>
@@ -475,13 +495,14 @@
     <XIgnored>0</XIgnored>
     <YIgnored>0</YIgnored>
     <ColorIgnored></ColorIgnored>
-    <Delay>2000</Delay>
+    <Delay>1000</Delay>
     <IsSequential>false</IsSequential>
     <IsDrag>false</IsDrag>
     <Description>Home (tsu cup) 1s</Description>
     <IsStartIcon>false</IsStartIcon>
     <RunOnce>false</RunOnce>
     <EndWholeScripts>false</EndWholeScripts>
+    <RunAfterScript>17</RunAfterScript>
   </KScript>
   <KScript No="22">
     <No>22</No>
@@ -505,6 +526,7 @@
     <IsStartIcon>false</IsStartIcon>
     <RunOnce>true</RunOnce>
     <EndWholeScripts>false</EndWholeScripts>
+    <RunAfterScript>0</RunAfterScript>
   </KScript>
   <KScript No="23">
     <No>23</No>
@@ -528,6 +550,7 @@
     <IsStartIcon>false</IsStartIcon>
     <RunOnce>false</RunOnce>
     <EndWholeScripts>false</EndWholeScripts>
+    <RunAfterScript>0</RunAfterScript>
   </KScript>
   <KScript No="24">
     <No>24</No>
@@ -551,6 +574,7 @@
     <IsStartIcon>false</IsStartIcon>
     <RunOnce>false</RunOnce>
     <EndWholeScripts>false</EndWholeScripts>
+    <RunAfterScript>0</RunAfterScript>
   </KScript>
   <KScript No="25">
     <No>25</No>
@@ -574,6 +598,7 @@
     <IsStartIcon>false</IsStartIcon>
     <RunOnce>false</RunOnce>
     <EndWholeScripts>false</EndWholeScripts>
+    <RunAfterScript>0</RunAfterScript>
   </KScript>
   <KScript No="26">
     <No>26</No>
@@ -597,6 +622,7 @@
     <IsStartIcon>false</IsStartIcon>
     <RunOnce>false</RunOnce>
     <EndWholeScripts>false</EndWholeScripts>
+    <RunAfterScript>0</RunAfterScript>
   </KScript>
   <KScript No="27">
     <No>27</No>
@@ -620,6 +646,7 @@
     <IsStartIcon>false</IsStartIcon>
     <RunOnce>false</RunOnce>
     <EndWholeScripts>false</EndWholeScripts>
+    <RunAfterScript>0</RunAfterScript>
   </KScript>
   <KScript No="28">
     <No>28</No>
@@ -643,6 +670,7 @@
     <IsStartIcon>false</IsStartIcon>
     <RunOnce>false</RunOnce>
     <EndWholeScripts>false</EndWholeScripts>
+    <RunAfterScript>0</RunAfterScript>
   </KScript>
   <KScript No="29">
     <No>29</No>
@@ -666,6 +694,7 @@
     <IsStartIcon>false</IsStartIcon>
     <RunOnce>false</RunOnce>
     <EndWholeScripts>false</EndWholeScripts>
+    <RunAfterScript>0</RunAfterScript>
   </KScript>
   <KScript No="30">
     <No>30</No>
@@ -689,6 +718,7 @@
     <IsStartIcon>false</IsStartIcon>
     <RunOnce>false</RunOnce>
     <EndWholeScripts>false</EndWholeScripts>
+    <RunAfterScript>0</RunAfterScript>
   </KScript>
   <KScript No="31">
     <No>31</No>
@@ -712,6 +742,7 @@
     <IsStartIcon>false</IsStartIcon>
     <RunOnce>false</RunOnce>
     <EndWholeScripts>false</EndWholeScripts>
+    <RunAfterScript>0</RunAfterScript>
   </KScript>
   <KScript No="32">
     <No>32</No>
@@ -735,6 +766,7 @@
     <IsStartIcon>false</IsStartIcon>
     <RunOnce>false</RunOnce>
     <EndWholeScripts>false</EndWholeScripts>
+    <RunAfterScript>0</RunAfterScript>
   </KScript>
   <KScript No="33">
     <No>33</No>
@@ -758,6 +790,7 @@
     <IsStartIcon>false</IsStartIcon>
     <RunOnce>false</RunOnce>
     <EndWholeScripts>false</EndWholeScripts>
+    <RunAfterScript>0</RunAfterScript>
   </KScript>
   <KScript No="34">
     <No>34</No>
@@ -774,13 +807,14 @@
     <XIgnored>0</XIgnored>
     <YIgnored>0</YIgnored>
     <ColorIgnored></ColorIgnored>
-    <Delay>2000</Delay>
+    <Delay>1000</Delay>
     <IsSequential>false</IsSequential>
     <IsDrag>false</IsDrag>
     <Description>training - home after training 1s</Description>
     <IsStartIcon>false</IsStartIcon>
     <RunOnce>false</RunOnce>
     <EndWholeScripts>false</EndWholeScripts>
+    <RunAfterScript>22</RunAfterScript>
   </KScript>
   <KScript No="35">
     <No>35</No>
@@ -804,6 +838,7 @@
     <IsStartIcon>false</IsStartIcon>
     <RunOnce>true</RunOnce>
     <EndWholeScripts>false</EndWholeScripts>
+    <RunAfterScript>0</RunAfterScript>
   </KScript>
   <KScript No="36">
     <No>36</No>
@@ -827,6 +862,7 @@
     <IsStartIcon>false</IsStartIcon>
     <RunOnce>false</RunOnce>
     <EndWholeScripts>true</EndWholeScripts>
+    <RunAfterScript>0</RunAfterScript>
   </KScript>
   <KScript No="37">
     <No>37</No>
@@ -850,6 +886,7 @@
     <IsStartIcon>false</IsStartIcon>
     <RunOnce>false</RunOnce>
     <EndWholeScripts>false</EndWholeScripts>
+    <RunAfterScript>0</RunAfterScript>
   </KScript>
   <KScript No="38">
     <No>38</No>
@@ -873,6 +910,7 @@
     <IsStartIcon>false</IsStartIcon>
     <RunOnce>false</RunOnce>
     <EndWholeScripts>false</EndWholeScripts>
+    <RunAfterScript>0</RunAfterScript>
   </KScript>
   <KScript No="39">
     <No>39</No>
@@ -896,6 +934,7 @@
     <IsStartIcon>false</IsStartIcon>
     <RunOnce>false</RunOnce>
     <EndWholeScripts>false</EndWholeScripts>
+    <RunAfterScript>0</RunAfterScript>
   </KScript>
   <KScript No="40">
     <No>40</No>
@@ -919,6 +958,7 @@
     <IsStartIcon>false</IsStartIcon>
     <RunOnce>false</RunOnce>
     <EndWholeScripts>false</EndWholeScripts>
+    <RunAfterScript>0</RunAfterScript>
   </KScript>
   <KScript No="41">
     <No>41</No>
@@ -942,6 +982,7 @@
     <IsStartIcon>false</IsStartIcon>
     <RunOnce>false</RunOnce>
     <EndWholeScripts>false</EndWholeScripts>
+    <RunAfterScript>0</RunAfterScript>
   </KScript>
   <KScript No="42">
     <No>42</No>
@@ -965,6 +1006,7 @@
     <IsStartIcon>false</IsStartIcon>
     <RunOnce>false</RunOnce>
     <EndWholeScripts>false</EndWholeScripts>
+    <RunAfterScript>0</RunAfterScript>
   </KScript>
   <KScript No="43">
     <No>43</No>
@@ -988,6 +1030,7 @@
     <IsStartIcon>false</IsStartIcon>
     <RunOnce>false</RunOnce>
     <EndWholeScripts>false</EndWholeScripts>
+    <RunAfterScript>0</RunAfterScript>
   </KScript>
   <KScript No="44">
     <No>44</No>
@@ -1011,6 +1054,7 @@
     <IsStartIcon>false</IsStartIcon>
     <RunOnce>false</RunOnce>
     <EndWholeScripts>false</EndWholeScripts>
+    <RunAfterScript>0</RunAfterScript>
   </KScript>
   <KScript No="45">
     <No>45</No>
@@ -1027,13 +1071,14 @@
     <XIgnored>0</XIgnored>
     <YIgnored>0</YIgnored>
     <ColorIgnored></ColorIgnored>
-    <Delay>2000</Delay>
+    <Delay>1000</Delay>
     <IsSequential>false</IsSequential>
     <IsDrag>false</IsDrag>
     <Description>league - Click on Home screen</Description>
     <IsStartIcon>false</IsStartIcon>
     <RunOnce>false</RunOnce>
     <EndWholeScripts>false</EndWholeScripts>
+    <RunAfterScript>44</RunAfterScript>
   </KScript>
   <KScript No="46">
     <No>46</No>
@@ -1057,6 +1102,7 @@
     <IsStartIcon>false</IsStartIcon>
     <RunOnce>true</RunOnce>
     <EndWholeScripts>false</EndWholeScripts>
+    <RunAfterScript>0</RunAfterScript>
   </KScript>
   <KScript No="47">
     <No>47</No>
@@ -1080,6 +1126,7 @@
     <IsStartIcon>false</IsStartIcon>
     <RunOnce>false</RunOnce>
     <EndWholeScripts>true</EndWholeScripts>
+    <RunAfterScript>0</RunAfterScript>
   </KScript>
   <KScript No="48">
     <No>48</No>
@@ -1103,6 +1150,7 @@
     <IsStartIcon>false</IsStartIcon>
     <RunOnce>false</RunOnce>
     <EndWholeScripts>false</EndWholeScripts>
+    <RunAfterScript>0</RunAfterScript>
   </KScript>
   <KScript No="49">
     <No>49</No>
@@ -1126,6 +1174,7 @@
     <IsStartIcon>false</IsStartIcon>
     <RunOnce>false</RunOnce>
     <EndWholeScripts>false</EndWholeScripts>
+    <RunAfterScript>0</RunAfterScript>
   </KScript>
   <KScript No="50">
     <No>50</No>
@@ -1149,6 +1198,7 @@
     <IsStartIcon>false</IsStartIcon>
     <RunOnce>false</RunOnce>
     <EndWholeScripts>false</EndWholeScripts>
+    <RunAfterScript>0</RunAfterScript>
   </KScript>
   <KScript No="51">
     <No>51</No>
@@ -1172,6 +1222,7 @@
     <IsStartIcon>false</IsStartIcon>
     <RunOnce>false</RunOnce>
     <EndWholeScripts>false</EndWholeScripts>
+    <RunAfterScript>0</RunAfterScript>
   </KScript>
   <KScript No="52">
     <No>52</No>
@@ -1195,6 +1246,7 @@
     <IsStartIcon>false</IsStartIcon>
     <RunOnce>false</RunOnce>
     <EndWholeScripts>false</EndWholeScripts>
+    <RunAfterScript>0</RunAfterScript>
   </KScript>
   <KScript No="53">
     <No>53</No>
@@ -1218,6 +1270,7 @@
     <IsStartIcon>false</IsStartIcon>
     <RunOnce>false</RunOnce>
     <EndWholeScripts>false</EndWholeScripts>
+    <RunAfterScript>0</RunAfterScript>
   </KScript>
   <KScript No="54">
     <No>54</No>
@@ -1241,6 +1294,7 @@
     <IsStartIcon>false</IsStartIcon>
     <RunOnce>false</RunOnce>
     <EndWholeScripts>false</EndWholeScripts>
+    <RunAfterScript>0</RunAfterScript>
   </KScript>
   <KScript No="55">
     <No>55</No>
@@ -1257,13 +1311,14 @@
     <XIgnored>0</XIgnored>
     <YIgnored>0</YIgnored>
     <ColorIgnored></ColorIgnored>
-    <Delay>2000</Delay>
+    <Delay>1000</Delay>
     <IsSequential>false</IsSequential>
     <IsDrag>false</IsDrag>
     <Description>league - Click on Home screen</Description>
     <IsStartIcon>false</IsStartIcon>
     <RunOnce>false</RunOnce>
     <EndWholeScripts>false</EndWholeScripts>
+    <RunAfterScript>54</RunAfterScript>
   </KScript>
   <KScript No="56">
     <No>56</No>
@@ -1287,6 +1342,7 @@
     <IsStartIcon>false</IsStartIcon>
     <RunOnce>true</RunOnce>
     <EndWholeScripts>false</EndWholeScripts>
+    <RunAfterScript>0</RunAfterScript>
   </KScript>
   <KScript No="57">
     <No>57</No>
@@ -1310,6 +1366,7 @@
     <IsStartIcon>false</IsStartIcon>
     <RunOnce>false</RunOnce>
     <EndWholeScripts>true</EndWholeScripts>
+    <RunAfterScript>0</RunAfterScript>
   </KScript>
   <KScript No="58">
     <No>58</No>
@@ -1333,6 +1390,7 @@
     <IsStartIcon>false</IsStartIcon>
     <RunOnce>false</RunOnce>
     <EndWholeScripts>false</EndWholeScripts>
+    <RunAfterScript>0</RunAfterScript>
   </KScript>
   <KScript No="59">
     <No>59</No>
@@ -1356,6 +1414,7 @@
     <IsStartIcon>false</IsStartIcon>
     <RunOnce>false</RunOnce>
     <EndWholeScripts>false</EndWholeScripts>
+    <RunAfterScript>0</RunAfterScript>
   </KScript>
   <KScript No="60">
     <No>60</No>
@@ -1379,6 +1438,7 @@
     <IsStartIcon>false</IsStartIcon>
     <RunOnce>false</RunOnce>
     <EndWholeScripts>false</EndWholeScripts>
+    <RunAfterScript>0</RunAfterScript>
   </KScript>
   <KScript No="61">
     <No>61</No>
@@ -1402,6 +1462,7 @@
     <IsStartIcon>false</IsStartIcon>
     <RunOnce>false</RunOnce>
     <EndWholeScripts>false</EndWholeScripts>
+    <RunAfterScript>0</RunAfterScript>
   </KScript>
   <KScript No="62">
     <No>62</No>
@@ -1425,6 +1486,7 @@
     <IsStartIcon>false</IsStartIcon>
     <RunOnce>false</RunOnce>
     <EndWholeScripts>false</EndWholeScripts>
+    <RunAfterScript>0</RunAfterScript>
   </KScript>
   <KScript No="63">
     <No>63</No>
@@ -1448,6 +1510,7 @@
     <IsStartIcon>false</IsStartIcon>
     <RunOnce>false</RunOnce>
     <EndWholeScripts>false</EndWholeScripts>
+    <RunAfterScript>0</RunAfterScript>
   </KScript>
   <KScript No="64">
     <No>64</No>
@@ -1471,6 +1534,7 @@
     <IsStartIcon>false</IsStartIcon>
     <RunOnce>false</RunOnce>
     <EndWholeScripts>false</EndWholeScripts>
+    <RunAfterScript>0</RunAfterScript>
   </KScript>
   <KScript No="65">
     <No>65</No>
@@ -1487,13 +1551,14 @@
     <XIgnored>0</XIgnored>
     <YIgnored>0</YIgnored>
     <ColorIgnored></ColorIgnored>
-    <Delay>2000</Delay>
+    <Delay>1000</Delay>
     <IsSequential>false</IsSequential>
     <IsDrag>false</IsDrag>
     <Description>league - Click on Home screen</Description>
     <IsStartIcon>false</IsStartIcon>
     <RunOnce>false</RunOnce>
     <EndWholeScripts>false</EndWholeScripts>
+    <RunAfterScript>64</RunAfterScript>
   </KScript>
   <KScript No="66">
     <No>66</No>
@@ -1517,6 +1582,7 @@
     <IsStartIcon>false</IsStartIcon>
     <RunOnce>false</RunOnce>
     <EndWholeScripts>false</EndWholeScripts>
+    <RunAfterScript>0</RunAfterScript>
   </KScript>
   <KScript No="67">
     <No>67</No>
@@ -1540,5 +1606,6 @@
     <IsStartIcon>false</IsStartIcon>
     <RunOnce>false</RunOnce>
     <EndWholeScripts>false</EndWholeScripts>
+    <RunAfterScript>0</RunAfterScript>
   </KScript>
 </KScrips>

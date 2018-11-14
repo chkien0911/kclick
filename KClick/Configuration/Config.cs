@@ -10,8 +10,20 @@ namespace KClick.Configuration
         public bool RunOnce { get; set; }
         public bool IsDisabledTemp { get; set; }
         public bool IsDisabledWholeScripts { get; set; }
+
+        private bool _canRun;
+
+        public bool CanRun
+        {
+            get => RunAfterScript == 0 || _canRun;
+            set => _canRun = value;
+        }
+
         public bool IsStartIcon { get; set; }
         public int No { get; set; }
+
+        public string DisplayMember => $"{No}. {Description}";
+
         public string WindowClass { get; set; }
         //public string ControlClass { get; set; }
         public string WindowName { get; set; }
@@ -55,7 +67,7 @@ namespace KClick.Configuration
         public IntPtr WindowHandle { get; set; }
         //public IntPtr ControlHandle { get; set; }
         public int Delay { get; set; } = 100;
-        
+
         public string ColorName { get; set; }
         public string ColorMovedName { get; set; }
         public string Color2Name { get; set; }
@@ -65,5 +77,7 @@ namespace KClick.Configuration
 
         public bool IsSequential { get; set; }
         public bool IsDrag { get; set; }
+
+        public int RunAfterScript { get; set; }
     }
 }
