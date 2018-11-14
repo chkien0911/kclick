@@ -10,6 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml.Linq;
+using KClick.Configuration;
 
 namespace KClick
 {
@@ -21,6 +22,9 @@ namespace KClick
 
         private static Configuration.GlobalConfig GlobalConfig = new Configuration.GlobalConfig();
         private static List<Configuration.Config> Configs = new List<Configuration.Config>();
+        private static List<Configuration.Config> SystemConfigs = new List<Configuration.Config>();
+        private static List<Configuration.Config> LoadingConfigs = new List<Configuration.Config>();
+        private static List<Configuration.Config> ClosePositionConfigs = new List<Configuration.Config>();
 
         private GlobalHotkey ghk;
         private static bool isRun = true;
@@ -59,6 +63,108 @@ namespace KClick
             //btnFixColor.Click += async (sender, e) => await BtnFixColor_ClickAsync(sender, e);//BtnFixColor_Click;
 
             Closed += RerolForm_Closed;
+
+
+            Load += RerolForm_Load;
+        }
+
+        private void RerolForm_Load(object sender, EventArgs e)
+        {
+            try
+            {
+                var appPath = System.IO.Path.GetDirectoryName(Application.ExecutablePath);
+
+                var systemXmlPath = "/templates/system/main_actions.xml";
+                SystemConfigs = ImportScript($"{appPath}/{systemXmlPath}");
+
+                var loadingXmlPath = "/templates/system/loading.xml";
+                LoadingConfigs = ImportScript($"{appPath}/{loadingXmlPath}");
+
+                var closeGameXmlPath = "/templates/system/close_game.xml";
+                ClosePositionConfigs = ImportScript($"{appPath}/{closeGameXmlPath}");
+
+                // Merge
+                Configs = Configs
+                    .Union(SystemConfigs)
+                    .Union(LoadingConfigs)
+                    .ToList();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+
+        private static List<Config> ImportScript(string path)
+        {
+            var xml = XDocument.Load(path);
+
+            var scripts = xml.Descendants("KScript").ToList();
+
+            var configs = new List<Config>();
+
+            if (scripts.Count > 0)
+            {
+                foreach (var item in scripts)
+                {
+                    configs.Add(new Configuration.Config
+                    {
+                        No = int.Parse(item.Element("No").Value),
+                        XPos = int.Parse(item.Element("X").Value),
+                        YPos = int.Parse(item.Element("Y").Value),
+                        ColorName = item.Element("Color").Value,
+
+                        XPosIgnored = int.Parse(item.Element("XIgnored").Value),
+                        YPosIgnored = int.Parse(item.Element("YIgnored").Value),
+                        ColorIgnoredName = item.Element("ColorIgnored").Value,
+
+                        X2Pos = int.Parse(item.Element("X2").Value),
+                        Y2Pos = int.Parse(item.Element("Y2").Value),
+                        Color2Name = item.Element("Color2").Value,
+
+                        XPosMoved = int.Parse(item.Element("XMoved").Value),
+                        YPosMoved = int.Parse(item.Element("YMoved").Value),
+                        ColorMovedName = item.Element("ColorMoved").Value,
+
+                        Description = (item.Element("Description").Value),
+                        Delay = int.Parse(item.Element("Delay").Value),
+                        IsSequential = bool.Parse(item.Element("IsSequential").Value),
+                        IsDrag = bool.Parse(item.Element("IsDrag").Value),
+                        IsStartIcon = item.Element("IsStartIcon") == null
+                            ? false
+                            : bool.Parse(item.Element("IsStartIcon").Value),
+                        RunOnce = item.Element("RunOnce") == null ? false : bool.Parse(item.Element("RunOnce").Value),
+                        EndWholeScripts = item.Element("EndWholeScripts") == null
+                            ? false
+                            : bool.Parse(item.Element("EndWholeScripts").Value),
+                        IsClosedPosition = item.Element("IsClosedPosition") == null
+                            ? false
+                            : bool.Parse(item.Element("IsClosedPosition").Value),
+                        RunAfterScript = item.Element("RunAfterScript") == null
+                            ? 0
+                            : int.Parse(item.Element("RunAfterScript").Value),
+                    });
+                }
+            }
+
+            return configs;
+        }
+
+        private void DisplayListView(IReadOnlyList<Config> configs)
+        {
+            if (configs.Count > 0)
+            {
+                for (int i = 0; i < configs.Count; i++)
+                {
+                    lsvScripts.Items.Add(configs[i].No.ToString());
+                    lsvScripts.Items[i].SubItems.Add(
+                        $"X1:{configs[i].XPos}, Y1:{configs[i].YPos}, Color1:{configs[i].ColorName} | X2:{configs[i].X2Pos}, Y2:{configs[i].Y2Pos}, Color2:{configs[i].Color2Name} | XMoved:{configs[i].XPosMoved}, YMoved:{configs[i].YPosMoved}, ColorMoved:{configs[i].ColorMovedName}"
+                    );
+                    lsvScripts.Items[i].SubItems.Add(configs[i].Description);
+
+                }
+            }
         }
 
         private void RerolForm_Closed(object sender, EventArgs e)
@@ -130,12 +236,6 @@ namespace KClick
                 }
             }
 
-            var c = Configs.FirstOrDefault(s => s.No == config.No);
-            if (c != null)
-            {
-                c = config;
-            }
-
             foreach (var item in Configs)
             {
                 if (item.No == config.No)
@@ -166,6 +266,8 @@ namespace KClick
 
                     item.EndWholeScripts = config.EndWholeScripts;
                     item.RunAfterScript = config.RunAfterScript;
+
+                    item.IsClosedPosition = config.IsClosedPosition;
 
                     break;
                 }
@@ -367,6 +469,7 @@ namespace KClick
                             new XElement("IsStartIcon", config.IsStartIcon),
                             new XElement("RunOnce", config.RunOnce),
                             new XElement("EndWholeScripts", config.EndWholeScripts),
+                            new XElement("IsClosedPosition", config.IsClosedPosition),
                             new XElement("RunAfterScript", config.RunAfterScript)
                         );
 
@@ -401,54 +504,11 @@ namespace KClick
                     lsvScripts.Items.Clear();
                     Configs.Clear();
 
-                    XDocument xml = XDocument.Load(openFileDialog.FileName);
-
-                    var scripts = xml.Descendants("KScript");
-
-                    if (scripts != null && scripts.Any())
+                    Configs = ImportScript(openFileDialog.FileName);
+                    if (Configs.Count > 0)
                     {
-                        int i = 0;
-                        foreach (var item in scripts)
-                        {
-                            lsvScripts.Items.Add(item.Element("No").Value);
-                            lsvScripts.Items[i].SubItems.Add(
-                                $"X1:{item.Element("X").Value}, Y1:{item.Element("Y").Value}, Color1:{item.Element("Color").Value} | X2:{item.Element("X2").Value}, Y2:{item.Element("Y2").Value}, Color2:{item.Element("Color2").Value} | XMoved:{item.Element("XMoved").Value}, YMoved:{item.Element("YMoved").Value}, ColorMoved:{item.Element("ColorMoved").Value}"
-                            );
-                            lsvScripts.Items[i].SubItems.Add(item.Element("Description").Value);
-
-                            Configs.Add(new Configuration.Config
-                            {
-                                No = int.Parse(item.Element("No").Value),
-                                XPos = int.Parse(item.Element("X").Value),
-                                YPos = int.Parse(item.Element("Y").Value),
-                                ColorName = item.Element("Color").Value,
-
-                                XPosIgnored = int.Parse(item.Element("XIgnored").Value),
-                                YPosIgnored = int.Parse(item.Element("YIgnored").Value),
-                                ColorIgnoredName = item.Element("ColorIgnored").Value,
-
-                                X2Pos = int.Parse(item.Element("X2").Value),
-                                Y2Pos = int.Parse(item.Element("Y2").Value),
-                                Color2Name = item.Element("Color2").Value,
-
-                                XPosMoved = int.Parse(item.Element("XMoved").Value),
-                                YPosMoved = int.Parse(item.Element("YMoved").Value),
-                                ColorMovedName = item.Element("ColorMoved").Value,
-
-                                Description = (item.Element("Description").Value),
-                                Delay = int.Parse(item.Element("Delay").Value),
-                                IsSequential = bool.Parse(item.Element("IsSequential").Value),
-                                IsDrag = bool.Parse(item.Element("IsDrag").Value),
-                                IsStartIcon = item.Element("IsStartIcon") == null ? false : bool.Parse(item.Element("IsStartIcon").Value),
-                                RunOnce = item.Element("RunOnce") == null ? false : bool.Parse(item.Element("RunOnce").Value),
-                                EndWholeScripts = item.Element("EndWholeScripts") == null ? false : bool.Parse(item.Element("EndWholeScripts").Value),
-                                RunAfterScript = item.Element("RunAfterScript") == null ? 0 : int.Parse(item.Element("RunAfterScript").Value),
-                            });
-
-                            i++;
-                        }
-
-                        MessageBox.Show(scripts.Count() + " script(s) found!");
+                        DisplayListView(Configs);
+                        MessageBox.Show(Configs.Count + " script(s) found!");
                     }
                     else
                     {
@@ -650,18 +710,34 @@ namespace KClick
             // Make Calculator the foreground application and send it 
             MouseOperation.SetForegroundWindow(GlobalConfig.WindowHandle);
 
-            //if (LoadingConfigs != null && LoadingConfigs.Count > 0)
-            //{
-            //    var loadingItem = LoadingConfigs[0];
-            //    var loadingColor = await MouseOperation.GetColorAt(new Point(loadingItem.XPos, loadingItem.YPos));
-            //    while (loadingColor.Name == loadingItem.ColorName)
-            //    {
-            //        txtProgress.AppendText($"- Script No : {config.No}. Loading.... {Environment.NewLine}");
+            if (LoadingConfigs != null && LoadingConfigs.Count > 0)
+            {
+                var loadingItem = LoadingConfigs[0];
 
-            //        loadingColor = await MouseOperation.GetColorAt(new Point(loadingItem.XPos, loadingItem.YPos));
+                // wait for 10s
+                bool isOk = false;
+                for (var i = 0; i < 30; i++)
+                {
+                    var loadingColor = MouseOperation.GetColorAt(new Point(loadingItem.XPos, loadingItem.YPos));
+                    if (loadingColor.Name != loadingItem.ColorName)
+                    {
+                        isOk = true;
+                        break;
+                    }
 
-            //    }
-            //}
+                    Debug.WriteLine("Loading...");
+                    await Task.Delay(1000);
+                }
+
+                if (isOk == false)
+                {
+                    // click on button Close to restart
+                    foreach (var closedPos in ClosePositionConfigs)
+                    {
+                        await MouseOperation.ClickSpeedModeAsync(GlobalConfig.WindowHandle, closedPos);
+                    }
+                }
+            }
 
             if (config.IsDrag)
             {

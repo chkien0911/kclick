@@ -77,12 +77,6 @@
     <Compile Include="RerolForm.Designer.cs">
       <DependentUpon>RerolForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="ScriptMakingForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ScriptMakingForm.Designer.cs">
-      <DependentUpon>ScriptMakingForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="Utilities\ClickOnPointTool.cs" />
     <Compile Include="Utilities\GlobalHotkey.cs" />
     <Compile Include="Utilities\Line.cs" />
@@ -133,6 +127,20 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="templates\custom\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="templates\system\close_game.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="templates\system\loading.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="templates\system\main_actions.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -78,6 +78,7 @@
             this.btnSave = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.cboRunAfterScript = new System.Windows.Forms.ComboBox();
+            this.chkIsClosedPosition = new System.Windows.Forms.CheckBox();
             this.panel3.SuspendLayout();
             this.grbIgnore.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -335,6 +336,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.chkIsClosedPosition);
             this.groupBox1.Controls.Add(this.chkEndWholeScripts);
             this.groupBox1.Controls.Add(this.chkRunOnce);
             this.groupBox1.Controls.Add(this.btnClearMoved);
@@ -369,7 +371,7 @@
             // chkRunOnce
             // 
             this.chkRunOnce.AutoSize = true;
-            this.chkRunOnce.Location = new System.Drawing.Point(318, 81);
+            this.chkRunOnce.Location = new System.Drawing.Point(324, 80);
             this.chkRunOnce.Name = "chkRunOnce";
             this.chkRunOnce.Size = new System.Drawing.Size(73, 17);
             this.chkRunOnce.TabIndex = 61;
@@ -557,6 +559,16 @@
             this.cboRunAfterScript.Size = new System.Drawing.Size(338, 21);
             this.cboRunAfterScript.TabIndex = 46;
             // 
+            // chkIsClosedPosition
+            // 
+            this.chkIsClosedPosition.AutoSize = true;
+            this.chkIsClosedPosition.Location = new System.Drawing.Point(324, 98);
+            this.chkIsClosedPosition.Name = "chkIsClosedPosition";
+            this.chkIsClosedPosition.Size = new System.Drawing.Size(92, 17);
+            this.chkIsClosedPosition.TabIndex = 63;
+            this.chkIsClosedPosition.Text = "Close Position";
+            this.chkIsClosedPosition.UseVisualStyleBackColor = true;
+            // 
             // ConfigForm
             // 
             this.AcceptButton = this.btnSave;
@@ -641,5 +653,6 @@
         private System.Windows.Forms.CheckBox chkEndWholeScripts;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox cboRunAfterScript;
+        private System.Windows.Forms.CheckBox chkIsClosedPosition;
     }
 }

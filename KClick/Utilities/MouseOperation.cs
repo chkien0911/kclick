@@ -76,14 +76,14 @@ namespace KClick.Utilities
 
         [DllImport("User32.dll", SetLastError = true)]
         public static extern IntPtr WindowFromPoint(POINT p);
-        
+
         // Activate an application window.
         [DllImport("USER32.DLL", SetLastError = true)]
         public static extern bool SetForegroundWindow(IntPtr hWnd);
 
         [DllImport("user32.dll", SetLastError = true, CharSet = CharSet.Auto)]
         public static extern IntPtr GetClassName(IntPtr hwnd, StringBuilder lpClassName, int nMaxCount);
-        
+
         // Get a handle to an application window.
         [DllImport("USER32.DLL", SetLastError = true, CharSet = CharSet.Unicode)]
         public static extern IntPtr FindWindow(string lpClassName, string lpWindowName);
@@ -179,7 +179,7 @@ namespace KClick.Utilities
                     return;
                 }
             }
-            
+
             var colorClientPoint = clientPoint;
             ClientToScreen(wndHandle, ref colorClientPoint);
             var color = GetColorAt(colorClientPoint);
@@ -197,7 +197,7 @@ namespace KClick.Utilities
                 inputMouseMove.Data.Mouse.X = CalculateAbsoluteCoordinateX(clientPoint.X);
                 inputMouseMove.Data.Mouse.Y = CalculateAbsoluteCoordinateY(clientPoint.Y);
                 inputMouseMove.Data.Mouse.Flags = 0x8000 | 0x0001; //0x8000 | 0x0001;//0x0001;
-                
+
                 var inputs = new INPUT[] { inputMouseMove, inputMouseDown };
                 SendInput((uint)inputs.Length, inputs, Marshal.SizeOf(typeof(INPUT)));
                 await Task.Delay(10);
@@ -205,7 +205,7 @@ namespace KClick.Utilities
                 for (int i = 0; i < allPoints.Length; i++)
                 {
                     var point = allPoints[i];
-                    
+
                     var inputMouseMove1 = new INPUT();
                     inputMouseMove1.Type = 0;
                     inputMouseMove1.Data.Mouse.X = CalculateAbsoluteCoordinateX(point.X);
@@ -225,7 +225,7 @@ namespace KClick.Utilities
                 var inputs3 = new INPUT[] { inputMouseUp };
                 SendInput((uint)inputs3.Length, inputs3, Marshal.SizeOf(typeof(INPUT)));
                 await Task.Delay(10);
-                
+
                 Cursor.Position = oldPos;
             }
         }
@@ -290,7 +290,7 @@ namespace KClick.Utilities
         {
             var x = config.XPos;
             var y = config.YPos;
-            
+
             //Cursor.Position = new Point(xPos, yPos);
             if (config.IsPositionIgnoredValid)
             {
@@ -327,12 +327,36 @@ namespace KClick.Utilities
                     int newy = y - rct.Top;
 
                     SendMessage(wndHandle, msg, (IntPtr)wParam, (IntPtr)CreateLParam(newx, newy));
-                   
+
                     return true;
                 }
             }
 
             return false;
+        }
+
+        public static bool SendMessageLeftUpSpeedMode(
+            IntPtr wndHandle,
+            int msg,
+            int wParam,
+            Configuration.Config config)
+        {
+            var x = config.XPos;
+            var y = config.YPos;
+
+            RECT rct = new RECT();
+
+            if (!GetWindowRect(wndHandle, ref rct))
+            {
+                return false;
+            }
+
+            int newx = x - rct.Left;
+            int newy = y - rct.Top;
+
+            SendMessage(wndHandle, msg, (IntPtr)wParam, (IntPtr)CreateLParam(newx, newy));
+
+            return true;
         }
 
         public static async Task<int> SendMessageAsync(
@@ -494,18 +518,17 @@ namespace KClick.Utilities
         {
             var isOk = false;
 
-            isOk = SendMessageSpeedMode(windowHandle,
-                (int)MouseEventFlags.LeftDown, 1, config);
-
             Debug.WriteLine($"- Script No : {config.No}. Left down");
             isOk = SendMessageSpeedMode(windowHandle,
-                (int)MouseEventFlags.LeftUp, 0, config);
+                (int)MouseEventFlags.LeftDown, 1, config);
+            Debug.WriteLine($"- Script No : {config.No}. Ok: {isOk}");
 
             Debug.WriteLine($"- Script No : {config.No}. Left up");
+            isOk = SendMessageSpeedMode(windowHandle,
+                (int)MouseEventFlags.LeftUp, 0, config);
+            Debug.WriteLine($"- Script No : {config.No}. Ok: {isOk}");
 
             await Task.Delay(10);
-
-            Debug.WriteLine($"- Script No : {config.No}. Ok: {isOk}");
 
             return isOk;
         }

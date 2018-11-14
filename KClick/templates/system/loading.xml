@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<KScrips>
+  <KScript No="1">
+    <No>1</No>
+    <MouseKey>Left</MouseKey>
+    <X>439</X>
+    <Y>384</Y>
+    <Color>ff222222</Color>
+    <X2>405</X2>
+    <Y2>386</Y2>
+    <Color2>ff595959</Color2>
+    <XMoved>0</XMoved>
+    <YMoved>0</YMoved>
+    <ColorMoved></ColorMoved>
+    <XIgnored>0</XIgnored>
+    <YIgnored>0</YIgnored>
+    <ColorIgnored></ColorIgnored>
+    <Delay>100</Delay>
+    <IsSequential>false</IsSequential>
+    <IsDrag>false</IsDrag>
+    <Description>Loading</Description>
+    <IsStartIcon>false</IsStartIcon>
+    <RunOnce>false</RunOnce>
+    <EndWholeScripts>false</EndWholeScripts>
+    <RunAfterScript>0</RunAfterScript>
+  </KScript>
+  <KScript No="2">
+    <No>2</No>
+    <MouseKey>Left</MouseKey>
+    <X>440</X>
+    <Y>382</Y>
+    <Color>ff222222</Color>
+    <X2>415</X2>
+    <Y2>385</Y2>
+    <Color2>ff444444</Color2>
+    <XMoved>0</XMoved>
+    <YMoved>0</YMoved>
+    <ColorMoved></ColorMoved>
+    <XIgnored>0</XIgnored>
+    <YIgnored>0</YIgnored>
+    <ColorIgnored></ColorIgnored>
+    <Delay>100</Delay>
+    <IsSequential>false</IsSequential>
+    <IsDrag>false</IsDrag>
+    <Description>Loading</Description>
+    <IsStartIcon>false</IsStartIcon>
+    <RunOnce>false</RunOnce>
+    <EndWholeScripts>false</EndWholeScripts>
+    <RunAfterScript>0</RunAfterScript>
+  </KScript>
+</KScrips>

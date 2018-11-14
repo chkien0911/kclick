@@ -12,7 +12,7 @@ namespace KClick.Configuration
         public bool IsDisabledWholeScripts { get; set; }
 
         private bool _canRun;
-
+        public bool IsClosedPosition { get; set; }
         public bool CanRun
         {
             get => RunAfterScript == 0 || _canRun;

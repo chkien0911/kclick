@@ -49,7 +49,6 @@ namespace KClick
             btnClearIgnored.Click += BtnClearIgnored_Click;
             btnClearMoved.Click += BtnClearMoved_Click;
 
-
             chkDrag.CheckedChanged += ChkDrag_CheckedChanged;
 
             btnReload.Click += BtnReload_Click;
@@ -203,8 +202,9 @@ namespace KClick
                     RunOnce = chkRunOnce.Checked,
 
                     EndWholeScripts = chkEndWholeScripts.Checked,
+                    IsClosedPosition =  chkIsClosedPosition.Checked,
 
-                    RunAfterScript = ((Config)(cboRunAfterScript.SelectedItem)).No != 0 ? ((Config)(cboRunAfterScript.SelectedItem)).No : 0
+                    RunAfterScript = ((Config) cboRunAfterScript.SelectedItem)?.No ?? 0
                 });
             }
             else
@@ -238,8 +238,9 @@ namespace KClick
                     RunOnce = chkRunOnce.Checked,
 
                     EndWholeScripts = chkEndWholeScripts.Checked,
+                    IsClosedPosition =  chkIsClosedPosition.Checked,
 
-                    RunAfterScript = ((Config)(cboRunAfterScript.SelectedItem)).No != 0 ? ((Config)(cboRunAfterScript.SelectedItem)).No : 0
+                    RunAfterScript = ((Config)cboRunAfterScript.SelectedItem)?.No ?? 0
                 });
             }
 
@@ -272,6 +273,8 @@ namespace KClick
             chkRunOnce.Checked = Config.RunOnce;
 
             chkEndWholeScripts.Checked = Config.EndWholeScripts;
+
+            chkIsClosedPosition.Checked = Config.IsClosedPosition;
 
             var source = Configs.ToList();
             source.Insert(0, new Config());

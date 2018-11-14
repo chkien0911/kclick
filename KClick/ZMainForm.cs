@@ -19,16 +19,6 @@ namespace KClick
             btnGetPosition.Click += BtnGetPosition_Click;
             btnReroll.Click += BtnReroll_Click;
             btnMainForm.Click += BtnMainForm_Click;
-            btnScriptMaking.Click += BtnScriptMaking_Click;
-        }
-
-        private void BtnScriptMaking_Click(object sender, EventArgs e)
-        {
-            Hide();
-
-            var form = new ScriptMakingForm();
-            form.ZMainForm = this;
-            form.Show();
         }
 
         private void BtnMainForm_Click(object sender, EventArgs e)
