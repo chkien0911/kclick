@@ -38,6 +38,9 @@
             this.btnGlobalJoin = new System.Windows.Forms.Button();
             this.btnClubJoin = new System.Windows.Forms.Button();
             this.btnScriptMaking = new System.Windows.Forms.Button();
+            this.btnClubShare = new System.Windows.Forms.Button();
+            this.btnGlobalShare = new System.Windows.Forms.Button();
+            this.btnRaidSetting = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnGetPosition
@@ -105,7 +108,7 @@
             // 
             // btnGlobalJoin
             // 
-            this.btnGlobalJoin.Location = new System.Drawing.Point(21, 189);
+            this.btnGlobalJoin.Location = new System.Drawing.Point(21, 248);
             this.btnGlobalJoin.Name = "btnGlobalJoin";
             this.btnGlobalJoin.Size = new System.Drawing.Size(96, 53);
             this.btnGlobalJoin.TabIndex = 7;
@@ -114,7 +117,7 @@
             // 
             // btnClubJoin
             // 
-            this.btnClubJoin.Location = new System.Drawing.Point(123, 189);
+            this.btnClubJoin.Location = new System.Drawing.Point(21, 189);
             this.btnClubJoin.Name = "btnClubJoin";
             this.btnClubJoin.Size = new System.Drawing.Size(96, 53);
             this.btnClubJoin.TabIndex = 8;
@@ -130,11 +133,41 @@
             this.btnScriptMaking.Text = "Script Making";
             this.btnScriptMaking.UseVisualStyleBackColor = true;
             // 
+            // btnClubShare
+            // 
+            this.btnClubShare.Location = new System.Drawing.Point(123, 189);
+            this.btnClubShare.Name = "btnClubShare";
+            this.btnClubShare.Size = new System.Drawing.Size(96, 53);
+            this.btnClubShare.TabIndex = 10;
+            this.btnClubShare.Text = "Club Share";
+            this.btnClubShare.UseVisualStyleBackColor = true;
+            // 
+            // btnGlobalShare
+            // 
+            this.btnGlobalShare.Location = new System.Drawing.Point(123, 248);
+            this.btnGlobalShare.Name = "btnGlobalShare";
+            this.btnGlobalShare.Size = new System.Drawing.Size(96, 53);
+            this.btnGlobalShare.TabIndex = 11;
+            this.btnGlobalShare.Text = "Global Share";
+            this.btnGlobalShare.UseVisualStyleBackColor = true;
+            // 
+            // btnRaidSetting
+            // 
+            this.btnRaidSetting.Location = new System.Drawing.Point(272, 130);
+            this.btnRaidSetting.Name = "btnRaidSetting";
+            this.btnRaidSetting.Size = new System.Drawing.Size(96, 53);
+            this.btnRaidSetting.TabIndex = 12;
+            this.btnRaidSetting.Text = "Raid Setting";
+            this.btnRaidSetting.UseVisualStyleBackColor = true;
+            // 
             // ZMainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(380, 261);
+            this.ClientSize = new System.Drawing.Size(380, 305);
+            this.Controls.Add(this.btnRaidSetting);
+            this.Controls.Add(this.btnGlobalShare);
+            this.Controls.Add(this.btnClubShare);
             this.Controls.Add(this.btnScriptMaking);
             this.Controls.Add(this.btnClubJoin);
             this.Controls.Add(this.btnGlobalJoin);
@@ -166,5 +199,8 @@
         private System.Windows.Forms.Button btnGlobalJoin;
         private System.Windows.Forms.Button btnClubJoin;
         private System.Windows.Forms.Button btnScriptMaking;
+        private System.Windows.Forms.Button btnClubShare;
+        private System.Windows.Forms.Button btnGlobalShare;
+        private System.Windows.Forms.Button btnRaidSetting;
     }
 }

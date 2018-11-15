@@ -518,15 +518,15 @@ namespace KClick.Utilities
         {
             var isOk = false;
 
-            Debug.WriteLine($"- Script No : {config.No}. Left down");
+            Debug.WriteLine($"- Script No : {config.No}-{config.Description}. Left down");
             isOk = SendMessageSpeedMode(windowHandle,
                 (int)MouseEventFlags.LeftDown, 1, config);
-            Debug.WriteLine($"- Script No : {config.No}. Ok: {isOk}");
+            Debug.WriteLine($"- Script No : {config.No}-{config.Description}. Ok: {isOk}");
 
             Debug.WriteLine($"- Script No : {config.No}. Left up");
-            isOk = SendMessageSpeedMode(windowHandle,
+            SendMessageLeftUpSpeedMode(windowHandle,
                 (int)MouseEventFlags.LeftUp, 0, config);
-            Debug.WriteLine($"- Script No : {config.No}. Ok: {isOk}");
+            Debug.WriteLine($"- Script No : {config.No}-{config.Description}. Ok: {isOk}");
 
             await Task.Delay(10);
 

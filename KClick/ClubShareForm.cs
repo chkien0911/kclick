@@ -14,11 +14,15 @@ using KClick.Configuration;
 
 namespace KClick
 {
-
-
-    public partial class RerolForm : Form
+    public partial class ClubShareForm : Form
     {
         public ZMainForm ZMainForm { get; set; }
+
+        private static List<Configuration.Raid> Raids = new List<Configuration.Raid>()
+        {
+            new Raid(){ No = 1, Name = "Get Hidden Drills"}
+        };
+
 
         private static Configuration.GlobalConfig GlobalConfig = new Configuration.GlobalConfig();
         private static List<Configuration.Config> Configs = new List<Configuration.Config>();
@@ -30,7 +34,7 @@ namespace KClick
         private static bool isRun = true;
         private static readonly object padlock = new object();
 
-        public RerolForm()
+        public ClubShareForm()
         {
             InitializeComponent();
 
@@ -52,8 +56,7 @@ namespace KClick
             btnDelete.Click += BtnDelete_Click;
             btnNewScript.Click += BtnNewScript_Click;
             btnEditScript.Click += BtnEditScript_Click;
-
-            btnClearScripts.Click += BtnClearScripts_Click;
+            
 
             btnTryClick.Click += async (sender, e) => await btnTryClick_ClickAsync(sender, e);
             btnGetMousePosition.Click += BtnGetMousePosition_Click;
@@ -83,6 +86,10 @@ namespace KClick
                 //var closeGameXmlPath = "/templates/system/close_game.xml";
                 //ClosePositionConfigs = ImportScript($"{appPath}/{closeGameXmlPath}");
 
+                cboRaidNumber.DataSource = Raids;
+                cboRaidNumber.DisplayMember = "Name";
+                cboRaidNumber.ValueMember = "No";
+                cboRaidNumber.SelectedIndex = 0;
                 //// Merge
                 //Configs = Configs
                 //    .Union(SystemConfigs)
@@ -184,7 +191,7 @@ namespace KClick
                     {
                         using (var form = new ConfigForm())
                         {
-                            form.RerolForm = this;
+                            form.ClubShareForm = this;
                             form.Config = config;
                             form.Configs = Configs;
                             form.GlobalConfig = GlobalConfig;
@@ -199,7 +206,7 @@ namespace KClick
         {
             using (var form = new ConfigForm())
             {
-                form.RerolForm = this;
+                form.ClubShareForm = this;
                 form.Configs = Configs;
                 form.GlobalConfig = GlobalConfig;
                 form.ShowDialog();
@@ -785,7 +792,11 @@ namespace KClick
 
                     if (config.CanRun && config.RunAfterScript > 0)
                     {
-                        config.CanRun = false;
+                        var subConfigs = Configs.Where(s => s.RunAfterScript == config.RunAfterScript).ToList();
+                        foreach (var subConfig in subConfigs)
+                        {
+                            subConfig.CanRun = false;
+                        }
                     }
                 }
             }

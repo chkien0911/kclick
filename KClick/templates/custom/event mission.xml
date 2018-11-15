@@ -848,7 +848,7 @@
     <RunOnce>false</RunOnce>
     <EndWholeScripts>false</EndWholeScripts>
     <IsClosedPosition>false</IsClosedPosition>
-    <RunAfterScript>22</RunAfterScript>
+    <RunAfterScript>31</RunAfterScript>
   </KScript>
   <KScript No="35">
     <No>35</No>
@@ -1672,6 +1672,31 @@
     <IsStartIcon>false</IsStartIcon>
     <RunOnce>false</RunOnce>
     <EndWholeScripts>false</EndWholeScripts>
+    <IsClosedPosition>false</IsClosedPosition>
+    <RunAfterScript>0</RunAfterScript>
+  </KScript>
+  <KScript No="68">
+    <No>68</No>
+    <MouseKey>Left</MouseKey>
+    <X>203</X>
+    <Y>214</Y>
+    <Color>ffa2d9ff</Color>
+    <X2>383</X2>
+    <Y2>69</Y2>
+    <Color2>ff437fef</Color2>
+    <XMoved>0</XMoved>
+    <YMoved>0</YMoved>
+    <ColorMoved></ColorMoved>
+    <XIgnored>0</XIgnored>
+    <YIgnored>0</YIgnored>
+    <ColorIgnored></ColorIgnored>
+    <Delay>100</Delay>
+    <IsSequential>false</IsSequential>
+    <IsDrag>false</IsDrag>
+    <Description>End-cleared mission</Description>
+    <IsStartIcon>false</IsStartIcon>
+    <RunOnce>false</RunOnce>
+    <EndWholeScripts>true</EndWholeScripts>
     <IsClosedPosition>false</IsClosedPosition>
     <RunAfterScript>0</RunAfterScript>
   </KScript>

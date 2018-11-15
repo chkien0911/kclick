@@ -21,6 +21,9 @@
     <Description>click on icon to start game</Description>
     <IsStartIcon>true</IsStartIcon>
     <RunOnce>false</RunOnce>
+    <EndWholeScripts>false</EndWholeScripts>
+    <IsClosedPosition>false</IsClosedPosition>
+    <RunAfterScript>0</RunAfterScript>
   </KScript>
   <KScript No="2">
     <No>2</No>
@@ -43,6 +46,9 @@
     <Description>click on screen to start game</Description>
     <IsStartIcon>false</IsStartIcon>
     <RunOnce>false</RunOnce>
+    <EndWholeScripts>false</EndWholeScripts>
+    <IsClosedPosition>false</IsClosedPosition>
+    <RunAfterScript>0</RunAfterScript>
   </KScript>
   <KScript No="3">
     <No>3</No>
@@ -65,6 +71,9 @@
     <Description>Check Close daily popup</Description>
     <IsStartIcon>false</IsStartIcon>
     <RunOnce>false</RunOnce>
+    <EndWholeScripts>false</EndWholeScripts>
+    <IsClosedPosition>false</IsClosedPosition>
+    <RunAfterScript>0</RunAfterScript>
   </KScript>
   <KScript No="4">
     <No>4</No>
@@ -87,6 +96,9 @@
     <Description>Close daily popup</Description>
     <IsStartIcon>false</IsStartIcon>
     <RunOnce>false</RunOnce>
+    <EndWholeScripts>false</EndWholeScripts>
+    <IsClosedPosition>false</IsClosedPosition>
+    <RunAfterScript>0</RunAfterScript>
   </KScript>
   <KScript No="5">
     <No>5</No>
@@ -109,6 +121,9 @@
     <Description>skip intro</Description>
     <IsStartIcon>false</IsStartIcon>
     <RunOnce>false</RunOnce>
+    <EndWholeScripts>false</EndWholeScripts>
+    <IsClosedPosition>false</IsClosedPosition>
+    <RunAfterScript>0</RunAfterScript>
   </KScript>
   <KScript No="6">
     <No>6</No>
@@ -131,6 +146,9 @@
     <Description>Close daily popup if any</Description>
     <IsStartIcon>false</IsStartIcon>
     <RunOnce>false</RunOnce>
+    <EndWholeScripts>false</EndWholeScripts>
+    <IsClosedPosition>false</IsClosedPosition>
+    <RunAfterScript>0</RunAfterScript>
   </KScript>
   <KScript No="7">
     <No>7</No>
@@ -153,5 +171,33 @@
     <Description>Retry connection</Description>
     <IsStartIcon>false</IsStartIcon>
     <RunOnce>false</RunOnce>
+    <EndWholeScripts>false</EndWholeScripts>
+    <IsClosedPosition>false</IsClosedPosition>
+    <RunAfterScript>0</RunAfterScript>
+  </KScript>
+  <KScript No="8">
+    <No>8</No>
+    <MouseKey>Left</MouseKey>
+    <X>311</X>
+    <Y>261</Y>
+    <Color>ff96e74a</Color>
+    <X2>482</X2>
+    <Y2>370</Y2>
+    <Color2>ff7b7432</Color2>
+    <XMoved>0</XMoved>
+    <YMoved>0</YMoved>
+    <ColorMoved></ColorMoved>
+    <XIgnored>0</XIgnored>
+    <YIgnored>0</YIgnored>
+    <ColorIgnored></ColorIgnored>
+    <Delay>100</Delay>
+    <IsSequential>false</IsSequential>
+    <IsDrag>false</IsDrag>
+    <Description>Restar match</Description>
+    <IsStartIcon>false</IsStartIcon>
+    <RunOnce>false</RunOnce>
+    <EndWholeScripts>false</EndWholeScripts>
+    <IsClosedPosition>false</IsClosedPosition>
+    <RunAfterScript>0</RunAfterScript>
   </KScript>
 </KScrips>

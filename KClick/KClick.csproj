@@ -48,6 +48,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ClubShareForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ClubShareForm.Designer.cs">
+      <DependentUpon>ClubShareForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="ConfigForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -57,6 +63,7 @@
     <Compile Include="Configuration\Config.cs" />
     <Compile Include="Configuration\GlobalConfig.cs" />
     <Compile Include="Configuration\MouseKey.cs" />
+    <Compile Include="Configuration\Raid.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -71,6 +78,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RaidSettingForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RaidSettingForm.Designer.cs">
+      <DependentUpon>RaidSettingForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="RerolForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -90,6 +103,9 @@
     <Compile Include="ZMainForm.Designer.cs">
       <DependentUpon>ZMainForm.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="ClubShareForm.resx">
+      <DependentUpon>ClubShareForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ConfigForm.resx">
       <DependentUpon>ConfigForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -108,6 +124,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="RaidSettingForm.resx">
+      <DependentUpon>RaidSettingForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="RerolForm.resx">
       <DependentUpon>RerolForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -139,6 +158,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="templates\system\main_actions.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="templates\system\raids.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>

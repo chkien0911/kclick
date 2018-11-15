@@ -15,6 +15,8 @@ namespace KClick
     public partial class ConfigForm : Form
     {
         public RerolForm RerolForm { get; set; }
+        public ClubShareForm ClubShareForm { get; set; }
+
         public List<Config> Configs { get; set; } = new List<Config>();
         public Configuration.Config Config { get; set; } = new Config();
         public Configuration.GlobalConfig GlobalConfig { get; set; } = new GlobalConfig();
@@ -169,79 +171,72 @@ namespace KClick
             Dispose();
         }
 
+        private Config GetConfig()
+        {
+            var config = new Configuration.Config
+            {
+                No = Config.No,
+
+                XPos = string.IsNullOrWhiteSpace(txtXPos.Text) ? 0 : int.Parse(txtXPos.Text),
+                YPos = string.IsNullOrWhiteSpace(txtYPos.Text) ? 0 : int.Parse(txtYPos.Text),
+                ColorName = txtColor1.Text,
+
+                X2Pos = string.IsNullOrWhiteSpace(txtX2.Text) ? 0 : int.Parse(txtX2.Text),
+                Y2Pos = string.IsNullOrWhiteSpace(txtY2.Text) ? 0 : int.Parse(txtY2.Text),
+                Color2Name = txtColor2.Text,
+
+                XPosIgnored = string.IsNullOrWhiteSpace(txtXIgnored1.Text) ? 0 : int.Parse(txtXIgnored1.Text),
+                YPosIgnored = string.IsNullOrWhiteSpace(txtYIgnored1.Text) ? 0 : int.Parse(txtYIgnored1.Text),
+                ColorIgnoredName = txtColorIgnored1.Text,
+
+                XPosMoved = string.IsNullOrWhiteSpace(txtXMoved.Text) ? 0 : int.Parse(txtXMoved.Text),
+                YPosMoved = string.IsNullOrWhiteSpace(txtYMoved.Text) ? 0 : int.Parse(txtYMoved.Text),
+                ColorMovedName = txtColorMoved.Text,
+
+                Description = txtDescription.Text,
+                Delay = string.IsNullOrWhiteSpace(txtDelay.Text) ? 200 : int.Parse(txtDelay.Text),
+                IsDrag = chkDrag.Checked,
+
+                IsStartIcon = chkIsStartIcon.Checked,
+                RunOnce = chkRunOnce.Checked,
+
+                EndWholeScripts = chkEndWholeScripts.Checked,
+                IsClosedPosition = chkIsClosedPosition.Checked,
+
+                RunAfterScript = ((Config)cboRunAfterScript.SelectedItem)?.No ?? 0
+            };
+
+            return config;
+        }
+
         private void BtnSave_Click(object sender, EventArgs e)
         {
             if (Config.No == 0)
             {
+                var config = GetConfig();
                 // Add
-                RerolForm.AddScript(new Configuration.Config
+                if (RerolForm != null)
                 {
-                    No = Config.No,
-
-                    XPos = string.IsNullOrWhiteSpace(txtXPos.Text) ? 0 : int.Parse(txtXPos.Text),
-                    YPos = string.IsNullOrWhiteSpace(txtYPos.Text) ? 0 : int.Parse(txtYPos.Text),
-                    ColorName = txtColor1.Text,
-
-                    X2Pos = string.IsNullOrWhiteSpace(txtX2.Text) ? 0 : int.Parse(txtX2.Text),
-                    Y2Pos = string.IsNullOrWhiteSpace(txtY2.Text) ? 0 : int.Parse(txtY2.Text),
-                    Color2Name = txtColor2.Text,
-
-                    XPosIgnored = string.IsNullOrWhiteSpace(txtXIgnored1.Text) ? 0 : int.Parse(txtXIgnored1.Text),
-                    YPosIgnored = string.IsNullOrWhiteSpace(txtYIgnored1.Text) ? 0 : int.Parse(txtYIgnored1.Text),
-                    ColorIgnoredName = txtColorIgnored1.Text,
-
-                    XPosMoved = string.IsNullOrWhiteSpace(txtXMoved.Text) ? 0 : int.Parse(txtXMoved.Text),
-                    YPosMoved = string.IsNullOrWhiteSpace(txtYMoved.Text) ? 0 : int.Parse(txtYMoved.Text),
-                    ColorMovedName = txtColorMoved.Text,
-
-                    Description = txtDescription.Text,
-                    Delay = string.IsNullOrWhiteSpace(txtDelay.Text) ? 200 : int.Parse(txtDelay.Text),
-                    IsDrag = chkDrag.Checked,
-
-                    IsStartIcon = chkIsStartIcon.Checked,
-                    RunOnce = chkRunOnce.Checked,
-
-                    EndWholeScripts = chkEndWholeScripts.Checked,
-                    IsClosedPosition =  chkIsClosedPosition.Checked,
-
-                    RunAfterScript = ((Config) cboRunAfterScript.SelectedItem)?.No ?? 0
-                });
+                    RerolForm.AddScript(config);
+                }
+                else if (ClubShareForm != null)
+                {
+                    ClubShareForm.AddScript(config);
+                }
             }
             else
             {
+                var config = GetConfig();
+
                 // Edit
-                RerolForm.UpdateScript(new Configuration.Config
+                if (RerolForm != null)
                 {
-                    No = Config.No,
-
-                    XPos = string.IsNullOrWhiteSpace(txtXPos.Text) ? 0 : int.Parse(txtXPos.Text),
-                    YPos = string.IsNullOrWhiteSpace(txtYPos.Text) ? 0 : int.Parse(txtYPos.Text),
-                    ColorName = txtColor1.Text,
-
-                    X2Pos = string.IsNullOrWhiteSpace(txtX2.Text) ? 0 : int.Parse(txtX2.Text),
-                    Y2Pos = string.IsNullOrWhiteSpace(txtY2.Text) ? 0 : int.Parse(txtY2.Text),
-                    Color2Name = txtColor2.Text,
-
-                    XPosIgnored = string.IsNullOrWhiteSpace(txtXIgnored1.Text) ? 0 : int.Parse(txtXIgnored1.Text),
-                    YPosIgnored = string.IsNullOrWhiteSpace(txtYIgnored1.Text) ? 0 : int.Parse(txtYIgnored1.Text),
-                    ColorIgnoredName = txtColorIgnored1.Text,
-
-                    XPosMoved = string.IsNullOrWhiteSpace(txtXMoved.Text) ? 0 : int.Parse(txtXMoved.Text),
-                    YPosMoved = string.IsNullOrWhiteSpace(txtYMoved.Text) ? 0 : int.Parse(txtYMoved.Text),
-                    ColorMovedName = txtColorMoved.Text,
-
-                    Description = txtDescription.Text,
-                    Delay = string.IsNullOrWhiteSpace(txtDelay.Text) ? 200 : int.Parse(txtDelay.Text),
-                    IsDrag = chkDrag.Checked,
-
-                    IsStartIcon = chkIsStartIcon.Checked,
-                    RunOnce = chkRunOnce.Checked,
-
-                    EndWholeScripts = chkEndWholeScripts.Checked,
-                    IsClosedPosition =  chkIsClosedPosition.Checked,
-
-                    RunAfterScript = ((Config)cboRunAfterScript.SelectedItem)?.No ?? 0
-                });
+                    RerolForm.UpdateScript(config);
+                }
+                else if (ClubShareForm != null)
+                {
+                    ClubShareForm.UpdateScript(config);
+                }
             }
 
             Close();
