@@ -194,7 +194,6 @@ namespace KClick
                             form.ClubShareForm = this;
                             form.Config = config;
                             form.Configs = Configs;
-                            form.GlobalConfig = GlobalConfig;
                             form.ShowDialog();
                         }
                     }
@@ -208,7 +207,6 @@ namespace KClick
             {
                 form.ClubShareForm = this;
                 form.Configs = Configs;
-                form.GlobalConfig = GlobalConfig;
                 form.ShowDialog();
             }
         }

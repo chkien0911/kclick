@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Diagnostics;
 using System.Drawing;
 using System.Drawing.Imaging;
+using System.Globalization;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
@@ -282,6 +283,14 @@ namespace KClick.Utilities
             return true;
         }
 
+        public static bool IsCloseColor(Color a, Color z, int threshold = 50)
+        {
+            int r = (int)a.R - z.R,
+                g = (int)a.G - z.G,
+                b = (int)a.B - z.B;
+            return (r * r + g * g + b * b) <= threshold * threshold;
+        }
+
         public static bool SendMessageSpeedMode(
             IntPtr wndHandle,
             int msg,
@@ -305,7 +314,9 @@ namespace KClick.Utilities
             var point = new Point(x, y);
             var color = GetColorAt(point);
 
-            if (color.Name == config.ColorName)
+            var configColor = Color.FromArgb(Int32.Parse(config.ColorName.Replace("#", ""), NumberStyles.HexNumber));
+
+            if (color.Name == config.ColorName || IsCloseColor(color, configColor))
             {
                 Color? color2 = null;
                 if (config.IsPosition2Valid)
@@ -314,7 +325,9 @@ namespace KClick.Utilities
                     color2 = GetColorAt(point2);
                 }
 
-                if (color2 == null || (color2.Value.Name == config.Color2Name))
+                var configColor2 = Color.FromArgb(Int32.Parse(config.Color2Name.Replace("#", ""), NumberStyles.HexNumber));
+
+                if (color2 == null || (color2 != null && (color2.Value.Name == config.Color2Name || IsCloseColor(color2.Value, configColor2))))
                 {
                     RECT rct = new RECT();
 

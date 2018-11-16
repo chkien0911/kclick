@@ -187,7 +187,6 @@ namespace KClick
                             form.RerolForm = this;
                             form.Config = config;
                             form.Configs = Configs;
-                            form.GlobalConfig = GlobalConfig;
                             form.ShowDialog();
                         }
                     }
@@ -201,7 +200,6 @@ namespace KClick
             {
                 form.RerolForm = this;
                 form.Configs = Configs;
-                form.GlobalConfig = GlobalConfig;
                 form.ShowDialog();
             }
         }
