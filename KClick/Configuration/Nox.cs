@@ -22,5 +22,6 @@ namespace KClick.Configuration
 
         public bool IsRun { get; set; }
         public List<Action> Actions { get; set; } = new List<Action>();
+        public bool IsSelected { get; set; }
     }
 }

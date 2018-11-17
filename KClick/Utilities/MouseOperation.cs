@@ -283,7 +283,7 @@ namespace KClick.Utilities
             return true;
         }
 
-        public static bool IsCloseColor(Color a, Color z, int threshold = 50)
+        public static bool IsCloseColor(Color a, Color z, int threshold = 20)
         {
             int r = (int)a.R - z.R,
                 g = (int)a.G - z.G,

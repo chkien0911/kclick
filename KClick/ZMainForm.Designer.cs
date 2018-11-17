@@ -40,7 +40,6 @@
             this.btnScriptMaking = new System.Windows.Forms.Button();
             this.btnClubShare = new System.Windows.Forms.Button();
             this.btnGlobalShare = new System.Windows.Forms.Button();
-            this.btnRaidSetting = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnGetPosition
@@ -151,21 +150,11 @@
             this.btnGlobalShare.Text = "Global Share";
             this.btnGlobalShare.UseVisualStyleBackColor = true;
             // 
-            // btnRaidSetting
-            // 
-            this.btnRaidSetting.Location = new System.Drawing.Point(272, 130);
-            this.btnRaidSetting.Name = "btnRaidSetting";
-            this.btnRaidSetting.Size = new System.Drawing.Size(96, 53);
-            this.btnRaidSetting.TabIndex = 12;
-            this.btnRaidSetting.Text = "Raid Setting";
-            this.btnRaidSetting.UseVisualStyleBackColor = true;
-            // 
             // ZMainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(380, 305);
-            this.Controls.Add(this.btnRaidSetting);
             this.Controls.Add(this.btnGlobalShare);
             this.Controls.Add(this.btnClubShare);
             this.Controls.Add(this.btnScriptMaking);
@@ -201,6 +190,5 @@
         private System.Windows.Forms.Button btnScriptMaking;
         private System.Windows.Forms.Button btnClubShare;
         private System.Windows.Forms.Button btnGlobalShare;
-        private System.Windows.Forms.Button btnRaidSetting;
     }
 }

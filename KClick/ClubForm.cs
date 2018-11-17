@@ -61,7 +61,7 @@ namespace KClick
             btnDelete.Click += BtnDelete_Click;
             btnNewScript.Click += BtnNewScript_Click;
             btnEditScript.Click += BtnEditScript_Click;
-
+            btnClearScript.Click += BtnClearScript_Click;
 
             btnTryClick.Click += async (sender, e) => await btnTryClick_ClickAsync(sender, e);
             btnGetMousePosition.Click += BtnGetMousePosition_Click;
@@ -73,19 +73,96 @@ namespace KClick
 
             Load += RerolForm_Load;
 
-            lsvAction.SelectedValueChanged += LsvAction_SelectedValueChanged;
             lsvNox.SelectedValueChanged += LsvNox_SelectedValueChanged;
-
+            lsvAction.ItemCheck += async (sender, e) => await LsvAction_ItemCheckAsync(sender, e);//+= LsvAction_ItemCheck;
+            lsvNox.ItemCheck += async (sender, e) => await LsvNox_ItemCheckAsync(sender, e);//LsvNox_ItemCheck;
 
             btnExport.Click += BtnExport_Click;
         }
 
-        private void LsvNox_SelectedValueChanged(object sender, EventArgs e)
+        private async Task LsvAction_ItemCheckAsync(object sender, ItemCheckEventArgs e)
         {
+            if (e.NewValue == CheckState.Unchecked)
+            {
+                await StopAsync();
+            }
+
+            var nox = GetSelectedNox();
+            if (nox == null)
+            {
+                //MessageBox.Show("Please take control & select a Nox");
+                return;
+            }
+
+            //nox.Actions.Clear();
+            //nox.Configs.Clear();
+            //for (int i = 0; i < lsvAction.Items.Count; i++)
+            //{
+            //    if (i != e.Index)
+            //    {
+            //        lsvAction.SetItemChecked(i, false);
+            //    }
+            //}
+            //lsvScripts.Items.Clear();
+
+            if (e.NewValue == CheckState.Checked)
+            {
+                nox.Actions = new List<Action>() { (Action)lsvAction.Items[e.Index] };
+
+                if (nox.IsRun)
+                {
+                    MessageBox.Show("Nox is runing");
+
+                    btnStop.Enabled = true;
+                    btnRun.Enabled = false;
+                }
+                else
+                {
+                    LoadScripts(nox);
+                }
+            }
+        }
+
+        private async Task LsvNox_ItemCheckAsync(object sender, ItemCheckEventArgs e)
+        {
+            var selectedNox = (Nox)lsvNox.SelectedItem;
+            var nox = Noxes.FirstOrDefault(s => s.No == selectedNox.No);
+
             for (int i = 0; i < lsvAction.Items.Count; i++)
             {
                 lsvAction.SetItemChecked(i, false);
             }
+            lsvScripts.Items.Clear();
+            nox.Actions.Clear();
+            nox.Configs.Clear();
+
+            if (nox.IsRun)
+            {
+                btnStop.Enabled = true;
+                btnRun.Enabled = false;
+            }
+            else
+            {
+                btnStop.Enabled = false;
+                btnRun.Enabled = true;
+            }
+
+            if (e.NewValue == CheckState.Unchecked)
+            {
+                await StopAsync();
+            }
+
+            nox.IsSelected = e.NewValue == CheckState.Checked;
+        }
+
+        private void LsvNox_SelectedValueChanged(object sender, EventArgs e)
+        {
+
+            for (int i = 0; i < lsvAction.Items.Count; i++)
+            {
+                lsvAction.SetItemChecked(i, false);
+            }
+            lsvScripts.Items.Clear();
 
             if (lsvNox.SelectedItems.Count > 0)
             {
@@ -101,27 +178,36 @@ namespace KClick
                         }
                     }
 
-                    LoadScripts(nox);
+                    if (nox.IsRun)
+                    {
+                        //MessageBox.Show("Nox is runing");
+
+                        btnStop.Enabled = true;
+                        btnRun.Enabled = false;
+                    }
+                    else
+                    {
+                        LoadScripts(nox);
+                    }
                 }
             }
         }
 
-        private void LsvAction_SelectedValueChanged(object sender, EventArgs e)
+
+        private void BtnClearScript_Click(object sender, EventArgs e)
         {
-            if (lsvNox.SelectedItems.Count > 0 && lsvNox.CheckedItems.Count > 0)
+            var nox = GetSelectedNox();
+            if (nox == null)
             {
-                var nox = GetSelectedNox();
-                if (lsvAction.CheckedItems.Count > 0)
-                {
-                    nox.Actions = new List<Action>() {(Action) lsvAction.CheckedItems[0]};
-                    LoadScripts(nox);
-                }
-                else
-                {
-                    nox.Actions = new List<Action>();
-                }
+                MessageBox.Show("Please take control & select a Nox");
+                return;
             }
+
+            nox.Configs.Clear();
+
+            lsvScripts.Items.Clear();
         }
+
 
         private void RerolForm_Load(object sender, EventArgs e)
         {
@@ -161,15 +247,15 @@ namespace KClick
 
         private void LoadScripts(Nox nox)
         {
-            nox.Configs.Clear();
-            lsvScripts.Items.Clear();
-
             if (nox.Actions.Count > 0)
             {
-                var xmlPath = GetXmlPath(nox.Actions.FirstOrDefault());
+                if (nox.Configs.Count == 0)
+                {
+                    var xmlPath = GetXmlPath(nox.Actions.FirstOrDefault());
 
-                //nox.Actions = new List<Action>() { (Action)lsvAction.CheckedItems[0] };
-                nox.Configs = ImportScript(xmlPath);
+                    //nox.Actions = new List<Action>() { (Action)lsvAction.CheckedItems[0] };
+                    nox.Configs = ImportScript(xmlPath);
+                }
 
                 DisplayListView(nox.Configs);
             }
@@ -277,6 +363,7 @@ namespace KClick
 
         private void DisplayListView(IReadOnlyList<Config> configs)
         {
+            lsvScripts.Items.Clear();
             if (configs.Count > 0)
             {
                 for (int i = 0; i < configs.Count; i++)
@@ -313,7 +400,7 @@ namespace KClick
 
                     if (selectedI.No == checkedI.No)
                     {
-                        return Noxes.Find(s => s.No == selectedI.No);
+                        return Noxes.Find(s => s.No == selectedI.No && s.IsSelected);
                     }
                 }
             }
@@ -323,21 +410,35 @@ namespace KClick
 
         private void BtnEditScript_Click(object sender, EventArgs e)
         {
+            var nox = GetSelectedNox();
+            if (nox == null)
+            {
+                MessageBox.Show("Please take control & select a Nox");
+                return;
+            }
+
             if (lsvScripts.SelectedItems.Count > 0)
             {
-                var no = int.Parse(lsvScripts.SelectedItems[0].SubItems[0].Text);
-                if (no > 0)
+                if (nox.IsRun)
                 {
-                    var configs = GetSelectedNox().Configs;
-                    var config = configs.FirstOrDefault(s => s.No == no);
-                    if (config != null)
+                    MessageBox.Show("Nox is runing");
+                }
+                else
+                {
+                    var no = int.Parse(lsvScripts.SelectedItems[0].SubItems[0].Text);
+                    if (no > 0)
                     {
-                        using (var form = new ConfigForm())
+                        var configs = nox.Configs;
+                        var config = configs.FirstOrDefault(s => s.No == no);
+                        if (config != null)
                         {
-                            form.ClubForm = this;
-                            form.Config = config;
-                            form.Configs = configs;
-                            form.ShowDialog();
+                            using (var form = new ConfigForm())
+                            {
+                                form.ClubForm = this;
+                                form.Config = config;
+                                form.Configs = configs;
+                                form.ShowDialog();
+                            }
                         }
                     }
                 }
@@ -346,7 +447,20 @@ namespace KClick
 
         private void BtnNewScript_Click(object sender, EventArgs e)
         {
-            var configs = GetSelectedNox().Configs;
+            var nox = GetSelectedNox();
+            if (nox == null)
+            {
+                MessageBox.Show("Please take control & select a Nox");
+                return;
+            }
+
+            if (nox.IsRun)
+            {
+                MessageBox.Show("Nox is runing");
+                return;
+            }
+
+            var configs = nox.Configs;
 
             using (var form = new ConfigForm())
             {
@@ -354,10 +468,18 @@ namespace KClick
                 form.Configs = configs;
                 form.ShowDialog();
             }
+
         }
 
         public void AddScript(Configuration.Config config)
         {
+            var nox = GetSelectedNox();
+            if (nox == null)
+            {
+                MessageBox.Show("Please take control & select a Nox");
+                return;
+            }
+
             var no = lsvScripts.Items.Count + 1;
             ListViewItem item = new ListViewItem((no).ToString());
             //item.SubItems.Add(new ListViewItem.ListViewSubItem(item, $"X1:{config.XPos}, Y1:{config.YPos}, Color1:{config.ColorName} | X2:{config.X2Pos}, Y2:{config.Y2Pos}, Color2:{config.Color2Name} | XMoved:{config.XPosMoved}, YMoved:{config.YPosMoved}, ColorMoved:{config.ColorMovedName}"));
@@ -367,7 +489,7 @@ namespace KClick
 
             config.No = no;
 
-            GetSelectedNox().Configs.Add(config);
+            nox.Configs.Add(config);
         }
 
         public void UpdateScript(Configuration.Config config)
@@ -389,8 +511,13 @@ namespace KClick
                 }
             }
 
-            var configs = GetSelectedNox().Configs;
-            foreach (var item in configs)
+            var nox = GetSelectedNox();
+            if (nox == null)
+            {
+                MessageBox.Show("Please take control & select a Nox");
+                return;
+            }
+            foreach (var item in nox.Configs)
             {
                 if (item.No == config.No)
                 {
@@ -441,12 +568,19 @@ namespace KClick
 
         private void BtnGetMousePosition_Click(object sender, EventArgs e)
         {
+            var nox = GetSelectedNox();
+            if (nox == null)
+            {
+                MessageBox.Show("Please take control & select a Nox");
+                return;
+            }
+
             if (lsvScripts.SelectedItems.Count > 0)
             {
                 var no = int.Parse(lsvScripts.SelectedItems[0].SubItems[0].Text);
                 if (no > 0)
                 {
-                    var configs = GetSelectedNox().Configs;
+                    var configs = nox.Configs;
                     var config = configs.FirstOrDefault(s => s.No == no);
                     if (config != null)
                     {
@@ -458,12 +592,19 @@ namespace KClick
 
         private async Task btnTryClick_ClickAsync(object sender, EventArgs e)
         {
+            var nox = GetSelectedNox();
+            if (nox == null)
+            {
+                MessageBox.Show("Please take control & select a Nox");
+                return;
+            }
+
             if (lsvScripts.SelectedItems.Count > 0)
             {
                 var no = int.Parse(lsvScripts.SelectedItems[0].SubItems[0].Text);
                 if (no > 0)
                 {
-                    var configs = GetSelectedNox().Configs;
+                    var configs = nox.Configs;
                     var config = configs.FirstOrDefault(s => s.No == no);
                     if (config != null)
                     {
@@ -473,14 +614,10 @@ namespace KClick
                         }
                         else
                         {
-                            var nox = Noxes.FirstOrDefault();
-                            if (nox != null)
+                            var isOk = await MouseOperation.ClickSpeedModeAsync(nox.Handle, config);
+                            if (!isOk)
                             {
-                                var isOk = await MouseOperation.ClickSpeedModeAsync(nox.Handle, config);
-                                if (!isOk)
-                                {
-                                    MessageBox.Show("Position not found!");
-                                }
+                                MessageBox.Show("Position not found!");
                             }
                         }
                     }
@@ -490,7 +627,14 @@ namespace KClick
 
         private void BtnDelete_Click(object sender, EventArgs e)
         {
-            var configs = GetSelectedNox().Configs;
+            var nox = GetSelectedNox();
+            if (nox == null)
+            {
+                MessageBox.Show("Please take control & select a Nox");
+                return;
+            }
+
+            var configs = nox.Configs;
             foreach (ListViewItem eachItem in lsvScripts.SelectedItems)
             {
                 lsvScripts.Items.Remove(eachItem);
@@ -510,6 +654,12 @@ namespace KClick
         private void BtnExport_Click(object sender, EventArgs e)
         {
             var nox = GetSelectedNox();
+            if (nox == null)
+            {
+                MessageBox.Show("Please take control & select a Nox");
+                return;
+            }
+
             var configs = nox.Configs;
             if (configs.Count == 0)
             {
@@ -586,11 +736,15 @@ namespace KClick
                 {
                     lsvScripts.Items.Clear();
 
-                    GetSelectedNox().Configs.Clear();
+                    var nox = GetSelectedNox();
+                    if (nox == null)
+                    {
+                        MessageBox.Show("Please take control & select a Nox");
+                        return;
+                    }
+                    nox.Configs.Clear();
 
-                    List<Config> configs;
-
-                    configs = ImportScript(openFileDialog.FileName);
+                    List<Config> configs = ImportScript(openFileDialog.FileName);
                     if (configs.Count > 0)
                     {
                         DisplayListView(configs);
@@ -601,7 +755,7 @@ namespace KClick
                         MessageBox.Show("No scripts found!");
                     }
 
-                    GetSelectedNox().Configs = configs;
+                    nox.Configs = configs;
                 }
             }
             catch (Exception ex)
@@ -768,23 +922,31 @@ namespace KClick
                 }
 
                 //var x = 1;
+
                 btnRun.Enabled = false;
                 btnStop.Enabled = true;
 
-                foreach (var nox in Noxes)
+                var nox = GetSelectedNox();
+                if (nox == null)
                 {
-                    nox.IsRun = true;
+                    MessageBox.Show("Please take control & select a Nox");
+                    return;
+                }
 
-                    while (nox.IsRun)
+                //foreach (var nox in Noxes)
+                //{
+                nox.IsRun = true;
+
+                while (nox.IsRun)
+                {
+                    await RunAsync(nox);
+
+                    if (nox.Configs.Any(s => s.IsDisabledWholeScripts))
                     {
-                        await RunAsync(nox);
-
-                        if (nox.Configs.Any(s => s.IsDisabledWholeScripts))
-                        {
-                            nox.IsRun = false;
-                        }
+                        nox.IsRun = false;
                     }
                 }
+                //}
 
             }
             catch (Exception ex)
@@ -918,17 +1080,19 @@ namespace KClick
             lock (padlock)
             {
                 var nox = GetSelectedNox();
+                if (nox == null)
+                {
+                    //MessageBox.Show("Please take control & select a Nox");
+                    return;
+                }
                 if (nox.IsRun)
                 {
                     nox.IsRun = false;
                 }
             }
 
-            if (Noxes.All(s => s.IsRun == false))
-            {
-                btnRun.Enabled = true;
-                btnStop.Enabled = false;
-            }
+            btnRun.Enabled = true;
+            btnStop.Enabled = false;
 
             await Task.Delay(100);
         }

@@ -58,6 +58,7 @@
             this.lsvNox = new System.Windows.Forms.CheckedListBox();
             this.contextMenuStrip2 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.btnAddNox = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnClearScript = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.contextMenuStrip1.SuspendLayout();
@@ -71,7 +72,6 @@
             // 
             // lsvAction
             // 
-            this.lsvAction.CheckOnClick = true;
             this.lsvAction.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lsvAction.FormattingEnabled = true;
             this.lsvAction.Items.AddRange(new object[] {
@@ -141,45 +141,46 @@
             this.btnNewScript,
             this.btnEditScript,
             this.btnDelete,
+            this.btnClearScript,
             this.toolStripSeparator2,
             this.btnGetMousePosition,
             this.btnTryClick});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(178, 120);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(181, 164);
             // 
             // btnNewScript
             // 
             this.btnNewScript.Name = "btnNewScript";
-            this.btnNewScript.Size = new System.Drawing.Size(177, 22);
+            this.btnNewScript.Size = new System.Drawing.Size(180, 22);
             this.btnNewScript.Text = "New";
             // 
             // btnEditScript
             // 
             this.btnEditScript.Name = "btnEditScript";
-            this.btnEditScript.Size = new System.Drawing.Size(177, 22);
+            this.btnEditScript.Size = new System.Drawing.Size(180, 22);
             this.btnEditScript.Text = "Edit";
             // 
             // btnDelete
             // 
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(177, 22);
+            this.btnDelete.Size = new System.Drawing.Size(180, 22);
             this.btnDelete.Text = "Delete";
             // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(174, 6);
+            this.toolStripSeparator2.Size = new System.Drawing.Size(177, 6);
             // 
             // btnGetMousePosition
             // 
             this.btnGetMousePosition.Name = "btnGetMousePosition";
-            this.btnGetMousePosition.Size = new System.Drawing.Size(177, 22);
+            this.btnGetMousePosition.Size = new System.Drawing.Size(180, 22);
             this.btnGetMousePosition.Text = "Get Mouse Position";
             // 
             // btnTryClick
             // 
             this.btnTryClick.Name = "btnTryClick";
-            this.btnTryClick.Size = new System.Drawing.Size(177, 22);
+            this.btnTryClick.Size = new System.Drawing.Size(180, 22);
             this.btnTryClick.Text = "Try Click";
             // 
             // panel3
@@ -321,6 +322,12 @@
             this.btnAddNox.Size = new System.Drawing.Size(96, 22);
             this.btnAddNox.Text = "Add";
             // 
+            // btnClearScript
+            // 
+            this.btnClearScript.Name = "btnClearScript";
+            this.btnClearScript.Size = new System.Drawing.Size(180, 22);
+            this.btnClearScript.Text = "Clear";
+            // 
             // ClubForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -378,5 +385,6 @@
         private System.Windows.Forms.CheckedListBox lsvNox;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip2;
         private System.Windows.Forms.ToolStripMenuItem btnAddNox;
+        private System.Windows.Forms.ToolStripMenuItem btnClearScript;
     }
 }

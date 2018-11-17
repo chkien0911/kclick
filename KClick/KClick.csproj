@@ -86,12 +86,6 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="RaidSettingForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="RaidSettingForm.Designer.cs">
-      <DependentUpon>RaidSettingForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="RerolForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -135,9 +129,6 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="RaidSettingForm.resx">
-      <DependentUpon>RaidSettingForm.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="RerolForm.resx">
       <DependentUpon>RerolForm.cs</DependentUpon>
     </EmbeddedResource>
