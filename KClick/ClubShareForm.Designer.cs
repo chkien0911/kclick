@@ -130,7 +130,7 @@
             this.lsvScripts.GridLines = true;
             this.lsvScripts.Location = new System.Drawing.Point(0, 0);
             this.lsvScripts.Name = "lsvScripts";
-            this.lsvScripts.Size = new System.Drawing.Size(355, 148);
+            this.lsvScripts.Size = new System.Drawing.Size(325, 105);
             this.lsvScripts.TabIndex = 1;
             this.lsvScripts.UseCompatibleStateImageBehavior = false;
             this.lsvScripts.View = System.Windows.Forms.View.Details;
@@ -141,12 +141,12 @@
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel3.Location = new System.Drawing.Point(0, 132);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(355, 148);
+            this.panel3.Size = new System.Drawing.Size(325, 105);
             this.panel3.TabIndex = 40;
             // 
             // btnImport
             // 
-            this.btnImport.Location = new System.Drawing.Point(237, 12);
+            this.btnImport.Location = new System.Drawing.Point(207, 11);
             this.btnImport.Name = "btnImport";
             this.btnImport.Size = new System.Drawing.Size(49, 50);
             this.btnImport.TabIndex = 3;
@@ -155,7 +155,7 @@
             // 
             // btnExport
             // 
-            this.btnExport.Location = new System.Drawing.Point(292, 12);
+            this.btnExport.Location = new System.Drawing.Point(262, 11);
             this.btnExport.Name = "btnExport";
             this.btnExport.Size = new System.Drawing.Size(51, 50);
             this.btnExport.TabIndex = 6;
@@ -191,22 +191,22 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 67);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(355, 65);
+            this.panel2.Size = new System.Drawing.Size(325, 65);
             this.panel2.TabIndex = 38;
             // 
             // cboRaidNumber
             // 
             this.cboRaidNumber.FormattingEnabled = true;
-            this.cboRaidNumber.Location = new System.Drawing.Point(198, 22);
+            this.cboRaidNumber.Location = new System.Drawing.Point(174, 35);
             this.cboRaidNumber.Name = "cboRaidNumber";
-            this.cboRaidNumber.Size = new System.Drawing.Size(145, 21);
+            this.cboRaidNumber.Size = new System.Drawing.Size(57, 21);
             this.cboRaidNumber.TabIndex = 16;
             this.cboRaidNumber.Visible = false;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(195, 6);
+            this.label1.Location = new System.Drawing.Point(171, 19);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(124, 13);
             this.label1.TabIndex = 15;
@@ -244,7 +244,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(355, 67);
+            this.panel1.Size = new System.Drawing.Size(325, 67);
             this.panel1.TabIndex = 39;
             // 
             // colDelay
@@ -290,7 +290,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(355, 280);
+            this.ClientSize = new System.Drawing.Size(325, 237);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
@@ -298,7 +298,7 @@
             this.Name = "ClubShareForm";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Main";
+            this.Text = "No App";
             this.contextMenuStrip1.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel2.ResumeLayout(false);

@@ -556,17 +556,21 @@ namespace KClick
                     IntPtr hWndParent = ClickOnPointTool.GetParent(hwnd);
                     if (hWndParent.ToInt64() > 0)
                     {
-                        if (string.IsNullOrWhiteSpace(GlobalConfig.WindowName))
-                        {
-                            Text += "(" + ClickOnPointTool.GetCaptionOfWindow(hWndParent) + ")";
-                        }
+                        var rct = new MouseOperation.RECT();
+                        var isOk = MouseOperation.GetWindowRect(hWndParent, ref rct);
+
+                        //if (string.IsNullOrWhiteSpace(GlobalConfig.WindowName))
+                        //{
+                        //    Text += "(" + ClickOnPointTool.GetCaptionOfWindow(hWndParent) + ". H: " + rct.Bottom + ". W: " + rct.Right + ")";
+                        //}
+                        Text = ClickOnPointTool.GetCaptionOfWindow(hWndParent) + ". H: " + rct.Bottom + ". W: " + rct.Right;
 
                         GlobalConfig.WindowClass = ClickOnPointTool.GetClassNameOfWindow(hWndParent);
                         GlobalConfig.WindowName = ClickOnPointTool.GetCaptionOfWindow(hWndParent);
                         GlobalConfig.WindowHandle = hWndParent;
 
-                        var rct = new MouseOperation.RECT();
-                        if (!MouseOperation.GetWindowRect(hWndParent, ref rct))
+                        
+                        if (!isOk)
                         {
                             txtX.Text = "0";
                             txtY.Text = "0";
