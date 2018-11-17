@@ -20,18 +20,8 @@ namespace KClick
             btnReroll.Click += BtnReroll_Click;
             btnMainForm.Click += BtnMainForm_Click;
             btnClubShare.Click += BtnClubShare_Click;
-
-            btnRaidSetting.Click += BtnRaidSetting_Click;
         }
-
-        private void BtnRaidSetting_Click(object sender, EventArgs e)
-        {
-            Hide();
-
-            var form = new RaidSettingForm();
-            form.ZMainForm = this;
-            form.Show();
-        }
+        
 
         private void BtnClubShare_Click(object sender, EventArgs e)
         {

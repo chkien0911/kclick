@@ -165,9 +165,10 @@ namespace KClick
                 for (int i = 0; i < configs.Count; i++)
                 {
                     lsvScripts.Items.Add(configs[i].No.ToString());
-                    lsvScripts.Items[i].SubItems.Add(
-                        $"X1:{configs[i].XPos}, Y1:{configs[i].YPos}, Color1:{configs[i].ColorName} | X2:{configs[i].X2Pos}, Y2:{configs[i].Y2Pos}, Color2:{configs[i].Color2Name} | XMoved:{configs[i].XPosMoved}, YMoved:{configs[i].YPosMoved}, ColorMoved:{configs[i].ColorMovedName}"
-                    );
+                    lsvScripts.Items.Add(configs[i].Delay.ToString());
+                    //lsvScripts.Items[i].SubItems.Add(
+                    //    $"X1:{configs[i].XPos}, Y1:{configs[i].YPos}, Color1:{configs[i].ColorName} | X2:{configs[i].X2Pos}, Y2:{configs[i].Y2Pos}, Color2:{configs[i].Color2Name} | XMoved:{configs[i].XPosMoved}, YMoved:{configs[i].YPosMoved}, ColorMoved:{configs[i].ColorMovedName}"
+                    //);
                     lsvScripts.Items[i].SubItems.Add(configs[i].Description);
 
                 }
@@ -176,7 +177,7 @@ namespace KClick
 
         private void RerolForm_Closed(object sender, EventArgs e)
         {
-            ZMainForm.Show();
+            ZMainForm?.Show();
         }
 
         private void BtnEditScript_Click(object sender, EventArgs e)
@@ -194,7 +195,6 @@ namespace KClick
                             form.ClubShareForm = this;
                             form.Config = config;
                             form.Configs = Configs;
-                            form.GlobalConfig = GlobalConfig;
                             form.ShowDialog();
                         }
                     }
@@ -208,7 +208,6 @@ namespace KClick
             {
                 form.ClubShareForm = this;
                 form.Configs = Configs;
-                form.GlobalConfig = GlobalConfig;
                 form.ShowDialog();
             }
         }
@@ -217,7 +216,8 @@ namespace KClick
         {
             var no = lsvScripts.Items.Count + 1;
             ListViewItem item = new ListViewItem((no).ToString());
-            item.SubItems.Add(new ListViewItem.ListViewSubItem(item, $"X1:{config.XPos}, Y1:{config.YPos}, Color1:{config.ColorName} | X2:{config.X2Pos}, Y2:{config.Y2Pos}, Color2:{config.Color2Name} | XMoved:{config.XPosMoved}, YMoved:{config.YPosMoved}, ColorMoved:{config.ColorMovedName}"));
+            item.SubItems.Add(new ListViewItem.ListViewSubItem(item, config.Delay.ToString()));
+            //item.SubItems.Add(new ListViewItem.ListViewSubItem(item, $"X1:{config.XPos}, Y1:{config.YPos}, Color1:{config.ColorName} | X2:{config.X2Pos}, Y2:{config.Y2Pos}, Color2:{config.Color2Name} | XMoved:{config.XPosMoved}, YMoved:{config.YPosMoved}, ColorMoved:{config.ColorMovedName}"));
             item.SubItems.Add(new ListViewItem.ListViewSubItem(item, config.Description));
             lsvScripts.Items.Add(item);
 
@@ -236,7 +236,8 @@ namespace KClick
             {
                 if (eachItem.SubItems[0].Text == config.No.ToString())
                 {
-                    eachItem.SubItems[1].Text = $"X1:{config.XPos}, Y1:{config.YPos}, Color1:{config.ColorName} | X2:{config.X2Pos}, Y2:{config.Y2Pos}, Color2:{config.Color2Name} | XMoved:{config.XPosMoved}, YMoved:{config.YPosMoved}, ColorMoved:{config.ColorMovedName}";
+                    //eachItem.SubItems[1].Text = $"X1:{config.XPos}, Y1:{config.YPos}, Color1:{config.ColorName} | X2:{config.X2Pos}, Y2:{config.Y2Pos}, Color2:{config.Color2Name} | XMoved:{config.XPosMoved}, YMoved:{config.YPosMoved}, ColorMoved:{config.ColorMovedName}";
+                    eachItem.SubItems[2].Text = config.Delay.ToString();
                     eachItem.SubItems[2].Text = config.Description;
 
                     break;
@@ -555,14 +556,34 @@ namespace KClick
                     IntPtr hWndParent = ClickOnPointTool.GetParent(hwnd);
                     if (hWndParent.ToInt64() > 0)
                     {
-                        if (string.IsNullOrWhiteSpace(GlobalConfig.WindowName))
-                        {
-                            Text += "(" + ClickOnPointTool.GetCaptionOfWindow(hWndParent) + ")";
-                        }
+                        var rct = new MouseOperation.RECT();
+                        var isOk = MouseOperation.GetWindowRect(hWndParent, ref rct);
+
+                        //if (string.IsNullOrWhiteSpace(GlobalConfig.WindowName))
+                        //{
+                        //    Text += "(" + ClickOnPointTool.GetCaptionOfWindow(hWndParent) + ". H: " + rct.Bottom + ". W: " + rct.Right + ")";
+                        //}
+                        Text = ClickOnPointTool.GetCaptionOfWindow(hWndParent) + ". H: " + rct.Bottom + ". W: " + rct.Right;
 
                         GlobalConfig.WindowClass = ClickOnPointTool.GetClassNameOfWindow(hWndParent);
                         GlobalConfig.WindowName = ClickOnPointTool.GetCaptionOfWindow(hWndParent);
                         GlobalConfig.WindowHandle = hWndParent;
+
+                        
+                        if (!isOk)
+                        {
+                            txtX.Text = "0";
+                            txtY.Text = "0";
+                            GlobalConfig.X = 0;
+                            GlobalConfig.Y = 0;
+                        }
+                        else
+                        {
+                            txtX.Text = rct.Left.ToString();
+                            txtY.Text = rct.Top.ToString();
+                            GlobalConfig.X = rct.Left;
+                            GlobalConfig.Y = rct.Top;
+                        }
 
                         ghk = new GlobalHotkey(GlobalHotkey.ALT, Keys.S, hWndParent);
                         ghk.Register();
@@ -614,8 +635,13 @@ namespace KClick
                     // If found, position it.
                     if (wHandle != IntPtr.Zero)
                     {
+                        var isOkX = int.TryParse(txtX.Text, out int x);
+                        var isOkY = int.TryParse(txtY.Text, out int y);
+                        GlobalConfig.X = isOkX ? x : 0;
+                        GlobalConfig.Y = isOkY ? y : 0;
+
                         // Move the window to (0,0)
-                        MouseOperation.SetWindowPos(wHandle, IntPtr.Zero, 0, 0, GlobalConfig.WindowWidth, GlobalConfig.WindowHigh, SWP_NOZORDER | SWP_SHOWWINDOW);
+                        MouseOperation.SetWindowPos(wHandle, IntPtr.Zero, GlobalConfig.X, GlobalConfig.Y, GlobalConfig.WindowWidth, GlobalConfig.WindowHigh, SWP_NOZORDER | SWP_SHOWWINDOW);
                     }
                     else
                     {

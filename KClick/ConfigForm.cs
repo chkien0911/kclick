@@ -14,13 +14,13 @@ namespace KClick
 {
     public partial class ConfigForm : Form
     {
+        public ClubForm ClubForm { get; set; }
         public RerolForm RerolForm { get; set; }
         public ClubShareForm ClubShareForm { get; set; }
 
         public List<Config> Configs { get; set; } = new List<Config>();
         public Configuration.Config Config { get; set; } = new Config();
-        public Configuration.GlobalConfig GlobalConfig { get; set; } = new GlobalConfig();
-
+        
         public ConfigForm()
         {
             InitializeComponent();
@@ -223,6 +223,10 @@ namespace KClick
                 {
                     ClubShareForm.AddScript(config);
                 }
+                else if (ClubForm != null)
+                {
+                    ClubForm.AddScript(config);
+                }
             }
             else
             {
@@ -236,6 +240,10 @@ namespace KClick
                 else if (ClubShareForm != null)
                 {
                     ClubShareForm.UpdateScript(config);
+                }
+                else if (ClubForm != null)
+                {
+                    ClubForm.UpdateScript(config);
                 }
             }
 
