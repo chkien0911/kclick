@@ -168,7 +168,7 @@ namespace KClick.Utilities
 
             var oldPos = Cursor.Position;
 
-            ClientToScreen(wndHandle, ref clientPoint2);
+            //ClientToScreen(wndHandle, ref clientPoint2);
 
             if (ignoredPoint.X != 0 && ignoredPoint.Y != 0 && !string.IsNullOrWhiteSpace(ignoredColor))
             {
@@ -181,9 +181,9 @@ namespace KClick.Utilities
                 }
             }
 
-            var colorClientPoint = clientPoint;
-            ClientToScreen(wndHandle, ref colorClientPoint);
-            var color = GetColorAt(colorClientPoint);
+            //var colorClientPoint = clientPoint;
+            //ClientToScreen(wndHandle, ref colorClientPoint);
+            var color = GetColorAt(clientPoint);
 
             if (color.Name == color1)
             {
@@ -203,6 +203,8 @@ namespace KClick.Utilities
                 SendInput((uint)inputs.Length, inputs, Marshal.SizeOf(typeof(INPUT)));
                 await Task.Delay(10);
 
+                Debug.WriteLine($"Left down");
+
                 for (int i = 0; i < allPoints.Length; i++)
                 {
                     var point = allPoints[i];
@@ -217,7 +219,7 @@ namespace KClick.Utilities
                     SendInput((uint)inputs1.Length, inputs1, Marshal.SizeOf(typeof(INPUT)));
                     await Task.Delay(10);
 
-
+                    Debug.WriteLine($"Move");
                 }
                 var inputMouseUp = new INPUT();
                 inputMouseUp.Type = 0;
@@ -225,7 +227,9 @@ namespace KClick.Utilities
 
                 var inputs3 = new INPUT[] { inputMouseUp };
                 SendInput((uint)inputs3.Length, inputs3, Marshal.SizeOf(typeof(INPUT)));
-                await Task.Delay(10);
+                //await Task.Delay(100);
+
+                Debug.WriteLine($"Left Up");
 
                 Cursor.Position = oldPos;
             }
@@ -283,13 +287,13 @@ namespace KClick.Utilities
             return true;
         }
 
-        public static bool IsCloseColor(Color a, Color z, int threshold = 20)
-        {
-            int r = (int)a.R - z.R,
-                g = (int)a.G - z.G,
-                b = (int)a.B - z.B;
-            return (r * r + g * g + b * b) <= threshold * threshold;
-        }
+        //public static bool IsCloseColor(Color a, Color z, int threshold = 1)
+        //{
+        //    int r = (int)a.R - z.R,
+        //        g = (int)a.G - z.G,
+        //        b = (int)a.B - z.B;
+        //    return (r * r + g * g + b * b) <= threshold * threshold;
+        //}
 
         public static bool SendMessageSpeedMode(
             IntPtr wndHandle,
@@ -316,18 +320,18 @@ namespace KClick.Utilities
 
             var configColor = Color.FromArgb(Int32.Parse(config.ColorName.Replace("#", ""), NumberStyles.HexNumber));
 
-            if (color.Name == config.ColorName || IsCloseColor(color, configColor))
+            if (color.Name == config.ColorName) //|| IsCloseColor(color, configColor))
             {
                 Color? color2 = null;
+                Color? configColor2 = null;
                 if (config.IsPosition2Valid)
                 {
                     var point2 = new Point(config.X2Pos, config.Y2Pos);
                     color2 = GetColorAt(point2);
+                    configColor2 = Color.FromArgb(Int32.Parse(config.Color2Name.Replace("#", ""), NumberStyles.HexNumber));
                 }
 
-                var configColor2 = Color.FromArgb(Int32.Parse(config.Color2Name.Replace("#", ""), NumberStyles.HexNumber));
-
-                if (color2 == null || (color2 != null && (color2.Value.Name == config.Color2Name || IsCloseColor(color2.Value, configColor2))))
+                if (color2 == null || (color2 != null && (color2.Value.Name == config.Color2Name))) //|| IsCloseColor(color2.Value, configColor2.Value))))
                 {
                     RECT rct = new RECT();
 
@@ -535,13 +539,15 @@ namespace KClick.Utilities
             isOk = SendMessageSpeedMode(windowHandle,
                 (int)MouseEventFlags.LeftDown, 1, config);
             Debug.WriteLine($"- Script No : {config.No}-{config.Description}. Ok: {isOk}");
+            if (isOk)
+            {
+                Debug.WriteLine($"- Script No : {config.No}. Left up");
+                SendMessageLeftUpSpeedMode(windowHandle,
+                    (int)MouseEventFlags.LeftUp, 0, config);
+                Debug.WriteLine($"- Script No : {config.No}-{config.Description}. Ok: {isOk}");
 
-            Debug.WriteLine($"- Script No : {config.No}. Left up");
-            SendMessageLeftUpSpeedMode(windowHandle,
-                (int)MouseEventFlags.LeftUp, 0, config);
-            Debug.WriteLine($"- Script No : {config.No}-{config.Description}. Ok: {isOk}");
-
-            await Task.Delay(10);
+                await Task.Delay(10);
+            }
 
             return isOk;
         }

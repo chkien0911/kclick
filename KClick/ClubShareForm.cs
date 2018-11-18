@@ -31,6 +31,7 @@ namespace KClick
         private static List<Configuration.Config> ClosePositionConfigs = new List<Configuration.Config>();
 
         private GlobalHotkey ghk;
+        private GlobalHotkey ghkMain;
         private static bool isRun = true;
         private static readonly object padlock = new object();
 
@@ -56,7 +57,7 @@ namespace KClick
             btnDelete.Click += BtnDelete_Click;
             btnNewScript.Click += BtnNewScript_Click;
             btnEditScript.Click += BtnEditScript_Click;
-            
+            btnClearScripts.Click += BtnClearScripts_Click1;
 
             btnTryClick.Click += async (sender, e) => await btnTryClick_ClickAsync(sender, e);
             btnGetMousePosition.Click += BtnGetMousePosition_Click;
@@ -69,6 +70,12 @@ namespace KClick
 
 
             Load += RerolForm_Load;
+        }
+
+        private void BtnClearScripts_Click1(object sender, EventArgs e)
+        {
+            Configs.Clear();
+            lsvScripts.Items.Clear();
         }
 
         private void RerolForm_Load(object sender, EventArgs e)
@@ -165,7 +172,7 @@ namespace KClick
                 for (int i = 0; i < configs.Count; i++)
                 {
                     lsvScripts.Items.Add(configs[i].No.ToString());
-                    lsvScripts.Items.Add(configs[i].Delay.ToString());
+                    lsvScripts.Items[i].SubItems.Add(configs[i].Delay.ToString());
                     //lsvScripts.Items[i].SubItems.Add(
                     //    $"X1:{configs[i].XPos}, Y1:{configs[i].YPos}, Color1:{configs[i].ColorName} | X2:{configs[i].X2Pos}, Y2:{configs[i].Y2Pos}, Color2:{configs[i].Color2Name} | XMoved:{configs[i].XPosMoved}, YMoved:{configs[i].YPosMoved}, ColorMoved:{configs[i].ColorMovedName}"
                     //);
@@ -195,6 +202,7 @@ namespace KClick
                             form.ClubShareForm = this;
                             form.Config = config;
                             form.Configs = Configs;
+                            form.GlobalConfig = GlobalConfig;
                             form.ShowDialog();
                         }
                     }
@@ -208,6 +216,7 @@ namespace KClick
             {
                 form.ClubShareForm = this;
                 form.Configs = Configs;
+                form.GlobalConfig = GlobalConfig;
                 form.ShowDialog();
             }
         }
@@ -325,10 +334,17 @@ namespace KClick
                         }
                         else
                         {
-                            var isOk = await MouseOperation.ClickSpeedModeAsync(GlobalConfig.WindowHandle, config);
-                            if (!isOk)
+                            if (config.IsDrag)
                             {
-                                MessageBox.Show("Position not found!");
+                                await MouseOperation.ClickAndDragAsync(GlobalConfig.WindowHandle, new Point(config.XPos, config.YPos), config.ColorName, new Point(config.XPosMoved, config.YPosMoved), new Point(config.XPosIgnored, config.XPosIgnored), config.ColorMovedName);
+                            }
+                            else
+                            {
+                                var isOk = await MouseOperation.ClickSpeedModeAsync(GlobalConfig.WindowHandle, config);
+                                if (!isOk)
+                                {
+                                    MessageBox.Show("Position not found!");
+                                }
                             }
                         }
                     }
@@ -586,7 +602,9 @@ namespace KClick
                         }
 
                         ghk = new GlobalHotkey(GlobalHotkey.ALT, Keys.S, hWndParent);
+                        ghkMain = new GlobalHotkey(GlobalHotkey.ALT, Keys.S, this.Handle);
                         ghk.Register();
+                        ghkMain.Register();
 
                         if (Configs.Count > 0)
                         {

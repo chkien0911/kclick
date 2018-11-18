@@ -56,6 +56,7 @@
             this.txtColorIgnored1 = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.chkIsClosedPosition = new System.Windows.Forms.CheckBox();
             this.chkEndWholeScripts = new System.Windows.Forms.CheckBox();
             this.chkRunOnce = new System.Windows.Forms.CheckBox();
             this.btnClearMoved = new System.Windows.Forms.Button();
@@ -73,12 +74,12 @@
             this.txtDelay = new System.Windows.Forms.TextBox();
             this.lblDelay = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnTryClick = new System.Windows.Forms.Button();
             this.btnReload = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.cboRunAfterScript = new System.Windows.Forms.ComboBox();
-            this.chkIsClosedPosition = new System.Windows.Forms.CheckBox();
             this.panel3.SuspendLayout();
             this.grbIgnore.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -358,6 +359,16 @@
             this.groupBox1.TabIndex = 40;
             this.groupBox1.TabStop = false;
             // 
+            // chkIsClosedPosition
+            // 
+            this.chkIsClosedPosition.AutoSize = true;
+            this.chkIsClosedPosition.Location = new System.Drawing.Point(324, 98);
+            this.chkIsClosedPosition.Name = "chkIsClosedPosition";
+            this.chkIsClosedPosition.Size = new System.Drawing.Size(92, 17);
+            this.chkIsClosedPosition.TabIndex = 63;
+            this.chkIsClosedPosition.Text = "Close Position";
+            this.chkIsClosedPosition.UseVisualStyleBackColor = true;
+            // 
             // chkEndWholeScripts
             // 
             this.chkEndWholeScripts.AutoSize = true;
@@ -505,14 +516,24 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.btnTryClick);
             this.panel1.Controls.Add(this.btnReload);
             this.panel1.Controls.Add(this.btnCancel);
             this.panel1.Controls.Add(this.btnSave);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel1.Location = new System.Drawing.Point(0, 391);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(440, 45);
+            this.panel1.Size = new System.Drawing.Size(430, 45);
             this.panel1.TabIndex = 43;
+            // 
+            // btnTryClick
+            // 
+            this.btnTryClick.Location = new System.Drawing.Point(91, 3);
+            this.btnTryClick.Name = "btnTryClick";
+            this.btnTryClick.Size = new System.Drawing.Size(75, 32);
+            this.btnTryClick.TabIndex = 3;
+            this.btnTryClick.Text = "Try Click";
+            this.btnTryClick.UseVisualStyleBackColor = true;
             // 
             // btnReload
             // 
@@ -526,7 +547,7 @@
             // btnCancel
             // 
             this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnCancel.Location = new System.Drawing.Point(361, 3);
+            this.btnCancel.Location = new System.Drawing.Point(351, 3);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(75, 32);
             this.btnCancel.TabIndex = 1;
@@ -535,7 +556,7 @@
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(280, 3);
+            this.btnSave.Location = new System.Drawing.Point(270, 3);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(75, 32);
             this.btnSave.TabIndex = 0;
@@ -559,23 +580,13 @@
             this.cboRunAfterScript.Size = new System.Drawing.Size(338, 21);
             this.cboRunAfterScript.TabIndex = 46;
             // 
-            // chkIsClosedPosition
-            // 
-            this.chkIsClosedPosition.AutoSize = true;
-            this.chkIsClosedPosition.Location = new System.Drawing.Point(324, 98);
-            this.chkIsClosedPosition.Name = "chkIsClosedPosition";
-            this.chkIsClosedPosition.Size = new System.Drawing.Size(92, 17);
-            this.chkIsClosedPosition.TabIndex = 63;
-            this.chkIsClosedPosition.Text = "Close Position";
-            this.chkIsClosedPosition.UseVisualStyleBackColor = true;
-            // 
             // ConfigForm
             // 
             this.AcceptButton = this.btnSave;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btnCancel;
-            this.ClientSize = new System.Drawing.Size(440, 436);
+            this.ClientSize = new System.Drawing.Size(430, 436);
             this.Controls.Add(this.cboRunAfterScript);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panel1);
@@ -654,5 +665,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox cboRunAfterScript;
         private System.Windows.Forms.CheckBox chkIsClosedPosition;
+        private System.Windows.Forms.Button btnTryClick;
     }
 }

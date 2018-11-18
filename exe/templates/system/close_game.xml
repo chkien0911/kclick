@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<KScrips>
+  <KScript No="1">
+    <No>1</No>
+    <MouseKey>Left</MouseKey>
+    <X>482</X>
+    <Y>17</Y>
+    <Color>ff1c1b20</Color>
+    <X2>261</X2>
+    <Y2>16</Y2>
+    <Color2>ff1c1b20</Color2>
+    <XMoved>0</XMoved>
+    <YMoved>0</YMoved>
+    <ColorMoved></ColorMoved>
+    <XIgnored>0</XIgnored>
+    <YIgnored>0</YIgnored>
+    <ColorIgnored></ColorIgnored>
+    <Delay>100</Delay>
+    <IsSequential>false</IsSequential>
+    <IsDrag>false</IsDrag>
+    <Description>Close game</Description>
+    <IsStartIcon>false</IsStartIcon>
+    <RunOnce>false</RunOnce>
+    <EndWholeScripts>false</EndWholeScripts>
+    <IsClosedPosition>true</IsClosedPosition>
+    <RunAfterScript>0</RunAfterScript>
+  </KScript>
+</KScrips>

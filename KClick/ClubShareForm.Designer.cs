@@ -39,6 +39,7 @@
             this.colDescription = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.colNo = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.lsvScripts = new System.Windows.Forms.ListView();
+            this.colDelay = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.panel3 = new System.Windows.Forms.Panel();
             this.btnImport = new System.Windows.Forms.Button();
             this.btnExport = new System.Windows.Forms.Button();
@@ -50,11 +51,11 @@
             this.btnFixControl = new System.Windows.Forms.Button();
             this.btnFindControl = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.colDelay = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.label2 = new System.Windows.Forms.Label();
-            this.txtX = new System.Windows.Forms.TextBox();
             this.txtY = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
+            this.txtX = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.btnClearScripts = new System.Windows.Forms.ToolStripMenuItem();
             this.contextMenuStrip1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -64,30 +65,30 @@
             // btnTryClick
             // 
             this.btnTryClick.Name = "btnTryClick";
-            this.btnTryClick.Size = new System.Drawing.Size(177, 22);
+            this.btnTryClick.Size = new System.Drawing.Size(180, 22);
             this.btnTryClick.Text = "Try Click";
             // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(174, 6);
+            this.toolStripSeparator2.Size = new System.Drawing.Size(177, 6);
             // 
             // btnDelete
             // 
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(177, 22);
+            this.btnDelete.Size = new System.Drawing.Size(180, 22);
             this.btnDelete.Text = "Delete";
             // 
             // btnEditScript
             // 
             this.btnEditScript.Name = "btnEditScript";
-            this.btnEditScript.Size = new System.Drawing.Size(177, 22);
+            this.btnEditScript.Size = new System.Drawing.Size(180, 22);
             this.btnEditScript.Text = "Edit";
             // 
             // btnNewScript
             // 
             this.btnNewScript.Name = "btnNewScript";
-            this.btnNewScript.Size = new System.Drawing.Size(177, 22);
+            this.btnNewScript.Size = new System.Drawing.Size(180, 22);
             this.btnNewScript.Text = "New";
             // 
             // contextMenuStrip1
@@ -96,16 +97,17 @@
             this.btnNewScript,
             this.btnEditScript,
             this.btnDelete,
+            this.btnClearScripts,
             this.toolStripSeparator2,
             this.btnGetMousePosition,
             this.btnTryClick});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(178, 120);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(181, 164);
             // 
             // btnGetMousePosition
             // 
             this.btnGetMousePosition.Name = "btnGetMousePosition";
-            this.btnGetMousePosition.Size = new System.Drawing.Size(177, 22);
+            this.btnGetMousePosition.Size = new System.Drawing.Size(180, 22);
             this.btnGetMousePosition.Text = "Get Mouse Position";
             // 
             // colDescription
@@ -130,43 +132,48 @@
             this.lsvScripts.GridLines = true;
             this.lsvScripts.Location = new System.Drawing.Point(0, 0);
             this.lsvScripts.Name = "lsvScripts";
-            this.lsvScripts.Size = new System.Drawing.Size(325, 105);
+            this.lsvScripts.Size = new System.Drawing.Size(314, 176);
             this.lsvScripts.TabIndex = 1;
             this.lsvScripts.UseCompatibleStateImageBehavior = false;
             this.lsvScripts.View = System.Windows.Forms.View.Details;
+            // 
+            // colDelay
+            // 
+            this.colDelay.Text = "Delay";
+            this.colDelay.Width = 45;
             // 
             // panel3
             // 
             this.panel3.Controls.Add(this.lsvScripts);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel3.Location = new System.Drawing.Point(0, 132);
+            this.panel3.Location = new System.Drawing.Point(0, 120);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(325, 105);
+            this.panel3.Size = new System.Drawing.Size(314, 176);
             this.panel3.TabIndex = 40;
             // 
             // btnImport
             // 
-            this.btnImport.Location = new System.Drawing.Point(207, 11);
+            this.btnImport.Location = new System.Drawing.Point(201, 11);
             this.btnImport.Name = "btnImport";
-            this.btnImport.Size = new System.Drawing.Size(49, 50);
+            this.btnImport.Size = new System.Drawing.Size(49, 43);
             this.btnImport.TabIndex = 3;
             this.btnImport.Text = "Load Script";
             this.btnImport.UseVisualStyleBackColor = true;
             // 
             // btnExport
             // 
-            this.btnExport.Location = new System.Drawing.Point(262, 11);
+            this.btnExport.Location = new System.Drawing.Point(256, 11);
             this.btnExport.Name = "btnExport";
-            this.btnExport.Size = new System.Drawing.Size(51, 50);
+            this.btnExport.Size = new System.Drawing.Size(51, 43);
             this.btnExport.TabIndex = 6;
             this.btnExport.Text = "Save Script";
             this.btnExport.UseVisualStyleBackColor = true;
             // 
             // btnRun
             // 
-            this.btnRun.Location = new System.Drawing.Point(12, 6);
+            this.btnRun.Location = new System.Drawing.Point(12, 9);
             this.btnRun.Name = "btnRun";
-            this.btnRun.Size = new System.Drawing.Size(69, 50);
+            this.btnRun.Size = new System.Drawing.Size(54, 36);
             this.btnRun.TabIndex = 14;
             this.btnRun.Text = "Run";
             this.btnRun.UseVisualStyleBackColor = true;
@@ -175,9 +182,9 @@
             // 
             this.btnStop.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnStop.Enabled = false;
-            this.btnStop.Location = new System.Drawing.Point(87, 6);
+            this.btnStop.Location = new System.Drawing.Point(72, 9);
             this.btnStop.Name = "btnStop";
-            this.btnStop.Size = new System.Drawing.Size(69, 50);
+            this.btnStop.Size = new System.Drawing.Size(65, 36);
             this.btnStop.TabIndex = 5;
             this.btnStop.Text = "Stop (Alt-S)";
             this.btnStop.UseVisualStyleBackColor = true;
@@ -191,13 +198,13 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 67);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(325, 65);
+            this.panel2.Size = new System.Drawing.Size(314, 53);
             this.panel2.TabIndex = 38;
             // 
             // cboRaidNumber
             // 
             this.cboRaidNumber.FormattingEnabled = true;
-            this.cboRaidNumber.Location = new System.Drawing.Point(174, 35);
+            this.cboRaidNumber.Location = new System.Drawing.Point(144, 24);
             this.cboRaidNumber.Name = "cboRaidNumber";
             this.cboRaidNumber.Size = new System.Drawing.Size(57, 21);
             this.cboRaidNumber.TabIndex = 16;
@@ -206,7 +213,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(171, 19);
+            this.label1.Location = new System.Drawing.Point(141, 8);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(124, 13);
             this.label1.TabIndex = 15;
@@ -215,9 +222,9 @@
             // 
             // btnFixControl
             // 
-            this.btnFixControl.Location = new System.Drawing.Point(143, 11);
+            this.btnFixControl.Location = new System.Drawing.Point(127, 11);
             this.btnFixControl.Name = "btnFixControl";
-            this.btnFixControl.Size = new System.Drawing.Size(58, 50);
+            this.btnFixControl.Size = new System.Drawing.Size(58, 43);
             this.btnFixControl.TabIndex = 2;
             this.btnFixControl.Text = "Fix Size Control";
             this.btnFixControl.UseVisualStyleBackColor = true;
@@ -226,7 +233,7 @@
             // 
             this.btnFindControl.Location = new System.Drawing.Point(12, 11);
             this.btnFindControl.Name = "btnFindControl";
-            this.btnFindControl.Size = new System.Drawing.Size(69, 50);
+            this.btnFindControl.Size = new System.Drawing.Size(54, 43);
             this.btnFindControl.TabIndex = 1;
             this.btnFindControl.Text = "Take Control";
             this.btnFindControl.UseVisualStyleBackColor = true;
@@ -244,34 +251,12 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(325, 67);
+            this.panel1.Size = new System.Drawing.Size(314, 67);
             this.panel1.TabIndex = 39;
-            // 
-            // colDelay
-            // 
-            this.colDelay.Text = "Delay";
-            this.colDelay.Width = 45;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(87, 15);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(14, 13);
-            this.label2.TabIndex = 17;
-            this.label2.Text = "X";
-            // 
-            // txtX
-            // 
-            this.txtX.Location = new System.Drawing.Point(107, 12);
-            this.txtX.Name = "txtX";
-            this.txtX.Size = new System.Drawing.Size(30, 20);
-            this.txtX.TabIndex = 17;
-            this.txtX.Text = "0";
             // 
             // txtY
             // 
-            this.txtY.Location = new System.Drawing.Point(107, 38);
+            this.txtY.Location = new System.Drawing.Point(91, 38);
             this.txtY.Name = "txtY";
             this.txtY.Size = new System.Drawing.Size(30, 20);
             this.txtY.TabIndex = 18;
@@ -280,17 +265,40 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(87, 41);
+            this.label3.Location = new System.Drawing.Point(71, 41);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(14, 13);
             this.label3.TabIndex = 19;
             this.label3.Text = "Y";
             // 
+            // txtX
+            // 
+            this.txtX.Location = new System.Drawing.Point(91, 12);
+            this.txtX.Name = "txtX";
+            this.txtX.Size = new System.Drawing.Size(30, 20);
+            this.txtX.TabIndex = 17;
+            this.txtX.Text = "0";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(71, 15);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(14, 13);
+            this.label2.TabIndex = 17;
+            this.label2.Text = "X";
+            // 
+            // btnClearScripts
+            // 
+            this.btnClearScripts.Name = "btnClearScripts";
+            this.btnClearScripts.Size = new System.Drawing.Size(180, 22);
+            this.btnClearScripts.Text = "Clear";
+            // 
             // ClubShareForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(325, 237);
+            this.ClientSize = new System.Drawing.Size(314, 296);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
@@ -298,7 +306,7 @@
             this.Name = "ClubShareForm";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "No App";
+            this.Text = "No App Found";
             this.contextMenuStrip1.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
@@ -337,5 +345,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtX;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ToolStripMenuItem btnClearScripts;
     }
 }

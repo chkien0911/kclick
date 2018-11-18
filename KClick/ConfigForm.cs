@@ -1,14 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using Gma.System.MouseKeyHook;
 using KClick.Configuration;
 using KClick.Utilities;
+using System;
+using System.Collections.Generic;
+using System.Drawing;
+using System.Linq;
+using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace KClick
 {
@@ -20,7 +18,64 @@ namespace KClick
 
         public List<Config> Configs { get; set; } = new List<Config>();
         public Configuration.Config Config { get; set; } = new Config();
-        
+        public Configuration.GlobalConfig GlobalConfig { get; set; } = new GlobalConfig();
+
+        private IKeyboardMouseEvents m_GlobalHook;
+
+        public void Subscribe()
+        {
+            // Note: for the application hook, use the Hook.AppEvents() instead
+            m_GlobalHook = Hook.GlobalEvents();
+
+            //m_GlobalHook.MouseDownExt += GlobalHookMouseDownExt;
+            //m_GlobalHook.MouseDragStarted += M_GlobalHook_MouseDragStarted;
+            //m_GlobalHook.MouseDragFinishedExt += M_GlobalHook_MouseDragFinishedExt;
+            //m_GlobalHook.MouseUp += M_GlobalHook_MouseUp;
+        }
+
+        //private void M_GlobalHook_MouseUp(object sender, MouseEventArgs e)
+        //{
+        //    txtProgress.AppendText(string.Format("MouseUp: \t{0}; \t Location: \t{1}", e.Button, e.Location));
+        //}
+
+        //private void M_GlobalHook_MouseMove(object sender, MouseEventArgs e)
+        //{
+        //    txtProgress.AppendText(string.Format("MouseMove: \t{0}; \t Location: \t{1}", e.Button, e.Location));
+        //}
+
+        //private void M_GlobalHook_MouseDragFinishedExt(object sender, MouseEventExtArgs e)
+        //{
+        //    txtProgress.AppendText(string.Format("MouseDragFinishedExt: \t{0}; \t Location: \t{1}", e.Button, e.Location));
+        //}
+
+        //private void M_GlobalHook_MouseDragStarted(object sender, MouseEventArgs e)
+        //{
+        //    txtProgress.AppendText(string.Format("MouseDragStarted: \t{0}; \t Location: \t{1}", e.Button, e.Location));
+        //}
+
+        //private void GlobalHookKeyPress(object sender, KeyPressEventArgs e)
+        //{
+        //    //txtProgress.AppendText(string.Format("KeyPress:: \t{0}; \t Location: \t{1}", e.KeyChar));
+        //}
+
+        //private void GlobalHookMouseDownExt(object sender, MouseEventExtArgs e)
+        //{
+        //    txtProgress.Clear();
+        //    txtProgress.AppendText(string.Format("MouseDownExt: \t{0}; \t Location: \t{1}", e.Button, e.Location));
+        //    // uncommenting the following line will suppress the middle mouse button click
+        //    // if (e.Buttons == MouseButtons.Middle) { e.Handled = true; }
+        //}
+        public void Unsubscribe()
+        {
+            //m_GlobalHook.MouseDownExt -= GlobalHookMouseDownExt;
+            //m_GlobalHook.MouseDragStarted -= M_GlobalHook_MouseDragStarted;
+            //m_GlobalHook.MouseDragFinishedExt -= M_GlobalHook_MouseDragFinishedExt;
+            //m_GlobalHook.MouseUp -= M_GlobalHook_MouseUp;
+
+            //It is recommened to dispose it
+            m_GlobalHook.Dispose();
+        }
+
         public ConfigForm()
         {
             InitializeComponent();
@@ -54,7 +109,45 @@ namespace KClick
             chkDrag.CheckedChanged += ChkDrag_CheckedChanged;
 
             btnReload.Click += BtnReload_Click;
+            btnTryClick.Click += async (sender, e) => await btnTryClick_ClickAsync(sender, e);
+
+            //Subscribe();
+
+            FormClosed += ConfigForm_FormClosed;
         }
+
+        private void ConfigForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            //Unsubscribe();   
+        }
+
+        private async Task btnTryClick_ClickAsync(object sender, EventArgs e)
+        {
+            var config = GetConfig();
+            if (config != null)
+            {
+                if (config.IsDisabledTemp)
+                {
+                    MessageBox.Show("Script was disabled temporarily!");
+                }
+                else
+                {
+                    if (config.IsDrag)
+                    {
+                        await MouseOperation.ClickAndDragAsync(GlobalConfig.WindowHandle, new Point(config.XPos, config.YPos), config.ColorName, new Point(config.XPosMoved, config.YPosMoved), new Point(config.XPosIgnored, config.XPosIgnored), config.ColorMovedName);
+                    }
+                    else
+                    {
+                        var isOk = await MouseOperation.ClickSpeedModeAsync(GlobalConfig.WindowHandle, config);
+                        if (!isOk)
+                        {
+                            MessageBox.Show("Position not found!");
+                        }
+                    }
+                }
+            }
+        }
+
 
         private void ChkDrag_CheckedChanged(object sender, EventArgs e)
         {
