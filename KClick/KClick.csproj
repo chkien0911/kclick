@@ -49,6 +49,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ActionForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ActionForm.Designer.cs">
+      <DependentUpon>ActionForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="ClubForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -73,6 +79,12 @@
     <Compile Include="Configuration\MouseKey.cs" />
     <Compile Include="Configuration\Nox.cs" />
     <Compile Include="Configuration\Raid.cs" />
+    <Compile Include="MainFForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainFForm.Designer.cs">
+      <DependentUpon>MainFForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -106,6 +118,9 @@
     <Compile Include="ZMainForm.Designer.cs">
       <DependentUpon>ZMainForm.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="ActionForm.resx">
+      <DependentUpon>ActionForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ClubForm.resx">
       <DependentUpon>ClubForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -114,6 +129,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ConfigForm.resx">
       <DependentUpon>ConfigForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainFForm.resx">
+      <DependentUpon>MainFForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>

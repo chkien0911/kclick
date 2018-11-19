@@ -16,6 +16,9 @@ namespace KClick
         public RerolForm RerolForm { get; set; }
         public ClubShareForm ClubShareForm { get; set; }
 
+        public MainFForm MainFForm { get; set; }
+        public ActionForm ActionForm { get; set; }
+
         public List<Config> Configs { get; set; } = new List<Config>();
         public Configuration.Config Config { get; set; } = new Config();
         public Configuration.GlobalConfig GlobalConfig { get; set; } = new GlobalConfig();
@@ -320,6 +323,14 @@ namespace KClick
                 {
                     ClubForm.AddScript(config);
                 }
+                else if (MainFForm != null)
+                {
+                    MainFForm.AddScript(config);
+                }
+                else if (ActionForm != null)
+                {
+                    ActionForm.AddScript(config);
+                }
             }
             else
             {
@@ -337,6 +348,14 @@ namespace KClick
                 else if (ClubForm != null)
                 {
                     ClubForm.UpdateScript(config);
+                }
+                else if (MainFForm != null)
+                {
+                    MainFForm.UpdateScript(config);
+                }
+                else if (ActionForm != null)
+                {
+                    ActionForm.UpdateScript(config);
                 }
             }
 

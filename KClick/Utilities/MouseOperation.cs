@@ -234,6 +234,81 @@ namespace KClick.Utilities
                 Cursor.Position = oldPos;
             }
         }
+        public static async Task ClickAndDragAsync(IntPtr wndHandle, Config config)
+        {
+            var clientPoint = new Point(config.XPos, config.YPos);
+            var clientPoint2 = new Point(config.XPosMoved, config.YPosMoved);
+
+            var allPoints = Line.GetPoints(clientPoint, clientPoint2, 10);
+
+            var oldPos = Cursor.Position;
+
+            //ClientToScreen(wndHandle, ref clientPoint2);
+
+            if (config.IsPositionIgnoredValid)
+            {
+                //var ignoredPoint = new Point(config.XPosIgnored, config.YPosIgnored);
+                //ClientToScreen(wndHandle, ref ignoredPoint);
+                var newIgnoredColor = GetColorAt(new Point(config.XPosIgnored, config.YPosIgnored));
+                if (newIgnoredColor.Name == config.ColorIgnoredName)
+                {
+                    return;
+                }
+            }
+
+            //var colorClientPoint = clientPoint;
+            //ClientToScreen(wndHandle, ref colorClientPoint);
+            var color = GetColorAt(clientPoint);
+
+            if (color.Name == config.ColorName)
+            {
+                var inputMouseDown = new INPUT();
+                inputMouseDown.Type = 0;
+                inputMouseDown.Data.Mouse.X = CalculateAbsoluteCoordinateX(clientPoint.X);
+                inputMouseDown.Data.Mouse.Y = CalculateAbsoluteCoordinateY(clientPoint.Y);
+                inputMouseDown.Data.Mouse.Flags = 0x0002;
+
+                var inputMouseMove = new INPUT();
+                inputMouseMove.Type = 0;
+                inputMouseMove.Data.Mouse.X = CalculateAbsoluteCoordinateX(clientPoint.X);
+                inputMouseMove.Data.Mouse.Y = CalculateAbsoluteCoordinateY(clientPoint.Y);
+                inputMouseMove.Data.Mouse.Flags = 0x8000 | 0x0001; //0x8000 | 0x0001;//0x0001;
+
+                var inputs = new INPUT[] { inputMouseMove, inputMouseDown };
+                SendInput((uint)inputs.Length, inputs, Marshal.SizeOf(typeof(INPUT)));
+                await Task.Delay(10);
+
+                Debug.WriteLine($"Left down");
+
+                for (int i = 0; i < allPoints.Length; i++)
+                {
+                    var point = allPoints[i];
+
+                    var inputMouseMove1 = new INPUT();
+                    inputMouseMove1.Type = 0;
+                    inputMouseMove1.Data.Mouse.X = CalculateAbsoluteCoordinateX(point.X);
+                    inputMouseMove1.Data.Mouse.Y = CalculateAbsoluteCoordinateY(point.Y);
+                    inputMouseMove1.Data.Mouse.Flags = 0x8000 | 0x0001; //0x8000 | 0x0001;//0x0001;
+
+                    var inputs1 = new INPUT[] { inputMouseMove1 };
+                    SendInput((uint)inputs1.Length, inputs1, Marshal.SizeOf(typeof(INPUT)));
+                    await Task.Delay(10);
+
+                    Debug.WriteLine($"Move");
+                }
+                var inputMouseUp = new INPUT();
+                inputMouseUp.Type = 0;
+                inputMouseUp.Data.Mouse.Flags = 0x0004;
+
+                var inputs3 = new INPUT[] { inputMouseUp };
+                SendInput((uint)inputs3.Length, inputs3, Marshal.SizeOf(typeof(INPUT)));
+                //await Task.Delay(100);
+
+                Debug.WriteLine($"Left Up");
+
+                Cursor.Position = oldPos;
+            }
+        }
 
 
         public static async Task<int> SendMessageSpeedModeAsync(

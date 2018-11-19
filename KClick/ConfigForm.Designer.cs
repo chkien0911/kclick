@@ -255,7 +255,7 @@
             this.grbIgnore.Cursor = System.Windows.Forms.Cursors.Default;
             this.grbIgnore.Location = new System.Drawing.Point(5, 108);
             this.grbIgnore.Name = "grbIgnore";
-            this.grbIgnore.Size = new System.Drawing.Size(422, 101);
+            this.grbIgnore.Size = new System.Drawing.Size(422, 91);
             this.grbIgnore.TabIndex = 39;
             this.grbIgnore.TabStop = false;
             this.grbIgnore.Text = "Successful Color (If matching this click point, mouse clicking will be ignored)";
@@ -353,7 +353,7 @@
             this.groupBox1.Controls.Add(this.txtDescription);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Cursor = System.Windows.Forms.Cursors.Default;
-            this.groupBox1.Location = new System.Drawing.Point(5, 215);
+            this.groupBox1.Location = new System.Drawing.Point(5, 205);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(422, 121);
             this.groupBox1.TabIndex = 40;
@@ -498,7 +498,7 @@
             // 
             // txtDelay
             // 
-            this.txtDelay.Location = new System.Drawing.Point(16, 360);
+            this.txtDelay.Location = new System.Drawing.Point(18, 347);
             this.txtDelay.MaxLength = 10;
             this.txtDelay.Name = "txtDelay";
             this.txtDelay.Size = new System.Drawing.Size(50, 20);
@@ -508,7 +508,7 @@
             // lblDelay
             // 
             this.lblDelay.AutoSize = true;
-            this.lblDelay.Location = new System.Drawing.Point(13, 344);
+            this.lblDelay.Location = new System.Drawing.Point(15, 331);
             this.lblDelay.Name = "lblDelay";
             this.lblDelay.Size = new System.Drawing.Size(56, 13);
             this.lblDelay.TabIndex = 42;
@@ -521,7 +521,7 @@
             this.panel1.Controls.Add(this.btnCancel);
             this.panel1.Controls.Add(this.btnSave);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(0, 391);
+            this.panel1.Location = new System.Drawing.Point(0, 373);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(430, 45);
             this.panel1.TabIndex = 43;
@@ -566,7 +566,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(88, 344);
+            this.label1.Location = new System.Drawing.Point(90, 331);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(101, 13);
             this.label1.TabIndex = 45;
@@ -575,7 +575,7 @@
             // cboRunAfterScript
             // 
             this.cboRunAfterScript.FormattingEnabled = true;
-            this.cboRunAfterScript.Location = new System.Drawing.Point(89, 360);
+            this.cboRunAfterScript.Location = new System.Drawing.Point(91, 347);
             this.cboRunAfterScript.Name = "cboRunAfterScript";
             this.cboRunAfterScript.Size = new System.Drawing.Size(338, 21);
             this.cboRunAfterScript.TabIndex = 46;
@@ -586,7 +586,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btnCancel;
-            this.ClientSize = new System.Drawing.Size(430, 436);
+            this.ClientSize = new System.Drawing.Size(430, 418);
             this.Controls.Add(this.cboRunAfterScript);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panel1);
