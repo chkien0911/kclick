@@ -30,7 +30,9 @@
         {
             this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.btnRun = new System.Windows.Forms.Button();
+            this.btnStop = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.txtY = new System.Windows.Forms.TextBox();
             this.btnFindControl = new System.Windows.Forms.Button();
@@ -40,9 +42,8 @@
             this.btnFixControl = new System.Windows.Forms.Button();
             this.txtX = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.btnRun = new System.Windows.Forms.Button();
-            this.btnStop = new System.Windows.Forms.Button();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.panel6 = new System.Windows.Forms.Panel();
             this.lsvScripts = new System.Windows.Forms.ListView();
             this.colNo = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.colDelay = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -56,18 +57,19 @@
             this.btnGetMousePosition = new System.Windows.Forms.ToolStripMenuItem();
             this.btnTryClick = new System.Windows.Forms.ToolStripMenuItem();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.panel6 = new System.Windows.Forms.Panel();
             this.lsvAction = new System.Windows.Forms.CheckedListBox();
             this.contextMenuStrip2 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.btnAddAction = new System.Windows.Forms.ToolStripMenuItem();
             this.btnEditAction = new System.Windows.Forms.ToolStripMenuItem();
+            this.chkAdjustAuto = new System.Windows.Forms.CheckBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
-            this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
+            this.panel3.SuspendLayout();
+            this.panel2.SuspendLayout();
+            this.panel6.SuspendLayout();
             this.contextMenuStrip1.SuspendLayout();
             this.panel5.SuspendLayout();
-            this.panel6.SuspendLayout();
             this.contextMenuStrip2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -81,15 +83,37 @@
             this.panel1.Size = new System.Drawing.Size(316, 119);
             this.panel1.TabIndex = 0;
             // 
-            // panel2
+            // panel4
             // 
-            this.panel2.Controls.Add(this.panel6);
-            this.panel2.Controls.Add(this.panel5);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(0, 119);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(316, 152);
-            this.panel2.TabIndex = 1;
+            this.panel4.Controls.Add(this.label1);
+            this.panel4.Controls.Add(this.chkAdjustAuto);
+            this.panel4.Controls.Add(this.btnRun);
+            this.panel4.Controls.Add(this.btnStop);
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel4.Location = new System.Drawing.Point(0, 67);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(316, 52);
+            this.panel4.TabIndex = 41;
+            // 
+            // btnRun
+            // 
+            this.btnRun.Location = new System.Drawing.Point(12, 9);
+            this.btnRun.Name = "btnRun";
+            this.btnRun.Size = new System.Drawing.Size(54, 36);
+            this.btnRun.TabIndex = 14;
+            this.btnRun.Text = "Run";
+            this.btnRun.UseVisualStyleBackColor = true;
+            // 
+            // btnStop
+            // 
+            this.btnStop.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btnStop.Enabled = false;
+            this.btnStop.Location = new System.Drawing.Point(72, 9);
+            this.btnStop.Name = "btnStop";
+            this.btnStop.Size = new System.Drawing.Size(50, 36);
+            this.btnStop.TabIndex = 5;
+            this.btnStop.Text = "Stop (Alt-S)";
+            this.btnStop.UseVisualStyleBackColor = true;
             // 
             // panel3
             // 
@@ -177,35 +201,24 @@
             this.label2.TabIndex = 17;
             this.label2.Text = "X";
             // 
-            // panel4
+            // panel2
             // 
-            this.panel4.Controls.Add(this.btnRun);
-            this.panel4.Controls.Add(this.btnStop);
-            this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel4.Location = new System.Drawing.Point(0, 67);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(316, 52);
-            this.panel4.TabIndex = 41;
+            this.panel2.Controls.Add(this.panel6);
+            this.panel2.Controls.Add(this.panel5);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel2.Location = new System.Drawing.Point(0, 119);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(316, 152);
+            this.panel2.TabIndex = 1;
             // 
-            // btnRun
+            // panel6
             // 
-            this.btnRun.Location = new System.Drawing.Point(12, 9);
-            this.btnRun.Name = "btnRun";
-            this.btnRun.Size = new System.Drawing.Size(54, 36);
-            this.btnRun.TabIndex = 14;
-            this.btnRun.Text = "Run";
-            this.btnRun.UseVisualStyleBackColor = true;
-            // 
-            // btnStop
-            // 
-            this.btnStop.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnStop.Enabled = false;
-            this.btnStop.Location = new System.Drawing.Point(72, 9);
-            this.btnStop.Name = "btnStop";
-            this.btnStop.Size = new System.Drawing.Size(65, 36);
-            this.btnStop.TabIndex = 5;
-            this.btnStop.Text = "Stop (Alt-S)";
-            this.btnStop.UseVisualStyleBackColor = true;
+            this.panel6.Controls.Add(this.lsvScripts);
+            this.panel6.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel6.Location = new System.Drawing.Point(85, 0);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(231, 152);
+            this.panel6.TabIndex = 4;
             // 
             // lsvScripts
             // 
@@ -302,15 +315,6 @@
             this.panel5.Size = new System.Drawing.Size(85, 152);
             this.panel5.TabIndex = 3;
             // 
-            // panel6
-            // 
-            this.panel6.Controls.Add(this.lsvScripts);
-            this.panel6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel6.Location = new System.Drawing.Point(85, 0);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(231, 152);
-            this.panel6.TabIndex = 4;
-            // 
             // lsvAction
             // 
             this.lsvAction.ContextMenuStrip = this.contextMenuStrip2;
@@ -332,14 +336,33 @@
             // btnAddAction
             // 
             this.btnAddAction.Name = "btnAddAction";
-            this.btnAddAction.Size = new System.Drawing.Size(180, 22);
+            this.btnAddAction.Size = new System.Drawing.Size(96, 22);
             this.btnAddAction.Text = "Add";
             // 
             // btnEditAction
             // 
             this.btnEditAction.Name = "btnEditAction";
-            this.btnEditAction.Size = new System.Drawing.Size(180, 22);
+            this.btnEditAction.Size = new System.Drawing.Size(96, 22);
             this.btnEditAction.Text = "Edit";
+            // 
+            // chkAdjustAuto
+            // 
+            this.chkAdjustAuto.AutoSize = true;
+            this.chkAdjustAuto.Location = new System.Drawing.Point(146, 9);
+            this.chkAdjustAuto.Name = "chkAdjustAuto";
+            this.chkAdjustAuto.Size = new System.Drawing.Size(137, 17);
+            this.chkAdjustAuto.TabIndex = 15;
+            this.chkAdjustAuto.Text = "Adjusted based on X, Y";
+            this.chkAdjustAuto.UseVisualStyleBackColor = true;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(128, 29);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(188, 13);
+            this.label1.TabIndex = 16;
+            this.label1.Text = "(Required script geneated at X=0,Y=0)";
             // 
             // MainFForm
             // 
@@ -354,13 +377,14 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "No App Found";
             this.panel1.ResumeLayout(false);
-            this.panel2.ResumeLayout(false);
+            this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
-            this.panel4.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
+            this.panel6.ResumeLayout(false);
             this.contextMenuStrip1.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
-            this.panel6.ResumeLayout(false);
             this.contextMenuStrip2.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -400,5 +424,7 @@
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip2;
         private System.Windows.Forms.ToolStripMenuItem btnAddAction;
         private System.Windows.Forms.ToolStripMenuItem btnEditAction;
+        private System.Windows.Forms.CheckBox chkAdjustAuto;
+        private System.Windows.Forms.Label label1;
     }
 }

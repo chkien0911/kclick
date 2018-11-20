@@ -80,6 +80,18 @@ namespace KClick
             }
         }
 
+        private int GetX()
+        {
+            var isOk = int.TryParse(txtX.Text, out int x);
+            return isOk ? x : 0;
+        }
+
+        private int GetY()
+        {
+            var isOk = int.TryParse(txtY.Text, out int y);
+            return isOk ? y : 0;
+        }
+
         private Action GetSelectedAction()
         {
             return (Action)lsvAction.SelectedItem;
@@ -88,6 +100,15 @@ namespace KClick
         private IEnumerable<Action> GetCheckedActions()
         {
             var items = lsvAction.CheckedItems;
+            foreach (Action item in items)
+            {
+                yield return item;
+            }
+        }
+
+        private IEnumerable<Action> GetAllActions()
+        {
+            var items = lsvAction.Items;
             foreach (Action item in items)
             {
                 yield return item;
@@ -365,7 +386,7 @@ namespace KClick
                 if (no > 0)
                 {
                     var action = GetSelectedAction();
-                    var config = action?.Configs.Find(s => s.No == no);
+                    var config = action?.GetAdjustedConfigs(chkAdjustAuto.Checked, GetX(), GetY()).Find(s => s.No == no);
                     if (config != null)
                     {
                         Cursor.Position = new Point(config.XPos, config.YPos);
@@ -382,7 +403,7 @@ namespace KClick
                 if (no > 0)
                 {
                     var action = GetSelectedAction();
-                    var config = action?.Configs.FirstOrDefault(s => s.No == no);
+                    var config = action?.GetAdjustedConfigs(chkAdjustAuto.Checked, GetX(), GetY()).FirstOrDefault(s => s.No == no);
                     if (config != null)
                     {
                         if (config.IsDisabledTemp)
@@ -513,68 +534,76 @@ namespace KClick
 
         private void BtnExport_Click(object sender, EventArgs e)
         {
-            var action = GetSelectedAction();
-            if (action != null)
+            var actions = GetAllActions();
+            if (actions != null)
             {
-                if (action.Configs.Count == 0)
-                {
-                    MessageBox.Show("No scripts found to save!");
-                    return;
-                }
-
                 SaveFileDialog saveFileDialog = new SaveFileDialog();
                 saveFileDialog.Filter = "KClick file|*.xml";
                 saveFileDialog.Title = "Save a KScript";
-
-                // If the file name is not an empty string open it for saving.  
                 if (saveFileDialog.ShowDialog() == DialogResult.OK)
                 {
                     try
                     {
                         XDocument xML = new XDocument();
-                        xML.Add(new XElement("KScrips"));
+                        xML.Add(new XElement("Actions"));
 
-                        for (int i = 0; i < action.Configs.Count; i++)
+                        foreach (var action in actions)
                         {
-                            var config = action.Configs[i];
+                            XElement xmlElement = new XElement("Action",
+                                        new XElement("No", action.No),
+                                        new XElement("Name", action.Name),
+                                new XElement("KScripts")
+                                    //new XElement("KScripts")
+                                    );
 
-                            XElement script = new XElement("KScript",
-                                new XElement("No", config.No),
-                                new XElement("MouseKey", "Left"),
+                            //XElement scripts = new XElement("KScripts");
+                            if (action.Configs.Count > 0)
+                            {
+                                foreach (var config in action.Configs)
+                                {
+                                    XElement script = new XElement("KScript",
+                                        new XElement("No", config.No),
+                                        new XElement("MouseKey", "Left"),
 
-                                new XElement("X", config.XPos),
-                                new XElement("Y", config.YPos),
-                                new XElement("Color", config.ColorName),
+                                        new XElement("X", config.XPos),
+                                        new XElement("Y", config.YPos),
+                                        new XElement("Color", config.ColorName),
 
-                                new XElement("X2", config.X2Pos),
-                                new XElement("Y2", config.Y2Pos),
-                                new XElement("Color2", config.Color2Name),
+                                        new XElement("X2", config.X2Pos),
+                                        new XElement("Y2", config.Y2Pos),
+                                        new XElement("Color2", config.Color2Name),
 
-                                new XElement("XMoved", config.XPosMoved),
-                                new XElement("YMoved", config.YPosMoved),
-                                new XElement("ColorMoved", config.ColorMovedName),
+                                        new XElement("XMoved", config.XPosMoved),
+                                        new XElement("YMoved", config.YPosMoved),
+                                        new XElement("ColorMoved", config.ColorMovedName),
 
-                                new XElement("XIgnored", config.XPosIgnored),
-                                new XElement("YIgnored", config.YPosIgnored),
-                                new XElement("ColorIgnored", config.ColorIgnoredName),
+                                        new XElement("XIgnored", config.XPosIgnored),
+                                        new XElement("YIgnored", config.YPosIgnored),
+                                        new XElement("ColorIgnored", config.ColorIgnoredName),
 
-                                new XElement("Delay", config.Delay),
-                                new XElement("IsSequential", config.IsSequential),
-                                new XElement("IsDrag", config.IsDrag),
-                                new XElement("Description", config.Description),
-                                new XElement("IsStartIcon", config.IsStartIcon),
-                                new XElement("RunOnce", config.RunOnce),
-                                new XElement("EndWholeScripts", config.EndWholeScripts),
-                                new XElement("IsClosedPosition", config.IsClosedPosition),
-                                new XElement("RunAfterScript", config.RunAfterScript)
-                            );
+                                        new XElement("Delay", config.Delay),
+                                        new XElement("IsSequential", config.IsSequential),
+                                        new XElement("IsDrag", config.IsDrag),
+                                        new XElement("Description", config.Description),
+                                        new XElement("IsStartIcon", config.IsStartIcon),
+                                        new XElement("RunOnce", config.RunOnce),
+                                        new XElement("EndWholeScripts", config.EndWholeScripts),
+                                        new XElement("IsClosedPosition", config.IsClosedPosition),
+                                        new XElement("RunAfterScript", config.RunAfterScript)
+                                    );
 
-                            script.SetAttributeValue("No", config.No);
+                                    script.SetAttributeValue("No", config.No);
 
-                            xML.Element("KScrips").Add(script);
+                                    xmlElement.Element("KScripts").Add(script);
+                                }
+                            }
+
+                            xmlElement.SetAttributeValue("No", action.No);
+
+                            xML.Element("Actions").Add(xmlElement);
+                            //xmlElement.Element("Action").Add(scripts);
                         }
 
-                        //testXML.Element("KScripts").Add(newStudent);
                         xML.Save(saveFileDialog.FileName);
 
                         MessageBox.Show("Saved!");
@@ -598,29 +627,122 @@ namespace KClick
 
                 if (!string.IsNullOrWhiteSpace(openFileDialog.FileName))
                 {
-                    var action = GetSelectedAction();
-                    if (action != null)
-                    {
-                        lsvScripts.Items.Clear();
-                        action.Configs.Clear();
+                    lsvAction.Items.Clear();
+                    lsvScripts.Items.Clear();
 
-                        action.Configs = ImportScript(openFileDialog.FileName);
-                        if (action.Configs.Count > 0)
-                        {
-                            DisplayListView(action.Configs);
-                            MessageBox.Show(action.Configs.Count + " script(s) found!");
-                        }
-                        else
-                        {
-                            MessageBox.Show("No scripts found!");
-                        }
+                    Actions.Clear();
+
+                    Actions = ImportActions(openFileDialog.FileName);
+                    //action.Configs = ImportScript(openFileDialog.FileName);
+                    if (Actions.Count > 0)
+                    {
+                        DisplayAction(Actions);
+
+                        MessageBox.Show(Actions.Count + " action(s) found!");
                     }
+                    else
+                    {
+                        MessageBox.Show("No scripts found!");
+                    }
+
                 }
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        private void DisplayAction(List<Action> actions)
+        {
+            lsvAction.Items.Clear();
+            if (actions.Count > 0)
+            {
+                for (int i = 0; i < actions.Count; i++)
+                {
+                    lsvAction.Items.Add(actions[i]);
+                    lsvAction.DisplayMember = "Name";
+                    lsvAction.ValueMember = "No";
+
+                    lsvScripts.Items.Clear();
+                    for (int j = 0; j < actions[i].Configs.Count; j++)
+                    {
+                        lsvScripts.Items.Add(actions[i].Configs[j].No.ToString());
+                        lsvScripts.Items[j].SubItems.Add(actions[i].Configs[j].Delay.ToString());
+                        lsvScripts.Items[j].SubItems.Add(actions[i].Configs[j].Description);
+                    }
+                }
+            }
+        }
+
+        private List<Action> ImportActions(string path)
+        {
+            var xml = XDocument.Load(path);
+
+            var actions = new List<Action>();
+            var actionXmls = xml.Descendants("Action").ToList();
+            if (actionXmls.Count > 0)
+            {
+                foreach (var actionXml in actionXmls)
+                {
+                    var action = new Configuration.Action
+                    {
+                        No = int.Parse(actionXml.Element("No").Value),
+                        Name = (actionXml.Element("Name").Value),
+                    };
+
+                    var scripts = actionXml.Descendants("KScript").ToList();
+
+                    if (scripts.Count > 0)
+                    {
+                        foreach (var item in scripts)
+                        {
+                            action.Configs.Add(new Configuration.Config
+                            {
+                                No = int.Parse(item.Element("No").Value),
+                                XPos = int.Parse(item.Element("X").Value),
+                                YPos = int.Parse(item.Element("Y").Value),
+                                ColorName = item.Element("Color").Value,
+
+                                XPosIgnored = int.Parse(item.Element("XIgnored").Value),
+                                YPosIgnored = int.Parse(item.Element("YIgnored").Value),
+                                ColorIgnoredName = item.Element("ColorIgnored").Value,
+
+                                X2Pos = int.Parse(item.Element("X2").Value),
+                                Y2Pos = int.Parse(item.Element("Y2").Value),
+                                Color2Name = item.Element("Color2").Value,
+
+                                XPosMoved = int.Parse(item.Element("XMoved").Value),
+                                YPosMoved = int.Parse(item.Element("YMoved").Value),
+                                ColorMovedName = item.Element("ColorMoved").Value,
+
+                                Description = (item.Element("Description").Value),
+                                Delay = int.Parse(item.Element("Delay").Value),
+                                IsSequential = bool.Parse(item.Element("IsSequential").Value),
+                                IsDrag = bool.Parse(item.Element("IsDrag").Value),
+                                IsStartIcon = item.Element("IsStartIcon") == null
+                                    ? false
+                                    : bool.Parse(item.Element("IsStartIcon").Value),
+                                RunOnce = item.Element("RunOnce") == null ? false : bool.Parse(item.Element("RunOnce").Value),
+                                EndWholeScripts = item.Element("EndWholeScripts") == null
+                                    ? false
+                                    : bool.Parse(item.Element("EndWholeScripts").Value),
+                                IsClosedPosition = item.Element("IsClosedPosition") == null
+                                    ? false
+                                    : bool.Parse(item.Element("IsClosedPosition").Value),
+                                RunAfterScript = item.Element("RunAfterScript") == null
+                                    ? 0
+                                    : int.Parse(item.Element("RunAfterScript").Value),
+                            });
+                        }
+                    }
+
+
+                    actions.Add(action);
+                }
+            }
+
+            return actions;
         }
 
         private void BtnFindControl_MouseHover(object sender, EventArgs e)
@@ -656,7 +778,7 @@ namespace KClick
                         //{
                         //    Text += "(" + ClickOnPointTool.GetCaptionOfWindow(hWndParent) + ". H: " + rct.Bottom + ". W: " + rct.Right + ")";
                         //}
-                        Text = ClickOnPointTool.GetCaptionOfWindow(hWndParent) + ". H: " + rct.Bottom + ". W: " + rct.Right;
+                        Text = ClickOnPointTool.GetCaptionOfWindow(hWndParent) + ". Bottom: " + rct.Bottom + ". Right: " + rct.Right;
 
                         GlobalConfig.WindowClass = ClickOnPointTool.GetClassNameOfWindow(hWndParent);
                         GlobalConfig.WindowName = ClickOnPointTool.GetCaptionOfWindow(hWndParent);
@@ -806,7 +928,7 @@ namespace KClick
         {
             while (action.IsRun)
             {
-                if (action.Configs.Any(s => s.IsDisabledWholeScripts))
+                if (action.GetAdjustedConfigs(chkAdjustAuto.Checked, GetX(), GetY()).Any(s => s.IsDisabledWholeScripts))
                 {
                     action.IsRun = false;
                     return;
@@ -830,9 +952,10 @@ namespace KClick
                 //    }
                 //}
 
-                if (!action.Configs.Any(s => s.IsDisabledWholeScripts))
+                var configs = action.GetAdjustedConfigs(chkAdjustAuto.Checked, GetX(), GetY());
+                if (!configs.Any(s => s.IsDisabledWholeScripts))
                 {
-                    foreach (var config in action.Configs)
+                    foreach (var config in configs)
                     {
                         if (config.IsDisabledTemp == false && config.CanRun)
                         {
@@ -914,7 +1037,7 @@ namespace KClick
                     var action = GetSelectedAction();
                     if (action != null)
                     {
-                        var configs = action.Configs.Where(s => s.RunAfterScript == config.No).ToList();
+                        var configs = action.GetAdjustedConfigs(chkAdjustAuto.Checked, GetX(), GetY()).Where(s => s.RunAfterScript == config.No).ToList();
                         if (configs.Count > 0)
                         {
                             foreach (var config1 in configs)
@@ -925,7 +1048,7 @@ namespace KClick
 
                         if (config.CanRun && config.RunAfterScript > 0)
                         {
-                            var subConfigs = action.Configs.Where(s => s.RunAfterScript == config.RunAfterScript).ToList();
+                            var subConfigs = action.GetAdjustedConfigs(chkAdjustAuto.Checked, GetX(), GetY()).Where(s => s.RunAfterScript == config.RunAfterScript).ToList();
                             foreach (var subConfig in subConfigs)
                             {
                                 subConfig.CanRun = false;

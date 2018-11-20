@@ -1,0 +1,109 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Actions>
+  <Action No="1">
+    <No>1</No>
+    <Name>rr</Name>
+    <KScripts>
+      <KScript No="1">
+        <No>1</No>
+        <MouseKey>Left</MouseKey>
+        <X>402</X>
+        <Y>190</Y>
+        <Color>fffeefde</Color>
+        <X2>410</X2>
+        <Y2>200</Y2>
+        <Color2>ff1935d6</Color2>
+        <XMoved>0</XMoved>
+        <YMoved>0</YMoved>
+        <ColorMoved></ColorMoved>
+        <XIgnored>0</XIgnored>
+        <YIgnored>0</YIgnored>
+        <ColorIgnored></ColorIgnored>
+        <Delay>100</Delay>
+        <IsSequential>false</IsSequential>
+        <IsDrag>false</IsDrag>
+        <Description>click icon</Description>
+        <IsStartIcon>false</IsStartIcon>
+        <RunOnce>false</RunOnce>
+        <EndWholeScripts>false</EndWholeScripts>
+        <IsClosedPosition>false</IsClosedPosition>
+        <RunAfterScript>0</RunAfterScript>
+      </KScript>
+      <KScript No="2">
+        <No>2</No>
+        <MouseKey>Left</MouseKey>
+        <X>248</X>
+        <Y>278</Y>
+        <Color>ffd7ded6</Color>
+        <X2>241</X2>
+        <Y2>331</Y2>
+        <Color2>ffffffff</Color2>
+        <XMoved>0</XMoved>
+        <YMoved>0</YMoved>
+        <ColorMoved></ColorMoved>
+        <XIgnored>0</XIgnored>
+        <YIgnored>0</YIgnored>
+        <ColorIgnored></ColorIgnored>
+        <Delay>100</Delay>
+        <IsSequential>false</IsSequential>
+        <IsDrag>false</IsDrag>
+        <Description>click download</Description>
+        <IsStartIcon>false</IsStartIcon>
+        <RunOnce>false</RunOnce>
+        <EndWholeScripts>false</EndWholeScripts>
+        <IsClosedPosition>false</IsClosedPosition>
+        <RunAfterScript>0</RunAfterScript>
+      </KScript>
+      <KScript No="3">
+        <No>3</No>
+        <MouseKey>Left</MouseKey>
+        <X>301</X>
+        <Y>257</Y>
+        <Color>ff77ad52</Color>
+        <X2>195</X2>
+        <Y2>264</Y2>
+        <Color2>ffc5573f</Color2>
+        <XMoved>0</XMoved>
+        <YMoved>0</YMoved>
+        <ColorMoved></ColorMoved>
+        <XIgnored>0</XIgnored>
+        <YIgnored>0</YIgnored>
+        <ColorIgnored></ColorIgnored>
+        <Delay>100</Delay>
+        <IsSequential>false</IsSequential>
+        <IsDrag>false</IsDrag>
+        <Description>click ok download</Description>
+        <IsStartIcon>false</IsStartIcon>
+        <RunOnce>false</RunOnce>
+        <EndWholeScripts>false</EndWholeScripts>
+        <IsClosedPosition>false</IsClosedPosition>
+        <RunAfterScript>0</RunAfterScript>
+      </KScript>
+      <KScript No="4">
+        <No>4</No>
+        <MouseKey>Left</MouseKey>
+        <X>373</X>
+        <Y>295</Y>
+        <Color>ff0015ae</Color>
+        <X2>343</X2>
+        <Y2>171</Y2>
+        <Color2>ffffcc95</Color2>
+        <XMoved>0</XMoved>
+        <YMoved>0</YMoved>
+        <ColorMoved></ColorMoved>
+        <XIgnored>0</XIgnored>
+        <YIgnored>0</YIgnored>
+        <ColorIgnored></ColorIgnored>
+        <Delay>100</Delay>
+        <IsSequential>false</IsSequential>
+        <IsDrag>false</IsDrag>
+        <Description>touch to start game</Description>
+        <IsStartIcon>false</IsStartIcon>
+        <RunOnce>false</RunOnce>
+        <EndWholeScripts>false</EndWholeScripts>
+        <IsClosedPosition>false</IsClosedPosition>
+        <RunAfterScript>0</RunAfterScript>
+      </KScript>
+    </KScripts>
+  </Action>
+</Actions>

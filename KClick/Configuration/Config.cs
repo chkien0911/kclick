@@ -4,7 +4,7 @@ using System.Drawing;
 
 namespace KClick.Configuration
 {
-    public class Config
+    public class Config : ICloneable
     {
         public bool EndWholeScripts { get; set; }
         public bool RunOnce { get; set; }
@@ -79,5 +79,11 @@ namespace KClick.Configuration
         public bool IsDrag { get; set; }
 
         public int RunAfterScript { get; set; }
+
+
+        public object Clone()
+        {
+            return MemberwiseClone();
+        }
     }
 }

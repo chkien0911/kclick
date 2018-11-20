@@ -30,50 +30,51 @@ namespace KClick
             // Note: for the application hook, use the Hook.AppEvents() instead
             m_GlobalHook = Hook.GlobalEvents();
 
-            //m_GlobalHook.MouseDownExt += GlobalHookMouseDownExt;
-            //m_GlobalHook.MouseDragStarted += M_GlobalHook_MouseDragStarted;
-            //m_GlobalHook.MouseDragFinishedExt += M_GlobalHook_MouseDragFinishedExt;
-            //m_GlobalHook.MouseUp += M_GlobalHook_MouseUp;
+            m_GlobalHook.MouseDownExt += GlobalHookMouseDownExt;
+            m_GlobalHook.MouseDragStarted += M_GlobalHook_MouseDragStarted;
+            m_GlobalHook.MouseDragFinishedExt += M_GlobalHook_MouseDragFinishedExt;
+            m_GlobalHook.MouseUp += M_GlobalHook_MouseUp;
         }
 
-        //private void M_GlobalHook_MouseUp(object sender, MouseEventArgs e)
-        //{
-        //    txtProgress.AppendText(string.Format("MouseUp: \t{0}; \t Location: \t{1}", e.Button, e.Location));
-        //}
+        private void M_GlobalHook_MouseUp(object sender, MouseEventArgs e)
+        {
+            //txtProgress.AppendText(string.Format("MouseUp: \t{0}; \t Location: \t{1}", e.Button, e.Location));
+        }
 
-        //private void M_GlobalHook_MouseMove(object sender, MouseEventArgs e)
-        //{
-        //    txtProgress.AppendText(string.Format("MouseMove: \t{0}; \t Location: \t{1}", e.Button, e.Location));
-        //}
+        private void M_GlobalHook_MouseMove(object sender, MouseEventArgs e)
+        {
+            //txtProgress.AppendText(string.Format("MouseMove: \t{0}; \t Location: \t{1}", e.Button, e.Location));
+        }
 
-        //private void M_GlobalHook_MouseDragFinishedExt(object sender, MouseEventExtArgs e)
-        //{
-        //    txtProgress.AppendText(string.Format("MouseDragFinishedExt: \t{0}; \t Location: \t{1}", e.Button, e.Location));
-        //}
+        private void M_GlobalHook_MouseDragFinishedExt(object sender, MouseEventExtArgs e)
+        {
+            //txtProgress.AppendText(string.Format("MouseDragFinishedExt: \t{0}; \t Location: \t{1}", e.Button, e.Location));
+        }
 
-        //private void M_GlobalHook_MouseDragStarted(object sender, MouseEventArgs e)
-        //{
-        //    txtProgress.AppendText(string.Format("MouseDragStarted: \t{0}; \t Location: \t{1}", e.Button, e.Location));
-        //}
+        private void M_GlobalHook_MouseDragStarted(object sender, MouseEventArgs e)
+        {
+            //txtProgress.AppendText(string.Format("MouseDragStarted: \t{0}; \t Location: \t{1}", e.Button, e.Location));
+        }
 
-        //private void GlobalHookKeyPress(object sender, KeyPressEventArgs e)
-        //{
-        //    //txtProgress.AppendText(string.Format("KeyPress:: \t{0}; \t Location: \t{1}", e.KeyChar));
-        //}
+        private void GlobalHookKeyPress(object sender, KeyPressEventArgs e)
+        {
+            //txtProgress.AppendText(string.Format("KeyPress:: \t{0}; \t Location: \t{1}", e.KeyChar));
+        }
 
-        //private void GlobalHookMouseDownExt(object sender, MouseEventExtArgs e)
-        //{
-        //    txtProgress.Clear();
-        //    txtProgress.AppendText(string.Format("MouseDownExt: \t{0}; \t Location: \t{1}", e.Button, e.Location));
-        //    // uncommenting the following line will suppress the middle mouse button click
-        //    // if (e.Buttons == MouseButtons.Middle) { e.Handled = true; }
-        //}
+        private void GlobalHookMouseDownExt(object sender, MouseEventExtArgs e)
+        {
+            //txtProgress.Clear();
+            //txtProgress.AppendText(string.Format("MouseDownExt: \t{0}; \t Location: \t{1}", e.Button, e.Location));
+            // uncommenting the following line will suppress the middle mouse button click
+            // if (e.Buttons == MouseButtons.Middle) { e.Handled = true; }
+        }
+
         public void Unsubscribe()
         {
-            //m_GlobalHook.MouseDownExt -= GlobalHookMouseDownExt;
-            //m_GlobalHook.MouseDragStarted -= M_GlobalHook_MouseDragStarted;
-            //m_GlobalHook.MouseDragFinishedExt -= M_GlobalHook_MouseDragFinishedExt;
-            //m_GlobalHook.MouseUp -= M_GlobalHook_MouseUp;
+            m_GlobalHook.MouseDownExt -= GlobalHookMouseDownExt;
+            m_GlobalHook.MouseDragStarted -= M_GlobalHook_MouseDragStarted;
+            m_GlobalHook.MouseDragFinishedExt -= M_GlobalHook_MouseDragFinishedExt;
+            m_GlobalHook.MouseUp -= M_GlobalHook_MouseUp;
 
             //It is recommened to dispose it
             m_GlobalHook.Dispose();

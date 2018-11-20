@@ -362,13 +362,13 @@ namespace KClick.Utilities
             return true;
         }
 
-        //public static bool IsCloseColor(Color a, Color z, int threshold = 1)
-        //{
-        //    int r = (int)a.R - z.R,
-        //        g = (int)a.G - z.G,
-        //        b = (int)a.B - z.B;
-        //    return (r * r + g * g + b * b) <= threshold * threshold;
-        //}
+        public static bool IsCloseColor(Color a, Color z, int threshold = 20)
+        {
+            int r = (int)a.R - z.R,
+                g = (int)a.G - z.G,
+                b = (int)a.B - z.B;
+            return (r * r + g * g + b * b) <= threshold * threshold;
+        }
 
         public static bool SendMessageSpeedMode(
             IntPtr wndHandle,
@@ -384,7 +384,9 @@ namespace KClick.Utilities
             {
                 var ignoredPoint = new Point(config.XPosIgnored, config.YPosIgnored);
                 var ignoredColor = GetColorAt(ignoredPoint);
-                if (ignoredColor.Name == config.ColorIgnoredName)
+                var ignoreConfigColor = Color.FromArgb(Int32.Parse(config.ColorIgnoredName.Replace("#", ""), NumberStyles.HexNumber));
+
+                if (ignoredColor.Name == config.ColorIgnoredName || IsCloseColor(ignoredColor, ignoreConfigColor))
                 {
                     return false;
                 }
@@ -395,7 +397,7 @@ namespace KClick.Utilities
 
             var configColor = Color.FromArgb(Int32.Parse(config.ColorName.Replace("#", ""), NumberStyles.HexNumber));
 
-            if (color.Name == config.ColorName) //|| IsCloseColor(color, configColor))
+            if (color.Name == config.ColorName || IsCloseColor(color, configColor))
             {
                 Color? color2 = null;
                 Color? configColor2 = null;
@@ -406,7 +408,7 @@ namespace KClick.Utilities
                     configColor2 = Color.FromArgb(Int32.Parse(config.Color2Name.Replace("#", ""), NumberStyles.HexNumber));
                 }
 
-                if (color2 == null || (color2 != null && (color2.Value.Name == config.Color2Name))) //|| IsCloseColor(color2.Value, configColor2.Value))))
+                if (color2 == null || (color2 != null && (color2.Value.Name == config.Color2Name || IsCloseColor(color2.Value, configColor2.Value))))
                 {
                     RECT rct = new RECT();
 

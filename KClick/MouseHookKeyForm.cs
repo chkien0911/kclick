@@ -27,7 +27,7 @@ namespace KClick
         private void MouseHookKeyForm_Closed(object sender, EventArgs e)
         {
             Unsubscribe();
-            ZMainForm.Show();
+            ZMainForm?.Show();
         }
 
         #region Global key
