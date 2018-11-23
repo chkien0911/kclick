@@ -230,7 +230,7 @@ namespace KClick
 
                 lsvAction.DataSource = Enum.GetValues(typeof(Actions))
                     .Cast<Actions>()
-                    .Select(p => new Action { No = (int)p, Name = p.ToString() })
+                    .Select(p => new Action { No = (int)p, Name = p.ToString()})
                     .ToList();
                 lsvAction.DisplayMember = "Name";
                 lsvAction.ValueMember = "No";

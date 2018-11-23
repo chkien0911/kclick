@@ -1,5 +1,6 @@
 ﻿
 
+using System;
 using System.Collections.Generic;
 
 namespace KClick.Configuration
@@ -39,6 +40,9 @@ namespace KClick.Configuration
 
             return configs;
         }
+
+        public TimeSpan? FromTime { get; set; }
+        public TimeSpan? ToTime { get; set; }
 
     }
 }

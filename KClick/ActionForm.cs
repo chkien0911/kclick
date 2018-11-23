@@ -287,6 +287,10 @@ namespace KClick
             {
                 txtNo.Text = Action.No.ToString();
                 txtName.Text = Action.Name;
+                if (Action.FromTime != null)
+                    dtpFrom.Value = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, Action.FromTime.Value.Hours, Action.FromTime.Value.Minutes, 0);
+                if (Action.ToTime != null)
+                    dtpTo.Value = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, Action.ToTime.Value.Hours, Action.ToTime.Value.Minutes, 0);
 
                 DisplayListView(Action.Configs);
             }
@@ -302,12 +306,11 @@ namespace KClick
         {
             Action.No = int.Parse(txtNo.Text);
             Action.Name = txtName.Text;
+            Action.FromTime = dtpFrom.Value.TimeOfDay;
+            Action.ToTime = dtpTo.Value.TimeOfDay;
 
             if (Action.No == 0)
             {
-                Action.No = int.Parse(txtNo.Text);
-                Action.Name = txtName.Text;
-
                 MainFForm.AddAction(Action);
             }
             else
