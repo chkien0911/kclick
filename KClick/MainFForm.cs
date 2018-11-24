@@ -258,20 +258,28 @@ namespace KClick
                 if (no > 0)
                 {
                     var action = GetSelectedAction();
-                    var config = action?.Configs.FirstOrDefault(s => s.No == no);
-                    if (config != null)
+                    if (action != null)
                     {
-                        using (var form = new ConfigForm())
+                        var config = action?.Configs.FirstOrDefault(s => s.No == no);
+                        if (config != null)
                         {
-                            form.MainFForm = this;
-                            form.Config = config;
-                            form.Configs = action?.Configs;
-                            form.GlobalConfig = GlobalConfig;
-                            form.ShowDialog();
+                            using (var form = new ConfigForm())
+                            {
+                                form.MainFForm = this;
+                                form.Config = config;
+                                form.Configs = action?.Configs;
+                                form.GlobalConfig = GlobalConfig;
+                                form.ShowDialog();
+                            }
                         }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Select an action");
                     }
                 }
             }
+            
         }
 
         private void BtnNewScript_Click(object sender, EventArgs e)
@@ -286,6 +294,10 @@ namespace KClick
                     form.GlobalConfig = GlobalConfig;
                     form.ShowDialog();
                 }
+            }
+            else
+            {
+                MessageBox.Show("Select an action");
             }
         }
 

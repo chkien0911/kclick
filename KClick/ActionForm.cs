@@ -1,14 +1,12 @@
-﻿using System;
+﻿using KClick.Configuration;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml.Linq;
-using KClick.Configuration;
 using Action = KClick.Configuration.Action;
 
 namespace KClick
@@ -17,6 +15,9 @@ namespace KClick
     {
         public MainFForm MainFForm { get; set; }
         public Action Action { get; set; } = new Action();
+
+        private DateTimePicker colDtpFrom;
+        private DateTimePicker colDtpTo;
 
         public ActionForm()
         {
@@ -33,6 +34,70 @@ namespace KClick
             btnClearScripts.Click += BtnClearScripts_Click1;
 
             Load += ActionForm_Load;
+
+            this.colDtpFrom = new DateTimePicker();
+            colDtpFrom.Format = DateTimePickerFormat.Custom;
+            colDtpFrom.CustomFormat = "MM/dd/yyyy hh:mm tt";
+            this.colDtpFrom.ValueChanged += new EventHandler(colDtpFromValueChanged);
+            this.colDtpFrom.Visible = false;
+            this.dgvFromTo.Controls.Add(colDtpFrom);
+
+            this.colDtpTo = new DateTimePicker();
+            colDtpTo.Format = DateTimePickerFormat.Custom;
+            colDtpTo.CustomFormat = "MM/dd/yyyy hh:mm tt";
+            this.colDtpTo.ValueChanged += new EventHandler(colDtpToValueChanged);
+            this.colDtpTo.Visible = false;
+            this.dgvFromTo.Controls.Add(colDtpTo);
+
+            dgvFromTo.CellClick += DgvFromTo_CellClick;
+            dgvFromTo.CellContentClick += DgvFromTo_CellContentClick;
+
+        }
+
+        private void DgvFromTo_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            
+        }
+
+        private void DgvFromTo_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex == 0)
+            {
+                Rectangle tempRect = dgvFromTo.GetCellDisplayRectangle(e.ColumnIndex, e.RowIndex, false);
+
+                colDtpFrom.Location = tempRect.Location;
+                colDtpFrom.Width = tempRect.Width;
+                colDtpFrom.Visible = true;
+            }
+            else if (e.ColumnIndex == 1)
+            {
+                Rectangle tempRect = dgvFromTo.GetCellDisplayRectangle(e.ColumnIndex, e.RowIndex, false);
+
+                colDtpTo.Location = tempRect.Location;
+                colDtpTo.Width = tempRect.Width;
+                colDtpTo.Visible = true;
+            }
+        }
+
+        void colDtpToValueChanged(object sender, EventArgs e)
+        {
+            dgvFromTo.CurrentCell.Value = colDtpTo.Value.ToString("MM/dd/yyyy hh:mm tt");//convert the date as per your format
+            colDtpTo.Visible = false;
+
+            // Then simply do this:
+            dgvFromTo.BeginEdit(true);
+            dgvFromTo.EndEdit();
+            dgvFromTo.NotifyCurrentCellDirty(true);
+        }
+        void colDtpFromValueChanged(object sender, EventArgs e)
+        {
+            dgvFromTo.CurrentCell.Value = colDtpFrom.Value.ToString("MM/dd/yyyy hh:mm tt");//convert the date as per your format
+            colDtpFrom.Visible = false;
+
+            // Then simply do this:
+            dgvFromTo.BeginEdit(true);
+            dgvFromTo.EndEdit();
+            dgvFromTo.NotifyCurrentCellDirty(true);
         }
 
         public void AddScript(Configuration.Config config)
@@ -287,10 +352,17 @@ namespace KClick
             {
                 txtNo.Text = Action.No.ToString();
                 txtName.Text = Action.Name;
-                if (Action.FromTime != null)
-                    dtpFrom.Value = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, Action.FromTime.Value.Hours, Action.FromTime.Value.Minutes, 0);
-                if (Action.ToTime != null)
-                    dtpTo.Value = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, Action.ToTime.Value.Hours, Action.ToTime.Value.Minutes, 0);
+
+                if (Action.Durations.Count > 0)
+                {
+                    var bindingList = new BindingList<Duration>(Action.Durations);
+                    var source = new BindingSource(bindingList, null);
+                    dgvFromTo.DataSource = source;
+                }
+                //if (Action.FromTime != null)
+                //    dtpFrom.Value = Action.FromTime.Value;
+                //if (Action.ToTime != null)
+                //    dtpTo.Value = Action.ToTime.Value;
 
                 DisplayListView(Action.Configs);
             }
@@ -306,8 +378,16 @@ namespace KClick
         {
             Action.No = int.Parse(txtNo.Text);
             Action.Name = txtName.Text;
-            Action.FromTime = dtpFrom.Value.TimeOfDay;
-            Action.ToTime = dtpTo.Value.TimeOfDay;
+
+            for (int rows = 0; rows < dgvFromTo.Rows.Count; rows++)
+            {
+                if (dgvFromTo.Rows[rows].Cells[0].Value != null && dgvFromTo.Rows[rows].Cells[1].Value != null)
+                {
+                    var from = DateTime.Parse(dgvFromTo.Rows[rows].Cells[0].Value.ToString());
+                    var to = DateTime.Parse(dgvFromTo.Rows[rows].Cells[1].Value.ToString());
+                    Action.Durations.Add(new Duration { FromTime = from, ToTime = to });
+                }
+            }
 
             if (Action.No == 0)
             {

@@ -51,15 +51,19 @@
             this.btnLoadScript = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
-            this.dtpFrom = new System.Windows.Forms.DateTimePicker();
-            this.label2 = new System.Windows.Forms.Label();
-            this.dtpTo = new System.Windows.Forms.DateTimePicker();
-            this.label3 = new System.Windows.Forms.Label();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.dgvFromTo = new System.Windows.Forms.DataGridView();
+            this.colFrom = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colTo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
             this.contextMenuStrip1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
+            this.panel5.SuspendLayout();
+            this.panel6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvFromTo)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -69,16 +73,16 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(232, 171);
+            this.panel1.Size = new System.Drawing.Size(342, 142);
             this.panel1.TabIndex = 0;
             // 
             // panel4
             // 
             this.panel4.Controls.Add(this.lsvScripts);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel4.Location = new System.Drawing.Point(0, 59);
+            this.panel4.Location = new System.Drawing.Point(0, 29);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(232, 112);
+            this.panel4.Size = new System.Drawing.Size(342, 113);
             this.panel4.TabIndex = 4;
             // 
             // lsvScripts
@@ -93,7 +97,7 @@
             this.lsvScripts.GridLines = true;
             this.lsvScripts.Location = new System.Drawing.Point(0, 0);
             this.lsvScripts.Name = "lsvScripts";
-            this.lsvScripts.Size = new System.Drawing.Size(232, 112);
+            this.lsvScripts.Size = new System.Drawing.Size(342, 113);
             this.lsvScripts.TabIndex = 3;
             this.lsvScripts.UseCompatibleStateImageBehavior = false;
             this.lsvScripts.View = System.Windows.Forms.View.Details;
@@ -169,29 +173,25 @@
             // 
             // panel3
             // 
-            this.panel3.Controls.Add(this.label3);
-            this.panel3.Controls.Add(this.dtpTo);
-            this.panel3.Controls.Add(this.label2);
-            this.panel3.Controls.Add(this.dtpFrom);
             this.panel3.Controls.Add(this.txtName);
             this.panel3.Controls.Add(this.txtNo);
             this.panel3.Controls.Add(this.label1);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel3.Location = new System.Drawing.Point(0, 0);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(232, 59);
+            this.panel3.Size = new System.Drawing.Size(342, 29);
             this.panel3.TabIndex = 3;
             // 
             // txtName
             // 
             this.txtName.Location = new System.Drawing.Point(61, 3);
             this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(118, 20);
+            this.txtName.Size = new System.Drawing.Size(249, 20);
             this.txtName.TabIndex = 1;
             // 
             // txtNo
             // 
-            this.txtNo.Location = new System.Drawing.Point(203, 3);
+            this.txtNo.Location = new System.Drawing.Point(316, 6);
             this.txtNo.Name = "txtNo";
             this.txtNo.Size = new System.Drawing.Size(26, 20);
             this.txtNo.TabIndex = 2;
@@ -209,18 +209,17 @@
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.btnLoadScript);
-            this.panel2.Controls.Add(this.btnCancel);
-            this.panel2.Controls.Add(this.btnSave);
+            this.panel2.Controls.Add(this.panel6);
+            this.panel2.Controls.Add(this.panel5);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(0, 171);
+            this.panel2.Location = new System.Drawing.Point(0, 142);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(232, 44);
+            this.panel2.Size = new System.Drawing.Size(342, 155);
             this.panel2.TabIndex = 1;
             // 
             // btnLoadScript
             // 
-            this.btnLoadScript.Location = new System.Drawing.Point(12, 6);
+            this.btnLoadScript.Location = new System.Drawing.Point(11, 6);
             this.btnLoadScript.Name = "btnLoadScript";
             this.btnLoadScript.Size = new System.Drawing.Size(73, 29);
             this.btnLoadScript.TabIndex = 2;
@@ -230,7 +229,7 @@
             // btnCancel
             // 
             this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnCancel.Location = new System.Drawing.Point(165, 6);
+            this.btnCancel.Location = new System.Drawing.Point(274, 6);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(56, 29);
             this.btnCancel.TabIndex = 1;
@@ -239,48 +238,58 @@
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(103, 6);
+            this.btnSave.Location = new System.Drawing.Point(212, 6);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(60, 29);
             this.btnSave.TabIndex = 0;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = true;
             // 
-            // dtpFrom
+            // panel5
             // 
-            this.dtpFrom.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dtpFrom.Location = new System.Drawing.Point(62, 30);
-            this.dtpFrom.Name = "dtpFrom";
-            this.dtpFrom.ShowUpDown = true;
-            this.dtpFrom.Size = new System.Drawing.Size(51, 20);
-            this.dtpFrom.TabIndex = 3;
+            this.panel5.Controls.Add(this.btnCancel);
+            this.panel5.Controls.Add(this.btnLoadScript);
+            this.panel5.Controls.Add(this.btnSave);
+            this.panel5.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel5.Location = new System.Drawing.Point(0, 115);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(342, 40);
+            this.panel5.TabIndex = 3;
             // 
-            // label2
+            // panel6
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(11, 36);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(50, 13);
-            this.label2.TabIndex = 4;
-            this.label2.Text = "Run from";
+            this.panel6.Controls.Add(this.dgvFromTo);
+            this.panel6.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel6.Location = new System.Drawing.Point(0, 0);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(342, 115);
+            this.panel6.TabIndex = 4;
             // 
-            // dtpTo
+            // dgvFromTo
             // 
-            this.dtpTo.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dtpTo.Location = new System.Drawing.Point(129, 30);
-            this.dtpTo.Name = "dtpTo";
-            this.dtpTo.ShowUpDown = true;
-            this.dtpTo.Size = new System.Drawing.Size(50, 20);
-            this.dtpTo.TabIndex = 5;
+            this.dgvFromTo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvFromTo.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.colFrom,
+            this.colTo});
+            this.dgvFromTo.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvFromTo.Location = new System.Drawing.Point(0, 0);
+            this.dgvFromTo.Name = "dgvFromTo";
+            this.dgvFromTo.Size = new System.Drawing.Size(342, 115);
+            this.dgvFromTo.TabIndex = 7;
             // 
-            // label3
+            // colFrom
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(115, 36);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(14, 13);
-            this.label3.TabIndex = 6;
-            this.label3.Text = "~";
+            this.colFrom.DataPropertyName = "FromTime";
+            this.colFrom.HeaderText = "From";
+            this.colFrom.Name = "colFrom";
+            this.colFrom.Width = 150;
+            // 
+            // colTo
+            // 
+            this.colTo.DataPropertyName = "ToTime";
+            this.colTo.HeaderText = "To";
+            this.colTo.Name = "colTo";
+            this.colTo.Width = 150;
             // 
             // ActionForm
             // 
@@ -288,7 +297,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btnCancel;
-            this.ClientSize = new System.Drawing.Size(232, 215);
+            this.ClientSize = new System.Drawing.Size(342, 297);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.MaximizeBox = false;
@@ -302,6 +311,9 @@
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.panel2.ResumeLayout(false);
+            this.panel5.ResumeLayout(false);
+            this.panel6.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvFromTo)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -330,9 +342,10 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
         private System.Windows.Forms.ToolStripMenuItem btnGetMousePosition;
         private System.Windows.Forms.ToolStripMenuItem btnTryClick;
-        private System.Windows.Forms.DateTimePicker dtpTo;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.DateTimePicker dtpFrom;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Panel panel6;
+        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.DataGridView dgvFromTo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colFrom;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colTo;
     }
 }

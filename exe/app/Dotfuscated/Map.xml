@@ -2,7 +2,7 @@
 <!DOCTYPE dotfuscatorMap SYSTEM "http://www.preemptive.com/dotfuscator/dtd/dotfuscatorMap_v1.2.dtd">
 <dotfuscatorMap version="1.1">
     <header>
-        <timestamp>2018-11-18T22:26:29</timestamp>
+        <timestamp>2018-11-20T21:01:03</timestamp>
         <product version="5.36.0.7050" user="Chu Hong Kien" serial="253588-391">Dotfuscator Community Edition</product>
     </header>
     <mapping>
@@ -3469,6 +3469,284 @@
         <module>
             <name>KClick.exe</name>
             <type>
+                <name>KClick.ActionForm</name>
+                <methodlist>
+                    <method>
+                        <signature>void()</signature>
+                        <name>.ctor</name>
+                    </method>
+                    <method>
+                        <signature>void(object, System.EventArgs)</signature>
+                        <name>ActionForm_Load</name>
+                        <newname>c</newname>
+                    </method>
+                    <method>
+                        <signature>void(KClick.Configuration.Config)</signature>
+                        <name>AddScript</name>
+                    </method>
+                    <method>
+                        <signature>void(object, System.EventArgs)</signature>
+                        <name>BtnCancel_Click</name>
+                        <newname>b</newname>
+                    </method>
+                    <method>
+                        <signature>void(object, System.EventArgs)</signature>
+                        <name>BtnClearScripts_Click1</name>
+                        <newname>h</newname>
+                    </method>
+                    <method>
+                        <signature>void(object, System.EventArgs)</signature>
+                        <name>BtnDelete_Click</name>
+                        <newname>e</newname>
+                    </method>
+                    <method>
+                        <signature>void(object, System.EventArgs)</signature>
+                        <name>BtnEditScript_Click</name>
+                        <newname>g</newname>
+                    </method>
+                    <method>
+                        <signature>void(object, System.EventArgs)</signature>
+                        <name>BtnLoadScript_Click</name>
+                        <newname>d</newname>
+                    </method>
+                    <method>
+                        <signature>void(object, System.EventArgs)</signature>
+                        <name>BtnNewScript_Click</name>
+                        <newname>f</newname>
+                    </method>
+                    <method>
+                        <signature>void(object, System.EventArgs)</signature>
+                        <name>BtnSave_Click</name>
+                        <newname>a</newname>
+                    </method>
+                    <method>
+                        <signature>void(System.Collections.Generic.IReadOnlyList`1&lt;KClick.Configuration.Config&gt;)</signature>
+                        <name>DisplayListView</name>
+                        <newname>a</newname>
+                    </method>
+                    <method>
+                        <signature>void(bool)</signature>
+                        <name>Dispose</name>
+                    </method>
+                    <method>
+                        <signature>System.Collections.Generic.List`1&lt;KClick.Configuration.Config&gt;(string)</signature>
+                        <name>ImportScript</name>
+                        <newname>a</newname>
+                    </method>
+                    <method>
+                        <signature>void()</signature>
+                        <name>InitializeComponent</name>
+                        <newname>a</newname>
+                    </method>
+                    <method>
+                        <signature>void(KClick.Configuration.Config)</signature>
+                        <name>UpdateScript</name>
+                    </method>
+                    <method>
+                        <signature>KClick.Configuration.Action()</signature>
+                        <name>get_Action</name>
+                    </method>
+                    <method>
+                        <signature>KClick.MainFForm()</signature>
+                        <name>get_MainFForm</name>
+                    </method>
+                    <method>
+                        <signature>void(KClick.Configuration.Action)</signature>
+                        <name>set_Action</name>
+                    </method>
+                    <method>
+                        <signature>void(KClick.MainFForm)</signature>
+                        <name>set_MainFForm</name>
+                    </method>
+                </methodlist>
+                <fieldlist>
+                    <field>
+                        <signature>KClick.Configuration.Action</signature>
+                        <name>&lt;Action&gt;k__BackingField</name>
+                        <newname>b</newname>
+                    </field>
+                    <field>
+                        <signature>KClick.MainFForm</signature>
+                        <name>&lt;MainFForm&gt;k__BackingField</name>
+                        <newname>a</newname>
+                    </field>
+                    <field>
+                        <signature>System.Windows.Forms.Button</signature>
+                        <name>btnCancel</name>
+                        <newname>h</newname>
+                    </field>
+                    <field>
+                        <signature>System.Windows.Forms.ToolStripMenuItem</signature>
+                        <name>btnClearScripts</name>
+                        <newname>v</newname>
+                    </field>
+                    <field>
+                        <signature>System.Windows.Forms.ToolStripMenuItem</signature>
+                        <name>btnDelete</name>
+                        <newname>u</newname>
+                    </field>
+                    <field>
+                        <signature>System.Windows.Forms.ToolStripMenuItem</signature>
+                        <name>btnEditScript</name>
+                        <newname>t</newname>
+                    </field>
+                    <field>
+                        <signature>System.Windows.Forms.ToolStripMenuItem</signature>
+                        <name>btnGetMousePosition</name>
+                        <newname>x</newname>
+                    </field>
+                    <field>
+                        <signature>System.Windows.Forms.Button</signature>
+                        <name>btnLoadScript</name>
+                        <newname>k</newname>
+                    </field>
+                    <field>
+                        <signature>System.Windows.Forms.ToolStripMenuItem</signature>
+                        <name>btnNewScript</name>
+                        <newname>s</newname>
+                    </field>
+                    <field>
+                        <signature>System.Windows.Forms.Button</signature>
+                        <name>btnSave</name>
+                        <newname>i</newname>
+                    </field>
+                    <field>
+                        <signature>System.Windows.Forms.ToolStripMenuItem</signature>
+                        <name>btnTryClick</name>
+                        <newname>y</newname>
+                    </field>
+                    <field>
+                        <signature>System.Windows.Forms.ColumnHeader</signature>
+                        <name>colDelay</name>
+                        <newname>p</newname>
+                    </field>
+                    <field>
+                        <signature>System.Windows.Forms.ColumnHeader</signature>
+                        <name>colDescription</name>
+                        <newname>q</newname>
+                    </field>
+                    <field>
+                        <signature>System.Windows.Forms.ColumnHeader</signature>
+                        <name>colNo</name>
+                        <newname>o</newname>
+                    </field>
+                    <field>
+                        <signature>System.ComponentModel.IContainer</signature>
+                        <name>components</name>
+                        <newname>c</newname>
+                    </field>
+                    <field>
+                        <signature>System.Windows.Forms.ContextMenuStrip</signature>
+                        <name>contextMenuStrip1</name>
+                        <newname>r</newname>
+                    </field>
+                    <field>
+                        <signature>System.Windows.Forms.Label</signature>
+                        <name>label1</name>
+                        <newname>g</newname>
+                    </field>
+                    <field>
+                        <signature>System.Windows.Forms.ListView</signature>
+                        <name>lsvScripts</name>
+                        <newname>n</newname>
+                    </field>
+                    <field>
+                        <signature>System.Windows.Forms.Panel</signature>
+                        <name>panel1</name>
+                        <newname>d</newname>
+                    </field>
+                    <field>
+                        <signature>System.Windows.Forms.Panel</signature>
+                        <name>panel2</name>
+                        <newname>e</newname>
+                    </field>
+                    <field>
+                        <signature>System.Windows.Forms.Panel</signature>
+                        <name>panel3</name>
+                        <newname>l</newname>
+                    </field>
+                    <field>
+                        <signature>System.Windows.Forms.Panel</signature>
+                        <name>panel4</name>
+                        <newname>m</newname>
+                    </field>
+                    <field>
+                        <signature>System.Windows.Forms.ToolStripSeparator</signature>
+                        <name>toolStripSeparator2</name>
+                        <newname>w</newname>
+                    </field>
+                    <field>
+                        <signature>System.Windows.Forms.TextBox</signature>
+                        <name>txtName</name>
+                        <newname>f</newname>
+                    </field>
+                    <field>
+                        <signature>System.Windows.Forms.TextBox</signature>
+                        <name>txtNo</name>
+                        <newname>j</newname>
+                    </field>
+                </fieldlist>
+                <propertylist>
+                    <property>
+                        <signature>KClick.Configuration.Action()</signature>
+                        <name>Action</name>
+                    </property>
+                    <property>
+                        <signature>KClick.MainFForm()</signature>
+                        <name>MainFForm</name>
+                    </property>
+                </propertylist>
+                <eventlist />
+            </type>
+            <type>
+                <name>KClick.ActionForm/&lt;&gt;c__DisplayClass12_0</name>
+                <newname>KClick.ActionForm/a</newname>
+                <methodlist>
+                    <method>
+                        <signature>void()</signature>
+                        <name>.ctor</name>
+                    </method>
+                    <method>
+                        <signature>bool(KClick.Configuration.Config)</signature>
+                        <name>&lt;BtnEditScript_Click&gt;b__0</name>
+                        <newname>b</newname>
+                    </method>
+                </methodlist>
+                <fieldlist>
+                    <field>
+                        <signature>int32</signature>
+                        <name>no</name>
+                        <newname>a</newname>
+                    </field>
+                </fieldlist>
+                <propertylist />
+                <eventlist />
+            </type>
+            <type>
+                <name>KClick.ActionForm/&lt;&gt;c__DisplayClass14_0</name>
+                <newname>KClick.ActionForm/b</newname>
+                <methodlist>
+                    <method>
+                        <signature>void()</signature>
+                        <name>.ctor</name>
+                    </method>
+                    <method>
+                        <signature>bool(KClick.Configuration.Config)</signature>
+                        <name>&lt;BtnDelete_Click&gt;b__0</name>
+                        <newname>b</newname>
+                    </method>
+                </methodlist>
+                <fieldlist>
+                    <field>
+                        <signature>int32</signature>
+                        <name>no</name>
+                        <newname>a</newname>
+                    </field>
+                </fieldlist>
+                <propertylist />
+                <eventlist />
+            </type>
+            <type>
                 <name>KClick.Actions</name>
                 <methodlist />
                 <fieldlist>
@@ -5795,12 +6073,12 @@
                     </method>
                     <method>
                         <signature>void(object, System.EventArgs)</signature>
-                        <name>&lt;.ctor&gt;b__27_0</name>
+                        <name>&lt;.ctor&gt;b__41_0</name>
                         <newname>a</newname>
                     </method>
                     <method>
                         <signature>bool(KClick.Configuration.Config)</signature>
-                        <name>&lt;ConfigForm_Load&gt;b__45_0</name>
+                        <name>&lt;ConfigForm_Load&gt;b__59_0</name>
                         <newname>a</newname>
                     </method>
                     <method>
@@ -5893,9 +6171,39 @@
                         <newname>e</newname>
                     </method>
                     <method>
+                        <signature>void(object, System.Windows.Forms.KeyPressEventArgs)</signature>
+                        <name>GlobalHookKeyPress</name>
+                        <newname>a</newname>
+                    </method>
+                    <method>
+                        <signature>void(object, Gma.System.MouseKeyHook.MouseEventExtArgs)</signature>
+                        <name>GlobalHookMouseDownExt</name>
+                        <newname>a</newname>
+                    </method>
+                    <method>
                         <signature>void()</signature>
                         <name>InitializeComponent</name>
                         <newname>a</newname>
+                    </method>
+                    <method>
+                        <signature>void(object, Gma.System.MouseKeyHook.MouseEventExtArgs)</signature>
+                        <name>M_GlobalHook_MouseDragFinishedExt</name>
+                        <newname>b</newname>
+                    </method>
+                    <method>
+                        <signature>void(object, System.Windows.Forms.MouseEventArgs)</signature>
+                        <name>M_GlobalHook_MouseDragStarted</name>
+                        <newname>f</newname>
+                    </method>
+                    <method>
+                        <signature>void(object, System.Windows.Forms.MouseEventArgs)</signature>
+                        <name>M_GlobalHook_MouseMove</name>
+                        <newname>g</newname>
+                    </method>
+                    <method>
+                        <signature>void(object, System.Windows.Forms.MouseEventArgs)</signature>
+                        <name>M_GlobalHook_MouseUp</name>
+                        <newname>h</newname>
                     </method>
                     <method>
                         <signature>void()</signature>
@@ -5909,6 +6217,10 @@
                         <signature>System.Threading.Tasks.Task(object, System.EventArgs)</signature>
                         <name>btnTryClick_ClickAsync</name>
                         <newname>l</newname>
+                    </method>
+                    <method>
+                        <signature>KClick.ActionForm()</signature>
+                        <name>get_ActionForm</name>
                     </method>
                     <method>
                         <signature>KClick.ClubForm()</signature>
@@ -5931,8 +6243,16 @@
                         <name>get_GlobalConfig</name>
                     </method>
                     <method>
+                        <signature>KClick.MainFForm()</signature>
+                        <name>get_MainFForm</name>
+                    </method>
+                    <method>
                         <signature>KClick.RerolForm()</signature>
                         <name>get_RerolForm</name>
+                    </method>
+                    <method>
+                        <signature>void(KClick.ActionForm)</signature>
+                        <name>set_ActionForm</name>
                     </method>
                     <method>
                         <signature>void(KClick.ClubForm)</signature>
@@ -5955,11 +6275,20 @@
                         <name>set_GlobalConfig</name>
                     </method>
                     <method>
+                        <signature>void(KClick.MainFForm)</signature>
+                        <name>set_MainFForm</name>
+                    </method>
+                    <method>
                         <signature>void(KClick.RerolForm)</signature>
                         <name>set_RerolForm</name>
                     </method>
                 </methodlist>
                 <fieldlist>
+                    <field>
+                        <signature>KClick.ActionForm</signature>
+                        <name>&lt;ActionForm&gt;k__BackingField</name>
+                        <newname>e</newname>
+                    </field>
                     <field>
                         <signature>KClick.ClubForm</signature>
                         <name>&lt;ClubForm&gt;k__BackingField</name>
@@ -5973,17 +6302,22 @@
                     <field>
                         <signature>KClick.Configuration.Config</signature>
                         <name>&lt;Config&gt;k__BackingField</name>
-                        <newname>e</newname>
+                        <newname>g</newname>
                     </field>
                     <field>
                         <signature>System.Collections.Generic.List`1&lt;KClick.Configuration.Config&gt;</signature>
                         <name>&lt;Configs&gt;k__BackingField</name>
-                        <newname>d</newname>
+                        <newname>f</newname>
                     </field>
                     <field>
                         <signature>KClick.Configuration.GlobalConfig</signature>
                         <name>&lt;GlobalConfig&gt;k__BackingField</name>
-                        <newname>f</newname>
+                        <newname>h</newname>
+                    </field>
+                    <field>
+                        <signature>KClick.MainFForm</signature>
+                        <name>&lt;MainFForm&gt;k__BackingField</name>
+                        <newname>d</newname>
                     </field>
                     <field>
                         <signature>KClick.RerolForm</signature>
@@ -5993,275 +6327,279 @@
                     <field>
                         <signature>System.Windows.Forms.Button</signature>
                         <name>btnCancel</name>
-                        <newname>a0</newname>
-                    </field>
-                    <field>
-                        <signature>System.Windows.Forms.Button</signature>
-                        <name>btnClear1</name>
-                        <newname>k</newname>
-                    </field>
-                    <field>
-                        <signature>System.Windows.Forms.Button</signature>
-                        <name>btnClear2</name>
-                        <newname>j</newname>
-                    </field>
-                    <field>
-                        <signature>System.Windows.Forms.Button</signature>
-                        <name>btnClearIgnored</name>
-                        <newname>aa</newname>
-                    </field>
-                    <field>
-                        <signature>System.Windows.Forms.Button</signature>
-                        <name>btnClearMoved</name>
-                        <newname>al</newname>
-                    </field>
-                    <field>
-                        <signature>System.Windows.Forms.Button</signature>
-                        <name>btnGetPosition</name>
-                        <newname>l</newname>
-                    </field>
-                    <field>
-                        <signature>System.Windows.Forms.Button</signature>
-                        <name>btnGetPosition2</name>
-                        <newname>t</newname>
-                    </field>
-                    <field>
-                        <signature>System.Windows.Forms.Button</signature>
-                        <name>btnGetPositionIgnored1</name>
-                        <newname>ac</newname>
-                    </field>
-                    <field>
-                        <signature>System.Windows.Forms.Button</signature>
-                        <name>btnGetPositionMoved</name>
-                        <newname>an</newname>
-                    </field>
-                    <field>
-                        <signature>System.Windows.Forms.Button</signature>
-                        <name>btnReload</name>
                         <newname>a2</newname>
                     </field>
                     <field>
                         <signature>System.Windows.Forms.Button</signature>
+                        <name>btnClear1</name>
+                        <newname>m</newname>
+                    </field>
+                    <field>
+                        <signature>System.Windows.Forms.Button</signature>
+                        <name>btnClear2</name>
+                        <newname>l</newname>
+                    </field>
+                    <field>
+                        <signature>System.Windows.Forms.Button</signature>
+                        <name>btnClearIgnored</name>
+                        <newname>ac</newname>
+                    </field>
+                    <field>
+                        <signature>System.Windows.Forms.Button</signature>
+                        <name>btnClearMoved</name>
+                        <newname>an</newname>
+                    </field>
+                    <field>
+                        <signature>System.Windows.Forms.Button</signature>
+                        <name>btnGetPosition</name>
+                        <newname>n</newname>
+                    </field>
+                    <field>
+                        <signature>System.Windows.Forms.Button</signature>
+                        <name>btnGetPosition2</name>
+                        <newname>v</newname>
+                    </field>
+                    <field>
+                        <signature>System.Windows.Forms.Button</signature>
+                        <name>btnGetPositionIgnored1</name>
+                        <newname>ae</newname>
+                    </field>
+                    <field>
+                        <signature>System.Windows.Forms.Button</signature>
+                        <name>btnGetPositionMoved</name>
+                        <newname>ap</newname>
+                    </field>
+                    <field>
+                        <signature>System.Windows.Forms.Button</signature>
+                        <name>btnReload</name>
+                        <newname>a4</newname>
+                    </field>
+                    <field>
+                        <signature>System.Windows.Forms.Button</signature>
                         <name>btnSave</name>
-                        <newname>a1</newname>
+                        <newname>a3</newname>
                     </field>
                     <field>
                         <signature>System.Windows.Forms.Button</signature>
                         <name>btnTryClick</name>
-                        <newname>a7</newname>
+                        <newname>a9</newname>
                     </field>
                     <field>
                         <signature>System.Windows.Forms.ComboBox</signature>
                         <name>cboRunAfterScript</name>
-                        <newname>a5</newname>
+                        <newname>a7</newname>
                     </field>
                     <field>
                         <signature>System.Windows.Forms.CheckBox</signature>
                         <name>chkDrag</name>
-                        <newname>au</newname>
+                        <newname>aw</newname>
                     </field>
                     <field>
                         <signature>System.Windows.Forms.CheckBox</signature>
                         <name>chkEndWholeScripts</name>
-                        <newname>a3</newname>
+                        <newname>a5</newname>
                     </field>
                     <field>
                         <signature>System.Windows.Forms.CheckBox</signature>
                         <name>chkIsClosedPosition</name>
-                        <newname>a6</newname>
+                        <newname>a8</newname>
                     </field>
                     <field>
                         <signature>System.Windows.Forms.CheckBox</signature>
                         <name>chkIsStartIcon</name>
-                        <newname>am</newname>
+                        <newname>ao</newname>
                     </field>
                     <field>
                         <signature>System.Windows.Forms.CheckBox</signature>
                         <name>chkRunOnce</name>
-                        <newname>ak</newname>
+                        <newname>am</newname>
                     </field>
                     <field>
                         <signature>System.ComponentModel.IContainer</signature>
                         <name>components</name>
-                        <newname>h</newname>
+                        <newname>j</newname>
                     </field>
                     <field>
                         <signature>System.Windows.Forms.GroupBox</signature>
                         <name>grbIgnore</name>
-                        <newname>z</newname>
+                        <newname>ab</newname>
                     </field>
                     <field>
                         <signature>System.Windows.Forms.GroupBox</signature>
                         <name>groupBox1</name>
-                        <newname>aj</newname>
+                        <newname>al</newname>
                     </field>
                     <field>
                         <signature>System.Windows.Forms.Label</signature>
                         <name>label1</name>
-                        <newname>a4</newname>
+                        <newname>a6</newname>
                     </field>
                     <field>
                         <signature>System.Windows.Forms.Label</signature>
                         <name>label2</name>
-                        <newname>ae</newname>
-                    </field>
-                    <field>
-                        <signature>System.Windows.Forms.Label</signature>
-                        <name>label3</name>
                         <newname>ag</newname>
                     </field>
                     <field>
                         <signature>System.Windows.Forms.Label</signature>
-                        <name>label4</name>
+                        <name>label3</name>
                         <newname>ai</newname>
                     </field>
                     <field>
                         <signature>System.Windows.Forms.Label</signature>
+                        <name>label4</name>
+                        <newname>ak</newname>
+                    </field>
+                    <field>
+                        <signature>System.Windows.Forms.Label</signature>
                         <name>label5</name>
-                        <newname>aw</newname>
-                    </field>
-                    <field>
-                        <signature>System.Windows.Forms.Label</signature>
-                        <name>label6</name>
-                        <newname>ap</newname>
-                    </field>
-                    <field>
-                        <signature>System.Windows.Forms.Label</signature>
-                        <name>label7</name>
-                        <newname>ar</newname>
-                    </field>
-                    <field>
-                        <signature>System.Windows.Forms.Label</signature>
-                        <name>label8</name>
-                        <newname>at</newname>
-                    </field>
-                    <field>
-                        <signature>System.Windows.Forms.Label</signature>
-                        <name>lblColor1</name>
-                        <newname>q</newname>
-                    </field>
-                    <field>
-                        <signature>System.Windows.Forms.Label</signature>
-                        <name>lblColor2</name>
-                        <newname>s</newname>
-                    </field>
-                    <field>
-                        <signature>System.Windows.Forms.Label</signature>
-                        <name>lblDelay</name>
                         <newname>ay</newname>
                     </field>
                     <field>
                         <signature>System.Windows.Forms.Label</signature>
+                        <name>label6</name>
+                        <newname>ar</newname>
+                    </field>
+                    <field>
+                        <signature>System.Windows.Forms.Label</signature>
+                        <name>label7</name>
+                        <newname>at</newname>
+                    </field>
+                    <field>
+                        <signature>System.Windows.Forms.Label</signature>
+                        <name>label8</name>
+                        <newname>av</newname>
+                    </field>
+                    <field>
+                        <signature>System.Windows.Forms.Label</signature>
+                        <name>lblColor1</name>
+                        <newname>s</newname>
+                    </field>
+                    <field>
+                        <signature>System.Windows.Forms.Label</signature>
+                        <name>lblColor2</name>
+                        <newname>u</newname>
+                    </field>
+                    <field>
+                        <signature>System.Windows.Forms.Label</signature>
+                        <name>lblDelay</name>
+                        <newname>a0</newname>
+                    </field>
+                    <field>
+                        <signature>System.Windows.Forms.Label</signature>
                         <name>lblX2</name>
-                        <newname>w</newname>
+                        <newname>y</newname>
                     </field>
                     <field>
                         <signature>System.Windows.Forms.Label</signature>
                         <name>lblXPos</name>
-                        <newname>m</newname>
+                        <newname>o</newname>
                     </field>
                     <field>
                         <signature>System.Windows.Forms.Label</signature>
                         <name>lblY2</name>
-                        <newname>x</newname>
+                        <newname>z</newname>
                     </field>
                     <field>
                         <signature>System.Windows.Forms.Label</signature>
                         <name>lblYPos</name>
-                        <newname>o</newname>
+                        <newname>q</newname>
                     </field>
                     <field>
                         <signature>Gma.System.MouseKeyHook.IKeyboardMouseEvents</signature>
                         <name>m_GlobalHook</name>
-                        <newname>g</newname>
+                        <newname>i</newname>
                     </field>
                     <field>
                         <signature>System.Windows.Forms.Panel</signature>
                         <name>panel1</name>
-                        <newname>az</newname>
+                        <newname>a1</newname>
                     </field>
                     <field>
                         <signature>System.Windows.Forms.Panel</signature>
                         <name>panel3</name>
-                        <newname>i</newname>
+                        <newname>k</newname>
                     </field>
                     <field>
                         <signature>System.Windows.Forms.TextBox</signature>
                         <name>txtColor1</name>
-                        <newname>r</newname>
+                        <newname>t</newname>
                     </field>
                     <field>
                         <signature>System.Windows.Forms.TextBox</signature>
                         <name>txtColor2</name>
-                        <newname>u</newname>
+                        <newname>w</newname>
                     </field>
                     <field>
                         <signature>System.Windows.Forms.TextBox</signature>
                         <name>txtColorIgnored1</name>
-                        <newname>ah</newname>
+                        <newname>aj</newname>
                     </field>
                     <field>
                         <signature>System.Windows.Forms.TextBox</signature>
                         <name>txtColorMoved</name>
-                        <newname>as</newname>
+                        <newname>au</newname>
                     </field>
                     <field>
                         <signature>System.Windows.Forms.TextBox</signature>
                         <name>txtDelay</name>
-                        <newname>ax</newname>
+                        <newname>az</newname>
                     </field>
                     <field>
                         <signature>System.Windows.Forms.RichTextBox</signature>
                         <name>txtDescription</name>
-                        <newname>av</newname>
+                        <newname>ax</newname>
                     </field>
                     <field>
                         <signature>System.Windows.Forms.TextBox</signature>
                         <name>txtNo</name>
-                        <newname>ab</newname>
-                    </field>
-                    <field>
-                        <signature>System.Windows.Forms.TextBox</signature>
-                        <name>txtX2</name>
-                        <newname>y</newname>
-                    </field>
-                    <field>
-                        <signature>System.Windows.Forms.TextBox</signature>
-                        <name>txtXIgnored1</name>
-                        <newname>af</newname>
-                    </field>
-                    <field>
-                        <signature>System.Windows.Forms.TextBox</signature>
-                        <name>txtXMoved</name>
-                        <newname>aq</newname>
-                    </field>
-                    <field>
-                        <signature>System.Windows.Forms.TextBox</signature>
-                        <name>txtXPos</name>
-                        <newname>n</newname>
-                    </field>
-                    <field>
-                        <signature>System.Windows.Forms.TextBox</signature>
-                        <name>txtY2</name>
-                        <newname>v</newname>
-                    </field>
-                    <field>
-                        <signature>System.Windows.Forms.TextBox</signature>
-                        <name>txtYIgnored1</name>
                         <newname>ad</newname>
                     </field>
                     <field>
                         <signature>System.Windows.Forms.TextBox</signature>
+                        <name>txtX2</name>
+                        <newname>aa</newname>
+                    </field>
+                    <field>
+                        <signature>System.Windows.Forms.TextBox</signature>
+                        <name>txtXIgnored1</name>
+                        <newname>ah</newname>
+                    </field>
+                    <field>
+                        <signature>System.Windows.Forms.TextBox</signature>
+                        <name>txtXMoved</name>
+                        <newname>as</newname>
+                    </field>
+                    <field>
+                        <signature>System.Windows.Forms.TextBox</signature>
+                        <name>txtXPos</name>
+                        <newname>p</newname>
+                    </field>
+                    <field>
+                        <signature>System.Windows.Forms.TextBox</signature>
+                        <name>txtY2</name>
+                        <newname>x</newname>
+                    </field>
+                    <field>
+                        <signature>System.Windows.Forms.TextBox</signature>
+                        <name>txtYIgnored1</name>
+                        <newname>af</newname>
+                    </field>
+                    <field>
+                        <signature>System.Windows.Forms.TextBox</signature>
                         <name>txtYMoved</name>
-                        <newname>ao</newname>
+                        <newname>aq</newname>
                     </field>
                     <field>
                         <signature>System.Windows.Forms.TextBox</signature>
                         <name>txtYPos</name>
-                        <newname>p</newname>
+                        <newname>r</newname>
                     </field>
                 </fieldlist>
                 <propertylist>
+                    <property>
+                        <signature>KClick.ActionForm()</signature>
+                        <name>ActionForm</name>
+                    </property>
                     <property>
                         <signature>KClick.ClubForm()</signature>
                         <name>ClubForm</name>
@@ -6283,6 +6621,10 @@
                         <name>GlobalConfig</name>
                     </property>
                     <property>
+                        <signature>KClick.MainFForm()</signature>
+                        <name>MainFForm</name>
+                    </property>
+                    <property>
                         <signature>KClick.RerolForm()</signature>
                         <name>RerolForm</name>
                     </property>
@@ -6290,7 +6632,7 @@
                 <eventlist />
             </type>
             <type>
-                <name>KClick.ConfigForm/&lt;&lt;-ctor&gt;b__27_0&gt;d</name>
+                <name>KClick.ConfigForm/&lt;&lt;-ctor&gt;b__41_0&gt;d</name>
                 <newname>KClick.ConfigForm/b</newname>
                 <methodlist>
                     <method>
@@ -6339,7 +6681,7 @@
                 <eventlist />
             </type>
             <type>
-                <name>KClick.ConfigForm/&lt;btnTryClick_ClickAsync&gt;d__29</name>
+                <name>KClick.ConfigForm/&lt;btnTryClick_ClickAsync&gt;d__43</name>
                 <newname>KClick.ConfigForm/a</newname>
                 <methodlist>
                     <method>
@@ -6391,12 +6733,32 @@
                         <name>.ctor</name>
                     </method>
                     <method>
+                        <signature>System.Collections.Generic.List`1&lt;KClick.Configuration.Config&gt;(bool, int32, int32)</signature>
+                        <name>GetAdjustedConfigs</name>
+                    </method>
+                    <method>
+                        <signature>System.Collections.Generic.List`1&lt;KClick.Configuration.Config&gt;()</signature>
+                        <name>get_Configs</name>
+                    </method>
+                    <method>
+                        <signature>bool()</signature>
+                        <name>get_IsRun</name>
+                    </method>
+                    <method>
                         <signature>string()</signature>
                         <name>get_Name</name>
                     </method>
                     <method>
                         <signature>int32()</signature>
                         <name>get_No</name>
+                    </method>
+                    <method>
+                        <signature>void(System.Collections.Generic.List`1&lt;KClick.Configuration.Config&gt;)</signature>
+                        <name>set_Configs</name>
+                    </method>
+                    <method>
+                        <signature>void(bool)</signature>
+                        <name>set_IsRun</name>
                     </method>
                     <method>
                         <signature>void(string)</signature>
@@ -6409,6 +6771,16 @@
                 </methodlist>
                 <fieldlist>
                     <field>
+                        <signature>System.Collections.Generic.List`1&lt;KClick.Configuration.Config&gt;</signature>
+                        <name>&lt;Configs&gt;k__BackingField</name>
+                        <newname>c</newname>
+                    </field>
+                    <field>
+                        <signature>bool</signature>
+                        <name>&lt;IsRun&gt;k__BackingField</name>
+                        <newname>d</newname>
+                    </field>
+                    <field>
                         <signature>string</signature>
                         <name>&lt;Name&gt;k__BackingField</name>
                         <newname>b</newname>
@@ -6420,6 +6792,14 @@
                     </field>
                 </fieldlist>
                 <propertylist>
+                    <property>
+                        <signature>System.Collections.Generic.List`1&lt;KClick.Configuration.Config&gt;()</signature>
+                        <name>Configs</name>
+                    </property>
+                    <property>
+                        <signature>bool()</signature>
+                        <name>IsRun</name>
+                    </property>
                     <property>
                         <signature>string()</signature>
                         <name>Name</name>
@@ -6437,6 +6817,10 @@
                     <method>
                         <signature>void()</signature>
                         <name>.ctor</name>
+                    </method>
+                    <method>
+                        <signature>object()</signature>
+                        <name>Clone</name>
                     </method>
                     <method>
                         <signature>bool()</signature>
@@ -7524,6 +7908,1247 @@
                         <name>Y</name>
                     </property>
                 </propertylist>
+                <eventlist />
+            </type>
+            <type>
+                <name>KClick.MainFForm</name>
+                <methodlist>
+                    <method>
+                        <signature>void()</signature>
+                        <name>.cctor</name>
+                    </method>
+                    <method>
+                        <signature>void()</signature>
+                        <name>.ctor</name>
+                    </method>
+                    <method>
+                        <signature>void(object, System.EventArgs)</signature>
+                        <name>&lt;.ctor&gt;b__11_0</name>
+                        <newname>c</newname>
+                    </method>
+                    <method>
+                        <signature>void(object, System.EventArgs)</signature>
+                        <name>&lt;.ctor&gt;b__11_1</name>
+                        <newname>b</newname>
+                    </method>
+                    <method>
+                        <signature>void(object, System.EventArgs)</signature>
+                        <name>&lt;.ctor&gt;b__11_2</name>
+                        <newname>a</newname>
+                    </method>
+                    <method>
+                        <signature>void(KClick.Configuration.Action)</signature>
+                        <name>AddAction</name>
+                    </method>
+                    <method>
+                        <signature>void(KClick.Configuration.Config)</signature>
+                        <name>AddScript</name>
+                    </method>
+                    <method>
+                        <signature>void(object, System.EventArgs)</signature>
+                        <name>BtnAddAction_Click</name>
+                        <newname>u</newname>
+                    </method>
+                    <method>
+                        <signature>void(object, System.EventArgs)</signature>
+                        <name>BtnClearScripts_Click</name>
+                        <newname>l</newname>
+                    </method>
+                    <method>
+                        <signature>void(object, System.EventArgs)</signature>
+                        <name>BtnClearScripts_Click1</name>
+                        <newname>t</newname>
+                    </method>
+                    <method>
+                        <signature>void(object, System.EventArgs)</signature>
+                        <name>BtnDelete_Click</name>
+                        <newname>j</newname>
+                    </method>
+                    <method>
+                        <signature>void(object, System.EventArgs)</signature>
+                        <name>BtnEditAction_Click</name>
+                        <newname>v</newname>
+                    </method>
+                    <method>
+                        <signature>void(object, System.EventArgs)</signature>
+                        <name>BtnEditScript_Click</name>
+                        <newname>q</newname>
+                    </method>
+                    <method>
+                        <signature>void(object, System.EventArgs)</signature>
+                        <name>BtnExport_Click</name>
+                        <newname>i</newname>
+                    </method>
+                    <method>
+                        <signature>void(object, System.Windows.Forms.MouseEventArgs)</signature>
+                        <name>BtnFindControl_MouseDown</name>
+                        <newname>b</newname>
+                    </method>
+                    <method>
+                        <signature>void(object, System.EventArgs)</signature>
+                        <name>BtnFindControl_MouseHover</name>
+                        <newname>g</newname>
+                    </method>
+                    <method>
+                        <signature>void(object, System.Windows.Forms.MouseEventArgs)</signature>
+                        <name>BtnFindControl_MouseUp</name>
+                        <newname>a</newname>
+                    </method>
+                    <method>
+                        <signature>System.Threading.Tasks.Task(object, System.EventArgs)</signature>
+                        <name>BtnFixColor_ClickAsync</name>
+                        <newname>k</newname>
+                    </method>
+                    <method>
+                        <signature>void(object, System.EventArgs)</signature>
+                        <name>BtnFixControl_Click</name>
+                        <newname>f</newname>
+                    </method>
+                    <method>
+                        <signature>void(object, System.EventArgs)</signature>
+                        <name>BtnGetMousePosition_Click</name>
+                        <newname>n</newname>
+                    </method>
+                    <method>
+                        <signature>void(object, System.EventArgs)</signature>
+                        <name>BtnImport_Click</name>
+                        <newname>h</newname>
+                    </method>
+                    <method>
+                        <signature>void(object, System.EventArgs)</signature>
+                        <name>BtnNewScript_Click</name>
+                        <newname>p</newname>
+                    </method>
+                    <method>
+                        <signature>System.Threading.Tasks.Task(object, System.EventArgs)</signature>
+                        <name>BtnRun_ClickAsync</name>
+                        <newname>d</newname>
+                    </method>
+                    <method>
+                        <signature>System.Threading.Tasks.Task(object, System.EventArgs)</signature>
+                        <name>BtnStop_ClickAsync</name>
+                        <newname>e</newname>
+                    </method>
+                    <method>
+                        <signature>void(System.Collections.Generic.List`1&lt;KClick.Configuration.Action&gt;)</signature>
+                        <name>DisplayAction</name>
+                        <newname>a</newname>
+                    </method>
+                    <method>
+                        <signature>void(System.Collections.Generic.IReadOnlyList`1&lt;KClick.Configuration.Config&gt;)</signature>
+                        <name>DisplayListView</name>
+                        <newname>a</newname>
+                    </method>
+                    <method>
+                        <signature>void(bool)</signature>
+                        <name>Dispose</name>
+                    </method>
+                    <method>
+                        <signature>void(KClick.Configuration.Action)</signature>
+                        <name>EditAction</name>
+                    </method>
+                    <method>
+                        <signature>System.Collections.Generic.IEnumerable`1&lt;KClick.Configuration.Action&gt;()</signature>
+                        <name>GetAllActions</name>
+                        <newname>c</newname>
+                    </method>
+                    <method>
+                        <signature>System.Collections.Generic.IEnumerable`1&lt;KClick.Configuration.Action&gt;()</signature>
+                        <name>GetCheckedActions</name>
+                        <newname>d</newname>
+                    </method>
+                    <method>
+                        <signature>KClick.Configuration.Action()</signature>
+                        <name>GetSelectedAction</name>
+                        <newname>e</newname>
+                    </method>
+                    <method>
+                        <signature>int32()</signature>
+                        <name>GetX</name>
+                        <newname>g</newname>
+                    </method>
+                    <method>
+                        <signature>int32()</signature>
+                        <name>GetY</name>
+                        <newname>f</newname>
+                    </method>
+                    <method>
+                        <signature>System.Collections.Generic.List`1&lt;KClick.Configuration.Action&gt;(string)</signature>
+                        <name>ImportActions</name>
+                        <newname>a</newname>
+                    </method>
+                    <method>
+                        <signature>System.Collections.Generic.List`1&lt;KClick.Configuration.Config&gt;(string)</signature>
+                        <name>ImportScript</name>
+                        <newname>b</newname>
+                    </method>
+                    <method>
+                        <signature>void()</signature>
+                        <name>InitializeComponent</name>
+                        <newname>a</newname>
+                    </method>
+                    <method>
+                        <signature>void(object, System.EventArgs)</signature>
+                        <name>LsvAction_SelectedValueChanged</name>
+                        <newname>w</newname>
+                    </method>
+                    <method>
+                        <signature>void(object, System.EventArgs)</signature>
+                        <name>LsvScripts_DoubleClick</name>
+                        <newname>o</newname>
+                    </method>
+                    <method>
+                        <signature>void(object, System.EventArgs)</signature>
+                        <name>RerolForm_Closed</name>
+                        <newname>r</newname>
+                    </method>
+                    <method>
+                        <signature>void(object, System.EventArgs)</signature>
+                        <name>RerolForm_Load</name>
+                        <newname>s</newname>
+                    </method>
+                    <method>
+                        <signature>System.Threading.Tasks.Task(KClick.Configuration.Action)</signature>
+                        <name>RunAsync</name>
+                        <newname>a</newname>
+                    </method>
+                    <method>
+                        <signature>System.Threading.Tasks.Task(KClick.Configuration.Config)</signature>
+                        <name>RunAsync</name>
+                        <newname>a</newname>
+                    </method>
+                    <method>
+                        <signature>System.Threading.Tasks.Task()</signature>
+                        <name>StopAsync</name>
+                        <newname>b</newname>
+                    </method>
+                    <method>
+                        <signature>void(KClick.Configuration.Config)</signature>
+                        <name>UpdateScript</name>
+                    </method>
+                    <method>
+                        <signature>System.Threading.Tasks.Task(object, System.EventArgs)</signature>
+                        <name>btnTryClick_ClickAsync</name>
+                        <newname>m</newname>
+                    </method>
+                    <method>
+                        <signature>System.Drawing.Size()</signature>
+                        <name>get_MaximumSize</name>
+                    </method>
+                    <method>
+                        <signature>KClick.ZMainForm()</signature>
+                        <name>get_ZMainForm</name>
+                    </method>
+                    <method>
+                        <signature>void(System.Drawing.Size)</signature>
+                        <name>set_MaximumSize</name>
+                    </method>
+                    <method>
+                        <signature>void(KClick.ZMainForm)</signature>
+                        <name>set_ZMainForm</name>
+                    </method>
+                </methodlist>
+                <fieldlist>
+                    <field>
+                        <signature>KClick.ZMainForm</signature>
+                        <name>&lt;ZMainForm&gt;k__BackingField</name>
+                        <newname>a</newname>
+                    </field>
+                    <field>
+                        <signature>System.Collections.Generic.List`1&lt;KClick.Configuration.Action&gt;</signature>
+                        <name>Actions</name>
+                        <newname>b</newname>
+                    </field>
+                    <field>
+                        <signature>KClick.Configuration.GlobalConfig</signature>
+                        <name>GlobalConfig</name>
+                        <newname>c</newname>
+                    </field>
+                    <field>
+                        <signature>System.Collections.Generic.List`1&lt;KClick.Configuration.Config&gt;</signature>
+                        <name>LoadingConfigs</name>
+                        <newname>e</newname>
+                    </field>
+                    <field>
+                        <signature>System.Collections.Generic.List`1&lt;KClick.Configuration.Config&gt;</signature>
+                        <name>SystemConfigs</name>
+                        <newname>d</newname>
+                    </field>
+                    <field>
+                        <signature>System.Windows.Forms.ToolStripMenuItem</signature>
+                        <name>btnAddAction</name>
+                        <newname>an</newname>
+                    </field>
+                    <field>
+                        <signature>System.Windows.Forms.ToolStripMenuItem</signature>
+                        <name>btnClearScripts</name>
+                        <newname>af</newname>
+                    </field>
+                    <field>
+                        <signature>System.Windows.Forms.ToolStripMenuItem</signature>
+                        <name>btnDelete</name>
+                        <newname>ae</newname>
+                    </field>
+                    <field>
+                        <signature>System.Windows.Forms.ToolStripMenuItem</signature>
+                        <name>btnEditAction</name>
+                        <newname>ao</newname>
+                    </field>
+                    <field>
+                        <signature>System.Windows.Forms.ToolStripMenuItem</signature>
+                        <name>btnEditScript</name>
+                        <newname>ad</newname>
+                    </field>
+                    <field>
+                        <signature>System.Windows.Forms.Button</signature>
+                        <name>btnExport</name>
+                        <newname>q</newname>
+                    </field>
+                    <field>
+                        <signature>System.Windows.Forms.Button</signature>
+                        <name>btnFindControl</name>
+                        <newname>n</newname>
+                    </field>
+                    <field>
+                        <signature>System.Windows.Forms.Button</signature>
+                        <name>btnFixControl</name>
+                        <newname>r</newname>
+                    </field>
+                    <field>
+                        <signature>System.Windows.Forms.ToolStripMenuItem</signature>
+                        <name>btnGetMousePosition</name>
+                        <newname>ah</newname>
+                    </field>
+                    <field>
+                        <signature>System.Windows.Forms.Button</signature>
+                        <name>btnImport</name>
+                        <newname>o</newname>
+                    </field>
+                    <field>
+                        <signature>System.Windows.Forms.ToolStripMenuItem</signature>
+                        <name>btnNewScript</name>
+                        <newname>ac</newname>
+                    </field>
+                    <field>
+                        <signature>System.Windows.Forms.Button</signature>
+                        <name>btnRun</name>
+                        <newname>v</newname>
+                    </field>
+                    <field>
+                        <signature>System.Windows.Forms.Button</signature>
+                        <name>btnStop</name>
+                        <newname>w</newname>
+                    </field>
+                    <field>
+                        <signature>System.Windows.Forms.ToolStripMenuItem</signature>
+                        <name>btnTryClick</name>
+                        <newname>ai</newname>
+                    </field>
+                    <field>
+                        <signature>System.Windows.Forms.CheckBox</signature>
+                        <name>chkAdjustAuto</name>
+                        <newname>ap</newname>
+                    </field>
+                    <field>
+                        <signature>System.Windows.Forms.ColumnHeader</signature>
+                        <name>colDelay</name>
+                        <newname>z</newname>
+                    </field>
+                    <field>
+                        <signature>System.Windows.Forms.ColumnHeader</signature>
+                        <name>colDescription</name>
+                        <newname>aa</newname>
+                    </field>
+                    <field>
+                        <signature>System.Windows.Forms.ColumnHeader</signature>
+                        <name>colNo</name>
+                        <newname>y</newname>
+                    </field>
+                    <field>
+                        <signature>System.ComponentModel.IContainer</signature>
+                        <name>components</name>
+                        <newname>i</newname>
+                    </field>
+                    <field>
+                        <signature>System.Windows.Forms.ContextMenuStrip</signature>
+                        <name>contextMenuStrip1</name>
+                        <newname>ab</newname>
+                    </field>
+                    <field>
+                        <signature>System.Windows.Forms.ContextMenuStrip</signature>
+                        <name>contextMenuStrip2</name>
+                        <newname>am</newname>
+                    </field>
+                    <field>
+                        <signature>KClick.Utilities.GlobalHotkey</signature>
+                        <name>ghk</name>
+                        <newname>f</newname>
+                    </field>
+                    <field>
+                        <signature>KClick.Utilities.GlobalHotkey</signature>
+                        <name>ghkMain</name>
+                        <newname>g</newname>
+                    </field>
+                    <field>
+                        <signature>System.Windows.Forms.Label</signature>
+                        <name>label1</name>
+                        <newname>aq</newname>
+                    </field>
+                    <field>
+                        <signature>System.Windows.Forms.Label</signature>
+                        <name>label2</name>
+                        <newname>t</newname>
+                    </field>
+                    <field>
+                        <signature>System.Windows.Forms.Label</signature>
+                        <name>label3</name>
+                        <newname>p</newname>
+                    </field>
+                    <field>
+                        <signature>System.Windows.Forms.CheckedListBox</signature>
+                        <name>lsvAction</name>
+                        <newname>al</newname>
+                    </field>
+                    <field>
+                        <signature>System.Windows.Forms.ListView</signature>
+                        <name>lsvScripts</name>
+                        <newname>x</newname>
+                    </field>
+                    <field>
+                        <signature>object</signature>
+                        <name>padlock</name>
+                        <newname>h</newname>
+                    </field>
+                    <field>
+                        <signature>System.Windows.Forms.Panel</signature>
+                        <name>panel1</name>
+                        <newname>j</newname>
+                    </field>
+                    <field>
+                        <signature>System.Windows.Forms.Panel</signature>
+                        <name>panel2</name>
+                        <newname>k</newname>
+                    </field>
+                    <field>
+                        <signature>System.Windows.Forms.Panel</signature>
+                        <name>panel3</name>
+                        <newname>l</newname>
+                    </field>
+                    <field>
+                        <signature>System.Windows.Forms.Panel</signature>
+                        <name>panel4</name>
+                        <newname>u</newname>
+                    </field>
+                    <field>
+                        <signature>System.Windows.Forms.Panel</signature>
+                        <name>panel5</name>
+                        <newname>ak</newname>
+                    </field>
+                    <field>
+                        <signature>System.Windows.Forms.Panel</signature>
+                        <name>panel6</name>
+                        <newname>aj</newname>
+                    </field>
+                    <field>
+                        <signature>System.Windows.Forms.ToolStripSeparator</signature>
+                        <name>toolStripSeparator2</name>
+                        <newname>ag</newname>
+                    </field>
+                    <field>
+                        <signature>System.Windows.Forms.TextBox</signature>
+                        <name>txtX</name>
+                        <newname>s</newname>
+                    </field>
+                    <field>
+                        <signature>System.Windows.Forms.TextBox</signature>
+                        <name>txtY</name>
+                        <newname>m</newname>
+                    </field>
+                </fieldlist>
+                <propertylist>
+                    <property>
+                        <signature>System.Drawing.Size()</signature>
+                        <name>MaximumSize</name>
+                    </property>
+                    <property>
+                        <signature>KClick.ZMainForm()</signature>
+                        <name>ZMainForm</name>
+                    </property>
+                </propertylist>
+                <eventlist />
+            </type>
+            <type>
+                <name>KClick.MainFForm/&lt;&lt;-ctor&gt;b__11_0&gt;d</name>
+                <newname>KClick.MainFForm/o</newname>
+                <methodlist>
+                    <method>
+                        <signature>void()</signature>
+                        <name>MoveNext</name>
+                        <newname>f</newname>
+                    </method>
+                    <method>
+                        <signature>void(System.Runtime.CompilerServices.IAsyncStateMachine)</signature>
+                        <name>SetStateMachine</name>
+                        <newname>f</newname>
+                    </method>
+                </methodlist>
+                <fieldlist>
+                    <field>
+                        <signature>int32</signature>
+                        <name>&lt;&gt;1__state</name>
+                        <newname>a</newname>
+                    </field>
+                    <field>
+                        <signature>KClick.MainFForm</signature>
+                        <name>&lt;&gt;4__this</name>
+                        <newname>c</newname>
+                    </field>
+                    <field>
+                        <signature>System.Runtime.CompilerServices.AsyncVoidMethodBuilder</signature>
+                        <name>&lt;&gt;t__builder</name>
+                        <newname>b</newname>
+                    </field>
+                    <field>
+                        <signature>System.Runtime.CompilerServices.TaskAwaiter</signature>
+                        <name>&lt;&gt;u__1</name>
+                        <newname>f</newname>
+                    </field>
+                    <field>
+                        <signature>System.EventArgs</signature>
+                        <name>e</name>
+                    </field>
+                    <field>
+                        <signature>object</signature>
+                        <name>sender</name>
+                        <newname>d</newname>
+                    </field>
+                </fieldlist>
+                <propertylist />
+                <eventlist />
+            </type>
+            <type>
+                <name>KClick.MainFForm/&lt;&lt;-ctor&gt;b__11_1&gt;d</name>
+                <newname>KClick.MainFForm/p</newname>
+                <methodlist>
+                    <method>
+                        <signature>void()</signature>
+                        <name>MoveNext</name>
+                        <newname>f</newname>
+                    </method>
+                    <method>
+                        <signature>void(System.Runtime.CompilerServices.IAsyncStateMachine)</signature>
+                        <name>SetStateMachine</name>
+                        <newname>f</newname>
+                    </method>
+                </methodlist>
+                <fieldlist>
+                    <field>
+                        <signature>int32</signature>
+                        <name>&lt;&gt;1__state</name>
+                        <newname>a</newname>
+                    </field>
+                    <field>
+                        <signature>KClick.MainFForm</signature>
+                        <name>&lt;&gt;4__this</name>
+                        <newname>c</newname>
+                    </field>
+                    <field>
+                        <signature>System.Runtime.CompilerServices.AsyncVoidMethodBuilder</signature>
+                        <name>&lt;&gt;t__builder</name>
+                        <newname>b</newname>
+                    </field>
+                    <field>
+                        <signature>System.Runtime.CompilerServices.TaskAwaiter</signature>
+                        <name>&lt;&gt;u__1</name>
+                        <newname>f</newname>
+                    </field>
+                    <field>
+                        <signature>System.EventArgs</signature>
+                        <name>e</name>
+                    </field>
+                    <field>
+                        <signature>object</signature>
+                        <name>sender</name>
+                        <newname>d</newname>
+                    </field>
+                </fieldlist>
+                <propertylist />
+                <eventlist />
+            </type>
+            <type>
+                <name>KClick.MainFForm/&lt;&lt;-ctor&gt;b__11_2&gt;d</name>
+                <newname>KClick.MainFForm/q</newname>
+                <methodlist>
+                    <method>
+                        <signature>void()</signature>
+                        <name>MoveNext</name>
+                        <newname>f</newname>
+                    </method>
+                    <method>
+                        <signature>void(System.Runtime.CompilerServices.IAsyncStateMachine)</signature>
+                        <name>SetStateMachine</name>
+                        <newname>f</newname>
+                    </method>
+                </methodlist>
+                <fieldlist>
+                    <field>
+                        <signature>int32</signature>
+                        <name>&lt;&gt;1__state</name>
+                        <newname>a</newname>
+                    </field>
+                    <field>
+                        <signature>KClick.MainFForm</signature>
+                        <name>&lt;&gt;4__this</name>
+                        <newname>c</newname>
+                    </field>
+                    <field>
+                        <signature>System.Runtime.CompilerServices.AsyncVoidMethodBuilder</signature>
+                        <name>&lt;&gt;t__builder</name>
+                        <newname>b</newname>
+                    </field>
+                    <field>
+                        <signature>System.Runtime.CompilerServices.TaskAwaiter</signature>
+                        <name>&lt;&gt;u__1</name>
+                        <newname>f</newname>
+                    </field>
+                    <field>
+                        <signature>System.EventArgs</signature>
+                        <name>e</name>
+                    </field>
+                    <field>
+                        <signature>object</signature>
+                        <name>sender</name>
+                        <newname>d</newname>
+                    </field>
+                </fieldlist>
+                <propertylist />
+                <eventlist />
+            </type>
+            <type>
+                <name>KClick.MainFForm/&lt;&gt;c</name>
+                <methodlist>
+                    <method>
+                        <signature>void()</signature>
+                        <name>.cctor</name>
+                    </method>
+                    <method>
+                        <signature>void()</signature>
+                        <name>.ctor</name>
+                    </method>
+                    <method>
+                        <signature>bool(KClick.Configuration.Config)</signature>
+                        <name>&lt;RunAsync&gt;b__48_0</name>
+                        <newname>a</newname>
+                    </method>
+                    <method>
+                        <signature>bool(KClick.Configuration.Config)</signature>
+                        <name>&lt;RunAsync&gt;b__48_1</name>
+                        <newname>b</newname>
+                    </method>
+                </methodlist>
+                <fieldlist>
+                    <field>
+                        <signature>KClick.MainFForm/&lt;&gt;c</signature>
+                        <name>&lt;&gt;9</name>
+                    </field>
+                    <field>
+                        <signature>System.Func`2&lt;KClick.Configuration.Config,bool&gt;</signature>
+                        <name>&lt;&gt;9__48_0</name>
+                    </field>
+                    <field>
+                        <signature>System.Func`2&lt;KClick.Configuration.Config,bool&gt;</signature>
+                        <name>&lt;&gt;9__48_1</name>
+                    </field>
+                </fieldlist>
+                <propertylist />
+                <eventlist />
+            </type>
+            <type>
+                <name>KClick.MainFForm/&lt;&gt;c__DisplayClass25_0</name>
+                <newname>KClick.MainFForm/c</newname>
+                <methodlist>
+                    <method>
+                        <signature>void()</signature>
+                        <name>.ctor</name>
+                    </method>
+                    <method>
+                        <signature>bool(KClick.Configuration.Config)</signature>
+                        <name>&lt;BtnEditScript_Click&gt;b__0</name>
+                        <newname>b</newname>
+                    </method>
+                </methodlist>
+                <fieldlist>
+                    <field>
+                        <signature>int32</signature>
+                        <name>no</name>
+                        <newname>a</newname>
+                    </field>
+                </fieldlist>
+                <propertylist />
+                <eventlist />
+            </type>
+            <type>
+                <name>KClick.MainFForm/&lt;&gt;c__DisplayClass33_0</name>
+                <newname>KClick.MainFForm/d</newname>
+                <methodlist>
+                    <method>
+                        <signature>void()</signature>
+                        <name>.ctor</name>
+                    </method>
+                    <method>
+                        <signature>bool(KClick.Configuration.Config)</signature>
+                        <name>&lt;BtnGetMousePosition_Click&gt;b__0</name>
+                        <newname>b</newname>
+                    </method>
+                </methodlist>
+                <fieldlist>
+                    <field>
+                        <signature>int32</signature>
+                        <name>no</name>
+                        <newname>a</newname>
+                    </field>
+                </fieldlist>
+                <propertylist />
+                <eventlist />
+            </type>
+            <type>
+                <name>KClick.MainFForm/&lt;&gt;c__DisplayClass34_0</name>
+                <newname>KClick.MainFForm/e</newname>
+                <methodlist>
+                    <method>
+                        <signature>void()</signature>
+                        <name>.ctor</name>
+                    </method>
+                    <method>
+                        <signature>bool(KClick.Configuration.Config)</signature>
+                        <name>&lt;btnTryClick_ClickAsync&gt;b__0</name>
+                        <newname>b</newname>
+                    </method>
+                </methodlist>
+                <fieldlist>
+                    <field>
+                        <signature>int32</signature>
+                        <name>no</name>
+                        <newname>a</newname>
+                    </field>
+                </fieldlist>
+                <propertylist />
+                <eventlist />
+            </type>
+            <type>
+                <name>KClick.MainFForm/&lt;&gt;c__DisplayClass37_0</name>
+                <newname>KClick.MainFForm/h</newname>
+                <methodlist>
+                    <method>
+                        <signature>void()</signature>
+                        <name>.ctor</name>
+                    </method>
+                    <method>
+                        <signature>bool(KClick.Configuration.Config)</signature>
+                        <name>&lt;BtnDelete_Click&gt;b__0</name>
+                        <newname>b</newname>
+                    </method>
+                </methodlist>
+                <fieldlist>
+                    <field>
+                        <signature>int32</signature>
+                        <name>no</name>
+                        <newname>a</newname>
+                    </field>
+                </fieldlist>
+                <propertylist />
+                <eventlist />
+            </type>
+            <type>
+                <name>KClick.MainFForm/&lt;&gt;c__DisplayClass49_0</name>
+                <newname>KClick.MainFForm/l</newname>
+                <methodlist>
+                    <method>
+                        <signature>void()</signature>
+                        <name>.ctor</name>
+                    </method>
+                    <method>
+                        <signature>bool(KClick.Configuration.Config)</signature>
+                        <name>&lt;RunAsync&gt;b__0</name>
+                        <newname>b</newname>
+                    </method>
+                    <method>
+                        <signature>bool(KClick.Configuration.Config)</signature>
+                        <name>&lt;RunAsync&gt;b__1</name>
+                        <newname>c</newname>
+                    </method>
+                </methodlist>
+                <fieldlist>
+                    <field>
+                        <signature>KClick.Configuration.Config</signature>
+                        <name>config</name>
+                        <newname>a</newname>
+                    </field>
+                </fieldlist>
+                <propertylist />
+                <eventlist />
+            </type>
+            <type>
+                <name>KClick.MainFForm/&lt;BtnFixColor_ClickAsync&gt;d__36</name>
+                <newname>KClick.MainFForm/g</newname>
+                <methodlist>
+                    <method>
+                        <signature>void()</signature>
+                        <name>MoveNext</name>
+                        <newname>d</newname>
+                    </method>
+                    <method>
+                        <signature>void(System.Runtime.CompilerServices.IAsyncStateMachine)</signature>
+                        <name>SetStateMachine</name>
+                        <newname>d</newname>
+                    </method>
+                </methodlist>
+                <fieldlist>
+                    <field>
+                        <signature>int32</signature>
+                        <name>&lt;&gt;1__state</name>
+                        <newname>a</newname>
+                    </field>
+                    <field>
+                        <signature>KClick.MainFForm</signature>
+                        <name>&lt;&gt;4__this</name>
+                        <newname>c</newname>
+                    </field>
+                    <field>
+                        <signature>System.Runtime.CompilerServices.AsyncTaskMethodBuilder</signature>
+                        <name>&lt;&gt;t__builder</name>
+                        <newname>b</newname>
+                    </field>
+                </fieldlist>
+                <propertylist />
+                <eventlist />
+            </type>
+            <type>
+                <name>KClick.MainFForm/&lt;BtnRun_ClickAsync&gt;d__47</name>
+                <newname>KClick.MainFForm/j</newname>
+                <methodlist>
+                    <method>
+                        <signature>void()</signature>
+                        <name>MoveNext</name>
+                        <newname>d</newname>
+                    </method>
+                    <method>
+                        <signature>void(System.Runtime.CompilerServices.IAsyncStateMachine)</signature>
+                        <name>SetStateMachine</name>
+                        <newname>d</newname>
+                    </method>
+                </methodlist>
+                <fieldlist>
+                    <field>
+                        <signature>int32</signature>
+                        <name>&lt;&gt;1__state</name>
+                        <newname>a</newname>
+                    </field>
+                    <field>
+                        <signature>KClick.MainFForm</signature>
+                        <name>&lt;&gt;4__this</name>
+                        <newname>c</newname>
+                    </field>
+                    <field>
+                        <signature>System.Collections.Generic.IEnumerator`1&lt;KClick.Configuration.Action&gt;</signature>
+                        <name>&lt;&gt;7__wrap1</name>
+                        <newname>d</newname>
+                    </field>
+                    <field>
+                        <signature>System.Runtime.CompilerServices.AsyncTaskMethodBuilder</signature>
+                        <name>&lt;&gt;t__builder</name>
+                        <newname>b</newname>
+                    </field>
+                    <field>
+                        <signature>System.Runtime.CompilerServices.TaskAwaiter</signature>
+                        <name>&lt;&gt;u__1</name>
+                        <newname>e</newname>
+                    </field>
+                </fieldlist>
+                <propertylist />
+                <eventlist />
+            </type>
+            <type>
+                <name>KClick.MainFForm/&lt;BtnStop_ClickAsync&gt;d__46</name>
+                <newname>KClick.MainFForm/i</newname>
+                <methodlist>
+                    <method>
+                        <signature>void()</signature>
+                        <name>MoveNext</name>
+                        <newname>d</newname>
+                    </method>
+                    <method>
+                        <signature>void(System.Runtime.CompilerServices.IAsyncStateMachine)</signature>
+                        <name>SetStateMachine</name>
+                        <newname>d</newname>
+                    </method>
+                </methodlist>
+                <fieldlist>
+                    <field>
+                        <signature>int32</signature>
+                        <name>&lt;&gt;1__state</name>
+                        <newname>a</newname>
+                    </field>
+                    <field>
+                        <signature>KClick.MainFForm</signature>
+                        <name>&lt;&gt;4__this</name>
+                        <newname>c</newname>
+                    </field>
+                    <field>
+                        <signature>System.Runtime.CompilerServices.AsyncTaskMethodBuilder</signature>
+                        <name>&lt;&gt;t__builder</name>
+                        <newname>b</newname>
+                    </field>
+                    <field>
+                        <signature>System.Runtime.CompilerServices.TaskAwaiter</signature>
+                        <name>&lt;&gt;u__1</name>
+                        <newname>d</newname>
+                    </field>
+                </fieldlist>
+                <propertylist />
+                <eventlist />
+            </type>
+            <type>
+                <name>KClick.MainFForm/&lt;GetAllActions&gt;d__17</name>
+                <newname>KClick.MainFForm/b</newname>
+                <methodlist>
+                    <method>
+                        <signature>void(int32)</signature>
+                        <name>.ctor</name>
+                    </method>
+                    <method>
+                        <signature>void()</signature>
+                        <name>&lt;&gt;m__Finally1</name>
+                        <newname>a</newname>
+                    </method>
+                    <method>
+                        <signature>bool()</signature>
+                        <name>MoveNext</name>
+                        <newname>c</newname>
+                    </method>
+                    <method>
+                        <signature>System.Collections.Generic.IEnumerator`1&lt;KClick.Configuration.Action&gt;()</signature>
+                        <name>System.Collections.Generic.IEnumerable&lt;KClick.Configuration.Action&gt;.GetEnumerator</name>
+                        <newname>h</newname>
+                    </method>
+                    <method>
+                        <signature>KClick.Configuration.Action()</signature>
+                        <name>System.Collections.Generic.IEnumerator&lt;KClick.Configuration.Action&gt;.get_Current</name>
+                        <newname>e</newname>
+                    </method>
+                    <method>
+                        <signature>System.Collections.IEnumerator()</signature>
+                        <name>System.Collections.IEnumerable.GetEnumerator</name>
+                        <newname>i</newname>
+                    </method>
+                    <method>
+                        <signature>void()</signature>
+                        <name>System.Collections.IEnumerator.Reset</name>
+                        <newname>f</newname>
+                    </method>
+                    <method>
+                        <signature>object()</signature>
+                        <name>System.Collections.IEnumerator.get_Current</name>
+                        <newname>g</newname>
+                    </method>
+                    <method>
+                        <signature>void()</signature>
+                        <name>System.IDisposable.Dispose</name>
+                        <newname>b</newname>
+                    </method>
+                </methodlist>
+                <fieldlist>
+                    <field>
+                        <signature>int32</signature>
+                        <name>&lt;&gt;1__state</name>
+                        <newname>a</newname>
+                    </field>
+                    <field>
+                        <signature>KClick.Configuration.Action</signature>
+                        <name>&lt;&gt;2__current</name>
+                        <newname>b</newname>
+                    </field>
+                    <field>
+                        <signature>KClick.MainFForm</signature>
+                        <name>&lt;&gt;4__this</name>
+                        <newname>d</newname>
+                    </field>
+                    <field>
+                        <signature>System.Collections.IEnumerator</signature>
+                        <name>&lt;&gt;7__wrap1</name>
+                        <newname>e</newname>
+                    </field>
+                    <field>
+                        <signature>int32</signature>
+                        <name>&lt;&gt;l__initialThreadId</name>
+                        <newname>c</newname>
+                    </field>
+                </fieldlist>
+                <propertylist />
+                <eventlist />
+            </type>
+            <type>
+                <name>KClick.MainFForm/&lt;GetCheckedActions&gt;d__16</name>
+                <newname>KClick.MainFForm/a</newname>
+                <methodlist>
+                    <method>
+                        <signature>void(int32)</signature>
+                        <name>.ctor</name>
+                    </method>
+                    <method>
+                        <signature>void()</signature>
+                        <name>&lt;&gt;m__Finally1</name>
+                        <newname>a</newname>
+                    </method>
+                    <method>
+                        <signature>bool()</signature>
+                        <name>MoveNext</name>
+                        <newname>c</newname>
+                    </method>
+                    <method>
+                        <signature>System.Collections.Generic.IEnumerator`1&lt;KClick.Configuration.Action&gt;()</signature>
+                        <name>System.Collections.Generic.IEnumerable&lt;KClick.Configuration.Action&gt;.GetEnumerator</name>
+                        <newname>h</newname>
+                    </method>
+                    <method>
+                        <signature>KClick.Configuration.Action()</signature>
+                        <name>System.Collections.Generic.IEnumerator&lt;KClick.Configuration.Action&gt;.get_Current</name>
+                        <newname>e</newname>
+                    </method>
+                    <method>
+                        <signature>System.Collections.IEnumerator()</signature>
+                        <name>System.Collections.IEnumerable.GetEnumerator</name>
+                        <newname>i</newname>
+                    </method>
+                    <method>
+                        <signature>void()</signature>
+                        <name>System.Collections.IEnumerator.Reset</name>
+                        <newname>f</newname>
+                    </method>
+                    <method>
+                        <signature>object()</signature>
+                        <name>System.Collections.IEnumerator.get_Current</name>
+                        <newname>g</newname>
+                    </method>
+                    <method>
+                        <signature>void()</signature>
+                        <name>System.IDisposable.Dispose</name>
+                        <newname>b</newname>
+                    </method>
+                </methodlist>
+                <fieldlist>
+                    <field>
+                        <signature>int32</signature>
+                        <name>&lt;&gt;1__state</name>
+                        <newname>a</newname>
+                    </field>
+                    <field>
+                        <signature>KClick.Configuration.Action</signature>
+                        <name>&lt;&gt;2__current</name>
+                        <newname>b</newname>
+                    </field>
+                    <field>
+                        <signature>KClick.MainFForm</signature>
+                        <name>&lt;&gt;4__this</name>
+                        <newname>d</newname>
+                    </field>
+                    <field>
+                        <signature>System.Collections.IEnumerator</signature>
+                        <name>&lt;&gt;7__wrap1</name>
+                        <newname>e</newname>
+                    </field>
+                    <field>
+                        <signature>int32</signature>
+                        <name>&lt;&gt;l__initialThreadId</name>
+                        <newname>c</newname>
+                    </field>
+                </fieldlist>
+                <propertylist />
+                <eventlist />
+            </type>
+            <type>
+                <name>KClick.MainFForm/&lt;RunAsync&gt;d__48</name>
+                <newname>KClick.MainFForm/k</newname>
+                <methodlist>
+                    <method>
+                        <signature>void()</signature>
+                        <name>MoveNext</name>
+                        <newname>e</newname>
+                    </method>
+                    <method>
+                        <signature>void(System.Runtime.CompilerServices.IAsyncStateMachine)</signature>
+                        <name>SetStateMachine</name>
+                        <newname>e</newname>
+                    </method>
+                </methodlist>
+                <fieldlist>
+                    <field>
+                        <signature>int32</signature>
+                        <name>&lt;&gt;1__state</name>
+                        <newname>a</newname>
+                    </field>
+                    <field>
+                        <signature>KClick.MainFForm</signature>
+                        <name>&lt;&gt;4__this</name>
+                        <newname>d</newname>
+                    </field>
+                    <field>
+                        <signature>System.Runtime.CompilerServices.AsyncTaskMethodBuilder</signature>
+                        <name>&lt;&gt;t__builder</name>
+                        <newname>b</newname>
+                    </field>
+                    <field>
+                        <signature>System.Runtime.CompilerServices.TaskAwaiter</signature>
+                        <name>&lt;&gt;u__1</name>
+                        <newname>e</newname>
+                    </field>
+                    <field>
+                        <signature>KClick.Configuration.Action</signature>
+                        <name>action</name>
+                        <newname>c</newname>
+                    </field>
+                </fieldlist>
+                <propertylist />
+                <eventlist />
+            </type>
+            <type>
+                <name>KClick.MainFForm/&lt;RunAsync&gt;d__49</name>
+                <newname>KClick.MainFForm/m</newname>
+                <methodlist>
+                    <method>
+                        <signature>void()</signature>
+                        <name>MoveNext</name>
+                        <newname>d</newname>
+                    </method>
+                    <method>
+                        <signature>void(System.Runtime.CompilerServices.IAsyncStateMachine)</signature>
+                        <name>SetStateMachine</name>
+                        <newname>d</newname>
+                    </method>
+                </methodlist>
+                <fieldlist>
+                    <field>
+                        <signature>int32</signature>
+                        <name>&lt;&gt;1__state</name>
+                        <newname>a</newname>
+                    </field>
+                    <field>
+                        <signature>KClick.MainFForm</signature>
+                        <name>&lt;&gt;4__this</name>
+                        <newname>e</newname>
+                    </field>
+                    <field>
+                        <signature>KClick.MainFForm/&lt;&gt;c__DisplayClass49_0</signature>
+                        <name>&lt;&gt;8__1</name>
+                        <newname>d</newname>
+                    </field>
+                    <field>
+                        <signature>System.Runtime.CompilerServices.AsyncTaskMethodBuilder</signature>
+                        <name>&lt;&gt;t__builder</name>
+                        <newname>b</newname>
+                    </field>
+                    <field>
+                        <signature>System.Runtime.CompilerServices.TaskAwaiter</signature>
+                        <name>&lt;&gt;u__1</name>
+                        <newname>f</newname>
+                    </field>
+                    <field>
+                        <signature>System.Runtime.CompilerServices.TaskAwaiter`1&lt;bool&gt;</signature>
+                        <name>&lt;&gt;u__2</name>
+                        <newname>g</newname>
+                    </field>
+                    <field>
+                        <signature>KClick.Configuration.Config</signature>
+                        <name>config</name>
+                        <newname>c</newname>
+                    </field>
+                </fieldlist>
+                <propertylist />
+                <eventlist />
+            </type>
+            <type>
+                <name>KClick.MainFForm/&lt;StopAsync&gt;d__50</name>
+                <newname>KClick.MainFForm/n</newname>
+                <methodlist>
+                    <method>
+                        <signature>void()</signature>
+                        <name>MoveNext</name>
+                        <newname>d</newname>
+                    </method>
+                    <method>
+                        <signature>void(System.Runtime.CompilerServices.IAsyncStateMachine)</signature>
+                        <name>SetStateMachine</name>
+                        <newname>d</newname>
+                    </method>
+                </methodlist>
+                <fieldlist>
+                    <field>
+                        <signature>int32</signature>
+                        <name>&lt;&gt;1__state</name>
+                        <newname>a</newname>
+                    </field>
+                    <field>
+                        <signature>KClick.MainFForm</signature>
+                        <name>&lt;&gt;4__this</name>
+                        <newname>c</newname>
+                    </field>
+                    <field>
+                        <signature>System.Runtime.CompilerServices.AsyncTaskMethodBuilder</signature>
+                        <name>&lt;&gt;t__builder</name>
+                        <newname>b</newname>
+                    </field>
+                    <field>
+                        <signature>System.Runtime.CompilerServices.TaskAwaiter</signature>
+                        <name>&lt;&gt;u__1</name>
+                        <newname>d</newname>
+                    </field>
+                </fieldlist>
+                <propertylist />
+                <eventlist />
+            </type>
+            <type>
+                <name>KClick.MainFForm/&lt;btnTryClick_ClickAsync&gt;d__34</name>
+                <newname>KClick.MainFForm/f</newname>
+                <methodlist>
+                    <method>
+                        <signature>void()</signature>
+                        <name>MoveNext</name>
+                        <newname>d</newname>
+                    </method>
+                    <method>
+                        <signature>void(System.Runtime.CompilerServices.IAsyncStateMachine)</signature>
+                        <name>SetStateMachine</name>
+                        <newname>d</newname>
+                    </method>
+                </methodlist>
+                <fieldlist>
+                    <field>
+                        <signature>int32</signature>
+                        <name>&lt;&gt;1__state</name>
+                        <newname>a</newname>
+                    </field>
+                    <field>
+                        <signature>KClick.MainFForm</signature>
+                        <name>&lt;&gt;4__this</name>
+                        <newname>c</newname>
+                    </field>
+                    <field>
+                        <signature>System.Runtime.CompilerServices.AsyncTaskMethodBuilder</signature>
+                        <name>&lt;&gt;t__builder</name>
+                        <newname>b</newname>
+                    </field>
+                    <field>
+                        <signature>System.Runtime.CompilerServices.TaskAwaiter</signature>
+                        <name>&lt;&gt;u__1</name>
+                        <newname>d</newname>
+                    </field>
+                    <field>
+                        <signature>System.Runtime.CompilerServices.TaskAwaiter`1&lt;bool&gt;</signature>
+                        <name>&lt;&gt;u__2</name>
+                        <newname>e</newname>
+                    </field>
+                </fieldlist>
+                <propertylist />
                 <eventlist />
             </type>
             <type>
@@ -10542,6 +12167,10 @@
                         <name>CalculateAbsoluteCoordinateY</name>
                     </method>
                     <method>
+                        <signature>System.Threading.Tasks.Task(native int, KClick.Configuration.Config)</signature>
+                        <name>ClickAndDragAsync</name>
+                    </method>
+                    <method>
                         <signature>System.Threading.Tasks.Task(native int, System.Drawing.Point, string, System.Drawing.Point, System.Drawing.Point, string)</signature>
                         <name>ClickAndDragAsync</name>
                     </method>
@@ -10601,6 +12230,10 @@
                     <method>
                         <signature>bool(native int, KClick.Utilities.MouseOperation/RECT&amp;)</signature>
                         <name>GetWindowRect</name>
+                    </method>
+                    <method>
+                        <signature>bool(System.Drawing.Color, System.Drawing.Color, int32)</signature>
+                        <name>IsCloseColor</name>
                     </method>
                     <method>
                         <signature>int32(int32, int32)</signature>
@@ -10759,8 +12392,63 @@
                 <eventlist />
             </type>
             <type>
-                <name>KClick.Utilities.MouseOperation/&lt;ClickSpeedModeAsync&gt;d__35</name>
-                <newname>KClick.Utilities.MouseOperation/i</newname>
+                <name>KClick.Utilities.MouseOperation/&lt;ClickAndDragAsync&gt;d__27</name>
+                <newname>KClick.Utilities.MouseOperation/f</newname>
+                <methodlist>
+                    <method>
+                        <signature>void()</signature>
+                        <name>MoveNext</name>
+                        <newname>d</newname>
+                    </method>
+                    <method>
+                        <signature>void(System.Runtime.CompilerServices.IAsyncStateMachine)</signature>
+                        <name>SetStateMachine</name>
+                        <newname>d</newname>
+                    </method>
+                </methodlist>
+                <fieldlist>
+                    <field>
+                        <signature>int32</signature>
+                        <name>&lt;&gt;1__state</name>
+                        <newname>a</newname>
+                    </field>
+                    <field>
+                        <signature>System.Runtime.CompilerServices.AsyncTaskMethodBuilder</signature>
+                        <name>&lt;&gt;t__builder</name>
+                        <newname>b</newname>
+                    </field>
+                    <field>
+                        <signature>System.Runtime.CompilerServices.TaskAwaiter</signature>
+                        <name>&lt;&gt;u__1</name>
+                        <newname>f</newname>
+                    </field>
+                    <field>
+                        <signature>System.Drawing.Point[]</signature>
+                        <name>&lt;allPoints&gt;5__2</name>
+                        <newname>d</newname>
+                    </field>
+                    <field>
+                        <signature>int32</signature>
+                        <name>&lt;i&gt;5__4</name>
+                        <newname>g</newname>
+                    </field>
+                    <field>
+                        <signature>System.Drawing.Point</signature>
+                        <name>&lt;oldPos&gt;5__3</name>
+                        <newname>e</newname>
+                    </field>
+                    <field>
+                        <signature>KClick.Configuration.Config</signature>
+                        <name>config</name>
+                        <newname>c</newname>
+                    </field>
+                </fieldlist>
+                <propertylist />
+                <eventlist />
+            </type>
+            <type>
+                <name>KClick.Utilities.MouseOperation/&lt;ClickSpeedModeAsync&gt;d__37</name>
+                <newname>KClick.Utilities.MouseOperation/j</newname>
                 <methodlist>
                     <method>
                         <signature>void()</signature>
@@ -10809,8 +12497,8 @@
                 <eventlist />
             </type>
             <type>
-                <name>KClick.Utilities.MouseOperation/&lt;SendMessageAsync&gt;d__31</name>
-                <newname>KClick.Utilities.MouseOperation/g</newname>
+                <name>KClick.Utilities.MouseOperation/&lt;SendMessageAsync&gt;d__33</name>
+                <newname>KClick.Utilities.MouseOperation/h</newname>
                 <methodlist>
                     <method>
                         <signature>void()</signature>
@@ -10894,8 +12582,8 @@
                 <eventlist />
             </type>
             <type>
-                <name>KClick.Utilities.MouseOperation/&lt;SendMessageAsync&gt;d__32</name>
-                <newname>KClick.Utilities.MouseOperation/h</newname>
+                <name>KClick.Utilities.MouseOperation/&lt;SendMessageAsync&gt;d__34</name>
+                <newname>KClick.Utilities.MouseOperation/i</newname>
                 <methodlist>
                     <method>
                         <signature>void()</signature>
@@ -10969,8 +12657,8 @@
                 <eventlist />
             </type>
             <type>
-                <name>KClick.Utilities.MouseOperation/&lt;SendMessageSpeedModeAsync&gt;d__27</name>
-                <newname>KClick.Utilities.MouseOperation/f</newname>
+                <name>KClick.Utilities.MouseOperation/&lt;SendMessageSpeedModeAsync&gt;d__28</name>
+                <newname>KClick.Utilities.MouseOperation/g</newname>
                 <methodlist>
                     <method>
                         <signature>void()</signature>
@@ -11581,19 +13269,19 @@
     <statistics>
         <statisticline>
             <description>Total Classes</description>
-            <statistic>182</statistic>
+            <statistic>205</statistic>
         </statisticline>
         <statisticline>
             <description>Total Methods</description>
-            <statistic>1024</statistic>
+            <statistic>1169</statistic>
         </statisticline>
         <statisticline>
             <description>Total Fields</description>
-            <statistic>974</statistic>
+            <statistic>1124</statistic>
         </statisticline>
         <statisticline>
             <description>Total Properties</description>
-            <statistic>106</statistic>
+            <statistic>114</statistic>
         </statisticline>
         <statisticline>
             <description>Total Events</description>
@@ -11601,18 +13289,18 @@
         </statisticline>
         <statisticline>
             <description>Total Classes Renamed</description>
-            <statistic>131</statistic>
-            <statistic>71.98 %</statistic>
+            <statistic>151</statistic>
+            <statistic>73.66 %</statistic>
         </statisticline>
         <statisticline>
             <description>Total Methods Renamed</description>
-            <statistic>461</statistic>
-            <statistic>45.02 %</statistic>
+            <statistic>564</statistic>
+            <statistic>48.25 %</statistic>
         </statisticline>
         <statisticline>
             <description>Total Fields Renamed</description>
-            <statistic>858</statistic>
-            <statistic>88.09 %</statistic>
+            <statistic>1002</statistic>
+            <statistic>89.15 %</statistic>
         </statisticline>
         <statisticline>
             <description>Total Properties Renamed</description>
@@ -11626,38 +13314,38 @@
         </statisticline>
         <statisticline>
             <description>Methods Renamed to 'a'</description>
-            <statistic>92</statistic>
-            <statistic>8.98 %</statistic>
+            <statistic>109</statistic>
+            <statistic>9.32 %</statistic>
         </statisticline>
         <statisticline>
             <description>Methods Renamed to 'b'</description>
-            <statistic>72</statistic>
-            <statistic>7.03 %</statistic>
+            <statistic>88</statistic>
+            <statistic>7.53 %</statistic>
         </statisticline>
         <statisticline>
             <description>Methods Renamed to 'd'</description>
-            <statistic>71</statistic>
-            <statistic>6.93 %</statistic>
+            <statistic>88</statistic>
+            <statistic>7.53 %</statistic>
         </statisticline>
         <statisticline>
             <description>Methods Renamed to 'f'</description>
-            <statistic>45</statistic>
-            <statistic>4.39 %</statistic>
+            <statistic>57</statistic>
+            <statistic>4.88 %</statistic>
         </statisticline>
         <statisticline>
             <description>Methods Renamed to 'c'</description>
-            <statistic>38</statistic>
-            <statistic>3.71 %</statistic>
+            <statistic>44</statistic>
+            <statistic>3.76 %</statistic>
         </statisticline>
         <statisticline>
             <description>Methods Renamed to 'e'</description>
-            <statistic>20</statistic>
-            <statistic>1.95 %</statistic>
+            <statistic>27</statistic>
+            <statistic>2.31 %</statistic>
         </statisticline>
         <statisticline>
             <description>Methods Renamed to 'g'</description>
-            <statistic>15</statistic>
-            <statistic>1.46 %</statistic>
+            <statistic>21</statistic>
+            <statistic>1.80 %</statistic>
         </statisticline>
     </statistics>
 </dotfuscatorMap>

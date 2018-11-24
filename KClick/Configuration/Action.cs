@@ -41,8 +41,13 @@ namespace KClick.Configuration
             return configs;
         }
 
-        public TimeSpan? FromTime { get; set; }
-        public TimeSpan? ToTime { get; set; }
+        public List<Duration> Durations { get; set; } = new List<Duration>();
+    }
+
+    public class Duration
+    {
+        public DateTime FromTime { get; set; }
+        public DateTime ToTime { get; set; }
 
     }
 }
