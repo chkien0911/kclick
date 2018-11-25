@@ -48,12 +48,13 @@
             this.txtNo = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.btnLoadScript = new System.Windows.Forms.Button();
-            this.btnCancel = new System.Windows.Forms.Button();
-            this.btnSave = new System.Windows.Forms.Button();
-            this.panel5 = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
             this.dgvFromTo = new System.Windows.Forms.DataGridView();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.btnCancel = new System.Windows.Forms.Button();
+            this.btnLoadScript = new System.Windows.Forms.Button();
+            this.btnSave = new System.Windows.Forms.Button();
+            this.colDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colFrom = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colTo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
@@ -61,9 +62,9 @@
             this.contextMenuStrip1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
-            this.panel5.SuspendLayout();
             this.panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvFromTo)).BeginInit();
+            this.panel5.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -217,45 +218,6 @@
             this.panel2.Size = new System.Drawing.Size(342, 155);
             this.panel2.TabIndex = 1;
             // 
-            // btnLoadScript
-            // 
-            this.btnLoadScript.Location = new System.Drawing.Point(11, 6);
-            this.btnLoadScript.Name = "btnLoadScript";
-            this.btnLoadScript.Size = new System.Drawing.Size(73, 29);
-            this.btnLoadScript.TabIndex = 2;
-            this.btnLoadScript.Text = "Load Script";
-            this.btnLoadScript.UseVisualStyleBackColor = true;
-            // 
-            // btnCancel
-            // 
-            this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnCancel.Location = new System.Drawing.Point(274, 6);
-            this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(56, 29);
-            this.btnCancel.TabIndex = 1;
-            this.btnCancel.Text = "Cancel";
-            this.btnCancel.UseVisualStyleBackColor = true;
-            // 
-            // btnSave
-            // 
-            this.btnSave.Location = new System.Drawing.Point(212, 6);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(60, 29);
-            this.btnSave.TabIndex = 0;
-            this.btnSave.Text = "Save";
-            this.btnSave.UseVisualStyleBackColor = true;
-            // 
-            // panel5
-            // 
-            this.panel5.Controls.Add(this.btnCancel);
-            this.panel5.Controls.Add(this.btnLoadScript);
-            this.panel5.Controls.Add(this.btnSave);
-            this.panel5.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel5.Location = new System.Drawing.Point(0, 115);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(342, 40);
-            this.panel5.TabIndex = 3;
-            // 
             // panel6
             // 
             this.panel6.Controls.Add(this.dgvFromTo);
@@ -269,6 +231,7 @@
             // 
             this.dgvFromTo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvFromTo.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.colDate,
             this.colFrom,
             this.colTo});
             this.dgvFromTo.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -277,19 +240,65 @@
             this.dgvFromTo.Size = new System.Drawing.Size(342, 115);
             this.dgvFromTo.TabIndex = 7;
             // 
+            // panel5
+            // 
+            this.panel5.Controls.Add(this.btnCancel);
+            this.panel5.Controls.Add(this.btnLoadScript);
+            this.panel5.Controls.Add(this.btnSave);
+            this.panel5.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel5.Location = new System.Drawing.Point(0, 115);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(342, 40);
+            this.panel5.TabIndex = 3;
+            // 
+            // btnCancel
+            // 
+            this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btnCancel.Location = new System.Drawing.Point(274, 6);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(56, 29);
+            this.btnCancel.TabIndex = 1;
+            this.btnCancel.Text = "Cancel";
+            this.btnCancel.UseVisualStyleBackColor = true;
+            // 
+            // btnLoadScript
+            // 
+            this.btnLoadScript.Location = new System.Drawing.Point(11, 6);
+            this.btnLoadScript.Name = "btnLoadScript";
+            this.btnLoadScript.Size = new System.Drawing.Size(73, 29);
+            this.btnLoadScript.TabIndex = 2;
+            this.btnLoadScript.Text = "Load Script";
+            this.btnLoadScript.UseVisualStyleBackColor = true;
+            // 
+            // btnSave
+            // 
+            this.btnSave.Location = new System.Drawing.Point(212, 6);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(60, 29);
+            this.btnSave.TabIndex = 0;
+            this.btnSave.Text = "Save";
+            this.btnSave.UseVisualStyleBackColor = true;
+            // 
+            // colDate
+            // 
+            this.colDate.DataPropertyName = "Date";
+            this.colDate.HeaderText = "Date";
+            this.colDate.Name = "colDate";
+            this.colDate.Width = 130;
+            // 
             // colFrom
             // 
             this.colFrom.DataPropertyName = "FromTime";
             this.colFrom.HeaderText = "From";
             this.colFrom.Name = "colFrom";
-            this.colFrom.Width = 150;
+            this.colFrom.Width = 70;
             // 
             // colTo
             // 
             this.colTo.DataPropertyName = "ToTime";
             this.colTo.HeaderText = "To";
             this.colTo.Name = "colTo";
-            this.colTo.Width = 150;
+            this.colTo.Width = 70;
             // 
             // ActionForm
             // 
@@ -311,9 +320,9 @@
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.panel2.ResumeLayout(false);
-            this.panel5.ResumeLayout(false);
             this.panel6.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvFromTo)).EndInit();
+            this.panel5.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -345,6 +354,7 @@
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.DataGridView dgvFromTo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colDate;
         private System.Windows.Forms.DataGridViewTextBoxColumn colFrom;
         private System.Windows.Forms.DataGridViewTextBoxColumn colTo;
     }

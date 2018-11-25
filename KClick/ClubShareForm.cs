@@ -92,11 +92,7 @@ namespace KClick
 
                 //var closeGameXmlPath = "/templates/system/close_game.xml";
                 //ClosePositionConfigs = ImportScript($"{appPath}/{closeGameXmlPath}");
-
-                cboRaidNumber.DataSource = Raids;
-                cboRaidNumber.DisplayMember = "Name";
-                cboRaidNumber.ValueMember = "No";
-                cboRaidNumber.SelectedIndex = 0;
+                
                 //// Merge
                 //Configs = Configs
                 //    .Union(SystemConfigs)
@@ -575,11 +571,9 @@ namespace KClick
                         var rct = new MouseOperation.RECT();
                         var isOk = MouseOperation.GetWindowRect(hWndParent, ref rct);
 
-                        //if (string.IsNullOrWhiteSpace(GlobalConfig.WindowName))
-                        //{
-                        //    Text += "(" + ClickOnPointTool.GetCaptionOfWindow(hWndParent) + ". H: " + rct.Bottom + ". W: " + rct.Right + ")";
-                        //}
-                        Text = ClickOnPointTool.GetCaptionOfWindow(hWndParent) + ". H: " + rct.Bottom + ". W: " + rct.Right;
+                        var width = (rct.Right - rct.Left);
+                        var heigh = (rct.Bottom - rct.Top);
+                        Text = ClickOnPointTool.GetCaptionOfWindow(hWndParent) + ". H: " + heigh + ". W: " + width;
 
                         GlobalConfig.WindowClass = ClickOnPointTool.GetClassNameOfWindow(hWndParent);
                         GlobalConfig.WindowName = ClickOnPointTool.GetCaptionOfWindow(hWndParent);
@@ -590,15 +584,25 @@ namespace KClick
                         {
                             txtX.Text = "0";
                             txtY.Text = "0";
+                            txtWidth.Text = "500";
+                            txtY.Text = "400";
+
                             GlobalConfig.X = 0;
                             GlobalConfig.Y = 0;
+                            GlobalConfig.WindowWidth = 500;
+                            GlobalConfig.WindowHigh = 400;
                         }
                         else
                         {
                             txtX.Text = rct.Left.ToString();
                             txtY.Text = rct.Top.ToString();
+                            txtWidth.Text = width.ToString();
+                            txtHeight.Text = heigh.ToString();
+
                             GlobalConfig.X = rct.Left;
                             GlobalConfig.Y = rct.Top;
+                            GlobalConfig.WindowWidth = width;
+                            GlobalConfig.WindowHigh = heigh;
                         }
 
                         ghk = new GlobalHotkey(GlobalHotkey.ALT, Keys.S, hWndParent);

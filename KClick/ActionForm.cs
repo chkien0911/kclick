@@ -16,6 +16,7 @@ namespace KClick
         public MainFForm MainFForm { get; set; }
         public Action Action { get; set; } = new Action();
 
+        private DateTimePicker colDtpDate;
         private DateTimePicker colDtpFrom;
         private DateTimePicker colDtpTo;
 
@@ -35,33 +36,44 @@ namespace KClick
 
             Load += ActionForm_Load;
 
+            colDtpDate = new DateTimePicker();
+            colDtpDate.Format = DateTimePickerFormat.Custom;
+            colDtpDate.CustomFormat = "MM/dd/yyyy";
+            colDtpDate.ValueChanged += new EventHandler(colDtpDateValueChanged);
+            colDtpDate.Visible = false;
+            dgvFromTo.Controls.Add(colDtpDate);
+
             this.colDtpFrom = new DateTimePicker();
             colDtpFrom.Format = DateTimePickerFormat.Custom;
-            colDtpFrom.CustomFormat = "MM/dd/yyyy hh:mm tt";
+            colDtpFrom.CustomFormat = "hh:mm tt";
             this.colDtpFrom.ValueChanged += new EventHandler(colDtpFromValueChanged);
             this.colDtpFrom.Visible = false;
+            colDtpFrom.ShowUpDown = true;
             this.dgvFromTo.Controls.Add(colDtpFrom);
 
             this.colDtpTo = new DateTimePicker();
             colDtpTo.Format = DateTimePickerFormat.Custom;
-            colDtpTo.CustomFormat = "MM/dd/yyyy hh:mm tt";
+            colDtpTo.CustomFormat = "hh:mm tt";
             this.colDtpTo.ValueChanged += new EventHandler(colDtpToValueChanged);
             this.colDtpTo.Visible = false;
+            colDtpTo.ShowUpDown = true;
             this.dgvFromTo.Controls.Add(colDtpTo);
 
             dgvFromTo.CellClick += DgvFromTo_CellClick;
-            dgvFromTo.CellContentClick += DgvFromTo_CellContentClick;
 
         }
-
-        private void DgvFromTo_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            
-        }
-
+        
         private void DgvFromTo_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.ColumnIndex == 0)
+            {
+                Rectangle tempRect = dgvFromTo.GetCellDisplayRectangle(e.ColumnIndex, e.RowIndex, false);
+
+                colDtpDate.Location = tempRect.Location;
+                colDtpDate.Width = tempRect.Width;
+                colDtpDate.Visible = true;
+            }
+            else if (e.ColumnIndex == 1)
             {
                 Rectangle tempRect = dgvFromTo.GetCellDisplayRectangle(e.ColumnIndex, e.RowIndex, false);
 
@@ -69,7 +81,7 @@ namespace KClick
                 colDtpFrom.Width = tempRect.Width;
                 colDtpFrom.Visible = true;
             }
-            else if (e.ColumnIndex == 1)
+            else if (e.ColumnIndex == 2)
             {
                 Rectangle tempRect = dgvFromTo.GetCellDisplayRectangle(e.ColumnIndex, e.RowIndex, false);
 
@@ -79,25 +91,36 @@ namespace KClick
             }
         }
 
+        void colDtpDateValueChanged(object sender, EventArgs e)
+        {
+            dgvFromTo.CurrentCell.Value = colDtpDate.Value.ToString("MM/dd/yyyy");
+            colDtpDate.Visible = false;
+
+            // Then simply do this:
+            //dgvFromTo.BeginEdit(true);
+            //dgvFromTo.EndEdit();
+            //dgvFromTo.NotifyCurrentCellDirty(true);
+        }
+
         void colDtpToValueChanged(object sender, EventArgs e)
         {
-            dgvFromTo.CurrentCell.Value = colDtpTo.Value.ToString("MM/dd/yyyy hh:mm tt");//convert the date as per your format
+            dgvFromTo.CurrentCell.Value = colDtpTo.Value.ToString("hh:mm tt");//convert the date as per your format
             colDtpTo.Visible = false;
 
             // Then simply do this:
-            dgvFromTo.BeginEdit(true);
-            dgvFromTo.EndEdit();
-            dgvFromTo.NotifyCurrentCellDirty(true);
+            //dgvFromTo.BeginEdit(true);
+            //dgvFromTo.EndEdit();
+            //dgvFromTo.NotifyCurrentCellDirty(true);
         }
         void colDtpFromValueChanged(object sender, EventArgs e)
         {
-            dgvFromTo.CurrentCell.Value = colDtpFrom.Value.ToString("MM/dd/yyyy hh:mm tt");//convert the date as per your format
+            dgvFromTo.CurrentCell.Value = colDtpFrom.Value.ToString("hh:mm tt");//convert the date as per your format
             colDtpFrom.Visible = false;
 
             // Then simply do this:
-            dgvFromTo.BeginEdit(true);
-            dgvFromTo.EndEdit();
-            dgvFromTo.NotifyCurrentCellDirty(true);
+            //dgvFromTo.BeginEdit(true);
+            //dgvFromTo.EndEdit();
+            //dgvFromTo.NotifyCurrentCellDirty(true);
         }
 
         public void AddScript(Configuration.Config config)

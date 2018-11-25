@@ -117,11 +117,15 @@ namespace KClick
 
         private void BtnEditAction_Click(object sender, EventArgs e)
         {
-            using (var form = new ActionForm())
+            var action = GetSelectedAction();
+            if (action != null)
             {
-                form.MainFForm = this;
-                form.Action = GetSelectedAction();
-                form.ShowDialog();
+                using (var form = new ActionForm())
+                {
+                    form.MainFForm = this;
+                    form.Action = action;
+                    form.ShowDialog();
+                }
             }
         }
 
@@ -779,56 +783,73 @@ namespace KClick
                     StringBuilder className = new StringBuilder(256);
                     var nRet = MouseOperation.GetClassName(hwnd, className, className.Capacity);
 
-                    //For Parent 
+                    //App
                     IntPtr hWndParent = ClickOnPointTool.GetParent(hwnd);
+
                     if (hWndParent.ToInt64() > 0)
                     {
-                        var rct = new MouseOperation.RECT();
-                        var isOk = MouseOperation.GetWindowRect(hWndParent, ref rct);
+                        // Nox
+                        IntPtr hWndParentMain = ClickOnPointTool.GetParent(hWndParent);
 
-                        //if (string.IsNullOrWhiteSpace(GlobalConfig.WindowName))
-                        //{
-                        //    Text += "(" + ClickOnPointTool.GetCaptionOfWindow(hWndParent) + ". H: " + rct.Bottom + ". W: " + rct.Right + ")";
-                        //}
-                        Text = ClickOnPointTool.GetCaptionOfWindow(hWndParent) + ". Bottom: " + rct.Bottom + ". Right: " + rct.Right;
-
-                        GlobalConfig.WindowClass = ClickOnPointTool.GetClassNameOfWindow(hWndParent);
-                        GlobalConfig.WindowName = ClickOnPointTool.GetCaptionOfWindow(hWndParent);
-                        GlobalConfig.WindowHandle = hWndParent;
-
-
-                        if (!isOk)
+                        if (hWndParentMain.ToInt64() > 0)
                         {
-                            txtX.Text = "0";
-                            txtY.Text = "0";
-                            GlobalConfig.X = 0;
-                            GlobalConfig.Y = 0;
+                            var rctMain = new MouseOperation.RECT();
+                            var isOk = MouseOperation.GetWindowRect(hWndParentMain, ref rctMain);
+
+                            Text = ClickOnPointTool.GetCaptionOfWindow(hWndParentMain);
+                            
+                            var width = (rctMain.Right - rctMain.Left);
+                            var heigh = (rctMain.Bottom - rctMain.Top);
+                            //Text = ClickOnPointTool.GetCaptionOfWindow(hWndParent);
+
+                            GlobalConfig.WindowClass = ClickOnPointTool.GetClassNameOfWindow(hWndParentMain);
+                            GlobalConfig.WindowName = ClickOnPointTool.GetCaptionOfWindow(hWndParentMain);
+                            GlobalConfig.WindowHandle = hWndParentMain;
+
+
+                            if (!isOk)
+                            {
+                                txtX.Text = "0";
+                                txtY.Text = "0";
+
+                                GlobalConfig.X = 0;
+                                GlobalConfig.Y = 0;
+                                GlobalConfig.WindowWidth = 504;
+                                GlobalConfig.WindowHigh = 432;
+                            }
+                            else
+                            {
+                                txtX.Text = rctMain.Left.ToString();
+                                txtY.Text = rctMain.Top.ToString();
+
+                                GlobalConfig.X = rctMain.Left;
+                                GlobalConfig.Y = rctMain.Top;
+                                GlobalConfig.WindowWidth = width;
+                                GlobalConfig.WindowHigh = heigh;
+                            }
+
+                            ghk = new GlobalHotkey(GlobalHotkey.ALT, Keys.S, hWndParentMain);
+                            ghkMain = new GlobalHotkey(GlobalHotkey.ALT, Keys.S, this.Handle);
+                            ghk.Register();
+                            ghkMain.Register();
+
+                            var action = GetSelectedAction();
+                            if (action != null)
+                            {
+                                if (action.Configs.Count > 0)
+                                {
+                                    foreach (var config in action.Configs)
+                                    {
+                                        config.WindowClass = GlobalConfig.WindowClass;
+                                        config.WindowName = GlobalConfig.WindowName;
+                                        config.WindowHandle = GlobalConfig.WindowHandle;
+                                    }
+                                }
+                            }
                         }
                         else
                         {
-                            txtX.Text = rct.Left.ToString();
-                            txtY.Text = rct.Top.ToString();
-                            GlobalConfig.X = rct.Left;
-                            GlobalConfig.Y = rct.Top;
-                        }
-
-                        ghk = new GlobalHotkey(GlobalHotkey.ALT, Keys.S, hWndParent);
-                        ghkMain = new GlobalHotkey(GlobalHotkey.ALT, Keys.S, this.Handle);
-                        ghk.Register();
-                        ghkMain.Register();
-
-                        var action = GetSelectedAction();
-                        if (action != null)
-                        {
-                            if (action.Configs.Count > 0)
-                            {
-                                foreach (var config in action.Configs)
-                                {
-                                    config.WindowClass = GlobalConfig.WindowClass;
-                                    config.WindowName = GlobalConfig.WindowName;
-                                    config.WindowHandle = GlobalConfig.WindowHandle;
-                                }
-                            }
+                            MessageBox.Show("No parent application found!");
                         }
                     }
                     else

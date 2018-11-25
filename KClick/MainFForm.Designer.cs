@@ -31,6 +31,8 @@
             this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.chkAdjustAuto = new System.Windows.Forms.CheckBox();
             this.btnRun = new System.Windows.Forms.Button();
             this.btnStop = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -61,8 +63,6 @@
             this.contextMenuStrip2 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.btnAddAction = new System.Windows.Forms.ToolStripMenuItem();
             this.btnEditAction = new System.Windows.Forms.ToolStripMenuItem();
-            this.chkAdjustAuto = new System.Windows.Forms.CheckBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -80,7 +80,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(316, 119);
+            this.panel1.Size = new System.Drawing.Size(319, 119);
             this.panel1.TabIndex = 0;
             // 
             // panel4
@@ -92,8 +92,27 @@
             this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel4.Location = new System.Drawing.Point(0, 67);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(316, 52);
+            this.panel4.Size = new System.Drawing.Size(319, 52);
             this.panel4.TabIndex = 41;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(128, 29);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(188, 13);
+            this.label1.TabIndex = 16;
+            this.label1.Text = "(Required script geneated at X=0,Y=0)";
+            // 
+            // chkAdjustAuto
+            // 
+            this.chkAdjustAuto.AutoSize = true;
+            this.chkAdjustAuto.Location = new System.Drawing.Point(146, 9);
+            this.chkAdjustAuto.Name = "chkAdjustAuto";
+            this.chkAdjustAuto.Size = new System.Drawing.Size(137, 17);
+            this.chkAdjustAuto.TabIndex = 15;
+            this.chkAdjustAuto.Text = "Adjusted based on X, Y";
+            this.chkAdjustAuto.UseVisualStyleBackColor = true;
             // 
             // btnRun
             // 
@@ -128,12 +147,12 @@
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel3.Location = new System.Drawing.Point(0, 0);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(316, 67);
+            this.panel3.Size = new System.Drawing.Size(319, 67);
             this.panel3.TabIndex = 40;
             // 
             // txtY
             // 
-            this.txtY.Location = new System.Drawing.Point(91, 38);
+            this.txtY.Location = new System.Drawing.Point(101, 37);
             this.txtY.Name = "txtY";
             this.txtY.Size = new System.Drawing.Size(30, 20);
             this.txtY.TabIndex = 18;
@@ -150,17 +169,17 @@
             // 
             // btnImport
             // 
-            this.btnImport.Location = new System.Drawing.Point(201, 11);
+            this.btnImport.Location = new System.Drawing.Point(229, 12);
             this.btnImport.Name = "btnImport";
-            this.btnImport.Size = new System.Drawing.Size(49, 43);
+            this.btnImport.Size = new System.Drawing.Size(40, 43);
             this.btnImport.TabIndex = 3;
-            this.btnImport.Text = "Load Script";
+            this.btnImport.Text = "Load";
             this.btnImport.UseVisualStyleBackColor = true;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(71, 41);
+            this.label3.Location = new System.Drawing.Point(81, 40);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(14, 13);
             this.label3.TabIndex = 19;
@@ -168,25 +187,25 @@
             // 
             // btnExport
             // 
-            this.btnExport.Location = new System.Drawing.Point(256, 11);
+            this.btnExport.Location = new System.Drawing.Point(275, 12);
             this.btnExport.Name = "btnExport";
-            this.btnExport.Size = new System.Drawing.Size(51, 43);
+            this.btnExport.Size = new System.Drawing.Size(41, 43);
             this.btnExport.TabIndex = 6;
-            this.btnExport.Text = "Save Script";
+            this.btnExport.Text = "Save";
             this.btnExport.UseVisualStyleBackColor = true;
             // 
             // btnFixControl
             // 
-            this.btnFixControl.Location = new System.Drawing.Point(127, 11);
+            this.btnFixControl.Location = new System.Drawing.Point(144, 11);
             this.btnFixControl.Name = "btnFixControl";
-            this.btnFixControl.Size = new System.Drawing.Size(58, 43);
+            this.btnFixControl.Size = new System.Drawing.Size(61, 43);
             this.btnFixControl.TabIndex = 2;
-            this.btnFixControl.Text = "Fix Size Control";
+            this.btnFixControl.Text = "Fix Size";
             this.btnFixControl.UseVisualStyleBackColor = true;
             // 
             // txtX
             // 
-            this.txtX.Location = new System.Drawing.Point(91, 12);
+            this.txtX.Location = new System.Drawing.Point(101, 11);
             this.txtX.Name = "txtX";
             this.txtX.Size = new System.Drawing.Size(30, 20);
             this.txtX.TabIndex = 17;
@@ -195,7 +214,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(71, 15);
+            this.label2.Location = new System.Drawing.Point(81, 14);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(14, 13);
             this.label2.TabIndex = 17;
@@ -208,7 +227,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(0, 119);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(316, 152);
+            this.panel2.Size = new System.Drawing.Size(319, 207);
             this.panel2.TabIndex = 1;
             // 
             // panel6
@@ -217,7 +236,7 @@
             this.panel6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel6.Location = new System.Drawing.Point(85, 0);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(231, 152);
+            this.panel6.Size = new System.Drawing.Size(234, 207);
             this.panel6.TabIndex = 4;
             // 
             // lsvScripts
@@ -232,7 +251,7 @@
             this.lsvScripts.GridLines = true;
             this.lsvScripts.Location = new System.Drawing.Point(0, 0);
             this.lsvScripts.Name = "lsvScripts";
-            this.lsvScripts.Size = new System.Drawing.Size(231, 152);
+            this.lsvScripts.Size = new System.Drawing.Size(234, 207);
             this.lsvScripts.TabIndex = 2;
             this.lsvScripts.UseCompatibleStateImageBehavior = false;
             this.lsvScripts.View = System.Windows.Forms.View.Details;
@@ -312,7 +331,7 @@
             this.panel5.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel5.Location = new System.Drawing.Point(0, 0);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(85, 152);
+            this.panel5.Size = new System.Drawing.Size(85, 207);
             this.panel5.TabIndex = 3;
             // 
             // lsvAction
@@ -322,7 +341,7 @@
             this.lsvAction.FormattingEnabled = true;
             this.lsvAction.Location = new System.Drawing.Point(0, 0);
             this.lsvAction.Name = "lsvAction";
-            this.lsvAction.Size = new System.Drawing.Size(85, 152);
+            this.lsvAction.Size = new System.Drawing.Size(85, 207);
             this.lsvAction.TabIndex = 1;
             // 
             // contextMenuStrip2
@@ -345,30 +364,11 @@
             this.btnEditAction.Size = new System.Drawing.Size(96, 22);
             this.btnEditAction.Text = "Edit";
             // 
-            // chkAdjustAuto
-            // 
-            this.chkAdjustAuto.AutoSize = true;
-            this.chkAdjustAuto.Location = new System.Drawing.Point(146, 9);
-            this.chkAdjustAuto.Name = "chkAdjustAuto";
-            this.chkAdjustAuto.Size = new System.Drawing.Size(137, 17);
-            this.chkAdjustAuto.TabIndex = 15;
-            this.chkAdjustAuto.Text = "Adjusted based on X, Y";
-            this.chkAdjustAuto.UseVisualStyleBackColor = true;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(128, 29);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(188, 13);
-            this.label1.TabIndex = 16;
-            this.label1.Text = "(Required script geneated at X=0,Y=0)";
-            // 
             // MainFForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(316, 271);
+            this.ClientSize = new System.Drawing.Size(319, 326);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.MaximizeBox = false;

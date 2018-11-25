@@ -6,8 +6,10 @@ namespace KClick.Configuration
 {
     public class GlobalConfig
     {
-        public int WindowWidth => 500;
-        public int WindowHigh => 400;
+        public int MainWidth { get; set; }
+        public int MainHigh { get; set; }
+        public int WindowWidth { get; set; }
+        public int WindowHigh { get; set; }
         public string WindowClass { get; set; }
         public string WindowName { get; set; }
         public IntPtr WindowHandle { get; set; } = IntPtr.Zero;
