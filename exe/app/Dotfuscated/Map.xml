@@ -2,7 +2,7 @@
 <!DOCTYPE dotfuscatorMap SYSTEM "http://www.preemptive.com/dotfuscator/dtd/dotfuscatorMap_v1.2.dtd">
 <dotfuscatorMap version="1.1">
     <header>
-        <timestamp>2018-11-20T21:01:03</timestamp>
+        <timestamp>2018-11-25T16:23:33</timestamp>
         <product version="5.36.0.7050" user="Chu Hong Kien" serial="253588-391">Dotfuscator Community Edition</product>
     </header>
     <mapping>
@@ -3520,6 +3520,11 @@
                         <newname>a</newname>
                     </method>
                     <method>
+                        <signature>void(object, System.Windows.Forms.DataGridViewCellEventArgs)</signature>
+                        <name>DgvFromTo_CellClick</name>
+                        <newname>a</newname>
+                    </method>
+                    <method>
                         <signature>void(System.Collections.Generic.IReadOnlyList`1&lt;KClick.Configuration.Config&gt;)</signature>
                         <name>DisplayListView</name>
                         <newname>a</newname>
@@ -3541,6 +3546,21 @@
                     <method>
                         <signature>void(KClick.Configuration.Config)</signature>
                         <name>UpdateScript</name>
+                    </method>
+                    <method>
+                        <signature>void(object, System.EventArgs)</signature>
+                        <name>colDtpDateValueChanged</name>
+                        <newname>k</newname>
+                    </method>
+                    <method>
+                        <signature>void(object, System.EventArgs)</signature>
+                        <name>colDtpFromValueChanged</name>
+                        <newname>i</newname>
+                    </method>
+                    <method>
+                        <signature>void(object, System.EventArgs)</signature>
+                        <name>colDtpToValueChanged</name>
+                        <newname>j</newname>
                     </method>
                     <method>
                         <signature>KClick.Configuration.Action()</signature>
@@ -3573,117 +3593,162 @@
                     <field>
                         <signature>System.Windows.Forms.Button</signature>
                         <name>btnCancel</name>
-                        <newname>h</newname>
-                    </field>
-                    <field>
-                        <signature>System.Windows.Forms.ToolStripMenuItem</signature>
-                        <name>btnClearScripts</name>
-                        <newname>v</newname>
-                    </field>
-                    <field>
-                        <signature>System.Windows.Forms.ToolStripMenuItem</signature>
-                        <name>btnDelete</name>
-                        <newname>u</newname>
-                    </field>
-                    <field>
-                        <signature>System.Windows.Forms.ToolStripMenuItem</signature>
-                        <name>btnEditScript</name>
-                        <newname>t</newname>
-                    </field>
-                    <field>
-                        <signature>System.Windows.Forms.ToolStripMenuItem</signature>
-                        <name>btnGetMousePosition</name>
-                        <newname>x</newname>
-                    </field>
-                    <field>
-                        <signature>System.Windows.Forms.Button</signature>
-                        <name>btnLoadScript</name>
                         <newname>k</newname>
                     </field>
                     <field>
                         <signature>System.Windows.Forms.ToolStripMenuItem</signature>
+                        <name>btnClearScripts</name>
+                        <newname>y</newname>
+                    </field>
+                    <field>
+                        <signature>System.Windows.Forms.ToolStripMenuItem</signature>
+                        <name>btnDelete</name>
+                        <newname>x</newname>
+                    </field>
+                    <field>
+                        <signature>System.Windows.Forms.ToolStripMenuItem</signature>
+                        <name>btnEditScript</name>
+                        <newname>w</newname>
+                    </field>
+                    <field>
+                        <signature>System.Windows.Forms.ToolStripMenuItem</signature>
+                        <name>btnGetMousePosition</name>
+                        <newname>aa</newname>
+                    </field>
+                    <field>
+                        <signature>System.Windows.Forms.Button</signature>
+                        <name>btnLoadScript</name>
+                        <newname>n</newname>
+                    </field>
+                    <field>
+                        <signature>System.Windows.Forms.ToolStripMenuItem</signature>
                         <name>btnNewScript</name>
-                        <newname>s</newname>
+                        <newname>v</newname>
                     </field>
                     <field>
                         <signature>System.Windows.Forms.Button</signature>
                         <name>btnSave</name>
-                        <newname>i</newname>
+                        <newname>l</newname>
                     </field>
                     <field>
                         <signature>System.Windows.Forms.ToolStripMenuItem</signature>
                         <name>btnTryClick</name>
-                        <newname>y</newname>
+                        <newname>ab</newname>
+                    </field>
+                    <field>
+                        <signature>System.Windows.Forms.DataGridViewTextBoxColumn</signature>
+                        <name>colDate</name>
+                        <newname>af</newname>
                     </field>
                     <field>
                         <signature>System.Windows.Forms.ColumnHeader</signature>
                         <name>colDelay</name>
-                        <newname>p</newname>
+                        <newname>s</newname>
                     </field>
                     <field>
                         <signature>System.Windows.Forms.ColumnHeader</signature>
                         <name>colDescription</name>
-                        <newname>q</newname>
+                        <newname>t</newname>
+                    </field>
+                    <field>
+                        <signature>System.Windows.Forms.DateTimePicker</signature>
+                        <name>colDtpDate</name>
+                        <newname>c</newname>
+                    </field>
+                    <field>
+                        <signature>System.Windows.Forms.DateTimePicker</signature>
+                        <name>colDtpFrom</name>
+                        <newname>d</newname>
+                    </field>
+                    <field>
+                        <signature>System.Windows.Forms.DateTimePicker</signature>
+                        <name>colDtpTo</name>
+                        <newname>e</newname>
+                    </field>
+                    <field>
+                        <signature>System.Windows.Forms.DataGridViewTextBoxColumn</signature>
+                        <name>colFrom</name>
+                        <newname>ag</newname>
                     </field>
                     <field>
                         <signature>System.Windows.Forms.ColumnHeader</signature>
                         <name>colNo</name>
-                        <newname>o</newname>
+                        <newname>r</newname>
+                    </field>
+                    <field>
+                        <signature>System.Windows.Forms.DataGridViewTextBoxColumn</signature>
+                        <name>colTo</name>
+                        <newname>ah</newname>
                     </field>
                     <field>
                         <signature>System.ComponentModel.IContainer</signature>
                         <name>components</name>
-                        <newname>c</newname>
+                        <newname>f</newname>
                     </field>
                     <field>
                         <signature>System.Windows.Forms.ContextMenuStrip</signature>
                         <name>contextMenuStrip1</name>
-                        <newname>r</newname>
+                        <newname>u</newname>
+                    </field>
+                    <field>
+                        <signature>System.Windows.Forms.DataGridView</signature>
+                        <name>dgvFromTo</name>
+                        <newname>ae</newname>
                     </field>
                     <field>
                         <signature>System.Windows.Forms.Label</signature>
                         <name>label1</name>
-                        <newname>g</newname>
+                        <newname>j</newname>
                     </field>
                     <field>
                         <signature>System.Windows.Forms.ListView</signature>
                         <name>lsvScripts</name>
-                        <newname>n</newname>
+                        <newname>q</newname>
                     </field>
                     <field>
                         <signature>System.Windows.Forms.Panel</signature>
                         <name>panel1</name>
-                        <newname>d</newname>
+                        <newname>g</newname>
                     </field>
                     <field>
                         <signature>System.Windows.Forms.Panel</signature>
                         <name>panel2</name>
-                        <newname>e</newname>
+                        <newname>h</newname>
                     </field>
                     <field>
                         <signature>System.Windows.Forms.Panel</signature>
                         <name>panel3</name>
-                        <newname>l</newname>
+                        <newname>o</newname>
                     </field>
                     <field>
                         <signature>System.Windows.Forms.Panel</signature>
                         <name>panel4</name>
-                        <newname>m</newname>
+                        <newname>p</newname>
+                    </field>
+                    <field>
+                        <signature>System.Windows.Forms.Panel</signature>
+                        <name>panel5</name>
+                        <newname>ad</newname>
+                    </field>
+                    <field>
+                        <signature>System.Windows.Forms.Panel</signature>
+                        <name>panel6</name>
+                        <newname>ac</newname>
                     </field>
                     <field>
                         <signature>System.Windows.Forms.ToolStripSeparator</signature>
                         <name>toolStripSeparator2</name>
-                        <newname>w</newname>
+                        <newname>z</newname>
                     </field>
                     <field>
                         <signature>System.Windows.Forms.TextBox</signature>
                         <name>txtName</name>
-                        <newname>f</newname>
+                        <newname>i</newname>
                     </field>
                     <field>
                         <signature>System.Windows.Forms.TextBox</signature>
                         <name>txtNo</name>
-                        <newname>j</newname>
+                        <newname>m</newname>
                     </field>
                 </fieldlist>
                 <propertylist>
@@ -3699,7 +3764,7 @@
                 <eventlist />
             </type>
             <type>
-                <name>KClick.ActionForm/&lt;&gt;c__DisplayClass12_0</name>
+                <name>KClick.ActionForm/&lt;&gt;c__DisplayClass19_0</name>
                 <newname>KClick.ActionForm/a</newname>
                 <methodlist>
                     <method>
@@ -3723,7 +3788,7 @@
                 <eventlist />
             </type>
             <type>
-                <name>KClick.ActionForm/&lt;&gt;c__DisplayClass14_0</name>
+                <name>KClick.ActionForm/&lt;&gt;c__DisplayClass21_0</name>
                 <newname>KClick.ActionForm/b</newname>
                 <methodlist>
                     <method>
@@ -5298,7 +5363,7 @@
                     <field>
                         <signature>System.Windows.Forms.ToolStripMenuItem</signature>
                         <name>btnClearScripts</name>
-                        <newname>am</newname>
+                        <newname>ak</newname>
                     </field>
                     <field>
                         <signature>System.Windows.Forms.ToolStripMenuItem</signature>
@@ -5356,14 +5421,9 @@
                         <newname>m</newname>
                     </field>
                     <field>
-                        <signature>System.Windows.Forms.ComboBox</signature>
-                        <name>cboRaidNumber</name>
-                        <newname>af</newname>
-                    </field>
-                    <field>
                         <signature>System.Windows.Forms.ColumnHeader</signature>
                         <name>colDelay</name>
-                        <newname>ah</newname>
+                        <newname>af</newname>
                     </field>
                     <field>
                         <signature>System.Windows.Forms.ColumnHeader</signature>
@@ -5403,17 +5463,22 @@
                     <field>
                         <signature>System.Windows.Forms.Label</signature>
                         <name>label1</name>
-                        <newname>ag</newname>
+                        <newname>am</newname>
                     </field>
                     <field>
                         <signature>System.Windows.Forms.Label</signature>
                         <name>label2</name>
-                        <newname>al</newname>
+                        <newname>aj</newname>
                     </field>
                     <field>
                         <signature>System.Windows.Forms.Label</signature>
                         <name>label3</name>
-                        <newname>aj</newname>
+                        <newname>ah</newname>
+                    </field>
+                    <field>
+                        <signature>System.Windows.Forms.Label</signature>
+                        <name>label4</name>
+                        <newname>ao</newname>
                     </field>
                     <field>
                         <signature>System.Windows.Forms.ListView</signature>
@@ -5447,13 +5512,23 @@
                     </field>
                     <field>
                         <signature>System.Windows.Forms.TextBox</signature>
+                        <name>txtHeight</name>
+                        <newname>al</newname>
+                    </field>
+                    <field>
+                        <signature>System.Windows.Forms.TextBox</signature>
+                        <name>txtWidth</name>
+                        <newname>an</newname>
+                    </field>
+                    <field>
+                        <signature>System.Windows.Forms.TextBox</signature>
                         <name>txtX</name>
-                        <newname>ak</newname>
+                        <newname>ai</newname>
                     </field>
                     <field>
                         <signature>System.Windows.Forms.TextBox</signature>
                         <name>txtY</name>
-                        <newname>ai</newname>
+                        <newname>ag</newname>
                     </field>
                 </fieldlist>
                 <propertylist>
@@ -6741,6 +6816,10 @@
                         <name>get_Configs</name>
                     </method>
                     <method>
+                        <signature>System.Collections.Generic.List`1&lt;KClick.Configuration.Duration&gt;()</signature>
+                        <name>get_Durations</name>
+                    </method>
+                    <method>
                         <signature>bool()</signature>
                         <name>get_IsRun</name>
                     </method>
@@ -6755,6 +6834,10 @@
                     <method>
                         <signature>void(System.Collections.Generic.List`1&lt;KClick.Configuration.Config&gt;)</signature>
                         <name>set_Configs</name>
+                    </method>
+                    <method>
+                        <signature>void(System.Collections.Generic.List`1&lt;KClick.Configuration.Duration&gt;)</signature>
+                        <name>set_Durations</name>
                     </method>
                     <method>
                         <signature>void(bool)</signature>
@@ -6776,6 +6859,11 @@
                         <newname>c</newname>
                     </field>
                     <field>
+                        <signature>System.Collections.Generic.List`1&lt;KClick.Configuration.Duration&gt;</signature>
+                        <name>&lt;Durations&gt;k__BackingField</name>
+                        <newname>e</newname>
+                    </field>
+                    <field>
                         <signature>bool</signature>
                         <name>&lt;IsRun&gt;k__BackingField</name>
                         <newname>d</newname>
@@ -6795,6 +6883,10 @@
                     <property>
                         <signature>System.Collections.Generic.List`1&lt;KClick.Configuration.Config&gt;()</signature>
                         <name>Configs</name>
+                    </property>
+                    <property>
+                        <signature>System.Collections.Generic.List`1&lt;KClick.Configuration.Duration&gt;()</signature>
+                        <name>Durations</name>
                     </property>
                     <property>
                         <signature>bool()</signature>
@@ -7346,6 +7438,54 @@
                 <eventlist />
             </type>
             <type>
+                <name>KClick.Configuration.Duration</name>
+                <methodlist>
+                    <method>
+                        <signature>void()</signature>
+                        <name>.ctor</name>
+                    </method>
+                    <method>
+                        <signature>System.DateTime()</signature>
+                        <name>get_FromTime</name>
+                    </method>
+                    <method>
+                        <signature>System.DateTime()</signature>
+                        <name>get_ToTime</name>
+                    </method>
+                    <method>
+                        <signature>void(System.DateTime)</signature>
+                        <name>set_FromTime</name>
+                    </method>
+                    <method>
+                        <signature>void(System.DateTime)</signature>
+                        <name>set_ToTime</name>
+                    </method>
+                </methodlist>
+                <fieldlist>
+                    <field>
+                        <signature>System.DateTime</signature>
+                        <name>&lt;FromTime&gt;k__BackingField</name>
+                        <newname>a</newname>
+                    </field>
+                    <field>
+                        <signature>System.DateTime</signature>
+                        <name>&lt;ToTime&gt;k__BackingField</name>
+                        <newname>b</newname>
+                    </field>
+                </fieldlist>
+                <propertylist>
+                    <property>
+                        <signature>System.DateTime()</signature>
+                        <name>FromTime</name>
+                    </property>
+                    <property>
+                        <signature>System.DateTime()</signature>
+                        <name>ToTime</name>
+                    </property>
+                </propertylist>
+                <eventlist />
+            </type>
+            <type>
                 <name>KClick.Configuration.GlobalConfig</name>
                 <methodlist>
                     <method>
@@ -7355,6 +7495,14 @@
                     <method>
                         <signature>bool()</signature>
                         <name>get_IsValid</name>
+                    </method>
+                    <method>
+                        <signature>int32()</signature>
+                        <name>get_MainHigh</name>
+                    </method>
+                    <method>
+                        <signature>int32()</signature>
+                        <name>get_MainWidth</name>
                     </method>
                     <method>
                         <signature>string()</signature>
@@ -7385,6 +7533,14 @@
                         <name>get_Y</name>
                     </method>
                     <method>
+                        <signature>void(int32)</signature>
+                        <name>set_MainHigh</name>
+                    </method>
+                    <method>
+                        <signature>void(int32)</signature>
+                        <name>set_MainWidth</name>
+                    </method>
+                    <method>
                         <signature>void(string)</signature>
                         <name>set_WindowClass</name>
                     </method>
@@ -7393,8 +7549,16 @@
                         <name>set_WindowHandle</name>
                     </method>
                     <method>
+                        <signature>void(int32)</signature>
+                        <name>set_WindowHigh</name>
+                    </method>
+                    <method>
                         <signature>void(string)</signature>
                         <name>set_WindowName</name>
+                    </method>
+                    <method>
+                        <signature>void(int32)</signature>
+                        <name>set_WindowWidth</name>
                     </method>
                     <method>
                         <signature>void(int32)</signature>
@@ -7407,35 +7571,63 @@
                 </methodlist>
                 <fieldlist>
                     <field>
-                        <signature>string</signature>
-                        <name>&lt;WindowClass&gt;k__BackingField</name>
-                        <newname>a</newname>
-                    </field>
-                    <field>
-                        <signature>native int</signature>
-                        <name>&lt;WindowHandle&gt;k__BackingField</name>
-                        <newname>c</newname>
-                    </field>
-                    <field>
-                        <signature>string</signature>
-                        <name>&lt;WindowName&gt;k__BackingField</name>
+                        <signature>int32</signature>
+                        <name>&lt;MainHigh&gt;k__BackingField</name>
                         <newname>b</newname>
                     </field>
                     <field>
                         <signature>int32</signature>
-                        <name>&lt;X&gt;k__BackingField</name>
+                        <name>&lt;MainWidth&gt;k__BackingField</name>
+                        <newname>a</newname>
+                    </field>
+                    <field>
+                        <signature>string</signature>
+                        <name>&lt;WindowClass&gt;k__BackingField</name>
+                        <newname>e</newname>
+                    </field>
+                    <field>
+                        <signature>native int</signature>
+                        <name>&lt;WindowHandle&gt;k__BackingField</name>
+                        <newname>g</newname>
+                    </field>
+                    <field>
+                        <signature>int32</signature>
+                        <name>&lt;WindowHigh&gt;k__BackingField</name>
                         <newname>d</newname>
+                    </field>
+                    <field>
+                        <signature>string</signature>
+                        <name>&lt;WindowName&gt;k__BackingField</name>
+                        <newname>f</newname>
+                    </field>
+                    <field>
+                        <signature>int32</signature>
+                        <name>&lt;WindowWidth&gt;k__BackingField</name>
+                        <newname>c</newname>
+                    </field>
+                    <field>
+                        <signature>int32</signature>
+                        <name>&lt;X&gt;k__BackingField</name>
+                        <newname>h</newname>
                     </field>
                     <field>
                         <signature>int32</signature>
                         <name>&lt;Y&gt;k__BackingField</name>
-                        <newname>e</newname>
+                        <newname>i</newname>
                     </field>
                 </fieldlist>
                 <propertylist>
                     <property>
                         <signature>bool()</signature>
                         <name>IsValid</name>
+                    </property>
+                    <property>
+                        <signature>int32()</signature>
+                        <name>MainHigh</name>
+                    </property>
+                    <property>
+                        <signature>int32()</signature>
+                        <name>MainWidth</name>
                     </property>
                     <property>
                         <signature>string()</signature>
@@ -13269,19 +13461,19 @@
     <statistics>
         <statisticline>
             <description>Total Classes</description>
-            <statistic>205</statistic>
+            <statistic>206</statistic>
         </statisticline>
         <statisticline>
             <description>Total Methods</description>
-            <statistic>1169</statistic>
+            <statistic>1186</statistic>
         </statisticline>
         <statisticline>
             <description>Total Fields</description>
-            <statistic>1124</statistic>
+            <statistic>1142</statistic>
         </statisticline>
         <statisticline>
             <description>Total Properties</description>
-            <statistic>114</statistic>
+            <statistic>119</statistic>
         </statisticline>
         <statisticline>
             <description>Total Events</description>
@@ -13290,17 +13482,17 @@
         <statisticline>
             <description>Total Classes Renamed</description>
             <statistic>151</statistic>
-            <statistic>73.66 %</statistic>
+            <statistic>73.30 %</statistic>
         </statisticline>
         <statisticline>
             <description>Total Methods Renamed</description>
-            <statistic>564</statistic>
-            <statistic>48.25 %</statistic>
+            <statistic>568</statistic>
+            <statistic>47.89 %</statistic>
         </statisticline>
         <statisticline>
             <description>Total Fields Renamed</description>
-            <statistic>1002</statistic>
-            <statistic>89.15 %</statistic>
+            <statistic>1020</statistic>
+            <statistic>89.32 %</statistic>
         </statisticline>
         <statisticline>
             <description>Total Properties Renamed</description>
@@ -13314,38 +13506,38 @@
         </statisticline>
         <statisticline>
             <description>Methods Renamed to 'a'</description>
-            <statistic>109</statistic>
-            <statistic>9.32 %</statistic>
+            <statistic>110</statistic>
+            <statistic>9.27 %</statistic>
         </statisticline>
         <statisticline>
             <description>Methods Renamed to 'b'</description>
             <statistic>88</statistic>
-            <statistic>7.53 %</statistic>
+            <statistic>7.42 %</statistic>
         </statisticline>
         <statisticline>
             <description>Methods Renamed to 'd'</description>
             <statistic>88</statistic>
-            <statistic>7.53 %</statistic>
+            <statistic>7.42 %</statistic>
         </statisticline>
         <statisticline>
             <description>Methods Renamed to 'f'</description>
             <statistic>57</statistic>
-            <statistic>4.88 %</statistic>
+            <statistic>4.81 %</statistic>
         </statisticline>
         <statisticline>
             <description>Methods Renamed to 'c'</description>
             <statistic>44</statistic>
-            <statistic>3.76 %</statistic>
+            <statistic>3.71 %</statistic>
         </statisticline>
         <statisticline>
             <description>Methods Renamed to 'e'</description>
             <statistic>27</statistic>
-            <statistic>2.31 %</statistic>
+            <statistic>2.28 %</statistic>
         </statisticline>
         <statisticline>
             <description>Methods Renamed to 'g'</description>
             <statistic>21</statistic>
-            <statistic>1.80 %</statistic>
+            <statistic>1.77 %</statistic>
         </statisticline>
     </statistics>
 </dotfuscatorMap>
