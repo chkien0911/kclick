@@ -56,6 +56,12 @@
     <Compile Include="ActionForm.Designer.cs">
       <DependentUpon>ActionForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="BoostTimeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BoostTimeForm.Designer.cs">
+      <DependentUpon>BoostTimeForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="ClubForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -121,6 +127,9 @@
     </Compile>
     <EmbeddedResource Include="ActionForm.resx">
       <DependentUpon>ActionForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BoostTimeForm.resx">
+      <DependentUpon>BoostTimeForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ClubForm.resx">
       <DependentUpon>ClubForm.cs</DependentUpon>

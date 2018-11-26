@@ -15,11 +15,7 @@ namespace KClick
     {
         public MainFForm MainFForm { get; set; }
         public Action Action { get; set; } = new Action();
-
-        private DateTimePicker colDtpDate;
-        private DateTimePicker colDtpFrom;
-        private DateTimePicker colDtpTo;
-
+        
         public ActionForm()
         {
             InitializeComponent();
@@ -36,92 +32,113 @@ namespace KClick
 
             Load += ActionForm_Load;
 
-            colDtpDate = new DateTimePicker();
-            colDtpDate.Format = DateTimePickerFormat.Custom;
-            colDtpDate.CustomFormat = "MM/dd/yyyy";
-            colDtpDate.ValueChanged += new EventHandler(colDtpDateValueChanged);
-            colDtpDate.Visible = false;
-            dgvFromTo.Controls.Add(colDtpDate);
-
-            this.colDtpFrom = new DateTimePicker();
-            colDtpFrom.Format = DateTimePickerFormat.Custom;
-            colDtpFrom.CustomFormat = "hh:mm tt";
-            this.colDtpFrom.ValueChanged += new EventHandler(colDtpFromValueChanged);
-            this.colDtpFrom.Visible = false;
-            colDtpFrom.ShowUpDown = true;
-            this.dgvFromTo.Controls.Add(colDtpFrom);
-
-            this.colDtpTo = new DateTimePicker();
-            colDtpTo.Format = DateTimePickerFormat.Custom;
-            colDtpTo.CustomFormat = "hh:mm tt";
-            this.colDtpTo.ValueChanged += new EventHandler(colDtpToValueChanged);
-            this.colDtpTo.Visible = false;
-            colDtpTo.ShowUpDown = true;
-            this.dgvFromTo.Controls.Add(colDtpTo);
-
-            dgvFromTo.CellClick += DgvFromTo_CellClick;
-
+            btnAddTime.Click += BtnAddTime_Click;
+            btnEditTime.Click += BtnEditTime_Click;
+            btnDeleteTime.Click += BtnDeleteTime_Click;
         }
-        
-        private void DgvFromTo_CellClick(object sender, DataGridViewCellEventArgs e)
+
+        private void BtnDeleteTime_Click(object sender, EventArgs e)
         {
-            if (e.ColumnIndex == 0)
+            if (Action != null)
             {
-                Rectangle tempRect = dgvFromTo.GetCellDisplayRectangle(e.ColumnIndex, e.RowIndex, false);
+                foreach (ListViewItem eachItem in lsvBoostTime.SelectedItems)
+                {
+                    lsvBoostTime.Items.Remove(eachItem);
 
-                colDtpDate.Location = tempRect.Location;
-                colDtpDate.Width = tempRect.Width;
-                colDtpDate.Visible = true;
-            }
-            else if (e.ColumnIndex == 1)
-            {
-                Rectangle tempRect = dgvFromTo.GetCellDisplayRectangle(e.ColumnIndex, e.RowIndex, false);
+                    var no = int.Parse(eachItem.SubItems[0].Text);
+                    Action.BoostTime.Remove(Action.BoostTime.FirstOrDefault(s => s.No == no));
+                }
 
-                colDtpFrom.Location = tempRect.Location;
-                colDtpFrom.Width = tempRect.Width;
-                colDtpFrom.Visible = true;
-            }
-            else if (e.ColumnIndex == 2)
-            {
-                Rectangle tempRect = dgvFromTo.GetCellDisplayRectangle(e.ColumnIndex, e.RowIndex, false);
-
-                colDtpTo.Location = tempRect.Location;
-                colDtpTo.Width = tempRect.Width;
-                colDtpTo.Visible = true;
+                // reorder
+                for (int i = 0; i < Action.BoostTime.Count; i++)
+                {
+                    lsvBoostTime.Items[i].SubItems[0].Text = (i + 1).ToString();
+                    Action.BoostTime[i].No = i + 1;
+                }
             }
         }
 
-        void colDtpDateValueChanged(object sender, EventArgs e)
+        private void BtnEditTime_Click(object sender, EventArgs e)
         {
-            dgvFromTo.CurrentCell.Value = colDtpDate.Value.ToString("MM/dd/yyyy");
-            colDtpDate.Visible = false;
-
-            // Then simply do this:
-            //dgvFromTo.BeginEdit(true);
-            //dgvFromTo.EndEdit();
-            //dgvFromTo.NotifyCurrentCellDirty(true);
+            if (lsvBoostTime.SelectedItems.Count > 0)
+            {
+                var no = int.Parse(lsvBoostTime.SelectedItems[0].SubItems[0].Text);
+                if (no > 0)
+                {
+                    var boostTime = Action?.BoostTime.FirstOrDefault(s => s.No == no);
+                    if (boostTime != null)
+                    {
+                        using (var form = new BoostTimeForm())
+                        {
+                            form.ActionForm = this;
+                            form.BoostTime = boostTime;
+                            form.ShowDialog();
+                        }
+                    }
+                }
+            }
         }
 
-        void colDtpToValueChanged(object sender, EventArgs e)
+        private void BtnAddTime_Click(object sender, EventArgs e)
         {
-            dgvFromTo.CurrentCell.Value = colDtpTo.Value.ToString("hh:mm tt");//convert the date as per your format
-            colDtpTo.Visible = false;
-
-            // Then simply do this:
-            //dgvFromTo.BeginEdit(true);
-            //dgvFromTo.EndEdit();
-            //dgvFromTo.NotifyCurrentCellDirty(true);
+            if (Action != null)
+            {
+                using (var form = new BoostTimeForm())
+                {
+                    form.ActionForm = this;
+                    form.ShowDialog();
+                }
+            }
         }
-        void colDtpFromValueChanged(object sender, EventArgs e)
+
+        public void AddBoostTime(Configuration.BoostTime boostTime)
         {
-            dgvFromTo.CurrentCell.Value = colDtpFrom.Value.ToString("hh:mm tt");//convert the date as per your format
-            colDtpFrom.Visible = false;
+            if (Action != null)
+            {
+                var no = lsvBoostTime.Items.Count + 1;
+                ListViewItem item = new ListViewItem((no).ToString());
+                item.SubItems.Add(new ListViewItem.ListViewSubItem(item, boostTime.FromTime.ToString()));
+                item.SubItems.Add(new ListViewItem.ListViewSubItem(item, boostTime.ToTime.ToString()));
+                lsvBoostTime.Items.Add(item);
 
-            // Then simply do this:
-            //dgvFromTo.BeginEdit(true);
-            //dgvFromTo.EndEdit();
-            //dgvFromTo.NotifyCurrentCellDirty(true);
+                boostTime.No = no;
+                Action.BoostTime.Add(boostTime);
+            }
         }
+
+        public void UpdateBoostTime(Configuration.BoostTime boostTime)
+        {
+            if (boostTime.No <= 0)
+            {
+                return;
+            }
+
+            if (Action != null)
+            {
+                foreach (ListViewItem eachItem in lsvBoostTime.Items)
+                {
+                    if (eachItem.SubItems[0].Text == boostTime.No.ToString())
+                    {
+                        eachItem.SubItems[1].Text = boostTime.FromTime.ToString();
+                        eachItem.SubItems[2].Text = boostTime.ToTime.ToString();
+
+                        break;
+                    }
+                }
+
+                foreach (var item in Action.BoostTime)
+                {
+                    if (item.No == boostTime.No)
+                    {
+                        item.FromTime = boostTime.FromTime;
+                        item.ToTime = boostTime.ToTime;
+                        
+                        break;
+                    }
+                }
+            }
+        }
+
 
         public void AddScript(Configuration.Config config)
         {
@@ -152,8 +169,7 @@ namespace KClick
                 {
                     if (eachItem.SubItems[0].Text == config.No.ToString())
                     {
-                        //eachItem.SubItems[1].Text = $"X1:{config.XPos}, Y1:{config.YPos}, Color1:{config.ColorName} | X2:{config.X2Pos}, Y2:{config.Y2Pos}, Color2:{config.Color2Name} | XMoved:{config.XPosMoved}, YMoved:{config.YPosMoved}, ColorMoved:{config.ColorMovedName}";
-                        eachItem.SubItems[2].Text = config.Delay.ToString();
+                        eachItem.SubItems[1].Text = config.Delay.ToString();
                         eachItem.SubItems[2].Text = config.Description;
 
                         break;
@@ -313,6 +329,20 @@ namespace KClick
             }
         }
 
+        private void DisplayBoostTime(IReadOnlyList<BoostTime> boostTime)
+        {
+            if (boostTime.Count > 0)
+            {
+                for (int i = 0; i < boostTime.Count; i++)
+                {
+                    lsvBoostTime.Items.Add(boostTime[i].No.ToString());
+                    lsvBoostTime.Items[i].SubItems.Add(boostTime[i].FromTime.ToString());
+                    lsvBoostTime.Items[i].SubItems.Add(boostTime[i].ToTime.ToString());
+
+                }
+            }
+        }
+
         private static List<Config> ImportScript(string path)
         {
             var xml = XDocument.Load(path);
@@ -375,19 +405,9 @@ namespace KClick
             {
                 txtNo.Text = Action.No.ToString();
                 txtName.Text = Action.Name;
-
-                if (Action.Durations.Count > 0)
-                {
-                    var bindingList = new BindingList<Duration>(Action.Durations);
-                    var source = new BindingSource(bindingList, null);
-                    dgvFromTo.DataSource = source;
-                }
-                //if (Action.FromTime != null)
-                //    dtpFrom.Value = Action.FromTime.Value;
-                //if (Action.ToTime != null)
-                //    dtpTo.Value = Action.ToTime.Value;
-
+                
                 DisplayListView(Action.Configs);
+                DisplayBoostTime(Action.BoostTime);
             }
         }
 
@@ -401,17 +421,7 @@ namespace KClick
         {
             Action.No = int.Parse(txtNo.Text);
             Action.Name = txtName.Text;
-
-            for (int rows = 0; rows < dgvFromTo.Rows.Count; rows++)
-            {
-                if (dgvFromTo.Rows[rows].Cells[0].Value != null && dgvFromTo.Rows[rows].Cells[1].Value != null)
-                {
-                    var from = DateTime.Parse(dgvFromTo.Rows[rows].Cells[0].Value.ToString());
-                    var to = DateTime.Parse(dgvFromTo.Rows[rows].Cells[1].Value.ToString());
-                    Action.Durations.Add(new Duration { FromTime = from, ToTime = to });
-                }
-            }
-
+            
             if (Action.No == 0)
             {
                 MainFForm.AddAction(Action);

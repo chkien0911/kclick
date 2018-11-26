@@ -249,6 +249,7 @@ namespace KClick
             }
         }
 
+
         private void RerolForm_Closed(object sender, EventArgs e)
         {
             ZMainForm?.Show();
@@ -283,7 +284,7 @@ namespace KClick
                     }
                 }
             }
-            
+
         }
 
         private void BtnNewScript_Click(object sender, EventArgs e)
@@ -337,7 +338,7 @@ namespace KClick
                     if (eachItem.SubItems[0].Text == config.No.ToString())
                     {
                         //eachItem.SubItems[1].Text = $"X1:{config.XPos}, Y1:{config.YPos}, Color1:{config.ColorName} | X2:{config.X2Pos}, Y2:{config.Y2Pos}, Color2:{config.Color2Name} | XMoved:{config.XPosMoved}, YMoved:{config.YPosMoved}, ColorMoved:{config.ColorMovedName}";
-                        eachItem.SubItems[2].Text = config.Delay.ToString();
+                        eachItem.SubItems[1].Text = config.Delay.ToString();
                         eachItem.SubItems[2].Text = config.Description;
 
                         break;
@@ -789,67 +790,58 @@ namespace KClick
                     if (hWndParent.ToInt64() > 0)
                     {
                         // Nox
-                        IntPtr hWndParentMain = ClickOnPointTool.GetParent(hWndParent);
+                        var rctMain = new MouseOperation.RECT();
+                        var isOk = MouseOperation.GetWindowRect(hWndParent, ref rctMain);
 
-                        if (hWndParentMain.ToInt64() > 0)
+                        Text = ClickOnPointTool.GetCaptionOfWindow(hWndParent);
+
+                        var width = (rctMain.Right - rctMain.Left);
+                        var heigh = (rctMain.Bottom - rctMain.Top);
+                        //Text = ClickOnPointTool.GetCaptionOfWindow(hWndParent);
+
+                        GlobalConfig.WindowClass = ClickOnPointTool.GetClassNameOfWindow(hWndParent);
+                        GlobalConfig.WindowName = ClickOnPointTool.GetCaptionOfWindow(hWndParent);
+                        GlobalConfig.WindowHandle = hWndParent;
+
+
+                        if (!isOk)
                         {
-                            var rctMain = new MouseOperation.RECT();
-                            var isOk = MouseOperation.GetWindowRect(hWndParentMain, ref rctMain);
+                            txtX.Text = "0";
+                            txtY.Text = "0";
 
-                            Text = ClickOnPointTool.GetCaptionOfWindow(hWndParentMain);
-                            
-                            var width = (rctMain.Right - rctMain.Left);
-                            var heigh = (rctMain.Bottom - rctMain.Top);
-                            //Text = ClickOnPointTool.GetCaptionOfWindow(hWndParent);
-
-                            GlobalConfig.WindowClass = ClickOnPointTool.GetClassNameOfWindow(hWndParentMain);
-                            GlobalConfig.WindowName = ClickOnPointTool.GetCaptionOfWindow(hWndParentMain);
-                            GlobalConfig.WindowHandle = hWndParentMain;
-
-
-                            if (!isOk)
-                            {
-                                txtX.Text = "0";
-                                txtY.Text = "0";
-
-                                GlobalConfig.X = 0;
-                                GlobalConfig.Y = 0;
-                                GlobalConfig.WindowWidth = 504;
-                                GlobalConfig.WindowHigh = 432;
-                            }
-                            else
-                            {
-                                txtX.Text = rctMain.Left.ToString();
-                                txtY.Text = rctMain.Top.ToString();
-
-                                GlobalConfig.X = rctMain.Left;
-                                GlobalConfig.Y = rctMain.Top;
-                                GlobalConfig.WindowWidth = width;
-                                GlobalConfig.WindowHigh = heigh;
-                            }
-
-                            ghk = new GlobalHotkey(GlobalHotkey.ALT, Keys.S, hWndParentMain);
-                            ghkMain = new GlobalHotkey(GlobalHotkey.ALT, Keys.S, this.Handle);
-                            ghk.Register();
-                            ghkMain.Register();
-
-                            var action = GetSelectedAction();
-                            if (action != null)
-                            {
-                                if (action.Configs.Count > 0)
-                                {
-                                    foreach (var config in action.Configs)
-                                    {
-                                        config.WindowClass = GlobalConfig.WindowClass;
-                                        config.WindowName = GlobalConfig.WindowName;
-                                        config.WindowHandle = GlobalConfig.WindowHandle;
-                                    }
-                                }
-                            }
+                            GlobalConfig.X = 0;
+                            GlobalConfig.Y = 0;
+                            GlobalConfig.WindowWidth = 504;
+                            GlobalConfig.WindowHigh = 432;
                         }
                         else
                         {
-                            MessageBox.Show("No parent application found!");
+                            txtX.Text = rctMain.Left.ToString();
+                            txtY.Text = rctMain.Top.ToString();
+
+                            GlobalConfig.X = rctMain.Left;
+                            GlobalConfig.Y = rctMain.Top;
+                            GlobalConfig.WindowWidth = width;
+                            GlobalConfig.WindowHigh = heigh;
+                        }
+
+                        ghk = new GlobalHotkey(GlobalHotkey.ALT, Keys.S, hWndParent);
+                        ghkMain = new GlobalHotkey(GlobalHotkey.ALT, Keys.S, this.Handle);
+                        ghk.Register();
+                        ghkMain.Register();
+
+                        var action = GetSelectedAction();
+                        if (action != null)
+                        {
+                            if (action.Configs.Count > 0)
+                            {
+                                foreach (var config in action.Configs)
+                                {
+                                    config.WindowClass = GlobalConfig.WindowClass;
+                                    config.WindowName = GlobalConfig.WindowName;
+                                    config.WindowHandle = GlobalConfig.WindowHandle;
+                                }
+                            }
                         }
                     }
                     else
@@ -941,6 +933,8 @@ namespace KClick
                     {
                         if (action != null && action.Configs.Count != 0)
                         {
+                            var current = DateTime.Now;
+
                             //var x = 1;
                             action.IsRun = true;
                             btnRun.Enabled = false;
@@ -961,43 +955,35 @@ namespace KClick
         {
             while (action.IsRun)
             {
-                if (action.GetAdjustedConfigs(chkAdjustAuto.Checked, GetX(), GetY()).Any(s => s.IsDisabledWholeScripts))
+                if (action.BoostTime.Count == 0
+                                || action.BoostTime.Any(s => s.FromTime <= DateTime.Now && DateTime.Now <= s.ToTime))
                 {
-                    action.IsRun = false;
-                    return;
-                }
-
-                var tasks = new List<Task>();
-
-                //foreach (var config in SystemConfigs)
-                //{
-                //    if (config.IsDisabledTemp == false && config.CanRun)
-                //    {
-                //        tasks.Add(RunAsync(config));
-                //    }
-                //}
-
-                //foreach (var config in LoadingConfigs)
-                //{
-                //    if (config.IsDisabledTemp == false && config.CanRun)
-                //    {
-                //        tasks.Add(RunAsync(config));
-                //    }
-                //}
-
-                var configs = action.GetAdjustedConfigs(chkAdjustAuto.Checked, GetX(), GetY());
-                if (!configs.Any(s => s.IsDisabledWholeScripts))
-                {
-                    foreach (var config in configs)
+                    if (action.GetAdjustedConfigs(chkAdjustAuto.Checked, GetX(), GetY()).Any(s => s.IsDisabledWholeScripts))
                     {
-                        if (config.IsDisabledTemp == false && config.CanRun)
+                        action.IsRun = false;
+                        return;
+                    }
+
+                    var tasks = new List<Task>();
+
+                    var configs = action.GetAdjustedConfigs(chkAdjustAuto.Checked, GetX(), GetY());
+                    if (!configs.Any(s => s.IsDisabledWholeScripts))
+                    {
+                        foreach (var config in configs)
                         {
-                            tasks.Add(RunAsync(config));
+                            if (config.IsDisabledTemp == false && config.CanRun)
+                            {
+                                tasks.Add(RunAsync(config));
+                            }
                         }
                     }
-                }
 
-                await Task.WhenAll(tasks);
+                    await Task.WhenAll(tasks);
+                }
+                else
+                {
+                    await Task.Delay(10000);
+                }
             }
 
         }
