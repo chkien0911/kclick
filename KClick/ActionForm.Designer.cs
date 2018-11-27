@@ -49,22 +49,26 @@
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
-            this.dgvFromTo = new System.Windows.Forms.DataGridView();
             this.panel5 = new System.Windows.Forms.Panel();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnLoadScript = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
-            this.colDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colFrom = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colTo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lsvBoostTime = new System.Windows.Forms.ListView();
+            this.colBoostTimeFrom = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.colBoostTimeTo = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.contextMenuStrip2 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.btnAddTime = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnEditTime = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnDeleteTime = new System.Windows.Forms.ToolStripMenuItem();
+            this.colBoostTimeNo = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
             this.contextMenuStrip1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel6.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvFromTo)).BeginInit();
             this.panel5.SuspendLayout();
+            this.contextMenuStrip2.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -220,25 +224,12 @@
             // 
             // panel6
             // 
-            this.panel6.Controls.Add(this.dgvFromTo);
+            this.panel6.Controls.Add(this.lsvBoostTime);
             this.panel6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel6.Location = new System.Drawing.Point(0, 0);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(342, 115);
             this.panel6.TabIndex = 4;
-            // 
-            // dgvFromTo
-            // 
-            this.dgvFromTo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvFromTo.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.colDate,
-            this.colFrom,
-            this.colTo});
-            this.dgvFromTo.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvFromTo.Location = new System.Drawing.Point(0, 0);
-            this.dgvFromTo.Name = "dgvFromTo";
-            this.dgvFromTo.Size = new System.Drawing.Size(342, 115);
-            this.dgvFromTo.TabIndex = 7;
             // 
             // panel5
             // 
@@ -279,26 +270,64 @@
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = true;
             // 
-            // colDate
+            // lsvBoostTime
             // 
-            this.colDate.DataPropertyName = "Date";
-            this.colDate.HeaderText = "Date";
-            this.colDate.Name = "colDate";
-            this.colDate.Width = 130;
+            this.lsvBoostTime.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.colBoostTimeNo,
+            this.colBoostTimeFrom,
+            this.colBoostTimeTo});
+            this.lsvBoostTime.ContextMenuStrip = this.contextMenuStrip2;
+            this.lsvBoostTime.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lsvBoostTime.FullRowSelect = true;
+            this.lsvBoostTime.GridLines = true;
+            this.lsvBoostTime.Location = new System.Drawing.Point(0, 0);
+            this.lsvBoostTime.Name = "lsvBoostTime";
+            this.lsvBoostTime.Size = new System.Drawing.Size(342, 115);
+            this.lsvBoostTime.TabIndex = 4;
+            this.lsvBoostTime.UseCompatibleStateImageBehavior = false;
+            this.lsvBoostTime.View = System.Windows.Forms.View.Details;
             // 
-            // colFrom
+            // colBoostTimeFrom
             // 
-            this.colFrom.DataPropertyName = "FromTime";
-            this.colFrom.HeaderText = "From";
-            this.colFrom.Name = "colFrom";
-            this.colFrom.Width = 70;
+            this.colBoostTimeFrom.Text = "From Time";
+            this.colBoostTimeFrom.Width = 150;
             // 
-            // colTo
+            // colBoostTimeTo
             // 
-            this.colTo.DataPropertyName = "ToTime";
-            this.colTo.HeaderText = "To";
-            this.colTo.Name = "colTo";
-            this.colTo.Width = 70;
+            this.colBoostTimeTo.Text = "To Time";
+            this.colBoostTimeTo.Width = 150;
+            // 
+            // contextMenuStrip2
+            // 
+            this.contextMenuStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.btnAddTime,
+            this.btnEditTime,
+            this.btnDeleteTime});
+            this.contextMenuStrip2.Name = "contextMenuStrip2";
+            this.contextMenuStrip2.Size = new System.Drawing.Size(108, 70);
+            // 
+            // btnAddTime
+            // 
+            this.btnAddTime.Name = "btnAddTime";
+            this.btnAddTime.Size = new System.Drawing.Size(107, 22);
+            this.btnAddTime.Text = "Add";
+            // 
+            // btnEditTime
+            // 
+            this.btnEditTime.Name = "btnEditTime";
+            this.btnEditTime.Size = new System.Drawing.Size(107, 22);
+            this.btnEditTime.Text = "Edit";
+            // 
+            // btnDeleteTime
+            // 
+            this.btnDeleteTime.Name = "btnDeleteTime";
+            this.btnDeleteTime.Size = new System.Drawing.Size(107, 22);
+            this.btnDeleteTime.Text = "Delete";
+            // 
+            // colBoostTimeNo
+            // 
+            this.colBoostTimeNo.Text = "No";
+            this.colBoostTimeNo.Width = 30;
             // 
             // ActionForm
             // 
@@ -321,8 +350,8 @@
             this.panel3.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel6.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvFromTo)).EndInit();
             this.panel5.ResumeLayout(false);
+            this.contextMenuStrip2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -353,9 +382,13 @@
         private System.Windows.Forms.ToolStripMenuItem btnTryClick;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.DataGridView dgvFromTo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colDate;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colFrom;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colTo;
+        private System.Windows.Forms.ListView lsvBoostTime;
+        private System.Windows.Forms.ColumnHeader colBoostTimeFrom;
+        private System.Windows.Forms.ColumnHeader colBoostTimeTo;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip2;
+        private System.Windows.Forms.ToolStripMenuItem btnAddTime;
+        private System.Windows.Forms.ToolStripMenuItem btnEditTime;
+        private System.Windows.Forms.ToolStripMenuItem btnDeleteTime;
+        private System.Windows.Forms.ColumnHeader colBoostTimeNo;
     }
 }

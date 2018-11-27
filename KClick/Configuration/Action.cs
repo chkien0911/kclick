@@ -41,11 +41,12 @@ namespace KClick.Configuration
             return configs;
         }
 
-        public List<Duration> Durations { get; set; } = new List<Duration>();
+        public List<BoostTime> BoostTime { get; set; } = new List<BoostTime>();
     }
 
-    public class Duration
+    public class BoostTime
     {
+        public int No { get; set; }
         public DateTime FromTime { get; set; }
         public DateTime ToTime { get; set; }
 

@@ -242,7 +242,7 @@ namespace KClick
                 if (eachItem.SubItems[0].Text == config.No.ToString())
                 {
                     //eachItem.SubItems[1].Text = $"X1:{config.XPos}, Y1:{config.YPos}, Color1:{config.ColorName} | X2:{config.X2Pos}, Y2:{config.Y2Pos}, Color2:{config.Color2Name} | XMoved:{config.XPosMoved}, YMoved:{config.YPosMoved}, ColorMoved:{config.ColorMovedName}";
-                    eachItem.SubItems[2].Text = config.Delay.ToString();
+                    eachItem.SubItems[1].Text = config.Delay.ToString();
                     eachItem.SubItems[2].Text = config.Description;
 
                     break;
