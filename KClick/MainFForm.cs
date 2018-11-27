@@ -982,7 +982,8 @@ namespace KClick
                 }
                 else
                 {
-                    await Task.Delay(10000);
+                    var delay = 60 * 1000;
+                    await Task.Delay(delay);
                 }
             }
 
