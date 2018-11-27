@@ -138,7 +138,7 @@ namespace KClick
                 {
                     if (config.IsDrag)
                     {
-                        await MouseOperation.ClickAndDragAsync(GlobalConfig.WindowHandle, new Point(config.XPos, config.YPos), config.ColorName, new Point(config.XPosMoved, config.YPosMoved), new Point(config.XPosIgnored, config.XPosIgnored), config.ColorMovedName);
+                        await MouseOperation.ClickAndDragAsync(GlobalConfig.WindowHandle, config);
                     }
                     else
                     {
@@ -159,12 +159,14 @@ namespace KClick
             txtYMoved.Enabled = chkDrag.Checked;
             txtColorMoved.Enabled = chkDrag.Checked;
             btnGetPositionMoved.Enabled = chkDrag.Checked;
+            chkSlow.Enabled = chkDrag.Checked;
 
             if (chkDrag.Checked == false)
             {
                 txtXMoved.Clear();
                 txtYMoved.Clear();
                 txtColorMoved.Clear();
+                chkSlow.Checked = false;
             }
         }
 
@@ -179,6 +181,7 @@ namespace KClick
             txtYMoved.Clear();
             txtColorMoved.Clear();
             chkDrag.Checked = false;
+            chkSlow.Checked = false;
             btnGetPositionMoved.Enabled = false;
         }
 
@@ -293,6 +296,7 @@ namespace KClick
                 Description = txtDescription.Text,
                 Delay = string.IsNullOrWhiteSpace(txtDelay.Text) ? 200 : int.Parse(txtDelay.Text),
                 IsDrag = chkDrag.Checked,
+                DragSlow = chkSlow.Checked,
 
                 IsStartIcon = chkIsStartIcon.Checked,
                 RunOnce = chkRunOnce.Checked,
@@ -378,6 +382,7 @@ namespace KClick
             txtColorIgnored1.Text = Config.ColorIgnoredName;
 
             chkDrag.Checked = Config.IsDrag;
+            chkSlow.Checked = Config.DragSlow;
             txtXMoved.Text = Config.XPosMoved.ToString();
             txtYMoved.Text = Config.YPosMoved.ToString();
             txtColorMoved.Text = Config.ColorMovedName;

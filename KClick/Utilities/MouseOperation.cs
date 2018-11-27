@@ -234,6 +234,7 @@ namespace KClick.Utilities
                 Cursor.Position = oldPos;
             }
         }
+
         public static async Task ClickAndDragAsync(IntPtr wndHandle, Config config)
         {
             var clientPoint = new Point(config.XPos, config.YPos);
@@ -292,7 +293,14 @@ namespace KClick.Utilities
 
                     var inputs1 = new INPUT[] { inputMouseMove1 };
                     SendInput((uint)inputs1.Length, inputs1, Marshal.SizeOf(typeof(INPUT)));
-                    await Task.Delay(10);
+                    if (config.DragSlow)
+                    {
+                        await Task.Delay(50);
+                    }
+                    else
+                    {
+                        await Task.Delay(10);
+                    }
 
                     Debug.WriteLine($"Move");
                 }
@@ -302,7 +310,7 @@ namespace KClick.Utilities
 
                 var inputs3 = new INPUT[] { inputMouseUp };
                 SendInput((uint)inputs3.Length, inputs3, Marshal.SizeOf(typeof(INPUT)));
-                //await Task.Delay(100);
+                await Task.Delay(100);
 
                 Debug.WriteLine($"Left Up");
 

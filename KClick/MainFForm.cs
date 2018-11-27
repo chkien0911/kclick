@@ -1,17 +1,14 @@
-﻿using KClick.Utilities;
+﻿using KClick.Configuration;
+using KClick.Utilities;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
-using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml.Linq;
-using KClick.Configuration;
 using Action = KClick.Configuration.Action;
 
 namespace KClick
@@ -211,6 +208,7 @@ namespace KClick
                         Delay = int.Parse(item.Element("Delay").Value),
                         IsSequential = bool.Parse(item.Element("IsSequential").Value),
                         IsDrag = bool.Parse(item.Element("IsDrag").Value),
+                        DragSlow = item.Element("DragSlow") == null ? false : bool.Parse(item.Element("DragSlow").Value),
                         IsStartIcon = item.Element("IsStartIcon") == null
                             ? false
                             : bool.Parse(item.Element("IsStartIcon").Value),
@@ -283,7 +281,7 @@ namespace KClick
                     }
                 }
             }
-            
+
         }
 
         private void BtnNewScript_Click(object sender, EventArgs e)
@@ -361,6 +359,7 @@ namespace KClick
                         item.Color2Name = config.Color2Name;
 
                         item.IsDrag = config.IsDrag;
+                        item.DragSlow = config.DragSlow;
                         item.XPosMoved = config.XPosMoved;
                         item.YPosMoved = config.YPosMoved;
                         item.ColorMovedName = config.ColorMovedName;
@@ -600,6 +599,7 @@ namespace KClick
                                         new XElement("Delay", config.Delay),
                                         new XElement("IsSequential", config.IsSequential),
                                         new XElement("IsDrag", config.IsDrag),
+                                        new XElement("DragSlow", config.DragSlow),
                                         new XElement("Description", config.Description),
                                         new XElement("IsStartIcon", config.IsStartIcon),
                                         new XElement("RunOnce", config.RunOnce),
@@ -736,6 +736,9 @@ namespace KClick
                                 Delay = int.Parse(item.Element("Delay").Value),
                                 IsSequential = bool.Parse(item.Element("IsSequential").Value),
                                 IsDrag = bool.Parse(item.Element("IsDrag").Value),
+                                DragSlow = item.Element("DragSlow") == null
+                                    ? false
+                                    : bool.Parse(item.Element("DragSlow").Value),
                                 IsStartIcon = item.Element("IsStartIcon") == null
                                     ? false
                                     : bool.Parse(item.Element("IsStartIcon").Value),
@@ -788,69 +791,74 @@ namespace KClick
 
                     if (hWndParent.ToInt64() > 0)
                     {
+                        var rct1 = new MouseOperation.RECT();
+                        var isOk1 = MouseOperation.GetWindowRect(hWndParent, ref rct1);
+
+                        var caption1 = ClickOnPointTool.GetCaptionOfWindow(hWndParent);
+
                         // Nox
-                        IntPtr hWndParentMain = ClickOnPointTool.GetParent(hWndParent);
+                        //IntPtr hWndParentMain = ClickOnPointTool.GetParent(hWndParent);
 
-                        if (hWndParentMain.ToInt64() > 0)
+                        //if (hWndParentMain.ToInt64() > 0)
+                        //{
+                        var rctMain = new MouseOperation.RECT();
+                        var isOk = MouseOperation.GetWindowRect(hWndParent, ref rctMain);
+
+                        Text = ClickOnPointTool.GetCaptionOfWindow(hWndParent);
+
+                        var width = (rctMain.Right - rctMain.Left);
+                        var heigh = (rctMain.Bottom - rctMain.Top);
+                        //Text = ClickOnPointTool.GetCaptionOfWindow(hWndParent);
+
+                        GlobalConfig.WindowClass = ClickOnPointTool.GetClassNameOfWindow(hWndParent);
+                        GlobalConfig.WindowName = ClickOnPointTool.GetCaptionOfWindow(hWndParent);
+                        GlobalConfig.WindowHandle = hWndParent;
+
+
+                        if (!isOk)
                         {
-                            var rctMain = new MouseOperation.RECT();
-                            var isOk = MouseOperation.GetWindowRect(hWndParentMain, ref rctMain);
+                            txtX.Text = "0";
+                            txtY.Text = "0";
 
-                            Text = ClickOnPointTool.GetCaptionOfWindow(hWndParentMain);
-                            
-                            var width = (rctMain.Right - rctMain.Left);
-                            var heigh = (rctMain.Bottom - rctMain.Top);
-                            //Text = ClickOnPointTool.GetCaptionOfWindow(hWndParent);
-
-                            GlobalConfig.WindowClass = ClickOnPointTool.GetClassNameOfWindow(hWndParentMain);
-                            GlobalConfig.WindowName = ClickOnPointTool.GetCaptionOfWindow(hWndParentMain);
-                            GlobalConfig.WindowHandle = hWndParentMain;
-
-
-                            if (!isOk)
-                            {
-                                txtX.Text = "0";
-                                txtY.Text = "0";
-
-                                GlobalConfig.X = 0;
-                                GlobalConfig.Y = 0;
-                                GlobalConfig.WindowWidth = 504;
-                                GlobalConfig.WindowHigh = 432;
-                            }
-                            else
-                            {
-                                txtX.Text = rctMain.Left.ToString();
-                                txtY.Text = rctMain.Top.ToString();
-
-                                GlobalConfig.X = rctMain.Left;
-                                GlobalConfig.Y = rctMain.Top;
-                                GlobalConfig.WindowWidth = width;
-                                GlobalConfig.WindowHigh = heigh;
-                            }
-
-                            ghk = new GlobalHotkey(GlobalHotkey.ALT, Keys.S, hWndParentMain);
-                            ghkMain = new GlobalHotkey(GlobalHotkey.ALT, Keys.S, this.Handle);
-                            ghk.Register();
-                            ghkMain.Register();
-
-                            var action = GetSelectedAction();
-                            if (action != null)
-                            {
-                                if (action.Configs.Count > 0)
-                                {
-                                    foreach (var config in action.Configs)
-                                    {
-                                        config.WindowClass = GlobalConfig.WindowClass;
-                                        config.WindowName = GlobalConfig.WindowName;
-                                        config.WindowHandle = GlobalConfig.WindowHandle;
-                                    }
-                                }
-                            }
+                            GlobalConfig.X = 0;
+                            GlobalConfig.Y = 0;
+                            GlobalConfig.WindowWidth = 504;
+                            GlobalConfig.WindowHigh = 432;
                         }
                         else
                         {
-                            MessageBox.Show("No parent application found!");
+                            txtX.Text = rctMain.Left.ToString();
+                            txtY.Text = rctMain.Top.ToString();
+
+                            GlobalConfig.X = rctMain.Left;
+                            GlobalConfig.Y = rctMain.Top;
+                            GlobalConfig.WindowWidth = width;
+                            GlobalConfig.WindowHigh = heigh;
                         }
+
+                        ghk = new GlobalHotkey(GlobalHotkey.ALT, Keys.S, hWndParent);
+                        ghkMain = new GlobalHotkey(GlobalHotkey.ALT, Keys.S, this.Handle);
+                        ghk.Register();
+                        ghkMain.Register();
+
+                        var action = GetSelectedAction();
+                        if (action != null)
+                        {
+                            if (action.Configs.Count > 0)
+                            {
+                                foreach (var config in action.Configs)
+                                {
+                                    config.WindowClass = GlobalConfig.WindowClass;
+                                    config.WindowName = GlobalConfig.WindowName;
+                                    config.WindowHandle = GlobalConfig.WindowHandle;
+                                }
+                            }
+                        }
+                        //}
+                        //else
+                        //{
+                        //    MessageBox.Show("No parent application found!");
+                        //}
                     }
                     else
                     {

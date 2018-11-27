@@ -77,7 +77,7 @@ namespace KClick.Configuration
 
         public bool IsSequential { get; set; }
         public bool IsDrag { get; set; }
-
+        public bool DragSlow { get; set; }
         public int RunAfterScript { get; set; }
 
 

@@ -80,6 +80,7 @@
             this.btnSave = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.cboRunAfterScript = new System.Windows.Forms.ComboBox();
+            this.chkSlow = new System.Windows.Forms.CheckBox();
             this.panel3.SuspendLayout();
             this.grbIgnore.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -337,6 +338,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.chkSlow);
             this.groupBox1.Controls.Add(this.chkIsClosedPosition);
             this.groupBox1.Controls.Add(this.chkEndWholeScripts);
             this.groupBox1.Controls.Add(this.chkRunOnce);
@@ -580,6 +582,17 @@
             this.cboRunAfterScript.Size = new System.Drawing.Size(338, 21);
             this.cboRunAfterScript.TabIndex = 46;
             // 
+            // chkSlow
+            // 
+            this.chkSlow.AutoSize = true;
+            this.chkSlow.Enabled = false;
+            this.chkSlow.Location = new System.Drawing.Point(24, 101);
+            this.chkSlow.Name = "chkSlow";
+            this.chkSlow.Size = new System.Drawing.Size(79, 17);
+            this.chkSlow.TabIndex = 64;
+            this.chkSlow.Text = "Slow Mode";
+            this.chkSlow.UseVisualStyleBackColor = true;
+            // 
             // ConfigForm
             // 
             this.AcceptButton = this.btnSave;
@@ -666,5 +679,6 @@
         private System.Windows.Forms.ComboBox cboRunAfterScript;
         private System.Windows.Forms.CheckBox chkIsClosedPosition;
         private System.Windows.Forms.Button btnTryClick;
+        private System.Windows.Forms.CheckBox chkSlow;
     }
 }
