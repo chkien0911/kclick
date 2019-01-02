@@ -2,7 +2,7 @@
 <!DOCTYPE dotfuscatorMap SYSTEM "http://www.preemptive.com/dotfuscator/dtd/dotfuscatorMap_v1.2.dtd">
 <dotfuscatorMap version="1.1">
     <header>
-        <timestamp>2018-11-25T16:23:33</timestamp>
+        <timestamp>2018-11-27T19:57:32</timestamp>
         <product version="5.36.0.7050" user="Chu Hong Kien" serial="253588-391">Dotfuscator Community Edition</product>
     </header>
     <mapping>
@@ -3481,8 +3481,17 @@
                         <newname>c</newname>
                     </method>
                     <method>
+                        <signature>void(KClick.Configuration.BoostTime)</signature>
+                        <name>AddBoostTime</name>
+                    </method>
+                    <method>
                         <signature>void(KClick.Configuration.Config)</signature>
                         <name>AddScript</name>
+                    </method>
+                    <method>
+                        <signature>void(object, System.EventArgs)</signature>
+                        <name>BtnAddTime_Click</name>
+                        <newname>i</newname>
                     </method>
                     <method>
                         <signature>void(object, System.EventArgs)</signature>
@@ -3496,6 +3505,11 @@
                     </method>
                     <method>
                         <signature>void(object, System.EventArgs)</signature>
+                        <name>BtnDeleteTime_Click</name>
+                        <newname>k</newname>
+                    </method>
+                    <method>
+                        <signature>void(object, System.EventArgs)</signature>
                         <name>BtnDelete_Click</name>
                         <newname>e</newname>
                     </method>
@@ -3503,6 +3517,11 @@
                         <signature>void(object, System.EventArgs)</signature>
                         <name>BtnEditScript_Click</name>
                         <newname>g</newname>
+                    </method>
+                    <method>
+                        <signature>void(object, System.EventArgs)</signature>
+                        <name>BtnEditTime_Click</name>
+                        <newname>j</newname>
                     </method>
                     <method>
                         <signature>void(object, System.EventArgs)</signature>
@@ -3520,8 +3539,8 @@
                         <newname>a</newname>
                     </method>
                     <method>
-                        <signature>void(object, System.Windows.Forms.DataGridViewCellEventArgs)</signature>
-                        <name>DgvFromTo_CellClick</name>
+                        <signature>void(System.Collections.Generic.IReadOnlyList`1&lt;KClick.Configuration.BoostTime&gt;)</signature>
+                        <name>DisplayBoostTime</name>
                         <newname>a</newname>
                     </method>
                     <method>
@@ -3544,23 +3563,12 @@
                         <newname>a</newname>
                     </method>
                     <method>
+                        <signature>void(KClick.Configuration.BoostTime)</signature>
+                        <name>UpdateBoostTime</name>
+                    </method>
+                    <method>
                         <signature>void(KClick.Configuration.Config)</signature>
                         <name>UpdateScript</name>
-                    </method>
-                    <method>
-                        <signature>void(object, System.EventArgs)</signature>
-                        <name>colDtpDateValueChanged</name>
-                        <newname>k</newname>
-                    </method>
-                    <method>
-                        <signature>void(object, System.EventArgs)</signature>
-                        <name>colDtpFromValueChanged</name>
-                        <newname>i</newname>
-                    </method>
-                    <method>
-                        <signature>void(object, System.EventArgs)</signature>
-                        <name>colDtpToValueChanged</name>
-                        <newname>j</newname>
                     </method>
                     <method>
                         <signature>KClick.Configuration.Action()</signature>
@@ -3591,164 +3599,169 @@
                         <newname>a</newname>
                     </field>
                     <field>
+                        <signature>System.Windows.Forms.ToolStripMenuItem</signature>
+                        <name>btnAddTime</name>
+                        <newname>af</newname>
+                    </field>
+                    <field>
                         <signature>System.Windows.Forms.Button</signature>
                         <name>btnCancel</name>
-                        <newname>k</newname>
+                        <newname>h</newname>
                     </field>
                     <field>
                         <signature>System.Windows.Forms.ToolStripMenuItem</signature>
                         <name>btnClearScripts</name>
-                        <newname>y</newname>
+                        <newname>v</newname>
                     </field>
                     <field>
                         <signature>System.Windows.Forms.ToolStripMenuItem</signature>
                         <name>btnDelete</name>
-                        <newname>x</newname>
+                        <newname>u</newname>
+                    </field>
+                    <field>
+                        <signature>System.Windows.Forms.ToolStripMenuItem</signature>
+                        <name>btnDeleteTime</name>
+                        <newname>ah</newname>
                     </field>
                     <field>
                         <signature>System.Windows.Forms.ToolStripMenuItem</signature>
                         <name>btnEditScript</name>
-                        <newname>w</newname>
+                        <newname>t</newname>
+                    </field>
+                    <field>
+                        <signature>System.Windows.Forms.ToolStripMenuItem</signature>
+                        <name>btnEditTime</name>
+                        <newname>ag</newname>
                     </field>
                     <field>
                         <signature>System.Windows.Forms.ToolStripMenuItem</signature>
                         <name>btnGetMousePosition</name>
-                        <newname>aa</newname>
+                        <newname>x</newname>
                     </field>
                     <field>
                         <signature>System.Windows.Forms.Button</signature>
                         <name>btnLoadScript</name>
-                        <newname>n</newname>
+                        <newname>k</newname>
                     </field>
                     <field>
                         <signature>System.Windows.Forms.ToolStripMenuItem</signature>
                         <name>btnNewScript</name>
-                        <newname>v</newname>
+                        <newname>s</newname>
                     </field>
                     <field>
                         <signature>System.Windows.Forms.Button</signature>
                         <name>btnSave</name>
-                        <newname>l</newname>
+                        <newname>i</newname>
                     </field>
                     <field>
                         <signature>System.Windows.Forms.ToolStripMenuItem</signature>
                         <name>btnTryClick</name>
-                        <newname>ab</newname>
+                        <newname>y</newname>
                     </field>
                     <field>
-                        <signature>System.Windows.Forms.DataGridViewTextBoxColumn</signature>
-                        <name>colDate</name>
-                        <newname>af</newname>
+                        <signature>System.Windows.Forms.ColumnHeader</signature>
+                        <name>colBoostTimeFrom</name>
+                        <newname>ac</newname>
+                    </field>
+                    <field>
+                        <signature>System.Windows.Forms.ColumnHeader</signature>
+                        <name>colBoostTimeNo</name>
+                        <newname>ai</newname>
+                    </field>
+                    <field>
+                        <signature>System.Windows.Forms.ColumnHeader</signature>
+                        <name>colBoostTimeTo</name>
+                        <newname>ad</newname>
                     </field>
                     <field>
                         <signature>System.Windows.Forms.ColumnHeader</signature>
                         <name>colDelay</name>
-                        <newname>s</newname>
+                        <newname>p</newname>
                     </field>
                     <field>
                         <signature>System.Windows.Forms.ColumnHeader</signature>
                         <name>colDescription</name>
-                        <newname>t</newname>
-                    </field>
-                    <field>
-                        <signature>System.Windows.Forms.DateTimePicker</signature>
-                        <name>colDtpDate</name>
-                        <newname>c</newname>
-                    </field>
-                    <field>
-                        <signature>System.Windows.Forms.DateTimePicker</signature>
-                        <name>colDtpFrom</name>
-                        <newname>d</newname>
-                    </field>
-                    <field>
-                        <signature>System.Windows.Forms.DateTimePicker</signature>
-                        <name>colDtpTo</name>
-                        <newname>e</newname>
-                    </field>
-                    <field>
-                        <signature>System.Windows.Forms.DataGridViewTextBoxColumn</signature>
-                        <name>colFrom</name>
-                        <newname>ag</newname>
+                        <newname>q</newname>
                     </field>
                     <field>
                         <signature>System.Windows.Forms.ColumnHeader</signature>
                         <name>colNo</name>
-                        <newname>r</newname>
-                    </field>
-                    <field>
-                        <signature>System.Windows.Forms.DataGridViewTextBoxColumn</signature>
-                        <name>colTo</name>
-                        <newname>ah</newname>
+                        <newname>o</newname>
                     </field>
                     <field>
                         <signature>System.ComponentModel.IContainer</signature>
                         <name>components</name>
-                        <newname>f</newname>
+                        <newname>c</newname>
                     </field>
                     <field>
                         <signature>System.Windows.Forms.ContextMenuStrip</signature>
                         <name>contextMenuStrip1</name>
-                        <newname>u</newname>
+                        <newname>r</newname>
                     </field>
                     <field>
-                        <signature>System.Windows.Forms.DataGridView</signature>
-                        <name>dgvFromTo</name>
+                        <signature>System.Windows.Forms.ContextMenuStrip</signature>
+                        <name>contextMenuStrip2</name>
                         <newname>ae</newname>
                     </field>
                     <field>
                         <signature>System.Windows.Forms.Label</signature>
                         <name>label1</name>
-                        <newname>j</newname>
+                        <newname>g</newname>
+                    </field>
+                    <field>
+                        <signature>System.Windows.Forms.ListView</signature>
+                        <name>lsvBoostTime</name>
+                        <newname>ab</newname>
                     </field>
                     <field>
                         <signature>System.Windows.Forms.ListView</signature>
                         <name>lsvScripts</name>
-                        <newname>q</newname>
+                        <newname>n</newname>
                     </field>
                     <field>
                         <signature>System.Windows.Forms.Panel</signature>
                         <name>panel1</name>
-                        <newname>g</newname>
+                        <newname>d</newname>
                     </field>
                     <field>
                         <signature>System.Windows.Forms.Panel</signature>
                         <name>panel2</name>
-                        <newname>h</newname>
+                        <newname>e</newname>
                     </field>
                     <field>
                         <signature>System.Windows.Forms.Panel</signature>
                         <name>panel3</name>
-                        <newname>o</newname>
+                        <newname>l</newname>
                     </field>
                     <field>
                         <signature>System.Windows.Forms.Panel</signature>
                         <name>panel4</name>
-                        <newname>p</newname>
+                        <newname>m</newname>
                     </field>
                     <field>
                         <signature>System.Windows.Forms.Panel</signature>
                         <name>panel5</name>
-                        <newname>ad</newname>
+                        <newname>aa</newname>
                     </field>
                     <field>
                         <signature>System.Windows.Forms.Panel</signature>
                         <name>panel6</name>
-                        <newname>ac</newname>
+                        <newname>z</newname>
                     </field>
                     <field>
                         <signature>System.Windows.Forms.ToolStripSeparator</signature>
                         <name>toolStripSeparator2</name>
-                        <newname>z</newname>
+                        <newname>w</newname>
                     </field>
                     <field>
                         <signature>System.Windows.Forms.TextBox</signature>
                         <name>txtName</name>
-                        <newname>i</newname>
+                        <newname>f</newname>
                     </field>
                     <field>
                         <signature>System.Windows.Forms.TextBox</signature>
                         <name>txtNo</name>
-                        <newname>m</newname>
+                        <newname>j</newname>
                     </field>
                 </fieldlist>
                 <propertylist>
@@ -3764,8 +3777,32 @@
                 <eventlist />
             </type>
             <type>
-                <name>KClick.ActionForm/&lt;&gt;c__DisplayClass19_0</name>
-                <newname>KClick.ActionForm/a</newname>
+                <name>KClick.ActionForm/&lt;&gt;c__DisplayClass10_0</name>
+                <newname>KClick.ActionForm/b</newname>
+                <methodlist>
+                    <method>
+                        <signature>void()</signature>
+                        <name>.ctor</name>
+                    </method>
+                    <method>
+                        <signature>bool(KClick.Configuration.BoostTime)</signature>
+                        <name>&lt;BtnEditTime_Click&gt;b__0</name>
+                        <newname>b</newname>
+                    </method>
+                </methodlist>
+                <fieldlist>
+                    <field>
+                        <signature>int32</signature>
+                        <name>no</name>
+                        <newname>a</newname>
+                    </field>
+                </fieldlist>
+                <propertylist />
+                <eventlist />
+            </type>
+            <type>
+                <name>KClick.ActionForm/&lt;&gt;c__DisplayClass17_0</name>
+                <newname>KClick.ActionForm/c</newname>
                 <methodlist>
                     <method>
                         <signature>void()</signature>
@@ -3788,8 +3825,8 @@
                 <eventlist />
             </type>
             <type>
-                <name>KClick.ActionForm/&lt;&gt;c__DisplayClass21_0</name>
-                <newname>KClick.ActionForm/b</newname>
+                <name>KClick.ActionForm/&lt;&gt;c__DisplayClass19_0</name>
+                <newname>KClick.ActionForm/d</newname>
                 <methodlist>
                     <method>
                         <signature>void()</signature>
@@ -3798,6 +3835,30 @@
                     <method>
                         <signature>bool(KClick.Configuration.Config)</signature>
                         <name>&lt;BtnDelete_Click&gt;b__0</name>
+                        <newname>b</newname>
+                    </method>
+                </methodlist>
+                <fieldlist>
+                    <field>
+                        <signature>int32</signature>
+                        <name>no</name>
+                        <newname>a</newname>
+                    </field>
+                </fieldlist>
+                <propertylist />
+                <eventlist />
+            </type>
+            <type>
+                <name>KClick.ActionForm/&lt;&gt;c__DisplayClass9_0</name>
+                <newname>KClick.ActionForm/a</newname>
+                <methodlist>
+                    <method>
+                        <signature>void()</signature>
+                        <name>.ctor</name>
+                    </method>
+                    <method>
+                        <signature>bool(KClick.Configuration.BoostTime)</signature>
+                        <name>&lt;BtnDeleteTime_Click&gt;b__0</name>
                         <newname>b</newname>
                     </method>
                 </methodlist>
@@ -3849,6 +3910,138 @@
                     </field>
                 </fieldlist>
                 <propertylist />
+                <eventlist />
+            </type>
+            <type>
+                <name>KClick.BoostTimeForm</name>
+                <methodlist>
+                    <method>
+                        <signature>void()</signature>
+                        <name>.ctor</name>
+                    </method>
+                    <method>
+                        <signature>void(object, System.EventArgs)</signature>
+                        <name>BoostTimeForm_Load</name>
+                        <newname>c</newname>
+                    </method>
+                    <method>
+                        <signature>void(object, System.EventArgs)</signature>
+                        <name>BtnCancel_Click</name>
+                        <newname>b</newname>
+                    </method>
+                    <method>
+                        <signature>void(object, System.EventArgs)</signature>
+                        <name>BtnSave_Click</name>
+                        <newname>a</newname>
+                    </method>
+                    <method>
+                        <signature>void(bool)</signature>
+                        <name>Dispose</name>
+                    </method>
+                    <method>
+                        <signature>void()</signature>
+                        <name>InitializeComponent</name>
+                        <newname>a</newname>
+                    </method>
+                    <method>
+                        <signature>KClick.ActionForm()</signature>
+                        <name>get_ActionForm</name>
+                    </method>
+                    <method>
+                        <signature>KClick.Configuration.BoostTime()</signature>
+                        <name>get_BoostTime</name>
+                    </method>
+                    <method>
+                        <signature>void(KClick.ActionForm)</signature>
+                        <name>set_ActionForm</name>
+                    </method>
+                    <method>
+                        <signature>void(KClick.Configuration.BoostTime)</signature>
+                        <name>set_BoostTime</name>
+                    </method>
+                </methodlist>
+                <fieldlist>
+                    <field>
+                        <signature>KClick.ActionForm</signature>
+                        <name>&lt;ActionForm&gt;k__BackingField</name>
+                        <newname>a</newname>
+                    </field>
+                    <field>
+                        <signature>KClick.Configuration.BoostTime</signature>
+                        <name>&lt;BoostTime&gt;k__BackingField</name>
+                        <newname>b</newname>
+                    </field>
+                    <field>
+                        <signature>System.Windows.Forms.Button</signature>
+                        <name>btnCancel</name>
+                        <newname>m</newname>
+                    </field>
+                    <field>
+                        <signature>System.Windows.Forms.Button</signature>
+                        <name>btnSave</name>
+                        <newname>l</newname>
+                    </field>
+                    <field>
+                        <signature>System.ComponentModel.IContainer</signature>
+                        <name>components</name>
+                        <newname>c</newname>
+                    </field>
+                    <field>
+                        <signature>System.Windows.Forms.DateTimePicker</signature>
+                        <name>dtpDate</name>
+                        <newname>g</newname>
+                    </field>
+                    <field>
+                        <signature>System.Windows.Forms.DateTimePicker</signature>
+                        <name>dtpFrom</name>
+                        <newname>i</newname>
+                    </field>
+                    <field>
+                        <signature>System.Windows.Forms.DateTimePicker</signature>
+                        <name>dtpTo</name>
+                        <newname>k</newname>
+                    </field>
+                    <field>
+                        <signature>System.Windows.Forms.Label</signature>
+                        <name>label1</name>
+                        <newname>f</newname>
+                    </field>
+                    <field>
+                        <signature>System.Windows.Forms.Label</signature>
+                        <name>label2</name>
+                        <newname>h</newname>
+                    </field>
+                    <field>
+                        <signature>System.Windows.Forms.Label</signature>
+                        <name>label3</name>
+                        <newname>j</newname>
+                    </field>
+                    <field>
+                        <signature>System.Windows.Forms.Panel</signature>
+                        <name>panel1</name>
+                        <newname>d</newname>
+                    </field>
+                    <field>
+                        <signature>System.Windows.Forms.Panel</signature>
+                        <name>panel2</name>
+                        <newname>e</newname>
+                    </field>
+                    <field>
+                        <signature>System.Windows.Forms.TextBox</signature>
+                        <name>txtNo</name>
+                        <newname>n</newname>
+                    </field>
+                </fieldlist>
+                <propertylist>
+                    <property>
+                        <signature>KClick.ActionForm()</signature>
+                        <name>ActionForm</name>
+                    </property>
+                    <property>
+                        <signature>KClick.Configuration.BoostTime()</signature>
+                        <name>BoostTime</name>
+                    </property>
+                </propertylist>
                 <eventlist />
             </type>
             <type>
@@ -6490,6 +6683,11 @@
                         <newname>am</newname>
                     </field>
                     <field>
+                        <signature>System.Windows.Forms.CheckBox</signature>
+                        <name>chkSlow</name>
+                        <newname>ba</newname>
+                    </field>
+                    <field>
                         <signature>System.ComponentModel.IContainer</signature>
                         <name>components</name>
                         <newname>j</newname>
@@ -6812,12 +7010,12 @@
                         <name>GetAdjustedConfigs</name>
                     </method>
                     <method>
-                        <signature>System.Collections.Generic.List`1&lt;KClick.Configuration.Config&gt;()</signature>
-                        <name>get_Configs</name>
+                        <signature>System.Collections.Generic.List`1&lt;KClick.Configuration.BoostTime&gt;()</signature>
+                        <name>get_BoostTime</name>
                     </method>
                     <method>
-                        <signature>System.Collections.Generic.List`1&lt;KClick.Configuration.Duration&gt;()</signature>
-                        <name>get_Durations</name>
+                        <signature>System.Collections.Generic.List`1&lt;KClick.Configuration.Config&gt;()</signature>
+                        <name>get_Configs</name>
                     </method>
                     <method>
                         <signature>bool()</signature>
@@ -6832,12 +7030,12 @@
                         <name>get_No</name>
                     </method>
                     <method>
-                        <signature>void(System.Collections.Generic.List`1&lt;KClick.Configuration.Config&gt;)</signature>
-                        <name>set_Configs</name>
+                        <signature>void(System.Collections.Generic.List`1&lt;KClick.Configuration.BoostTime&gt;)</signature>
+                        <name>set_BoostTime</name>
                     </method>
                     <method>
-                        <signature>void(System.Collections.Generic.List`1&lt;KClick.Configuration.Duration&gt;)</signature>
-                        <name>set_Durations</name>
+                        <signature>void(System.Collections.Generic.List`1&lt;KClick.Configuration.Config&gt;)</signature>
+                        <name>set_Configs</name>
                     </method>
                     <method>
                         <signature>void(bool)</signature>
@@ -6854,14 +7052,14 @@
                 </methodlist>
                 <fieldlist>
                     <field>
+                        <signature>System.Collections.Generic.List`1&lt;KClick.Configuration.BoostTime&gt;</signature>
+                        <name>&lt;BoostTime&gt;k__BackingField</name>
+                        <newname>e</newname>
+                    </field>
+                    <field>
                         <signature>System.Collections.Generic.List`1&lt;KClick.Configuration.Config&gt;</signature>
                         <name>&lt;Configs&gt;k__BackingField</name>
                         <newname>c</newname>
-                    </field>
-                    <field>
-                        <signature>System.Collections.Generic.List`1&lt;KClick.Configuration.Duration&gt;</signature>
-                        <name>&lt;Durations&gt;k__BackingField</name>
-                        <newname>e</newname>
                     </field>
                     <field>
                         <signature>bool</signature>
@@ -6881,12 +7079,12 @@
                 </fieldlist>
                 <propertylist>
                     <property>
-                        <signature>System.Collections.Generic.List`1&lt;KClick.Configuration.Config&gt;()</signature>
-                        <name>Configs</name>
+                        <signature>System.Collections.Generic.List`1&lt;KClick.Configuration.BoostTime&gt;()</signature>
+                        <name>BoostTime</name>
                     </property>
                     <property>
-                        <signature>System.Collections.Generic.List`1&lt;KClick.Configuration.Duration&gt;()</signature>
-                        <name>Durations</name>
+                        <signature>System.Collections.Generic.List`1&lt;KClick.Configuration.Config&gt;()</signature>
+                        <name>Configs</name>
                     </property>
                     <property>
                         <signature>bool()</signature>
@@ -6899,6 +7097,71 @@
                     <property>
                         <signature>int32()</signature>
                         <name>No</name>
+                    </property>
+                </propertylist>
+                <eventlist />
+            </type>
+            <type>
+                <name>KClick.Configuration.BoostTime</name>
+                <methodlist>
+                    <method>
+                        <signature>void()</signature>
+                        <name>.ctor</name>
+                    </method>
+                    <method>
+                        <signature>System.DateTime()</signature>
+                        <name>get_FromTime</name>
+                    </method>
+                    <method>
+                        <signature>int32()</signature>
+                        <name>get_No</name>
+                    </method>
+                    <method>
+                        <signature>System.DateTime()</signature>
+                        <name>get_ToTime</name>
+                    </method>
+                    <method>
+                        <signature>void(System.DateTime)</signature>
+                        <name>set_FromTime</name>
+                    </method>
+                    <method>
+                        <signature>void(int32)</signature>
+                        <name>set_No</name>
+                    </method>
+                    <method>
+                        <signature>void(System.DateTime)</signature>
+                        <name>set_ToTime</name>
+                    </method>
+                </methodlist>
+                <fieldlist>
+                    <field>
+                        <signature>System.DateTime</signature>
+                        <name>&lt;FromTime&gt;k__BackingField</name>
+                        <newname>b</newname>
+                    </field>
+                    <field>
+                        <signature>int32</signature>
+                        <name>&lt;No&gt;k__BackingField</name>
+                        <newname>a</newname>
+                    </field>
+                    <field>
+                        <signature>System.DateTime</signature>
+                        <name>&lt;ToTime&gt;k__BackingField</name>
+                        <newname>c</newname>
+                    </field>
+                </fieldlist>
+                <propertylist>
+                    <property>
+                        <signature>System.DateTime()</signature>
+                        <name>FromTime</name>
+                    </property>
+                    <property>
+                        <signature>int32()</signature>
+                        <name>No</name>
+                    </property>
+                    <property>
+                        <signature>System.DateTime()</signature>
+                        <name>ToTime</name>
                     </property>
                 </propertylist>
                 <eventlist />
@@ -6945,6 +7208,10 @@
                     <method>
                         <signature>string()</signature>
                         <name>get_DisplayMember</name>
+                    </method>
+                    <method>
+                        <signature>bool()</signature>
+                        <name>get_DragSlow</name>
                     </method>
                     <method>
                         <signature>bool()</signature>
@@ -7076,6 +7343,10 @@
                     </method>
                     <method>
                         <signature>void(bool)</signature>
+                        <name>set_DragSlow</name>
+                    </method>
+                    <method>
+                        <signature>void(bool)</signature>
                         <name>set_EndWholeScripts</name>
                     </method>
                     <method>
@@ -7192,6 +7463,11 @@
                     </field>
                     <field>
                         <signature>bool</signature>
+                        <name>&lt;DragSlow&gt;k__BackingField</name>
+                        <newname>ab</newname>
+                    </field>
+                    <field>
+                        <signature>bool</signature>
                         <name>&lt;EndWholeScripts&gt;k__BackingField</name>
                         <newname>a</newname>
                     </field>
@@ -7233,7 +7509,7 @@
                     <field>
                         <signature>int32</signature>
                         <name>&lt;RunAfterScript&gt;k__BackingField</name>
-                        <newname>ab</newname>
+                        <newname>ac</newname>
                     </field>
                     <field>
                         <signature>bool</signature>
@@ -7336,6 +7612,10 @@
                     </property>
                     <property>
                         <signature>bool()</signature>
+                        <name>DragSlow</name>
+                    </property>
+                    <property>
+                        <signature>bool()</signature>
                         <name>EndWholeScripts</name>
                     </property>
                     <property>
@@ -7433,54 +7713,6 @@
                     <property>
                         <signature>int32()</signature>
                         <name>YPosMoved</name>
-                    </property>
-                </propertylist>
-                <eventlist />
-            </type>
-            <type>
-                <name>KClick.Configuration.Duration</name>
-                <methodlist>
-                    <method>
-                        <signature>void()</signature>
-                        <name>.ctor</name>
-                    </method>
-                    <method>
-                        <signature>System.DateTime()</signature>
-                        <name>get_FromTime</name>
-                    </method>
-                    <method>
-                        <signature>System.DateTime()</signature>
-                        <name>get_ToTime</name>
-                    </method>
-                    <method>
-                        <signature>void(System.DateTime)</signature>
-                        <name>set_FromTime</name>
-                    </method>
-                    <method>
-                        <signature>void(System.DateTime)</signature>
-                        <name>set_ToTime</name>
-                    </method>
-                </methodlist>
-                <fieldlist>
-                    <field>
-                        <signature>System.DateTime</signature>
-                        <name>&lt;FromTime&gt;k__BackingField</name>
-                        <newname>a</newname>
-                    </field>
-                    <field>
-                        <signature>System.DateTime</signature>
-                        <name>&lt;ToTime&gt;k__BackingField</name>
-                        <newname>b</newname>
-                    </field>
-                </fieldlist>
-                <propertylist>
-                    <property>
-                        <signature>System.DateTime()</signature>
-                        <name>FromTime</name>
-                    </property>
-                    <property>
-                        <signature>System.DateTime()</signature>
-                        <name>ToTime</name>
                     </property>
                 </propertylist>
                 <eventlist />
@@ -8728,13 +8960,18 @@
                         <name>.ctor</name>
                     </method>
                     <method>
-                        <signature>bool(KClick.Configuration.Config)</signature>
+                        <signature>bool(KClick.Configuration.BoostTime)</signature>
                         <name>&lt;RunAsync&gt;b__48_0</name>
                         <newname>a</newname>
                     </method>
                     <method>
                         <signature>bool(KClick.Configuration.Config)</signature>
                         <name>&lt;RunAsync&gt;b__48_1</name>
+                        <newname>a</newname>
+                    </method>
+                    <method>
+                        <signature>bool(KClick.Configuration.Config)</signature>
+                        <name>&lt;RunAsync&gt;b__48_2</name>
                         <newname>b</newname>
                     </method>
                 </methodlist>
@@ -8744,12 +8981,16 @@
                         <name>&lt;&gt;9</name>
                     </field>
                     <field>
-                        <signature>System.Func`2&lt;KClick.Configuration.Config,bool&gt;</signature>
+                        <signature>System.Func`2&lt;KClick.Configuration.BoostTime,bool&gt;</signature>
                         <name>&lt;&gt;9__48_0</name>
                     </field>
                     <field>
                         <signature>System.Func`2&lt;KClick.Configuration.Config,bool&gt;</signature>
                         <name>&lt;&gt;9__48_1</name>
+                    </field>
+                    <field>
+                        <signature>System.Func`2&lt;KClick.Configuration.Config,bool&gt;</signature>
+                        <name>&lt;&gt;9__48_2</name>
                     </field>
                 </fieldlist>
                 <propertylist />
@@ -13461,19 +13702,19 @@
     <statistics>
         <statisticline>
             <description>Total Classes</description>
-            <statistic>206</statistic>
+            <statistic>209</statistic>
         </statisticline>
         <statisticline>
             <description>Total Methods</description>
-            <statistic>1186</statistic>
+            <statistic>1207</statistic>
         </statisticline>
         <statisticline>
             <description>Total Fields</description>
-            <statistic>1142</statistic>
+            <statistic>1163</statistic>
         </statisticline>
         <statisticline>
             <description>Total Properties</description>
-            <statistic>119</statistic>
+            <statistic>123</statistic>
         </statisticline>
         <statisticline>
             <description>Total Events</description>
@@ -13481,18 +13722,18 @@
         </statisticline>
         <statisticline>
             <description>Total Classes Renamed</description>
-            <statistic>151</statistic>
-            <statistic>73.30 %</statistic>
+            <statistic>153</statistic>
+            <statistic>73.21 %</statistic>
         </statisticline>
         <statisticline>
             <description>Total Methods Renamed</description>
-            <statistic>568</statistic>
-            <statistic>47.89 %</statistic>
+            <statistic>575</statistic>
+            <statistic>47.64 %</statistic>
         </statisticline>
         <statisticline>
             <description>Total Fields Renamed</description>
-            <statistic>1020</statistic>
-            <statistic>89.32 %</statistic>
+            <statistic>1040</statistic>
+            <statistic>89.42 %</statistic>
         </statisticline>
         <statisticline>
             <description>Total Properties Renamed</description>
@@ -13506,38 +13747,38 @@
         </statisticline>
         <statisticline>
             <description>Methods Renamed to 'a'</description>
-            <statistic>110</statistic>
-            <statistic>9.27 %</statistic>
+            <statistic>113</statistic>
+            <statistic>9.36 %</statistic>
         </statisticline>
         <statisticline>
             <description>Methods Renamed to 'b'</description>
-            <statistic>88</statistic>
-            <statistic>7.42 %</statistic>
+            <statistic>91</statistic>
+            <statistic>7.54 %</statistic>
         </statisticline>
         <statisticline>
             <description>Methods Renamed to 'd'</description>
             <statistic>88</statistic>
-            <statistic>7.42 %</statistic>
+            <statistic>7.29 %</statistic>
         </statisticline>
         <statisticline>
             <description>Methods Renamed to 'f'</description>
             <statistic>57</statistic>
-            <statistic>4.81 %</statistic>
+            <statistic>4.72 %</statistic>
         </statisticline>
         <statisticline>
             <description>Methods Renamed to 'c'</description>
-            <statistic>44</statistic>
-            <statistic>3.71 %</statistic>
+            <statistic>45</statistic>
+            <statistic>3.73 %</statistic>
         </statisticline>
         <statisticline>
             <description>Methods Renamed to 'e'</description>
             <statistic>27</statistic>
-            <statistic>2.28 %</statistic>
+            <statistic>2.24 %</statistic>
         </statisticline>
         <statisticline>
             <description>Methods Renamed to 'g'</description>
             <statistic>21</statistic>
-            <statistic>1.77 %</statistic>
+            <statistic>1.74 %</statistic>
         </statisticline>
     </statistics>
 </dotfuscatorMap>
