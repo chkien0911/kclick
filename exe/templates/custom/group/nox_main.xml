@@ -475,12 +475,12 @@
       <KScript No="19">
         <No>19</No>
         <MouseKey>Left</MouseKey>
-        <X>221</X>
-        <Y>278</Y>
-        <Color>ff96e74a</Color>
-        <X2>337</X2>
-        <Y2>366</Y2>
-        <Color2>ff3f3c22</Color2>
+        <X>286</X>
+        <Y>284</Y>
+        <Color>ff81ca40</Color>
+        <X2>447</X2>
+        <Y2>304</Y2>
+        <Color2>ff21576f</Color2>
         <XMoved>0</XMoved>
         <YMoved>0</YMoved>
         <ColorMoved></ColorMoved>
@@ -767,12 +767,12 @@
       <KScript No="1">
         <No>1</No>
         <MouseKey>Left</MouseKey>
-        <X>415</X>
-        <Y>205</Y>
-        <Color>fffee2bc</Color>
-        <X2>428</X2>
-        <Y2>215</Y2>
-        <Color2>ff1934d3</Color2>
+        <X>334</X>
+        <Y>157</Y>
+        <Color>ffffd99f</Color>
+        <X2>339</X2>
+        <Y2>162</Y2>
+        <Color2>ff2d1c17</Color2>
         <XMoved>0</XMoved>
         <YMoved>0</YMoved>
         <ColorMoved></ColorMoved>
@@ -1564,6 +1564,32 @@
         <IsDrag>false</IsDrag>
         <DragSlow>false</DragSlow>
         <Description>go to scenario lose</Description>
+        <IsStartIcon>false</IsStartIcon>
+        <RunOnce>false</RunOnce>
+        <EndWholeScripts>false</EndWholeScripts>
+        <IsClosedPosition>false</IsClosedPosition>
+        <RunAfterScript>0</RunAfterScript>
+      </KScript>
+      <KScript No="32">
+        <No>32</No>
+        <MouseKey>Left</MouseKey>
+        <X>338</X>
+        <Y>276</Y>
+        <Color>ff81ca40</Color>
+        <X2>470</X2>
+        <Y2>394</Y2>
+        <Color2>ff7f7f7f</Color2>
+        <XMoved>0</XMoved>
+        <YMoved>0</YMoved>
+        <ColorMoved></ColorMoved>
+        <XIgnored>0</XIgnored>
+        <YIgnored>0</YIgnored>
+        <ColorIgnored></ColorIgnored>
+        <Delay>100</Delay>
+        <IsSequential>false</IsSequential>
+        <IsDrag>false</IsDrag>
+        <DragSlow>false</DragSlow>
+        <Description>retry</Description>
         <IsStartIcon>false</IsStartIcon>
         <RunOnce>false</RunOnce>
         <EndWholeScripts>false</EndWholeScripts>
@@ -1949,12 +1975,12 @@
       <KScript No="1">
         <No>1</No>
         <MouseKey>Left</MouseKey>
-        <X>452</X>
-        <Y>155</Y>
-        <Color>ff1b35d2</Color>
-        <X2>437</X2>
-        <Y2>144</Y2>
-        <Color2>fffdd5a7</Color2>
+        <X>424</X>
+        <Y>159</Y>
+        <Color>fff7b9ac</Color>
+        <X2>418</X2>
+        <Y2>151</Y2>
+        <Color2>ffffd697</Color2>
         <XMoved>0</XMoved>
         <YMoved>0</YMoved>
         <ColorMoved></ColorMoved>
@@ -1975,12 +2001,12 @@
       <KScript No="2">
         <No>2</No>
         <MouseKey>Left</MouseKey>
-        <X>339</X>
-        <Y>184</Y>
-        <Color>ffffeecb</Color>
-        <X2>387</X2>
-        <Y2>310</Y2>
-        <Color2>ff0019bb</Color2>
+        <X>357</X>
+        <Y>236</Y>
+        <Color>ff1163ab</Color>
+        <X2>205</X2>
+        <Y2>208</Y2>
+        <Color2>fffff4d0</Color2>
         <XMoved>0</XMoved>
         <YMoved>0</YMoved>
         <ColorMoved></ColorMoved>
@@ -2001,12 +2027,12 @@
       <KScript No="3">
         <No>3</No>
         <MouseKey>Left</MouseKey>
-        <X>373</X>
-        <Y>210</Y>
-        <Color>ffa8ee65</Color>
-        <X2>352</X2>
-        <Y2>210</Y2>
-        <Color2>ffffffff</Color2>
+        <X>416</X>
+        <Y>167</Y>
+        <Color>fff9f7f7</Color>
+        <X2>431</X2>
+        <Y2>147</Y2>
+        <Color2>ff000000</Color2>
         <XMoved>0</XMoved>
         <YMoved>0</YMoved>
         <ColorMoved></ColorMoved>
@@ -2105,12 +2131,12 @@
       <KScript No="7">
         <No>7</No>
         <MouseKey>Left</MouseKey>
-        <X>283</X>
-        <Y>269</Y>
-        <Color>ffa8f65c</Color>
-        <X2>68</X2>
-        <Y2>387</Y2>
-        <Color2>ff215b2e</Color2>
+        <X>337</X>
+        <Y>271</Y>
+        <Color>ffabf466</Color>
+        <X2>432</X2>
+        <Y2>260</Y2>
+        <Color2>ff000548</Color2>
         <XMoved>0</XMoved>
         <YMoved>0</YMoved>
         <ColorMoved></ColorMoved>
@@ -2157,32 +2183,6 @@
       <KScript No="9">
         <No>9</No>
         <MouseKey>Left</MouseKey>
-        <X>197</X>
-        <Y>372</Y>
-        <Color>ff21511f</Color>
-        <X2>321</X2>
-        <Y2>361</Y2>
-        <Color2>ff34712e</Color2>
-        <XMoved>0</XMoved>
-        <YMoved>0</YMoved>
-        <ColorMoved></ColorMoved>
-        <XIgnored>0</XIgnored>
-        <YIgnored>0</YIgnored>
-        <ColorIgnored></ColorIgnored>
-        <Delay>100</Delay>
-        <IsSequential>false</IsSequential>
-        <IsDrag>false</IsDrag>
-        <DragSlow>false</DragSlow>
-        <Description>touch screen end game</Description>
-        <IsStartIcon>false</IsStartIcon>
-        <RunOnce>false</RunOnce>
-        <EndWholeScripts>false</EndWholeScripts>
-        <IsClosedPosition>false</IsClosedPosition>
-        <RunAfterScript>0</RunAfterScript>
-      </KScript>
-      <KScript No="10">
-        <No>10</No>
-        <MouseKey>Left</MouseKey>
         <X>238</X>
         <Y>196</Y>
         <Color>ff88caeb</Color>
@@ -2206,8 +2206,8 @@
         <IsClosedPosition>false</IsClosedPosition>
         <RunAfterScript>0</RunAfterScript>
       </KScript>
-      <KScript No="11">
-        <No>11</No>
+      <KScript No="10">
+        <No>10</No>
         <MouseKey>Left</MouseKey>
         <X>159</X>
         <Y>339</Y>
@@ -2232,8 +2232,8 @@
         <IsClosedPosition>false</IsClosedPosition>
         <RunAfterScript>0</RunAfterScript>
       </KScript>
-      <KScript No="12">
-        <No>12</No>
+      <KScript No="11">
+        <No>11</No>
         <MouseKey>Left</MouseKey>
         <X>139</X>
         <Y>143</Y>
@@ -2258,112 +2258,8 @@
         <IsClosedPosition>false</IsClosedPosition>
         <RunAfterScript>0</RunAfterScript>
       </KScript>
-      <KScript No="13">
-        <No>13</No>
-        <MouseKey>Left</MouseKey>
-        <X>164</X>
-        <Y>376</Y>
-        <Color>ff070f05</Color>
-        <X2>320</X2>
-        <Y2>358</Y2>
-        <Color2>ff0d170a</Color2>
-        <XMoved>0</XMoved>
-        <YMoved>0</YMoved>
-        <ColorMoved></ColorMoved>
-        <XIgnored>0</XIgnored>
-        <YIgnored>0</YIgnored>
-        <ColorIgnored></ColorIgnored>
-        <Delay>100</Delay>
-        <IsSequential>false</IsSequential>
-        <IsDrag>false</IsDrag>
-        <DragSlow>false</DragSlow>
-        <Description>touch screen get reward ball</Description>
-        <IsStartIcon>false</IsStartIcon>
-        <RunOnce>false</RunOnce>
-        <EndWholeScripts>false</EndWholeScripts>
-        <IsClosedPosition>false</IsClosedPosition>
-        <RunAfterScript>0</RunAfterScript>
-      </KScript>
-      <KScript No="14">
-        <No>14</No>
-        <MouseKey>Left</MouseKey>
-        <X>191</X>
-        <Y>376</Y>
-        <Color>ff10270d</Color>
-        <X2>297</X2>
-        <Y2>361</Y2>
-        <Color2>ff1d3816</Color2>
-        <XMoved>0</XMoved>
-        <YMoved>0</YMoved>
-        <ColorMoved></ColorMoved>
-        <XIgnored>0</XIgnored>
-        <YIgnored>0</YIgnored>
-        <ColorIgnored></ColorIgnored>
-        <Delay>100</Delay>
-        <IsSequential>false</IsSequential>
-        <IsDrag>false</IsDrag>
-        <DragSlow>false</DragSlow>
-        <Description>touch screen get reward</Description>
-        <IsStartIcon>false</IsStartIcon>
-        <RunOnce>false</RunOnce>
-        <EndWholeScripts>false</EndWholeScripts>
-        <IsClosedPosition>false</IsClosedPosition>
-        <RunAfterScript>0</RunAfterScript>
-      </KScript>
-      <KScript No="15">
-        <No>15</No>
-        <MouseKey>Left</MouseKey>
-        <X>354</X>
-        <Y>97</Y>
-        <Color>fff6c334</Color>
-        <X2>393</X2>
-        <Y2>110</Y2>
-        <Color2>ffdb8400</Color2>
-        <XMoved>0</XMoved>
-        <YMoved>0</YMoved>
-        <ColorMoved></ColorMoved>
-        <XIgnored>0</XIgnored>
-        <YIgnored>0</YIgnored>
-        <ColorIgnored></ColorIgnored>
-        <Delay>100</Delay>
-        <IsSequential>false</IsSequential>
-        <IsDrag>false</IsDrag>
-        <DragSlow>false</DragSlow>
-        <Description>click extreme</Description>
-        <IsStartIcon>false</IsStartIcon>
-        <RunOnce>false</RunOnce>
-        <EndWholeScripts>false</EndWholeScripts>
-        <IsClosedPosition>false</IsClosedPosition>
-        <RunAfterScript>0</RunAfterScript>
-      </KScript>
-      <KScript No="16">
-        <No>16</No>
-        <MouseKey>Left</MouseKey>
-        <X>173</X>
-        <Y>374</Y>
-        <Color>ff1e4f19</Color>
-        <X2>303</X2>
-        <Y2>361</Y2>
-        <Color2>ff34712e</Color2>
-        <XMoved>0</XMoved>
-        <YMoved>0</YMoved>
-        <ColorMoved></ColorMoved>
-        <XIgnored>0</XIgnored>
-        <YIgnored>0</YIgnored>
-        <ColorIgnored></ColorIgnored>
-        <Delay>100</Delay>
-        <IsSequential>false</IsSequential>
-        <IsDrag>false</IsDrag>
-        <DragSlow>false</DragSlow>
-        <Description>touch screen end game</Description>
-        <IsStartIcon>false</IsStartIcon>
-        <RunOnce>false</RunOnce>
-        <EndWholeScripts>false</EndWholeScripts>
-        <IsClosedPosition>false</IsClosedPosition>
-        <RunAfterScript>0</RunAfterScript>
-      </KScript>
-      <KScript No="17">
-        <No>17</No>
+      <KScript No="12">
+        <No>12</No>
         <MouseKey>Left</MouseKey>
         <X>218</X>
         <Y>407</Y>
@@ -2388,15 +2284,15 @@
         <IsClosedPosition>false</IsClosedPosition>
         <RunAfterScript>0</RunAfterScript>
       </KScript>
-      <KScript No="18">
-        <No>18</No>
+      <KScript No="13">
+        <No>13</No>
         <MouseKey>Left</MouseKey>
-        <X>219</X>
-        <Y>141</Y>
-        <Color>ffffaa1d</Color>
-        <X2>291</X2>
-        <Y2>169</Y2>
-        <Color2>ffffdb09</Color2>
+        <X>329</X>
+        <Y>170</Y>
+        <Color>ffffc335</Color>
+        <X2>328</X2>
+        <Y2>194</Y2>
+        <Color2>fffffffb</Color2>
         <XMoved>0</XMoved>
         <YMoved>0</YMoved>
         <ColorMoved></ColorMoved>
@@ -2414,8 +2310,8 @@
         <IsClosedPosition>false</IsClosedPosition>
         <RunAfterScript>0</RunAfterScript>
       </KScript>
-      <KScript No="19">
-        <No>19</No>
+      <KScript No="14">
+        <No>14</No>
         <MouseKey>Left</MouseKey>
         <X>369</X>
         <Y>346</Y>
@@ -2440,15 +2336,15 @@
         <IsClosedPosition>false</IsClosedPosition>
         <RunAfterScript>0</RunAfterScript>
       </KScript>
-      <KScript No="20">
-        <No>20</No>
+      <KScript No="15">
+        <No>15</No>
         <MouseKey>Left</MouseKey>
-        <X>223</X>
-        <Y>277</Y>
-        <Color>ff98e94c</Color>
-        <X2>367</X2>
-        <Y2>338</Y2>
-        <Color2>ff3b2f16</Color2>
+        <X>284</X>
+        <Y>276</Y>
+        <Color>ff95e24c</Color>
+        <X2>424</X2>
+        <Y2>380</Y2>
+        <Color2>ff191e20</Color2>
         <XMoved>0</XMoved>
         <YMoved>0</YMoved>
         <ColorMoved></ColorMoved>
@@ -2466,8 +2362,8 @@
         <IsClosedPosition>false</IsClosedPosition>
         <RunAfterScript>0</RunAfterScript>
       </KScript>
-      <KScript No="21">
-        <No>21</No>
+      <KScript No="16">
+        <No>16</No>
         <MouseKey>Left</MouseKey>
         <X>221</X>
         <Y>278</Y>
@@ -2492,8 +2388,8 @@
         <IsClosedPosition>false</IsClosedPosition>
         <RunAfterScript>0</RunAfterScript>
       </KScript>
-      <KScript No="22">
-        <No>22</No>
+      <KScript No="17">
+        <No>17</No>
         <MouseKey>Left</MouseKey>
         <X>281</X>
         <Y>278</Y>
@@ -2518,8 +2414,8 @@
         <IsClosedPosition>false</IsClosedPosition>
         <RunAfterScript>0</RunAfterScript>
       </KScript>
-      <KScript No="23">
-        <No>23</No>
+      <KScript No="18">
+        <No>18</No>
         <MouseKey>Left</MouseKey>
         <X>224</X>
         <Y>337</Y>
@@ -2544,86 +2440,8 @@
         <IsClosedPosition>false</IsClosedPosition>
         <RunAfterScript>0</RunAfterScript>
       </KScript>
-      <KScript No="24">
-        <No>24</No>
-        <MouseKey>Left</MouseKey>
-        <X>464</X>
-        <Y>412</Y>
-        <Color>fffed53a</Color>
-        <X2>484</X2>
-        <Y2>415</Y2>
-        <Color2>ff674208</Color2>
-        <XMoved>0</XMoved>
-        <YMoved>0</YMoved>
-        <ColorMoved></ColorMoved>
-        <XIgnored>0</XIgnored>
-        <YIgnored>0</YIgnored>
-        <ColorIgnored></ColorIgnored>
-        <Delay>100</Delay>
-        <IsSequential>false</IsSequential>
-        <IsDrag>false</IsDrag>
-        <DragSlow>false</DragSlow>
-        <Description>skip</Description>
-        <IsStartIcon>false</IsStartIcon>
-        <RunOnce>false</RunOnce>
-        <EndWholeScripts>false</EndWholeScripts>
-        <IsClosedPosition>false</IsClosedPosition>
-        <RunAfterScript>0</RunAfterScript>
-      </KScript>
-      <KScript No="25">
-        <No>25</No>
-        <MouseKey>Left</MouseKey>
-        <X>308</X>
-        <Y>394</Y>
-        <Color>ff7f7f7f</Color>
-        <X2>98</X2>
-        <Y2>241</Y2>
-        <Color2>ffffecce</Color2>
-        <XMoved>0</XMoved>
-        <YMoved>0</YMoved>
-        <ColorMoved></ColorMoved>
-        <XIgnored>0</XIgnored>
-        <YIgnored>0</YIgnored>
-        <ColorIgnored></ColorIgnored>
-        <Delay>100</Delay>
-        <IsSequential>false</IsSequential>
-        <IsDrag>false</IsDrag>
-        <DragSlow>false</DragSlow>
-        <Description>login bonus</Description>
-        <IsStartIcon>false</IsStartIcon>
-        <RunOnce>false</RunOnce>
-        <EndWholeScripts>false</EndWholeScripts>
-        <IsClosedPosition>false</IsClosedPosition>
-        <RunAfterScript>0</RunAfterScript>
-      </KScript>
-      <KScript No="26">
-        <No>26</No>
-        <MouseKey>Left</MouseKey>
-        <X>205</X>
-        <Y>390</Y>
-        <Color>ff000000</Color>
-        <X2>469</X2>
-        <Y2>107</Y2>
-        <Color2>ffce0008</Color2>
-        <XMoved>0</XMoved>
-        <YMoved>0</YMoved>
-        <ColorMoved></ColorMoved>
-        <XIgnored>0</XIgnored>
-        <YIgnored>0</YIgnored>
-        <ColorIgnored></ColorIgnored>
-        <Delay>100</Delay>
-        <IsSequential>false</IsSequential>
-        <IsDrag>false</IsDrag>
-        <DragSlow>false</DragSlow>
-        <Description>tab screen skip intro</Description>
-        <IsStartIcon>false</IsStartIcon>
-        <RunOnce>false</RunOnce>
-        <EndWholeScripts>false</EndWholeScripts>
-        <IsClosedPosition>false</IsClosedPosition>
-        <RunAfterScript>0</RunAfterScript>
-      </KScript>
-      <KScript No="27">
-        <No>27</No>
+      <KScript No="19">
+        <No>19</No>
         <MouseKey>Left</MouseKey>
         <X>276</X>
         <Y>284</Y>
@@ -2648,15 +2466,15 @@
         <IsClosedPosition>false</IsClosedPosition>
         <RunAfterScript>0</RunAfterScript>
       </KScript>
-      <KScript No="28">
-        <No>28</No>
+      <KScript No="20">
+        <No>20</No>
         <MouseKey>Left</MouseKey>
-        <X>286</X>
-        <Y>145</Y>
-        <Color>ffffcb21</Color>
-        <X2>82</X2>
-        <Y2>410</Y2>
-        <Color2>fff28123</Color2>
+        <X>138</X>
+        <Y>162</Y>
+        <Color>ffffd857</Color>
+        <X2>97</X2>
+        <Y2>296</Y2>
+        <Color2>fffdcb2c</Color2>
         <XMoved>0</XMoved>
         <YMoved>0</YMoved>
         <ColorMoved></ColorMoved>
@@ -2667,22 +2485,22 @@
         <IsSequential>false</IsSequential>
         <IsDrag>false</IsDrag>
         <DragSlow>false</DragSlow>
-        <Description>2nd event</Description>
+        <Description>1st event</Description>
         <IsStartIcon>false</IsStartIcon>
         <RunOnce>false</RunOnce>
         <EndWholeScripts>false</EndWholeScripts>
         <IsClosedPosition>false</IsClosedPosition>
         <RunAfterScript>0</RunAfterScript>
       </KScript>
-      <KScript No="29">
-        <No>29</No>
+      <KScript No="21">
+        <No>21</No>
         <MouseKey>Left</MouseKey>
-        <X>355</X>
-        <Y>223</Y>
+        <X>437</X>
+        <Y>112</Y>
         <Color>ffdb8400</Color>
-        <X2>138</X2>
-        <Y2>161</Y2>
-        <Color2>ffffce43</Color2>
+        <X2>139</X2>
+        <Y2>162</Y2>
+        <Color2>ffffcc37</Color2>
         <XMoved>0</XMoved>
         <YMoved>0</YMoved>
         <ColorMoved></ColorMoved>
@@ -2693,67 +2511,15 @@
         <IsSequential>false</IsSequential>
         <IsDrag>false</IsDrag>
         <DragSlow>false</DragSlow>
-        <Description>very hard</Description>
+        <Description>extreame</Description>
         <IsStartIcon>false</IsStartIcon>
         <RunOnce>false</RunOnce>
         <EndWholeScripts>false</EndWholeScripts>
         <IsClosedPosition>false</IsClosedPosition>
         <RunAfterScript>0</RunAfterScript>
       </KScript>
-      <KScript No="30">
-        <No>30</No>
-        <MouseKey>Left</MouseKey>
-        <X>349</X>
-        <Y>262</Y>
-        <Color>fff5bf53</Color>
-        <X2>80</X2>
-        <Y2>411</Y2>
-        <Color2>ffef7d21</Color2>
-        <XMoved>0</XMoved>
-        <YMoved>0</YMoved>
-        <ColorMoved></ColorMoved>
-        <XIgnored>0</XIgnored>
-        <YIgnored>0</YIgnored>
-        <ColorIgnored></ColorIgnored>
-        <Delay>100</Delay>
-        <IsSequential>false</IsSequential>
-        <IsDrag>false</IsDrag>
-        <DragSlow>false</DragSlow>
-        <Description>play match</Description>
-        <IsStartIcon>false</IsStartIcon>
-        <RunOnce>false</RunOnce>
-        <EndWholeScripts>false</EndWholeScripts>
-        <IsClosedPosition>false</IsClosedPosition>
-        <RunAfterScript>0</RunAfterScript>
-      </KScript>
-      <KScript No="31">
-        <No>31</No>
-        <MouseKey>Left</MouseKey>
-        <X>469</X>
-        <Y>419</Y>
-        <Color>ffe0ebfe</Color>
-        <X2>484</X2>
-        <Y2>399</Y2>
-        <Color2>ffe3edfe</Color2>
-        <XMoved>0</XMoved>
-        <YMoved>0</YMoved>
-        <ColorMoved></ColorMoved>
-        <XIgnored>0</XIgnored>
-        <YIgnored>0</YIgnored>
-        <ColorIgnored></ColorIgnored>
-        <Delay>100</Delay>
-        <IsSequential>false</IsSequential>
-        <IsDrag>false</IsDrag>
-        <DragSlow>false</DragSlow>
-        <Description>skip bottom</Description>
-        <IsStartIcon>false</IsStartIcon>
-        <RunOnce>false</RunOnce>
-        <EndWholeScripts>false</EndWholeScripts>
-        <IsClosedPosition>false</IsClosedPosition>
-        <RunAfterScript>0</RunAfterScript>
-      </KScript>
-      <KScript No="32">
-        <No>32</No>
+      <KScript No="22">
+        <No>22</No>
         <MouseKey>Left</MouseKey>
         <X>286</X>
         <Y>297</Y>
@@ -2778,15 +2544,15 @@
         <IsClosedPosition>false</IsClosedPosition>
         <RunAfterScript>0</RunAfterScript>
       </KScript>
-      <KScript No="33">
-        <No>33</No>
+      <KScript No="23">
+        <No>23</No>
         <MouseKey>Left</MouseKey>
-        <X>187</X>
-        <Y>196</Y>
-        <Color>ff88ccea</Color>
-        <X2>235</X2>
-        <Y2>203</Y2>
-        <Color2>ff3366c7</Color2>
+        <X>267</X>
+        <Y>186</Y>
+        <Color>ff3366c0</Color>
+        <X2>201</X2>
+        <Y2>208</Y2>
+        <Color2>ffffffff</Color2>
         <XMoved>0</XMoved>
         <YMoved>0</YMoved>
         <ColorMoved></ColorMoved>
@@ -2804,15 +2570,15 @@
         <IsClosedPosition>false</IsClosedPosition>
         <RunAfterScript>0</RunAfterScript>
       </KScript>
-      <KScript No="34">
-        <No>34</No>
+      <KScript No="24">
+        <No>24</No>
         <MouseKey>Left</MouseKey>
-        <X>206</X>
-        <Y>100</Y>
-        <Color>fff3c031</Color>
-        <X2>210</X2>
-        <Y2>111</Y2>
-        <Color2>ffdb8400</Color2>
+        <X>226</X>
+        <Y>198</Y>
+        <Color>ff000587</Color>
+        <X2>247</X2>
+        <Y2>366</Y2>
+        <Color2>ff000000</Color2>
         <XMoved>0</XMoved>
         <YMoved>0</YMoved>
         <ColorMoved></ColorMoved>
@@ -2823,7 +2589,501 @@
         <IsSequential>false</IsSequential>
         <IsDrag>false</IsDrag>
         <DragSlow>false</DragSlow>
-        <Description>Click normal</Description>
+        <Description>touch screen to start</Description>
+        <IsStartIcon>false</IsStartIcon>
+        <RunOnce>false</RunOnce>
+        <EndWholeScripts>false</EndWholeScripts>
+        <IsClosedPosition>false</IsClosedPosition>
+        <RunAfterScript>0</RunAfterScript>
+      </KScript>
+      <KScript No="25">
+        <No>25</No>
+        <MouseKey>Left</MouseKey>
+        <X>332</X>
+        <Y>272</Y>
+        <Color>ffa7f55b</Color>
+        <X2>391</X2>
+        <Y2>243</Y2>
+        <Color2>ffffffff</Color2>
+        <XMoved>0</XMoved>
+        <YMoved>0</YMoved>
+        <ColorMoved></ColorMoved>
+        <XIgnored>0</XIgnored>
+        <YIgnored>0</YIgnored>
+        <ColorIgnored></ColorIgnored>
+        <Delay>100</Delay>
+        <IsSequential>false</IsSequential>
+        <IsDrag>false</IsDrag>
+        <DragSlow>false</DragSlow>
+        <Description>restart game</Description>
+        <IsStartIcon>false</IsStartIcon>
+        <RunOnce>false</RunOnce>
+        <EndWholeScripts>false</EndWholeScripts>
+        <IsClosedPosition>false</IsClosedPosition>
+        <RunAfterScript>0</RunAfterScript>
+      </KScript>
+      <KScript No="26">
+        <No>26</No>
+        <MouseKey>Left</MouseKey>
+        <X>397</X>
+        <Y>279</Y>
+        <Color>ffee9a2c</Color>
+        <X2>424</X2>
+        <Y2>285</Y2>
+        <Color2>ff333c41</Color2>
+        <XMoved>0</XMoved>
+        <YMoved>0</YMoved>
+        <ColorMoved></ColorMoved>
+        <XIgnored>0</XIgnored>
+        <YIgnored>0</YIgnored>
+        <ColorIgnored></ColorIgnored>
+        <Delay>100</Delay>
+        <IsSequential>false</IsSequential>
+        <IsDrag>false</IsDrag>
+        <DragSlow>false</DragSlow>
+        <Description>play match</Description>
+        <IsStartIcon>false</IsStartIcon>
+        <RunOnce>false</RunOnce>
+        <EndWholeScripts>false</EndWholeScripts>
+        <IsClosedPosition>false</IsClosedPosition>
+        <RunAfterScript>0</RunAfterScript>
+      </KScript>
+      <KScript No="27">
+        <No>27</No>
+        <MouseKey>Left</MouseKey>
+        <X>455</X>
+        <Y>414</Y>
+        <Color>fffed336</Color>
+        <X2>479</X2>
+        <Y2>415</Y2>
+        <Color2>ff674208</Color2>
+        <XMoved>0</XMoved>
+        <YMoved>0</YMoved>
+        <ColorMoved></ColorMoved>
+        <XIgnored>0</XIgnored>
+        <YIgnored>0</YIgnored>
+        <ColorIgnored></ColorIgnored>
+        <Delay>100</Delay>
+        <IsSequential>false</IsSequential>
+        <IsDrag>false</IsDrag>
+        <DragSlow>false</DragSlow>
+        <Description>skip</Description>
+        <IsStartIcon>false</IsStartIcon>
+        <RunOnce>false</RunOnce>
+        <EndWholeScripts>false</EndWholeScripts>
+        <IsClosedPosition>false</IsClosedPosition>
+        <RunAfterScript>0</RunAfterScript>
+      </KScript>
+      <KScript No="28">
+        <No>28</No>
+        <MouseKey>Left</MouseKey>
+        <X>249</X>
+        <Y>180</Y>
+        <Color>ff91c6e0</Color>
+        <X2>200</X2>
+        <Y2>196</Y2>
+        <Color2>ffffffff</Color2>
+        <XMoved>0</XMoved>
+        <YMoved>0</YMoved>
+        <ColorMoved></ColorMoved>
+        <XIgnored>0</XIgnored>
+        <YIgnored>0</YIgnored>
+        <ColorIgnored></ColorIgnored>
+        <Delay>100</Delay>
+        <IsSequential>false</IsSequential>
+        <IsDrag>false</IsDrag>
+        <DragSlow>false</DragSlow>
+        <Description>click event</Description>
+        <IsStartIcon>false</IsStartIcon>
+        <RunOnce>false</RunOnce>
+        <EndWholeScripts>false</EndWholeScripts>
+        <IsClosedPosition>false</IsClosedPosition>
+        <RunAfterScript>0</RunAfterScript>
+      </KScript>
+      <KScript No="29">
+        <No>29</No>
+        <MouseKey>Left</MouseKey>
+        <X>291</X>
+        <Y>184</Y>
+        <Color>ff88c7e9</Color>
+        <X2>357</X2>
+        <Y2>187</Y2>
+        <Color2>ff3366c4</Color2>
+        <XMoved>0</XMoved>
+        <YMoved>0</YMoved>
+        <ColorMoved></ColorMoved>
+        <XIgnored>0</XIgnored>
+        <YIgnored>0</YIgnored>
+        <ColorIgnored></ColorIgnored>
+        <Delay>100</Delay>
+        <IsSequential>false</IsSequential>
+        <IsDrag>false</IsDrag>
+        <DragSlow>false</DragSlow>
+        <Description>events</Description>
+        <IsStartIcon>false</IsStartIcon>
+        <RunOnce>false</RunOnce>
+        <EndWholeScripts>false</EndWholeScripts>
+        <IsClosedPosition>false</IsClosedPosition>
+        <RunAfterScript>0</RunAfterScript>
+      </KScript>
+      <KScript No="30">
+        <No>30</No>
+        <MouseKey>Left</MouseKey>
+        <X>460</X>
+        <Y>414</Y>
+        <Color>fffed53a</Color>
+        <X2>485</X2>
+        <Y2>418</Y2>
+        <Color2>ffba911f</Color2>
+        <XMoved>0</XMoved>
+        <YMoved>0</YMoved>
+        <ColorMoved></ColorMoved>
+        <XIgnored>0</XIgnored>
+        <YIgnored>0</YIgnored>
+        <ColorIgnored></ColorIgnored>
+        <Delay>100</Delay>
+        <IsSequential>false</IsSequential>
+        <IsDrag>false</IsDrag>
+        <DragSlow>false</DragSlow>
+        <Description>skip</Description>
+        <IsStartIcon>false</IsStartIcon>
+        <RunOnce>false</RunOnce>
+        <EndWholeScripts>false</EndWholeScripts>
+        <IsClosedPosition>false</IsClosedPosition>
+        <RunAfterScript>0</RunAfterScript>
+      </KScript>
+      <KScript No="31">
+        <No>31</No>
+        <MouseKey>Left</MouseKey>
+        <X>141</X>
+        <Y>142</Y>
+        <Color>ff44cd12</Color>
+        <X2>99</X2>
+        <Y2>298</Y2>
+        <Color2>fffdcb2c</Color2>
+        <XMoved>0</XMoved>
+        <YMoved>0</YMoved>
+        <ColorMoved></ColorMoved>
+        <XIgnored>0</XIgnored>
+        <YIgnored>0</YIgnored>
+        <ColorIgnored></ColorIgnored>
+        <Delay>100</Delay>
+        <IsSequential>false</IsSequential>
+        <IsDrag>false</IsDrag>
+        <DragSlow>false</DragSlow>
+        <Description>1st event</Description>
+        <IsStartIcon>false</IsStartIcon>
+        <RunOnce>false</RunOnce>
+        <EndWholeScripts>false</EndWholeScripts>
+        <IsClosedPosition>false</IsClosedPosition>
+        <RunAfterScript>0</RunAfterScript>
+      </KScript>
+      <KScript No="32">
+        <No>32</No>
+        <MouseKey>Left</MouseKey>
+        <X>210</X>
+        <Y>111</Y>
+        <Color>ffdb8400</Color>
+        <X2>141</X2>
+        <Y2>158</Y2>
+        <Color2>ffa2e2ff</Color2>
+        <XMoved>0</XMoved>
+        <YMoved>0</YMoved>
+        <ColorMoved></ColorMoved>
+        <XIgnored>0</XIgnored>
+        <YIgnored>0</YIgnored>
+        <ColorIgnored></ColorIgnored>
+        <Delay>100</Delay>
+        <IsSequential>false</IsSequential>
+        <IsDrag>false</IsDrag>
+        <DragSlow>false</DragSlow>
+        <Description>very hard weekly</Description>
+        <IsStartIcon>false</IsStartIcon>
+        <RunOnce>false</RunOnce>
+        <EndWholeScripts>false</EndWholeScripts>
+        <IsClosedPosition>false</IsClosedPosition>
+        <RunAfterScript>0</RunAfterScript>
+      </KScript>
+      <KScript No="33">
+        <No>33</No>
+        <MouseKey>Left</MouseKey>
+        <X>436</X>
+        <Y>286</Y>
+        <Color>ffe0871e</Color>
+        <X2>438</X2>
+        <Y2>272</Y2>
+        <Color2>ff333b40</Color2>
+        <XMoved>0</XMoved>
+        <YMoved>0</YMoved>
+        <ColorMoved></ColorMoved>
+        <XIgnored>0</XIgnored>
+        <YIgnored>0</YIgnored>
+        <ColorIgnored></ColorIgnored>
+        <Delay>100</Delay>
+        <IsSequential>false</IsSequential>
+        <IsDrag>false</IsDrag>
+        <DragSlow>false</DragSlow>
+        <Description>play match</Description>
+        <IsStartIcon>false</IsStartIcon>
+        <RunOnce>false</RunOnce>
+        <EndWholeScripts>false</EndWholeScripts>
+        <IsClosedPosition>false</IsClosedPosition>
+        <RunAfterScript>0</RunAfterScript>
+      </KScript>
+      <KScript No="34">
+        <No>34</No>
+        <MouseKey>Left</MouseKey>
+        <X>234</X>
+        <Y>189</Y>
+        <Color>ff88c7e9</Color>
+        <X2>306</X2>
+        <Y2>186</Y2>
+        <Color2>ff3366bb</Color2>
+        <XMoved>0</XMoved>
+        <YMoved>0</YMoved>
+        <ColorMoved></ColorMoved>
+        <XIgnored>0</XIgnored>
+        <YIgnored>0</YIgnored>
+        <ColorIgnored></ColorIgnored>
+        <Delay>100</Delay>
+        <IsSequential>false</IsSequential>
+        <IsDrag>false</IsDrag>
+        <DragSlow>false</DragSlow>
+        <Description>event road</Description>
+        <IsStartIcon>false</IsStartIcon>
+        <RunOnce>false</RunOnce>
+        <EndWholeScripts>false</EndWholeScripts>
+        <IsClosedPosition>false</IsClosedPosition>
+        <RunAfterScript>0</RunAfterScript>
+      </KScript>
+      <KScript No="35">
+        <No>35</No>
+        <MouseKey>Left</MouseKey>
+        <X>309</X>
+        <Y>393</Y>
+        <Color>ff082109</Color>
+        <X2>369</X2>
+        <Y2>59</Y2>
+        <Color2>ffd6b8fa</Color2>
+        <XMoved>0</XMoved>
+        <YMoved>0</YMoved>
+        <ColorMoved></ColorMoved>
+        <XIgnored>0</XIgnored>
+        <YIgnored>0</YIgnored>
+        <ColorIgnored></ColorIgnored>
+        <Delay>100</Delay>
+        <IsSequential>false</IsSequential>
+        <IsDrag>false</IsDrag>
+        <DragSlow>false</DragSlow>
+        <Description>scenerio failed</Description>
+        <IsStartIcon>false</IsStartIcon>
+        <RunOnce>false</RunOnce>
+        <EndWholeScripts>false</EndWholeScripts>
+        <IsClosedPosition>false</IsClosedPosition>
+        <RunAfterScript>0</RunAfterScript>
+      </KScript>
+      <KScript No="36">
+        <No>36</No>
+        <MouseKey>Left</MouseKey>
+        <X>342</X>
+        <Y>287</Y>
+        <Color>ff9aea4e</Color>
+        <X2>471</X2>
+        <Y2>418</Y2>
+        <Color2>ff766b2a</Color2>
+        <XMoved>0</XMoved>
+        <YMoved>0</YMoved>
+        <ColorMoved></ColorMoved>
+        <XIgnored>0</XIgnored>
+        <YIgnored>0</YIgnored>
+        <ColorIgnored></ColorIgnored>
+        <Delay>100</Delay>
+        <IsSequential>false</IsSequential>
+        <IsDrag>false</IsDrag>
+        <DragSlow>false</DragSlow>
+        <Description>download new data</Description>
+        <IsStartIcon>false</IsStartIcon>
+        <RunOnce>false</RunOnce>
+        <EndWholeScripts>false</EndWholeScripts>
+        <IsClosedPosition>false</IsClosedPosition>
+        <RunAfterScript>0</RunAfterScript>
+      </KScript>
+      <KScript No="37">
+        <No>37</No>
+        <MouseKey>Left</MouseKey>
+        <X>435</X>
+        <Y>111</Y>
+        <Color>ffdb8400</Color>
+        <X2>141</X2>
+        <Y2>161</Y2>
+        <Color2>ffffd34d</Color2>
+        <XMoved>0</XMoved>
+        <YMoved>0</YMoved>
+        <ColorMoved></ColorMoved>
+        <XIgnored>0</XIgnored>
+        <YIgnored>0</YIgnored>
+        <ColorIgnored></ColorIgnored>
+        <Delay>100</Delay>
+        <IsSequential>false</IsSequential>
+        <IsDrag>false</IsDrag>
+        <DragSlow>false</DragSlow>
+        <Description>extream</Description>
+        <IsStartIcon>false</IsStartIcon>
+        <RunOnce>false</RunOnce>
+        <EndWholeScripts>false</EndWholeScripts>
+        <IsClosedPosition>false</IsClosedPosition>
+        <RunAfterScript>0</RunAfterScript>
+      </KScript>
+      <KScript No="38">
+        <No>38</No>
+        <MouseKey>Left</MouseKey>
+        <X>252</X>
+        <Y>395</Y>
+        <Color>ff194910</Color>
+        <X2>253</X2>
+        <Y2>354</Y2>
+        <Color2>ffe2ead9</Color2>
+        <XMoved>0</XMoved>
+        <YMoved>0</YMoved>
+        <ColorMoved></ColorMoved>
+        <XIgnored>0</XIgnored>
+        <YIgnored>0</YIgnored>
+        <ColorIgnored></ColorIgnored>
+        <Delay>100</Delay>
+        <IsSequential>false</IsSequential>
+        <IsDrag>false</IsDrag>
+        <DragSlow>false</DragSlow>
+        <Description>you win</Description>
+        <IsStartIcon>false</IsStartIcon>
+        <RunOnce>false</RunOnce>
+        <EndWholeScripts>false</EndWholeScripts>
+        <IsClosedPosition>false</IsClosedPosition>
+        <RunAfterScript>0</RunAfterScript>
+      </KScript>
+      <KScript No="39">
+        <No>39</No>
+        <MouseKey>Left</MouseKey>
+        <X>245</X>
+        <Y>385</Y>
+        <Color>ff0e2609</Color>
+        <X2>247</X2>
+        <Y2>353</Y2>
+        <Color2>ff73776c</Color2>
+        <XMoved>0</XMoved>
+        <YMoved>0</YMoved>
+        <ColorMoved></ColorMoved>
+        <XIgnored>0</XIgnored>
+        <YIgnored>0</YIgnored>
+        <ColorIgnored></ColorIgnored>
+        <Delay>100</Delay>
+        <IsSequential>false</IsSequential>
+        <IsDrag>false</IsDrag>
+        <DragSlow>false</DragSlow>
+        <Description>special bonus</Description>
+        <IsStartIcon>false</IsStartIcon>
+        <RunOnce>false</RunOnce>
+        <EndWholeScripts>false</EndWholeScripts>
+        <IsClosedPosition>false</IsClosedPosition>
+        <RunAfterScript>0</RunAfterScript>
+      </KScript>
+      <KScript No="40">
+        <No>40</No>
+        <MouseKey>Left</MouseKey>
+        <X>409</X>
+        <Y>311</Y>
+        <Color>ff55b5ac</Color>
+        <X2>227</X2>
+        <Y2>409</Y2>
+        <Color2>ff636026</Color2>
+        <XMoved>0</XMoved>
+        <YMoved>0</YMoved>
+        <ColorMoved></ColorMoved>
+        <XIgnored>0</XIgnored>
+        <YIgnored>0</YIgnored>
+        <ColorIgnored></ColorIgnored>
+        <Delay>100</Delay>
+        <IsSequential>false</IsSequential>
+        <IsDrag>false</IsDrag>
+        <DragSlow>false</DragSlow>
+        <Description>not responding</Description>
+        <IsStartIcon>false</IsStartIcon>
+        <RunOnce>false</RunOnce>
+        <EndWholeScripts>false</EndWholeScripts>
+        <IsClosedPosition>false</IsClosedPosition>
+        <RunAfterScript>0</RunAfterScript>
+      </KScript>
+      <KScript No="41">
+        <No>41</No>
+        <MouseKey>Left</MouseKey>
+        <X>407</X>
+        <Y>309</Y>
+        <Color>ff009688</Color>
+        <X2>113</X2>
+        <Y2>307</Y2>
+        <Color2>ff26a498</Color2>
+        <XMoved>0</XMoved>
+        <YMoved>0</YMoved>
+        <ColorMoved></ColorMoved>
+        <XIgnored>0</XIgnored>
+        <YIgnored>0</YIgnored>
+        <ColorIgnored></ColorIgnored>
+        <Delay>100</Delay>
+        <IsSequential>false</IsSequential>
+        <IsDrag>false</IsDrag>
+        <DragSlow>false</DragSlow>
+        <Description>not responding</Description>
+        <IsStartIcon>false</IsStartIcon>
+        <RunOnce>false</RunOnce>
+        <EndWholeScripts>false</EndWholeScripts>
+        <IsClosedPosition>false</IsClosedPosition>
+        <RunAfterScript>0</RunAfterScript>
+      </KScript>
+      <KScript No="42">
+        <No>42</No>
+        <MouseKey>Left</MouseKey>
+        <X>395</X>
+        <Y>112</Y>
+        <Color>ffdb8400</Color>
+        <X2>142</X2>
+        <Y2>163</Y2>
+        <Color2>ffffca44</Color2>
+        <XMoved>0</XMoved>
+        <YMoved>0</YMoved>
+        <ColorMoved></ColorMoved>
+        <XIgnored>0</XIgnored>
+        <YIgnored>0</YIgnored>
+        <ColorIgnored></ColorIgnored>
+        <Delay>100</Delay>
+        <IsSequential>false</IsSequential>
+        <IsDrag>false</IsDrag>
+        <DragSlow>false</DragSlow>
+        <Description>extream</Description>
+        <IsStartIcon>false</IsStartIcon>
+        <RunOnce>false</RunOnce>
+        <EndWholeScripts>false</EndWholeScripts>
+        <IsClosedPosition>false</IsClosedPosition>
+        <RunAfterScript>0</RunAfterScript>
+      </KScript>
+      <KScript No="43">
+        <No>43</No>
+        <MouseKey>Left</MouseKey>
+        <X>236</X>
+        <Y>288</Y>
+        <Color>ffe6e222</Color>
+        <X2>337</X2>
+        <Y2>316</Y2>
+        <Color2>ff34424b</Color2>
+        <XMoved>0</XMoved>
+        <YMoved>0</YMoved>
+        <ColorMoved></ColorMoved>
+        <XIgnored>0</XIgnored>
+        <YIgnored>0</YIgnored>
+        <ColorIgnored></ColorIgnored>
+        <Delay>100</Delay>
+        <IsSequential>false</IsSequential>
+        <IsDrag>false</IsDrag>
+        <DragSlow>false</DragSlow>
+        <Description>reward earn</Description>
         <IsStartIcon>false</IsStartIcon>
         <RunOnce>false</RunOnce>
         <EndWholeScripts>false</EndWholeScripts>
@@ -2839,12 +3099,12 @@
       <KScript No="1">
         <No>1</No>
         <MouseKey>Left</MouseKey>
-        <X>415</X>
-        <Y>205</Y>
-        <Color>fffee2bc</Color>
-        <X2>428</X2>
-        <Y2>215</Y2>
-        <Color2>ff1934d3</Color2>
+        <X>420</X>
+        <Y>159</Y>
+        <Color>ff746f5a</Color>
+        <X2>418</X2>
+        <Y2>151</Y2>
+        <Color2>ffffd697</Color2>
         <XMoved>0</XMoved>
         <YMoved>0</YMoved>
         <ColorMoved></ColorMoved>
@@ -2865,12 +3125,12 @@
       <KScript No="2">
         <No>2</No>
         <MouseKey>Left</MouseKey>
-        <X>339</X>
-        <Y>184</Y>
-        <Color>ffffeecb</Color>
-        <X2>387</X2>
-        <Y2>310</Y2>
-        <Color2>ff0019bb</Color2>
+        <X>207</X>
+        <Y>209</Y>
+        <Color>ffffeecc</Color>
+        <X2>353</X2>
+        <Y2>214</Y2>
+        <Color2>fffff5e7</Color2>
         <XMoved>0</XMoved>
         <YMoved>0</YMoved>
         <ColorMoved></ColorMoved>
@@ -2891,12 +3151,12 @@
       <KScript No="3">
         <No>3</No>
         <MouseKey>Left</MouseKey>
-        <X>373</X>
-        <Y>210</Y>
-        <Color>ffa8ee65</Color>
-        <X2>352</X2>
-        <Y2>210</Y2>
-        <Color2>ffffffff</Color2>
+        <X>418</X>
+        <Y>170</Y>
+        <Color>ffffffff</Color>
+        <X2>321</X2>
+        <Y2>167</Y2>
+        <Color2>ffe6f6f1</Color2>
         <XMoved>0</XMoved>
         <YMoved>0</YMoved>
         <ColorMoved></ColorMoved>
@@ -2918,11 +3178,11 @@
         <No>4</No>
         <MouseKey>Left</MouseKey>
         <X>241</X>
-        <Y>202</Y>
-        <Color>ff88ccec</Color>
-        <X2>295</X2>
-        <Y2>214</Y2>
-        <Color2>ff3366c0</Color2>
+        <Y>184</Y>
+        <Color>ff88caeb</Color>
+        <X2>246</X2>
+        <Y2>207</Y2>
+        <Color2>ffffffff</Color2>
         <XMoved>0</XMoved>
         <YMoved>0</YMoved>
         <ColorMoved></ColorMoved>
@@ -2943,12 +3203,12 @@
       <KScript No="5">
         <No>5</No>
         <MouseKey>Left</MouseKey>
-        <X>348</X>
-        <Y>270</Y>
-        <Color>fff3c157</Color>
-        <X2>347</X2>
-        <Y2>286</Y2>
-        <Color2>ff571010</Color2>
+        <X>366</X>
+        <Y>271</Y>
+        <Color>fff5bd52</Color>
+        <X2>437</X2>
+        <Y2>277</Y2>
+        <Color2>ff333a40</Color2>
         <XMoved>0</XMoved>
         <YMoved>0</YMoved>
         <ColorMoved></ColorMoved>
@@ -2969,12 +3229,12 @@
       <KScript No="6">
         <No>6</No>
         <MouseKey>Left</MouseKey>
-        <X>195</X>
-        <Y>227</Y>
-        <Color>ffffe755</Color>
-        <X2>337</X2>
-        <Y2>234</Y2>
-        <Color2>ffffe355</Color2>
+        <X>303</X>
+        <Y>279</Y>
+        <Color>ffffbd24</Color>
+        <X2>217</X2>
+        <Y2>413</Y2>
+        <Color2>ffea6546</Color2>
         <XMoved>0</XMoved>
         <YMoved>0</YMoved>
         <ColorMoved></ColorMoved>
@@ -2995,12 +3255,12 @@
       <KScript No="7">
         <No>7</No>
         <MouseKey>Left</MouseKey>
-        <X>374</X>
-        <Y>341</Y>
-        <Color>ffefba58</Color>
-        <X2>334</X2>
-        <Y2>364</Y2>
-        <Color2>fff7e656</Color2>
+        <X>375</X>
+        <Y>359</Y>
+        <Color>ffeaa647</Color>
+        <X2>422</X2>
+        <Y2>381</Y2>
+        <Color2>ff333a3e</Color2>
         <XMoved>0</XMoved>
         <YMoved>0</YMoved>
         <ColorMoved></ColorMoved>
@@ -3099,12 +3359,12 @@
       <KScript No="11">
         <No>11</No>
         <MouseKey>Left</MouseKey>
-        <X>306</X>
-        <Y>256</Y>
-        <Color>ff96e44d</Color>
-        <X2>221</X2>
-        <Y2>260</Y2>
-        <Color2>ffc5573f</Color2>
+        <X>326</X>
+        <Y>272</Y>
+        <Color>ffa7f55b</Color>
+        <X2>473</X2>
+        <Y2>418</Y2>
+        <Color2>ff766b2a</Color2>
         <XMoved>0</XMoved>
         <YMoved>0</YMoved>
         <ColorMoved></ColorMoved>
@@ -3177,32 +3437,6 @@
       <KScript No="14">
         <No>14</No>
         <MouseKey>Left</MouseKey>
-        <X>485</X>
-        <Y>48</Y>
-        <Color>ff979898</Color>
-        <X2>479</X2>
-        <Y2>47</Y2>
-        <Color2>fffdfdfd</Color2>
-        <XMoved>0</XMoved>
-        <YMoved>0</YMoved>
-        <ColorMoved></ColorMoved>
-        <XIgnored>0</XIgnored>
-        <YIgnored>0</YIgnored>
-        <ColorIgnored></ColorIgnored>
-        <Delay>35000</Delay>
-        <IsSequential>false</IsSequential>
-        <IsDrag>false</IsDrag>
-        <DragSlow>false</DragSlow>
-        <Description>Close ad after 35s</Description>
-        <IsStartIcon>false</IsStartIcon>
-        <RunOnce>false</RunOnce>
-        <EndWholeScripts>false</EndWholeScripts>
-        <IsClosedPosition>false</IsClosedPosition>
-        <RunAfterScript>13</RunAfterScript>
-      </KScript>
-      <KScript No="15">
-        <No>15</No>
-        <MouseKey>Left</MouseKey>
         <X>224</X>
         <Y>275</Y>
         <Color>ff9cec50</Color>
@@ -3226,8 +3460,8 @@
         <IsClosedPosition>false</IsClosedPosition>
         <RunAfterScript>0</RunAfterScript>
       </KScript>
-      <KScript No="16">
-        <No>16</No>
+      <KScript No="15">
+        <No>15</No>
         <MouseKey>Left</MouseKey>
         <X>227</X>
         <Y>276</Y>
@@ -3252,8 +3486,8 @@
         <IsClosedPosition>false</IsClosedPosition>
         <RunAfterScript>0</RunAfterScript>
       </KScript>
-      <KScript No="17">
-        <No>17</No>
+      <KScript No="16">
+        <No>16</No>
         <MouseKey>Left</MouseKey>
         <X>266</X>
         <Y>261</Y>
@@ -3278,8 +3512,8 @@
         <IsClosedPosition>false</IsClosedPosition>
         <RunAfterScript>0</RunAfterScript>
       </KScript>
-      <KScript No="18">
-        <No>18</No>
+      <KScript No="17">
+        <No>17</No>
         <MouseKey>Left</MouseKey>
         <X>197</X>
         <Y>372</Y>
@@ -3304,8 +3538,8 @@
         <IsClosedPosition>false</IsClosedPosition>
         <RunAfterScript>0</RunAfterScript>
       </KScript>
-      <KScript No="19">
-        <No>19</No>
+      <KScript No="18">
+        <No>18</No>
         <MouseKey>Left</MouseKey>
         <X>292</X>
         <Y>258</Y>
@@ -3330,8 +3564,8 @@
         <IsClosedPosition>false</IsClosedPosition>
         <RunAfterScript>0</RunAfterScript>
       </KScript>
-      <KScript No="20">
-        <No>20</No>
+      <KScript No="19">
+        <No>19</No>
         <MouseKey>Left</MouseKey>
         <X>307</X>
         <Y>71</Y>
@@ -3356,8 +3590,8 @@
         <IsClosedPosition>false</IsClosedPosition>
         <RunAfterScript>0</RunAfterScript>
       </KScript>
-      <KScript No="21">
-        <No>21</No>
+      <KScript No="20">
+        <No>20</No>
         <MouseKey>Left</MouseKey>
         <X>373</X>
         <Y>287</Y>
@@ -3382,8 +3616,8 @@
         <IsClosedPosition>false</IsClosedPosition>
         <RunAfterScript>0</RunAfterScript>
       </KScript>
-      <KScript No="22">
-        <No>22</No>
+      <KScript No="21">
+        <No>21</No>
         <MouseKey>Left</MouseKey>
         <X>271</X>
         <Y>318</Y>
@@ -3408,8 +3642,8 @@
         <IsClosedPosition>false</IsClosedPosition>
         <RunAfterScript>0</RunAfterScript>
       </KScript>
-      <KScript No="23">
-        <No>23</No>
+      <KScript No="22">
+        <No>22</No>
         <MouseKey>Left</MouseKey>
         <X>238</X>
         <Y>196</Y>
@@ -3434,8 +3668,8 @@
         <IsClosedPosition>false</IsClosedPosition>
         <RunAfterScript>0</RunAfterScript>
       </KScript>
-      <KScript No="24">
-        <No>24</No>
+      <KScript No="23">
+        <No>23</No>
         <MouseKey>Left</MouseKey>
         <X>398</X>
         <Y>204</Y>
@@ -3460,8 +3694,8 @@
         <IsClosedPosition>false</IsClosedPosition>
         <RunAfterScript>0</RunAfterScript>
       </KScript>
-      <KScript No="25">
-        <No>25</No>
+      <KScript No="24">
+        <No>24</No>
         <MouseKey>Left</MouseKey>
         <X>160</X>
         <Y>339</Y>
@@ -3486,8 +3720,8 @@
         <IsClosedPosition>false</IsClosedPosition>
         <RunAfterScript>0</RunAfterScript>
       </KScript>
-      <KScript No="26">
-        <No>26</No>
+      <KScript No="25">
+        <No>25</No>
         <MouseKey>Left</MouseKey>
         <X>139</X>
         <Y>143</Y>
@@ -3512,8 +3746,8 @@
         <IsClosedPosition>false</IsClosedPosition>
         <RunAfterScript>0</RunAfterScript>
       </KScript>
-      <KScript No="27">
-        <No>27</No>
+      <KScript No="26">
+        <No>26</No>
         <MouseKey>Left</MouseKey>
         <X>164</X>
         <Y>376</Y>
@@ -3538,8 +3772,8 @@
         <IsClosedPosition>false</IsClosedPosition>
         <RunAfterScript>0</RunAfterScript>
       </KScript>
-      <KScript No="28">
-        <No>28</No>
+      <KScript No="27">
+        <No>27</No>
         <MouseKey>Left</MouseKey>
         <X>191</X>
         <Y>376</Y>
@@ -3564,8 +3798,8 @@
         <IsClosedPosition>false</IsClosedPosition>
         <RunAfterScript>0</RunAfterScript>
       </KScript>
-      <KScript No="29">
-        <No>29</No>
+      <KScript No="28">
+        <No>28</No>
         <MouseKey>Left</MouseKey>
         <X>354</X>
         <Y>97</Y>
@@ -3590,8 +3824,8 @@
         <IsClosedPosition>false</IsClosedPosition>
         <RunAfterScript>0</RunAfterScript>
       </KScript>
-      <KScript No="30">
-        <No>30</No>
+      <KScript No="29">
+        <No>29</No>
         <MouseKey>Left</MouseKey>
         <X>173</X>
         <Y>374</Y>
@@ -3616,8 +3850,8 @@
         <IsClosedPosition>false</IsClosedPosition>
         <RunAfterScript>0</RunAfterScript>
       </KScript>
-      <KScript No="31">
-        <No>31</No>
+      <KScript No="30">
+        <No>30</No>
         <MouseKey>Left</MouseKey>
         <X>218</X>
         <Y>407</Y>
@@ -3642,6 +3876,162 @@
         <IsClosedPosition>false</IsClosedPosition>
         <RunAfterScript>0</RunAfterScript>
       </KScript>
+      <KScript No="31">
+        <No>31</No>
+        <MouseKey>Left</MouseKey>
+        <X>224</X>
+        <Y>340</Y>
+        <Color>ffeb6748</Color>
+        <X2>44</X2>
+        <Y2>340</Y2>
+        <Color2>ff898989</Color2>
+        <XMoved>0</XMoved>
+        <YMoved>0</YMoved>
+        <ColorMoved></ColorMoved>
+        <XIgnored>0</XIgnored>
+        <YIgnored>0</YIgnored>
+        <ColorIgnored></ColorIgnored>
+        <Delay>100</Delay>
+        <IsSequential>false</IsSequential>
+        <IsDrag>false</IsDrag>
+        <DragSlow>false</DragSlow>
+        <Description>close popup</Description>
+        <IsStartIcon>false</IsStartIcon>
+        <RunOnce>false</RunOnce>
+        <EndWholeScripts>false</EndWholeScripts>
+        <IsClosedPosition>false</IsClosedPosition>
+        <RunAfterScript>0</RunAfterScript>
+      </KScript>
+      <KScript No="32">
+        <No>32</No>
+        <MouseKey>Left</MouseKey>
+        <X>138</X>
+        <Y>161</Y>
+        <Color>ffffdc56</Color>
+        <X2>98</X2>
+        <Y2>296</Y2>
+        <Color2>fffdcb2c</Color2>
+        <XMoved>0</XMoved>
+        <YMoved>0</YMoved>
+        <ColorMoved></ColorMoved>
+        <XIgnored>0</XIgnored>
+        <YIgnored>0</YIgnored>
+        <ColorIgnored></ColorIgnored>
+        <Delay>100</Delay>
+        <IsSequential>false</IsSequential>
+        <IsDrag>false</IsDrag>
+        <DragSlow>false</DragSlow>
+        <Description>special event</Description>
+        <IsStartIcon>false</IsStartIcon>
+        <RunOnce>false</RunOnce>
+        <EndWholeScripts>false</EndWholeScripts>
+        <IsClosedPosition>false</IsClosedPosition>
+        <RunAfterScript>0</RunAfterScript>
+      </KScript>
+      <KScript No="33">
+        <No>33</No>
+        <MouseKey>Left</MouseKey>
+        <X>437</X>
+        <Y>109</Y>
+        <Color>ffdb8400</Color>
+        <X2>138</X2>
+        <Y2>162</Y2>
+        <Color2>ffffdc63</Color2>
+        <XMoved>0</XMoved>
+        <YMoved>0</YMoved>
+        <ColorMoved></ColorMoved>
+        <XIgnored>0</XIgnored>
+        <YIgnored>0</YIgnored>
+        <ColorIgnored></ColorIgnored>
+        <Delay>100</Delay>
+        <IsSequential>false</IsSequential>
+        <IsDrag>false</IsDrag>
+        <DragSlow>false</DragSlow>
+        <Description>extream</Description>
+        <IsStartIcon>false</IsStartIcon>
+        <RunOnce>false</RunOnce>
+        <EndWholeScripts>false</EndWholeScripts>
+        <IsClosedPosition>false</IsClosedPosition>
+        <RunAfterScript>0</RunAfterScript>
+      </KScript>
+      <KScript No="34">
+        <No>34</No>
+        <MouseKey>Left</MouseKey>
+        <X>276</X>
+        <Y>282</Y>
+        <Color>ff81ca40</Color>
+        <X2>472</X2>
+        <Y2>393</Y2>
+        <Color2>ff7f7f7f</Color2>
+        <XMoved>0</XMoved>
+        <YMoved>0</YMoved>
+        <ColorMoved></ColorMoved>
+        <XIgnored>0</XIgnored>
+        <YIgnored>0</YIgnored>
+        <ColorIgnored></ColorIgnored>
+        <Delay>100</Delay>
+        <IsSequential>false</IsSequential>
+        <IsDrag>false</IsDrag>
+        <DragSlow>false</DragSlow>
+        <Description>retry</Description>
+        <IsStartIcon>false</IsStartIcon>
+        <RunOnce>false</RunOnce>
+        <EndWholeScripts>false</EndWholeScripts>
+        <IsClosedPosition>false</IsClosedPosition>
+        <RunAfterScript>0</RunAfterScript>
+      </KScript>
+      <KScript No="35">
+        <No>35</No>
+        <MouseKey>Left</MouseKey>
+        <X>464</X>
+        <Y>416</Y>
+        <Color>fffed336</Color>
+        <X2>483</X2>
+        <Y2>416</Y2>
+        <Color2>ff674208</Color2>
+        <XMoved>0</XMoved>
+        <YMoved>0</YMoved>
+        <ColorMoved></ColorMoved>
+        <XIgnored>0</XIgnored>
+        <YIgnored>0</YIgnored>
+        <ColorIgnored></ColorIgnored>
+        <Delay>100</Delay>
+        <IsSequential>false</IsSequential>
+        <IsDrag>false</IsDrag>
+        <DragSlow>false</DragSlow>
+        <Description>skip</Description>
+        <IsStartIcon>false</IsStartIcon>
+        <RunOnce>false</RunOnce>
+        <EndWholeScripts>false</EndWholeScripts>
+        <IsClosedPosition>false</IsClosedPosition>
+        <RunAfterScript>0</RunAfterScript>
+      </KScript>
+      <KScript No="36">
+        <No>36</No>
+        <MouseKey>Left</MouseKey>
+        <X>484</X>
+        <Y>51</Y>
+        <Color>ff4e4f51</Color>
+        <X2>480</X2>
+        <Y2>51</Y2>
+        <Color2>fffffdff</Color2>
+        <XMoved>0</XMoved>
+        <YMoved>0</YMoved>
+        <ColorMoved></ColorMoved>
+        <XIgnored>0</XIgnored>
+        <YIgnored>0</YIgnored>
+        <ColorIgnored></ColorIgnored>
+        <Delay>100</Delay>
+        <IsSequential>false</IsSequential>
+        <IsDrag>false</IsDrag>
+        <DragSlow>false</DragSlow>
+        <Description>close ad</Description>
+        <IsStartIcon>false</IsStartIcon>
+        <RunOnce>false</RunOnce>
+        <EndWholeScripts>false</EndWholeScripts>
+        <IsClosedPosition>false</IsClosedPosition>
+        <RunAfterScript>0</RunAfterScript>
+      </KScript>
     </KScripts>
   </Action>
   <Action No="5">
@@ -3651,12 +4041,12 @@
       <KScript No="1">
         <No>1</No>
         <MouseKey>Left</MouseKey>
-        <X>282</X>
-        <Y>329</Y>
-        <Color>ff51bcee</Color>
-        <X2>326</X2>
-        <Y2>313</Y2>
-        <Color2>fffdbb13</Color2>
+        <X>371</X>
+        <Y>338</Y>
+        <Color>ff3e495b</Color>
+        <X2>354</X2>
+        <Y2>330</Y2>
+        <Color2>ff032555</Color2>
         <XMoved>0</XMoved>
         <YMoved>0</YMoved>
         <ColorMoved></ColorMoved>
@@ -3807,12 +4197,12 @@
       <KScript No="7">
         <No>7</No>
         <MouseKey>Left</MouseKey>
-        <X>416</X>
-        <Y>209</Y>
-        <Color>ffffefd0</Color>
-        <X2>425</X2>
-        <Y2>214</Y2>
-        <Color2>ff1934d2</Color2>
+        <X>341</X>
+        <Y>157</Y>
+        <Color>ffb7b4b4</Color>
+        <X2>327</X2>
+        <Y2>159</Y2>
+        <Color2>ff4960d7</Color2>
         <XMoved>0</XMoved>
         <YMoved>0</YMoved>
         <ColorMoved></ColorMoved>
@@ -3833,12 +4223,12 @@
       <KScript No="8">
         <No>8</No>
         <MouseKey>Left</MouseKey>
-        <X>350</X>
-        <Y>187</Y>
-        <Color>ffffddaa</Color>
-        <X2>385</X2>
-        <Y2>307</Y2>
-        <Color2>ff001cc6</Color2>
+        <X>130</X>
+        <Y>243</Y>
+        <Color>ff0011c3</Color>
+        <X2>50</X2>
+        <Y2>292</Y2>
+        <Color2>ffffe4b1</Color2>
         <XMoved>0</XMoved>
         <YMoved>0</YMoved>
         <ColorMoved></ColorMoved>
@@ -4376,6 +4766,344 @@
         <IsClosedPosition>false</IsClosedPosition>
         <RunAfterScript>0</RunAfterScript>
       </KScript>
+      <KScript No="29">
+        <No>29</No>
+        <MouseKey>Left</MouseKey>
+        <X>253</X>
+        <Y>155</Y>
+        <Color>ffffdd99</Color>
+        <X2>302</X2>
+        <Y2>153</Y2>
+        <Color2>ffaaffff</Color2>
+        <XMoved>0</XMoved>
+        <YMoved>0</YMoved>
+        <ColorMoved></ColorMoved>
+        <XIgnored>0</XIgnored>
+        <YIgnored>0</YIgnored>
+        <ColorIgnored></ColorIgnored>
+        <Delay>100</Delay>
+        <IsSequential>false</IsSequential>
+        <IsDrag>false</IsDrag>
+        <DragSlow>false</DragSlow>
+        <Description>regular 2</Description>
+        <IsStartIcon>false</IsStartIcon>
+        <RunOnce>false</RunOnce>
+        <EndWholeScripts>false</EndWholeScripts>
+        <IsClosedPosition>false</IsClosedPosition>
+        <RunAfterScript>0</RunAfterScript>
+      </KScript>
+      <KScript No="30">
+        <No>30</No>
+        <MouseKey>Left</MouseKey>
+        <X>363</X>
+        <Y>322</Y>
+        <Color>ff212198</Color>
+        <X2>373</X2>
+        <Y2>337</Y2>
+        <Color2>ffffb81f</Color2>
+        <XMoved>0</XMoved>
+        <YMoved>0</YMoved>
+        <ColorMoved></ColorMoved>
+        <XIgnored>0</XIgnored>
+        <YIgnored>0</YIgnored>
+        <ColorIgnored></ColorIgnored>
+        <Delay>100</Delay>
+        <IsSequential>false</IsSequential>
+        <IsDrag>false</IsDrag>
+        <DragSlow>false</DragSlow>
+        <Description>online mode</Description>
+        <IsStartIcon>false</IsStartIcon>
+        <RunOnce>false</RunOnce>
+        <EndWholeScripts>false</EndWholeScripts>
+        <IsClosedPosition>false</IsClosedPosition>
+        <RunAfterScript>0</RunAfterScript>
+      </KScript>
+      <KScript No="31">
+        <No>31</No>
+        <MouseKey>Left</MouseKey>
+        <X>115</X>
+        <Y>144</Y>
+        <Color>fff1dd88</Color>
+        <X2>215</X2>
+        <Y2>409</Y2>
+        <Color2>ffed6a4b</Color2>
+        <XMoved>0</XMoved>
+        <YMoved>0</YMoved>
+        <ColorMoved></ColorMoved>
+        <XIgnored>0</XIgnored>
+        <YIgnored>0</YIgnored>
+        <ColorIgnored></ColorIgnored>
+        <Delay>100</Delay>
+        <IsSequential>false</IsSequential>
+        <IsDrag>false</IsDrag>
+        <DragSlow>false</DragSlow>
+        <Description>final cup</Description>
+        <IsStartIcon>false</IsStartIcon>
+        <RunOnce>false</RunOnce>
+        <EndWholeScripts>false</EndWholeScripts>
+        <IsClosedPosition>false</IsClosedPosition>
+        <RunAfterScript>0</RunAfterScript>
+      </KScript>
+      <KScript No="32">
+        <No>32</No>
+        <MouseKey>Left</MouseKey>
+        <X>425</X>
+        <Y>388</Y>
+        <Color>ffebb547</Color>
+        <X2>268</X2>
+        <Y2>395</Y2>
+        <Color2>fff8e353</Color2>
+        <XMoved>0</XMoved>
+        <YMoved>0</YMoved>
+        <ColorMoved></ColorMoved>
+        <XIgnored>0</XIgnored>
+        <YIgnored>0</YIgnored>
+        <ColorIgnored></ColorIgnored>
+        <Delay>100</Delay>
+        <IsSequential>false</IsSequential>
+        <IsDrag>false</IsDrag>
+        <DragSlow>false</DragSlow>
+        <Description>play a match</Description>
+        <IsStartIcon>false</IsStartIcon>
+        <RunOnce>false</RunOnce>
+        <EndWholeScripts>false</EndWholeScripts>
+        <IsClosedPosition>false</IsClosedPosition>
+        <RunAfterScript>0</RunAfterScript>
+      </KScript>
+      <KScript No="33">
+        <No>33</No>
+        <MouseKey>Left</MouseKey>
+        <X>191</X>
+        <Y>267</Y>
+        <Color>ff2450b7</Color>
+        <X2>346</X2>
+        <Y2>267</Y2>
+        <Color2>ffab3a3a</Color2>
+        <XMoved>0</XMoved>
+        <YMoved>0</YMoved>
+        <ColorMoved></ColorMoved>
+        <XIgnored>0</XIgnored>
+        <YIgnored>0</YIgnored>
+        <ColorIgnored></ColorIgnored>
+        <Delay>100</Delay>
+        <IsSequential>false</IsSequential>
+        <IsDrag>false</IsDrag>
+        <DragSlow>false</DragSlow>
+        <Description>lose</Description>
+        <IsStartIcon>false</IsStartIcon>
+        <RunOnce>false</RunOnce>
+        <EndWholeScripts>false</EndWholeScripts>
+        <IsClosedPosition>false</IsClosedPosition>
+        <RunAfterScript>0</RunAfterScript>
+      </KScript>
+      <KScript No="34">
+        <No>34</No>
+        <MouseKey>Left</MouseKey>
+        <X>239</X>
+        <Y>219</Y>
+        <Color>ff1199ff</Color>
+        <X2>300</X2>
+        <Y2>426</Y2>
+        <Color2>ff000000</Color2>
+        <XMoved>0</XMoved>
+        <YMoved>0</YMoved>
+        <ColorMoved></ColorMoved>
+        <XIgnored>0</XIgnored>
+        <YIgnored>0</YIgnored>
+        <ColorIgnored></ColorIgnored>
+        <Delay>100</Delay>
+        <IsSequential>false</IsSequential>
+        <IsDrag>false</IsDrag>
+        <DragSlow>false</DragSlow>
+        <Description>end match</Description>
+        <IsStartIcon>false</IsStartIcon>
+        <RunOnce>false</RunOnce>
+        <EndWholeScripts>false</EndWholeScripts>
+        <IsClosedPosition>false</IsClosedPosition>
+        <RunAfterScript>0</RunAfterScript>
+      </KScript>
+      <KScript No="35">
+        <No>35</No>
+        <MouseKey>Left</MouseKey>
+        <X>234</X>
+        <Y>293</Y>
+        <Color>fff3f3f4</Color>
+        <X2>322</X2>
+        <Y2>423</Y2>
+        <Color2>ffd0a72c</Color2>
+        <XMoved>0</XMoved>
+        <YMoved>0</YMoved>
+        <ColorMoved></ColorMoved>
+        <XIgnored>0</XIgnored>
+        <YIgnored>0</YIgnored>
+        <ColorIgnored></ColorIgnored>
+        <Delay>100</Delay>
+        <IsSequential>false</IsSequential>
+        <IsDrag>false</IsDrag>
+        <DragSlow>false</DragSlow>
+        <Description>archieve reward</Description>
+        <IsStartIcon>false</IsStartIcon>
+        <RunOnce>false</RunOnce>
+        <EndWholeScripts>false</EndWholeScripts>
+        <IsClosedPosition>false</IsClosedPosition>
+        <RunAfterScript>0</RunAfterScript>
+      </KScript>
+      <KScript No="36">
+        <No>36</No>
+        <MouseKey>Left</MouseKey>
+        <X>333</X>
+        <Y>418</Y>
+        <Color>fff4c434</Color>
+        <X2>382</X2>
+        <Y2>410</Y2>
+        <Color2>ff104110</Color2>
+        <XMoved>0</XMoved>
+        <YMoved>0</YMoved>
+        <ColorMoved></ColorMoved>
+        <XIgnored>0</XIgnored>
+        <YIgnored>0</YIgnored>
+        <ColorIgnored></ColorIgnored>
+        <Delay>100</Delay>
+        <IsSequential>false</IsSequential>
+        <IsDrag>false</IsDrag>
+        <DragSlow>false</DragSlow>
+        <Description>continue match</Description>
+        <IsStartIcon>false</IsStartIcon>
+        <RunOnce>false</RunOnce>
+        <EndWholeScripts>false</EndWholeScripts>
+        <IsClosedPosition>false</IsClosedPosition>
+        <RunAfterScript>0</RunAfterScript>
+      </KScript>
+      <KScript No="37">
+        <No>37</No>
+        <MouseKey>Left</MouseKey>
+        <X>284</X>
+        <Y>278</Y>
+        <Color>ff96e74a</Color>
+        <X2>265</X2>
+        <Y2>414</Y2>
+        <Color2>ff787128</Color2>
+        <XMoved>0</XMoved>
+        <YMoved>0</YMoved>
+        <ColorMoved></ColorMoved>
+        <XIgnored>0</XIgnored>
+        <YIgnored>0</YIgnored>
+        <ColorIgnored></ColorIgnored>
+        <Delay>100</Delay>
+        <IsSequential>false</IsSequential>
+        <IsDrag>false</IsDrag>
+        <DragSlow>false</DragSlow>
+        <Description>ok</Description>
+        <IsStartIcon>false</IsStartIcon>
+        <RunOnce>false</RunOnce>
+        <EndWholeScripts>false</EndWholeScripts>
+        <IsClosedPosition>false</IsClosedPosition>
+        <RunAfterScript>0</RunAfterScript>
+      </KScript>
+      <KScript No="38">
+        <No>38</No>
+        <MouseKey>Left</MouseKey>
+        <X>354</X>
+        <Y>348</Y>
+        <Color>ff4decb5</Color>
+        <X2>327</X2>
+        <Y2>344</Y2>
+        <Color2>ff33dde5</Color2>
+        <XMoved>0</XMoved>
+        <YMoved>0</YMoved>
+        <ColorMoved></ColorMoved>
+        <XIgnored>0</XIgnored>
+        <YIgnored>0</YIgnored>
+        <ColorIgnored></ColorIgnored>
+        <Delay>100</Delay>
+        <IsSequential>false</IsSequential>
+        <IsDrag>false</IsDrag>
+        <DragSlow>false</DragSlow>
+        <Description>click online</Description>
+        <IsStartIcon>false</IsStartIcon>
+        <RunOnce>false</RunOnce>
+        <EndWholeScripts>false</EndWholeScripts>
+        <IsClosedPosition>false</IsClosedPosition>
+        <RunAfterScript>0</RunAfterScript>
+      </KScript>
+      <KScript No="39">
+        <No>39</No>
+        <MouseKey>Left</MouseKey>
+        <X>252</X>
+        <Y>159</Y>
+        <Color>ffffdd9e</Color>
+        <X2>306</X2>
+        <Y2>235</Y2>
+        <Color2>ff1fbe88</Color2>
+        <XMoved>0</XMoved>
+        <YMoved>0</YMoved>
+        <ColorMoved></ColorMoved>
+        <XIgnored>0</XIgnored>
+        <YIgnored>0</YIgnored>
+        <ColorIgnored></ColorIgnored>
+        <Delay>100</Delay>
+        <IsSequential>false</IsSequential>
+        <IsDrag>false</IsDrag>
+        <DragSlow>false</DragSlow>
+        <Description>click regular</Description>
+        <IsStartIcon>false</IsStartIcon>
+        <RunOnce>false</RunOnce>
+        <EndWholeScripts>false</EndWholeScripts>
+        <IsClosedPosition>false</IsClosedPosition>
+        <RunAfterScript>0</RunAfterScript>
+      </KScript>
+      <KScript No="40">
+        <No>40</No>
+        <MouseKey>Left</MouseKey>
+        <X>340</X>
+        <Y>279</Y>
+        <Color>ff81ca40</Color>
+        <X2>447</X2>
+        <Y2>413</Y2>
+        <Color2>ff111111</Color2>
+        <XMoved>0</XMoved>
+        <YMoved>0</YMoved>
+        <ColorMoved></ColorMoved>
+        <XIgnored>0</XIgnored>
+        <YIgnored>0</YIgnored>
+        <ColorIgnored></ColorIgnored>
+        <Delay>100</Delay>
+        <IsSequential>false</IsSequential>
+        <IsDrag>false</IsDrag>
+        <DragSlow>false</DragSlow>
+        <Description>retry</Description>
+        <IsStartIcon>false</IsStartIcon>
+        <RunOnce>false</RunOnce>
+        <EndWholeScripts>false</EndWholeScripts>
+        <IsClosedPosition>false</IsClosedPosition>
+        <RunAfterScript>0</RunAfterScript>
+      </KScript>
+      <KScript No="41">
+        <No>41</No>
+        <MouseKey>Left</MouseKey>
+        <X>450</X>
+        <Y>375</Y>
+        <Color>ffdca942</Color>
+        <X2>379</X2>
+        <Y2>374</Y2>
+        <Color2>ff90d3e7</Color2>
+        <XMoved>0</XMoved>
+        <YMoved>0</YMoved>
+        <ColorMoved></ColorMoved>
+        <XIgnored>0</XIgnored>
+        <YIgnored>0</YIgnored>
+        <ColorIgnored></ColorIgnored>
+        <Delay>100</Delay>
+        <IsSequential>false</IsSequential>
+        <IsDrag>false</IsDrag>
+        <DragSlow>false</DragSlow>
+        <Description>play match</Description>
+        <IsStartIcon>false</IsStartIcon>
+        <RunOnce>false</RunOnce>
+        <EndWholeScripts>false</EndWholeScripts>
+        <IsClosedPosition>false</IsClosedPosition>
+        <RunAfterScript>0</RunAfterScript>
+      </KScript>
     </KScripts>
   </Action>
   <Action No="6">
@@ -4385,12 +5113,12 @@
       <KScript No="1">
         <No>1</No>
         <MouseKey>Left</MouseKey>
-        <X>415</X>
-        <Y>205</Y>
-        <Color>fffee2bc</Color>
-        <X2>428</X2>
-        <Y2>215</Y2>
-        <Color2>ff1934d3</Color2>
+        <X>420</X>
+        <Y>160</Y>
+        <Color>ffd9bd37</Color>
+        <X2>427</X2>
+        <Y2>154</Y2>
+        <Color2>ff010101</Color2>
         <XMoved>0</XMoved>
         <YMoved>0</YMoved>
         <ColorMoved></ColorMoved>
@@ -4411,12 +5139,12 @@
       <KScript No="2">
         <No>2</No>
         <MouseKey>Left</MouseKey>
-        <X>339</X>
-        <Y>184</Y>
-        <Color>ffffeecb</Color>
-        <X2>387</X2>
-        <Y2>310</Y2>
-        <Color2>ff0019bb</Color2>
+        <X>195</X>
+        <Y>275</Y>
+        <Color>ff92d5f6</Color>
+        <X2>320</X2>
+        <Y2>285</Y2>
+        <Color2>ff002155</Color2>
         <XMoved>0</XMoved>
         <YMoved>0</YMoved>
         <ColorMoved></ColorMoved>
@@ -4437,11 +5165,11 @@
       <KScript No="3">
         <No>3</No>
         <MouseKey>Left</MouseKey>
-        <X>373</X>
-        <Y>210</Y>
-        <Color>ffa8ee65</Color>
-        <X2>352</X2>
-        <Y2>210</Y2>
+        <X>372</X>
+        <Y>220</Y>
+        <Color>ffa0e554</Color>
+        <X2>343</X2>
+        <Y2>240</Y2>
         <Color2>ffffffff</Color2>
         <XMoved>0</XMoved>
         <YMoved>0</YMoved>
@@ -4515,12 +5243,12 @@
       <KScript No="6">
         <No>6</No>
         <MouseKey>Left</MouseKey>
-        <X>283</X>
-        <Y>269</Y>
-        <Color>ffa8f65c</Color>
-        <X2>68</X2>
-        <Y2>387</Y2>
-        <Color2>ff215b2e</Color2>
+        <X>339</X>
+        <Y>286</Y>
+        <Color>ff7cc23e</Color>
+        <X2>473</X2>
+        <Y2>419</Y2>
+        <Color2>ff756928</Color2>
         <XMoved>0</XMoved>
         <YMoved>0</YMoved>
         <ColorMoved></ColorMoved>
@@ -4541,38 +5269,12 @@
       <KScript No="7">
         <No>7</No>
         <MouseKey>Left</MouseKey>
-        <X>266</X>
-        <Y>261</Y>
-        <Color>ff82cb40</Color>
-        <X2>391</X2>
-        <Y2>162</Y2>
-        <Color2>ff4375e4</Color2>
-        <XMoved>0</XMoved>
-        <YMoved>0</YMoved>
-        <ColorMoved></ColorMoved>
-        <XIgnored>0</XIgnored>
-        <YIgnored>0</YIgnored>
-        <ColorIgnored></ColorIgnored>
-        <Delay>100</Delay>
-        <IsSequential>false</IsSequential>
-        <IsDrag>false</IsDrag>
-        <DragSlow>false</DragSlow>
-        <Description>Failed to join</Description>
-        <IsStartIcon>false</IsStartIcon>
-        <RunOnce>false</RunOnce>
-        <EndWholeScripts>false</EndWholeScripts>
-        <IsClosedPosition>false</IsClosedPosition>
-        <RunAfterScript>0</RunAfterScript>
-      </KScript>
-      <KScript No="8">
-        <No>8</No>
-        <MouseKey>Left</MouseKey>
-        <X>197</X>
-        <Y>372</Y>
-        <Color>ff21511f</Color>
-        <X2>321</X2>
-        <Y2>361</Y2>
-        <Color2>ff34712e</Color2>
+        <X>156</X>
+        <Y>399</Y>
+        <Color>ff104110</Color>
+        <X2>161</X2>
+        <Y2>264</Y2>
+        <Color2>ff2656c3</Color2>
         <XMoved>0</XMoved>
         <YMoved>0</YMoved>
         <ColorMoved></ColorMoved>
@@ -4590,8 +5292,8 @@
         <IsClosedPosition>false</IsClosedPosition>
         <RunAfterScript>0</RunAfterScript>
       </KScript>
-      <KScript No="9">
-        <No>9</No>
+      <KScript No="8">
+        <No>8</No>
         <MouseKey>Left</MouseKey>
         <X>159</X>
         <Y>339</Y>
@@ -4616,8 +5318,8 @@
         <IsClosedPosition>false</IsClosedPosition>
         <RunAfterScript>0</RunAfterScript>
       </KScript>
-      <KScript No="10">
-        <No>10</No>
+      <KScript No="9">
+        <No>9</No>
         <MouseKey>Left</MouseKey>
         <X>139</X>
         <Y>143</Y>
@@ -4642,8 +5344,8 @@
         <IsClosedPosition>false</IsClosedPosition>
         <RunAfterScript>0</RunAfterScript>
       </KScript>
-      <KScript No="11">
-        <No>11</No>
+      <KScript No="10">
+        <No>10</No>
         <MouseKey>Left</MouseKey>
         <X>164</X>
         <Y>376</Y>
@@ -4668,15 +5370,15 @@
         <IsClosedPosition>false</IsClosedPosition>
         <RunAfterScript>0</RunAfterScript>
       </KScript>
-      <KScript No="12">
-        <No>12</No>
+      <KScript No="11">
+        <No>11</No>
         <MouseKey>Left</MouseKey>
-        <X>191</X>
-        <Y>376</Y>
-        <Color>ff10270d</Color>
-        <X2>297</X2>
-        <Y2>361</Y2>
-        <Color2>ff1d3816</Color2>
+        <X>183</X>
+        <Y>385</Y>
+        <Color>ff1d4410</Color>
+        <X2>170</X2>
+        <Y2>116</Y2>
+        <Color2>ff155e9e</Color2>
         <XMoved>0</XMoved>
         <YMoved>0</YMoved>
         <ColorMoved></ColorMoved>
@@ -4694,8 +5396,8 @@
         <IsClosedPosition>false</IsClosedPosition>
         <RunAfterScript>0</RunAfterScript>
       </KScript>
-      <KScript No="13">
-        <No>13</No>
+      <KScript No="12">
+        <No>12</No>
         <MouseKey>Left</MouseKey>
         <X>354</X>
         <Y>97</Y>
@@ -4720,15 +5422,15 @@
         <IsClosedPosition>false</IsClosedPosition>
         <RunAfterScript>0</RunAfterScript>
       </KScript>
-      <KScript No="14">
-        <No>14</No>
+      <KScript No="13">
+        <No>13</No>
         <MouseKey>Left</MouseKey>
-        <X>173</X>
-        <Y>374</Y>
-        <Color>ff1e4f19</Color>
-        <X2>303</X2>
-        <Y2>361</Y2>
-        <Color2>ff34712e</Color2>
+        <X>133</X>
+        <Y>385</Y>
+        <Color>ff082008</Color>
+        <X2>148</X2>
+        <Y2>115</Y2>
+        <Color2>ff113656</Color2>
         <XMoved>0</XMoved>
         <YMoved>0</YMoved>
         <ColorMoved></ColorMoved>
@@ -4746,8 +5448,8 @@
         <IsClosedPosition>false</IsClosedPosition>
         <RunAfterScript>0</RunAfterScript>
       </KScript>
-      <KScript No="15">
-        <No>15</No>
+      <KScript No="14">
+        <No>14</No>
         <MouseKey>Left</MouseKey>
         <X>218</X>
         <Y>407</Y>
@@ -4772,8 +5474,8 @@
         <IsClosedPosition>false</IsClosedPosition>
         <RunAfterScript>0</RunAfterScript>
       </KScript>
-      <KScript No="16">
-        <No>16</No>
+      <KScript No="15">
+        <No>15</No>
         <MouseKey>Left</MouseKey>
         <X>219</X>
         <Y>141</Y>
@@ -4798,8 +5500,8 @@
         <IsClosedPosition>false</IsClosedPosition>
         <RunAfterScript>0</RunAfterScript>
       </KScript>
-      <KScript No="17">
-        <No>17</No>
+      <KScript No="16">
+        <No>16</No>
         <MouseKey>Left</MouseKey>
         <X>369</X>
         <Y>346</Y>
@@ -4824,34 +5526,8 @@
         <IsClosedPosition>false</IsClosedPosition>
         <RunAfterScript>0</RunAfterScript>
       </KScript>
-      <KScript No="18">
-        <No>18</No>
-        <MouseKey>Left</MouseKey>
-        <X>223</X>
-        <Y>277</Y>
-        <Color>ff98e94c</Color>
-        <X2>367</X2>
-        <Y2>338</Y2>
-        <Color2>ff3b2f16</Color2>
-        <XMoved>0</XMoved>
-        <YMoved>0</YMoved>
-        <ColorMoved></ColorMoved>
-        <XIgnored>0</XIgnored>
-        <YIgnored>0</YIgnored>
-        <ColorIgnored></ColorIgnored>
-        <Delay>100</Delay>
-        <IsSequential>false</IsSequential>
-        <IsDrag>false</IsDrag>
-        <DragSlow>false</DragSlow>
-        <Description>connection failed</Description>
-        <IsStartIcon>false</IsStartIcon>
-        <RunOnce>false</RunOnce>
-        <EndWholeScripts>false</EndWholeScripts>
-        <IsClosedPosition>false</IsClosedPosition>
-        <RunAfterScript>0</RunAfterScript>
-      </KScript>
-      <KScript No="19">
-        <No>19</No>
+      <KScript No="17">
+        <No>17</No>
         <MouseKey>Left</MouseKey>
         <X>221</X>
         <Y>278</Y>
@@ -4876,15 +5552,15 @@
         <IsClosedPosition>false</IsClosedPosition>
         <RunAfterScript>0</RunAfterScript>
       </KScript>
-      <KScript No="20">
-        <No>20</No>
+      <KScript No="18">
+        <No>18</No>
         <MouseKey>Left</MouseKey>
-        <X>281</X>
+        <X>344</X>
         <Y>278</Y>
-        <Color>ff96e74a</Color>
-        <X2>304</X2>
-        <Y2>268</Y2>
-        <Color2>ffabf85f</Color2>
+        <Color>ff9aeb4e</Color>
+        <X2>472</X2>
+        <Y2>397</Y2>
+        <Color2>ff777773</Color2>
         <XMoved>0</XMoved>
         <YMoved>0</YMoved>
         <ColorMoved></ColorMoved>
@@ -4902,8 +5578,8 @@
         <IsClosedPosition>false</IsClosedPosition>
         <RunAfterScript>0</RunAfterScript>
       </KScript>
-      <KScript No="21">
-        <No>21</No>
+      <KScript No="19">
+        <No>19</No>
         <MouseKey>Left</MouseKey>
         <X>224</X>
         <Y>337</Y>
@@ -4928,60 +5604,8 @@
         <IsClosedPosition>false</IsClosedPosition>
         <RunAfterScript>0</RunAfterScript>
       </KScript>
-      <KScript No="22">
-        <No>22</No>
-        <MouseKey>Left</MouseKey>
-        <X>464</X>
-        <Y>412</Y>
-        <Color>fffed53a</Color>
-        <X2>484</X2>
-        <Y2>415</Y2>
-        <Color2>ff674208</Color2>
-        <XMoved>0</XMoved>
-        <YMoved>0</YMoved>
-        <ColorMoved></ColorMoved>
-        <XIgnored>0</XIgnored>
-        <YIgnored>0</YIgnored>
-        <ColorIgnored></ColorIgnored>
-        <Delay>100</Delay>
-        <IsSequential>false</IsSequential>
-        <IsDrag>false</IsDrag>
-        <DragSlow>false</DragSlow>
-        <Description>skip</Description>
-        <IsStartIcon>false</IsStartIcon>
-        <RunOnce>false</RunOnce>
-        <EndWholeScripts>false</EndWholeScripts>
-        <IsClosedPosition>false</IsClosedPosition>
-        <RunAfterScript>0</RunAfterScript>
-      </KScript>
-      <KScript No="23">
-        <No>23</No>
-        <MouseKey>Left</MouseKey>
-        <X>308</X>
-        <Y>394</Y>
-        <Color>ff7f7f7f</Color>
-        <X2>98</X2>
-        <Y2>241</Y2>
-        <Color2>ffffecce</Color2>
-        <XMoved>0</XMoved>
-        <YMoved>0</YMoved>
-        <ColorMoved></ColorMoved>
-        <XIgnored>0</XIgnored>
-        <YIgnored>0</YIgnored>
-        <ColorIgnored></ColorIgnored>
-        <Delay>100</Delay>
-        <IsSequential>false</IsSequential>
-        <IsDrag>false</IsDrag>
-        <DragSlow>false</DragSlow>
-        <Description>login bonus</Description>
-        <IsStartIcon>false</IsStartIcon>
-        <RunOnce>false</RunOnce>
-        <EndWholeScripts>false</EndWholeScripts>
-        <IsClosedPosition>false</IsClosedPosition>
-        <RunAfterScript>0</RunAfterScript>
-      </KScript>
-      <KScript No="24">
-        <No>24</No>
+      <KScript No="20">
+        <No>20</No>
         <MouseKey>Left</MouseKey>
         <X>205</X>
         <Y>390</Y>
@@ -5006,8 +5630,8 @@
         <IsClosedPosition>false</IsClosedPosition>
         <RunAfterScript>0</RunAfterScript>
       </KScript>
-      <KScript No="25">
-        <No>25</No>
+      <KScript No="21">
+        <No>21</No>
         <MouseKey>Left</MouseKey>
         <X>276</X>
         <Y>284</Y>
@@ -5032,8 +5656,8 @@
         <IsClosedPosition>false</IsClosedPosition>
         <RunAfterScript>0</RunAfterScript>
       </KScript>
-      <KScript No="26">
-        <No>26</No>
+      <KScript No="22">
+        <No>22</No>
         <MouseKey>Left</MouseKey>
         <X>397</X>
         <Y>146</Y>
@@ -5058,8 +5682,8 @@
         <IsClosedPosition>false</IsClosedPosition>
         <RunAfterScript>0</RunAfterScript>
       </KScript>
-      <KScript No="27">
-        <No>27</No>
+      <KScript No="23">
+        <No>23</No>
         <MouseKey>Left</MouseKey>
         <X>371</X>
         <Y>68</Y>
@@ -5084,34 +5708,8 @@
         <IsClosedPosition>false</IsClosedPosition>
         <RunAfterScript>0</RunAfterScript>
       </KScript>
-      <KScript No="28">
-        <No>28</No>
-        <MouseKey>Left</MouseKey>
-        <X>457</X>
-        <Y>418</Y>
-        <Color>ffe4eefe</Color>
-        <X2>486</X2>
-        <Y2>391</Y2>
-        <Color2>ffe4eefe</Color2>
-        <XMoved>0</XMoved>
-        <YMoved>0</YMoved>
-        <ColorMoved></ColorMoved>
-        <XIgnored>0</XIgnored>
-        <YIgnored>0</YIgnored>
-        <ColorIgnored></ColorIgnored>
-        <Delay>100</Delay>
-        <IsSequential>false</IsSequential>
-        <IsDrag>false</IsDrag>
-        <DragSlow>false</DragSlow>
-        <Description>skip intro</Description>
-        <IsStartIcon>false</IsStartIcon>
-        <RunOnce>false</RunOnce>
-        <EndWholeScripts>false</EndWholeScripts>
-        <IsClosedPosition>false</IsClosedPosition>
-        <RunAfterScript>0</RunAfterScript>
-      </KScript>
-      <KScript No="29">
-        <No>29</No>
+      <KScript No="24">
+        <No>24</No>
         <MouseKey>Left</MouseKey>
         <X>283</X>
         <Y>298</Y>
@@ -5136,8 +5734,8 @@
         <IsClosedPosition>false</IsClosedPosition>
         <RunAfterScript>0</RunAfterScript>
       </KScript>
-      <KScript No="30">
-        <No>30</No>
+      <KScript No="25">
+        <No>25</No>
         <MouseKey>Left</MouseKey>
         <X>208</X>
         <Y>275</Y>
@@ -5162,8 +5760,8 @@
         <IsClosedPosition>false</IsClosedPosition>
         <RunAfterScript>0</RunAfterScript>
       </KScript>
-      <KScript No="31">
-        <No>31</No>
+      <KScript No="26">
+        <No>26</No>
         <MouseKey>Left</MouseKey>
         <X>77</X>
         <Y>410</Y>
@@ -5188,8 +5786,8 @@
         <IsClosedPosition>false</IsClosedPosition>
         <RunAfterScript>0</RunAfterScript>
       </KScript>
-      <KScript No="32">
-        <No>32</No>
+      <KScript No="27">
+        <No>27</No>
         <MouseKey>Left</MouseKey>
         <X>312</X>
         <Y>165</Y>
@@ -5214,8 +5812,8 @@
         <IsClosedPosition>false</IsClosedPosition>
         <RunAfterScript>0</RunAfterScript>
       </KScript>
-      <KScript No="33">
-        <No>33</No>
+      <KScript No="28">
+        <No>28</No>
         <MouseKey>Left</MouseKey>
         <X>219</X>
         <Y>274</Y>
@@ -5240,8 +5838,8 @@
         <IsClosedPosition>false</IsClosedPosition>
         <RunAfterScript>0</RunAfterScript>
       </KScript>
-      <KScript No="34">
-        <No>34</No>
+      <KScript No="29">
+        <No>29</No>
         <MouseKey>Left</MouseKey>
         <X>103</X>
         <Y>317</Y>
@@ -5266,8 +5864,8 @@
         <IsClosedPosition>false</IsClosedPosition>
         <RunAfterScript>0</RunAfterScript>
       </KScript>
-      <KScript No="35">
-        <No>35</No>
+      <KScript No="30">
+        <No>30</No>
         <MouseKey>Left</MouseKey>
         <X>214</X>
         <Y>275</Y>
@@ -5292,6 +5890,292 @@
         <IsClosedPosition>false</IsClosedPosition>
         <RunAfterScript>0</RunAfterScript>
       </KScript>
+      <KScript No="31">
+        <No>31</No>
+        <MouseKey>Left</MouseKey>
+        <X>215</X>
+        <Y>279</Y>
+        <Color>ff94e648</Color>
+        <X2>445</X2>
+        <Y2>413</Y2>
+        <Color2>ff111111</Color2>
+        <XMoved>0</XMoved>
+        <YMoved>0</YMoved>
+        <ColorMoved></ColorMoved>
+        <XIgnored>0</XIgnored>
+        <YIgnored>0</YIgnored>
+        <ColorIgnored></ColorIgnored>
+        <Delay>100</Delay>
+        <IsSequential>false</IsSequential>
+        <IsDrag>false</IsDrag>
+        <DragSlow>false</DragSlow>
+        <Description>returning title</Description>
+        <IsStartIcon>false</IsStartIcon>
+        <RunOnce>false</RunOnce>
+        <EndWholeScripts>false</EndWholeScripts>
+        <IsClosedPosition>false</IsClosedPosition>
+        <RunAfterScript>0</RunAfterScript>
+      </KScript>
+      <KScript No="32">
+        <No>32</No>
+        <MouseKey>Left</MouseKey>
+        <X>284</X>
+        <Y>288</Y>
+        <Color>ff97e94b</Color>
+        <X2>279</X2>
+        <Y2>324</Y2>
+        <Color2>ffecc332</Color2>
+        <XMoved>0</XMoved>
+        <YMoved>0</YMoved>
+        <ColorMoved></ColorMoved>
+        <XIgnored>0</XIgnored>
+        <YIgnored>0</YIgnored>
+        <ColorIgnored></ColorIgnored>
+        <Delay>100</Delay>
+        <IsSequential>false</IsSequential>
+        <IsDrag>false</IsDrag>
+        <DragSlow>false</DragSlow>
+        <Description>click sell when full</Description>
+        <IsStartIcon>false</IsStartIcon>
+        <RunOnce>false</RunOnce>
+        <EndWholeScripts>false</EndWholeScripts>
+        <IsClosedPosition>false</IsClosedPosition>
+        <RunAfterScript>0</RunAfterScript>
+      </KScript>
+      <KScript No="33">
+        <No>33</No>
+        <MouseKey>Left</MouseKey>
+        <X>430</X>
+        <Y>409</Y>
+        <Color>fff4c837</Color>
+        <X2>468</X2>
+        <Y2>405</Y2>
+        <Color2>fffacca0</Color2>
+        <XMoved>0</XMoved>
+        <YMoved>0</YMoved>
+        <ColorMoved></ColorMoved>
+        <XIgnored>0</XIgnored>
+        <YIgnored>0</YIgnored>
+        <ColorIgnored></ColorIgnored>
+        <Delay>100</Delay>
+        <IsSequential>false</IsSequential>
+        <IsDrag>false</IsDrag>
+        <DragSlow>false</DragSlow>
+        <Description>join club share</Description>
+        <IsStartIcon>false</IsStartIcon>
+        <RunOnce>false</RunOnce>
+        <EndWholeScripts>false</EndWholeScripts>
+        <IsClosedPosition>false</IsClosedPosition>
+        <RunAfterScript>0</RunAfterScript>
+      </KScript>
+      <KScript No="34">
+        <No>34</No>
+        <MouseKey>Left</MouseKey>
+        <X>98</X>
+        <Y>389</Y>
+        <Color>ff124110</Color>
+        <X2>344</X2>
+        <Y2>258</Y2>
+        <Color2>ff343c42</Color2>
+        <XMoved>0</XMoved>
+        <YMoved>0</YMoved>
+        <ColorMoved></ColorMoved>
+        <XIgnored>0</XIgnored>
+        <YIgnored>0</YIgnored>
+        <ColorIgnored></ColorIgnored>
+        <Delay>100</Delay>
+        <IsSequential>false</IsSequential>
+        <IsDrag>false</IsDrag>
+        <DragSlow>false</DragSlow>
+        <Description>touch sceen end game</Description>
+        <IsStartIcon>false</IsStartIcon>
+        <RunOnce>false</RunOnce>
+        <EndWholeScripts>false</EndWholeScripts>
+        <IsClosedPosition>false</IsClosedPosition>
+        <RunAfterScript>0</RunAfterScript>
+      </KScript>
+      <KScript No="35">
+        <No>35</No>
+        <MouseKey>Left</MouseKey>
+        <X>295</X>
+        <Y>389</Y>
+        <Color>ff0b2409</Color>
+        <X2>413</X2>
+        <Y2>72</Y2>
+        <Color2>ff235682</Color2>
+        <XMoved>0</XMoved>
+        <YMoved>0</YMoved>
+        <ColorMoved></ColorMoved>
+        <XIgnored>0</XIgnored>
+        <YIgnored>0</YIgnored>
+        <ColorIgnored></ColorIgnored>
+        <Delay>100</Delay>
+        <IsSequential>false</IsSequential>
+        <IsDrag>false</IsDrag>
+        <DragSlow>false</DragSlow>
+        <Description>senariafailed</Description>
+        <IsStartIcon>false</IsStartIcon>
+        <RunOnce>false</RunOnce>
+        <EndWholeScripts>false</EndWholeScripts>
+        <IsClosedPosition>false</IsClosedPosition>
+        <RunAfterScript>0</RunAfterScript>
+      </KScript>
+      <KScript No="36">
+        <No>36</No>
+        <MouseKey>Left</MouseKey>
+        <X>469</X>
+        <Y>414</Y>
+        <Color>fffed336</Color>
+        <X2>484</X2>
+        <Y2>414</Y2>
+        <Color2>ff674208</Color2>
+        <XMoved>0</XMoved>
+        <YMoved>0</YMoved>
+        <ColorMoved></ColorMoved>
+        <XIgnored>0</XIgnored>
+        <YIgnored>0</YIgnored>
+        <ColorIgnored></ColorIgnored>
+        <Delay>100</Delay>
+        <IsSequential>false</IsSequential>
+        <IsDrag>false</IsDrag>
+        <DragSlow>false</DragSlow>
+        <Description>skip</Description>
+        <IsStartIcon>false</IsStartIcon>
+        <RunOnce>false</RunOnce>
+        <EndWholeScripts>false</EndWholeScripts>
+        <IsClosedPosition>false</IsClosedPosition>
+        <RunAfterScript>0</RunAfterScript>
+      </KScript>
+      <KScript No="37">
+        <No>37</No>
+        <MouseKey>Left</MouseKey>
+        <X>459</X>
+        <Y>415</Y>
+        <Color>fffed438</Color>
+        <X2>482</X2>
+        <Y2>418</Y2>
+        <Color2>ff674208</Color2>
+        <XMoved>0</XMoved>
+        <YMoved>0</YMoved>
+        <ColorMoved></ColorMoved>
+        <XIgnored>0</XIgnored>
+        <YIgnored>0</YIgnored>
+        <ColorIgnored></ColorIgnored>
+        <Delay>100</Delay>
+        <IsSequential>false</IsSequential>
+        <IsDrag>false</IsDrag>
+        <DragSlow>false</DragSlow>
+        <Description>skip</Description>
+        <IsStartIcon>false</IsStartIcon>
+        <RunOnce>false</RunOnce>
+        <EndWholeScripts>false</EndWholeScripts>
+        <IsClosedPosition>false</IsClosedPosition>
+        <RunAfterScript>0</RunAfterScript>
+      </KScript>
+      <KScript No="38">
+        <No>38</No>
+        <MouseKey>Left</MouseKey>
+        <X>412</X>
+        <Y>204</Y>
+        <Color>ffffffff</Color>
+        <X2>317</X2>
+        <Y2>171</Y2>
+        <Color2>ffe1f9fc</Color2>
+        <XMoved>0</XMoved>
+        <YMoved>0</YMoved>
+        <ColorMoved></ColorMoved>
+        <XIgnored>0</XIgnored>
+        <YIgnored>0</YIgnored>
+        <ColorIgnored></ColorIgnored>
+        <Delay>100</Delay>
+        <IsSequential>false</IsSequential>
+        <IsDrag>false</IsDrag>
+        <DragSlow>false</DragSlow>
+        <Description>story mode (home)</Description>
+        <IsStartIcon>false</IsStartIcon>
+        <RunOnce>false</RunOnce>
+        <EndWholeScripts>false</EndWholeScripts>
+        <IsClosedPosition>false</IsClosedPosition>
+        <RunAfterScript>0</RunAfterScript>
+      </KScript>
+      <KScript No="39">
+        <No>39</No>
+        <MouseKey>Left</MouseKey>
+        <X>428</X>
+        <Y>411</Y>
+        <Color>fff3e856</Color>
+        <X2>462</X2>
+        <Y2>404</Y2>
+        <Color2>ffffddb7</Color2>
+        <XMoved>0</XMoved>
+        <YMoved>0</YMoved>
+        <ColorMoved></ColorMoved>
+        <XIgnored>0</XIgnored>
+        <YIgnored>0</YIgnored>
+        <ColorIgnored></ColorIgnored>
+        <Delay>100</Delay>
+        <IsSequential>false</IsSequential>
+        <IsDrag>false</IsDrag>
+        <DragSlow>false</DragSlow>
+        <Description>club share play</Description>
+        <IsStartIcon>false</IsStartIcon>
+        <RunOnce>false</RunOnce>
+        <EndWholeScripts>false</EndWholeScripts>
+        <IsClosedPosition>false</IsClosedPosition>
+        <RunAfterScript>0</RunAfterScript>
+      </KScript>
+      <KScript No="40">
+        <No>40</No>
+        <MouseKey>Left</MouseKey>
+        <X>409</X>
+        <Y>308</Y>
+        <Color>ff009688</Color>
+        <X2>432</X2>
+        <Y2>231</Y2>
+        <Color2>ffeeeeee</Color2>
+        <XMoved>0</XMoved>
+        <YMoved>0</YMoved>
+        <ColorMoved></ColorMoved>
+        <XIgnored>0</XIgnored>
+        <YIgnored>0</YIgnored>
+        <ColorIgnored></ColorIgnored>
+        <Delay>100</Delay>
+        <IsSequential>false</IsSequential>
+        <IsDrag>false</IsDrag>
+        <DragSlow>false</DragSlow>
+        <Description>ok rfesponding</Description>
+        <IsStartIcon>false</IsStartIcon>
+        <RunOnce>false</RunOnce>
+        <EndWholeScripts>false</EndWholeScripts>
+        <IsClosedPosition>false</IsClosedPosition>
+        <RunAfterScript>0</RunAfterScript>
+      </KScript>
+      <KScript No="41">
+        <No>41</No>
+        <MouseKey>Left</MouseKey>
+        <X>410</X>
+        <Y>296</Y>
+        <Color>ff009688</Color>
+        <X2>396</X2>
+        <Y2>253</Y2>
+        <Color2>ffeeeeee</Color2>
+        <XMoved>0</XMoved>
+        <YMoved>0</YMoved>
+        <ColorMoved></ColorMoved>
+        <XIgnored>0</XIgnored>
+        <YIgnored>0</YIgnored>
+        <ColorIgnored></ColorIgnored>
+        <Delay>100</Delay>
+        <IsSequential>false</IsSequential>
+        <IsDrag>false</IsDrag>
+        <DragSlow>false</DragSlow>
+        <Description>ok responding</Description>
+        <IsStartIcon>false</IsStartIcon>
+        <RunOnce>false</RunOnce>
+        <EndWholeScripts>false</EndWholeScripts>
+        <IsClosedPosition>false</IsClosedPosition>
+        <RunAfterScript>0</RunAfterScript>
+      </KScript>
     </KScripts>
   </Action>
   <Action No="7">
@@ -5302,11 +6186,11 @@
         <No>1</No>
         <MouseKey>Left</MouseKey>
         <X>415</X>
-        <Y>205</Y>
-        <Color>fffee2bc</Color>
-        <X2>428</X2>
-        <Y2>215</Y2>
-        <Color2>ff1934d3</Color2>
+        <Y>157</Y>
+        <Color>ff8c154e</Color>
+        <X2>426</X2>
+        <Y2>157</Y2>
+        <Color2>ff000000</Color2>
         <XMoved>0</XMoved>
         <YMoved>0</YMoved>
         <ColorMoved></ColorMoved>
@@ -5327,12 +6211,12 @@
       <KScript No="2">
         <No>2</No>
         <MouseKey>Left</MouseKey>
-        <X>339</X>
-        <Y>184</Y>
-        <Color>ffffeecb</Color>
-        <X2>387</X2>
-        <Y2>310</Y2>
-        <Color2>ff0019bb</Color2>
+        <X>143</X>
+        <Y>236</Y>
+        <Color>ff0011bb</Color>
+        <X2>65</X2>
+        <Y2>233</Y2>
+        <Color2>ffffe8c0</Color2>
         <XMoved>0</XMoved>
         <YMoved>0</YMoved>
         <ColorMoved></ColorMoved>
@@ -5405,11 +6289,11 @@
       <KScript No="5">
         <No>5</No>
         <MouseKey>Left</MouseKey>
-        <X>350</X>
-        <Y>262</Y>
-        <Color>fff5bf53</Color>
-        <X2>245</X2>
-        <Y2>110</Y2>
+        <X>396</X>
+        <Y>282</Y>
+        <Color>ffed9425</Color>
+        <X2>213</X2>
+        <Y2>112</Y2>
         <Color2>ffffd400</Color2>
         <XMoved>0</XMoved>
         <YMoved>0</YMoved>
@@ -5495,7 +6379,7 @@
         <XIgnored>0</XIgnored>
         <YIgnored>0</YIgnored>
         <ColorIgnored></ColorIgnored>
-        <Delay>25000</Delay>
+        <Delay>30000</Delay>
         <IsSequential>false</IsSequential>
         <IsDrag>false</IsDrag>
         <DragSlow>false</DragSlow>
@@ -5547,7 +6431,7 @@
         <XIgnored>0</XIgnored>
         <YIgnored>0</YIgnored>
         <ColorIgnored></ColorIgnored>
-        <Delay>30000</Delay>
+        <Delay>35000</Delay>
         <IsSequential>false</IsSequential>
         <IsDrag>false</IsDrag>
         <DragSlow>false</DragSlow>
@@ -5561,12 +6445,12 @@
       <KScript No="11">
         <No>11</No>
         <MouseKey>Left</MouseKey>
-        <X>282</X>
-        <Y>269</Y>
-        <Color>ffa8f65c</Color>
-        <X2>57</X2>
-        <Y2>387</Y2>
-        <Color2>ff255c30</Color2>
+        <X>337</X>
+        <Y>271</Y>
+        <Color>ffabf466</Color>
+        <X2>473</X2>
+        <Y2>419</Y2>
+        <Color2>ff756928</Color2>
         <XMoved>0</XMoved>
         <YMoved>0</YMoved>
         <ColorMoved></ColorMoved>
@@ -5639,32 +6523,6 @@
       <KScript No="14">
         <No>14</No>
         <MouseKey>Left</MouseKey>
-        <X>484</X>
-        <Y>49</Y>
-        <Color>ff47484a</Color>
-        <X2>484</X2>
-        <Y2>43</Y2>
-        <Color2>ffffffff</Color2>
-        <XMoved>0</XMoved>
-        <YMoved>0</YMoved>
-        <ColorMoved></ColorMoved>
-        <XIgnored>0</XIgnored>
-        <YIgnored>0</YIgnored>
-        <ColorIgnored></ColorIgnored>
-        <Delay>35000</Delay>
-        <IsSequential>false</IsSequential>
-        <IsDrag>false</IsDrag>
-        <DragSlow>false</DragSlow>
-        <Description>Close ad after 35s</Description>
-        <IsStartIcon>false</IsStartIcon>
-        <RunOnce>false</RunOnce>
-        <EndWholeScripts>false</EndWholeScripts>
-        <IsClosedPosition>false</IsClosedPosition>
-        <RunAfterScript>13</RunAfterScript>
-      </KScript>
-      <KScript No="15">
-        <No>15</No>
-        <MouseKey>Left</MouseKey>
         <X>224</X>
         <Y>275</Y>
         <Color>ff9cec50</Color>
@@ -5688,8 +6546,8 @@
         <IsClosedPosition>false</IsClosedPosition>
         <RunAfterScript>0</RunAfterScript>
       </KScript>
-      <KScript No="16">
-        <No>16</No>
+      <KScript No="15">
+        <No>15</No>
         <MouseKey>Left</MouseKey>
         <X>227</X>
         <Y>276</Y>
@@ -5714,8 +6572,8 @@
         <IsClosedPosition>false</IsClosedPosition>
         <RunAfterScript>0</RunAfterScript>
       </KScript>
-      <KScript No="17">
-        <No>17</No>
+      <KScript No="16">
+        <No>16</No>
         <MouseKey>Left</MouseKey>
         <X>266</X>
         <Y>261</Y>
@@ -5740,8 +6598,8 @@
         <IsClosedPosition>false</IsClosedPosition>
         <RunAfterScript>0</RunAfterScript>
       </KScript>
-      <KScript No="18">
-        <No>18</No>
+      <KScript No="17">
+        <No>17</No>
         <MouseKey>Left</MouseKey>
         <X>197</X>
         <Y>372</Y>
@@ -5766,8 +6624,8 @@
         <IsClosedPosition>false</IsClosedPosition>
         <RunAfterScript>0</RunAfterScript>
       </KScript>
-      <KScript No="19">
-        <No>19</No>
+      <KScript No="18">
+        <No>18</No>
         <MouseKey>Left</MouseKey>
         <X>292</X>
         <Y>258</Y>
@@ -5792,8 +6650,8 @@
         <IsClosedPosition>false</IsClosedPosition>
         <RunAfterScript>0</RunAfterScript>
       </KScript>
-      <KScript No="20">
-        <No>20</No>
+      <KScript No="19">
+        <No>19</No>
         <MouseKey>Left</MouseKey>
         <X>307</X>
         <Y>71</Y>
@@ -5818,8 +6676,8 @@
         <IsClosedPosition>false</IsClosedPosition>
         <RunAfterScript>0</RunAfterScript>
       </KScript>
-      <KScript No="21">
-        <No>21</No>
+      <KScript No="20">
+        <No>20</No>
         <MouseKey>Left</MouseKey>
         <X>373</X>
         <Y>287</Y>
@@ -5844,8 +6702,8 @@
         <IsClosedPosition>false</IsClosedPosition>
         <RunAfterScript>0</RunAfterScript>
       </KScript>
-      <KScript No="22">
-        <No>22</No>
+      <KScript No="21">
+        <No>21</No>
         <MouseKey>Left</MouseKey>
         <X>271</X>
         <Y>318</Y>
@@ -5870,8 +6728,8 @@
         <IsClosedPosition>false</IsClosedPosition>
         <RunAfterScript>0</RunAfterScript>
       </KScript>
-      <KScript No="23">
-        <No>23</No>
+      <KScript No="22">
+        <No>22</No>
         <MouseKey>Left</MouseKey>
         <X>160</X>
         <Y>339</Y>
@@ -5896,8 +6754,8 @@
         <IsClosedPosition>false</IsClosedPosition>
         <RunAfterScript>0</RunAfterScript>
       </KScript>
-      <KScript No="24">
-        <No>24</No>
+      <KScript No="23">
+        <No>23</No>
         <MouseKey>Left</MouseKey>
         <X>164</X>
         <Y>376</Y>
@@ -5922,8 +6780,8 @@
         <IsClosedPosition>false</IsClosedPosition>
         <RunAfterScript>0</RunAfterScript>
       </KScript>
-      <KScript No="25">
-        <No>25</No>
+      <KScript No="24">
+        <No>24</No>
         <MouseKey>Left</MouseKey>
         <X>191</X>
         <Y>376</Y>
@@ -5948,8 +6806,8 @@
         <IsClosedPosition>false</IsClosedPosition>
         <RunAfterScript>0</RunAfterScript>
       </KScript>
-      <KScript No="26">
-        <No>26</No>
+      <KScript No="25">
+        <No>25</No>
         <MouseKey>Left</MouseKey>
         <X>354</X>
         <Y>97</Y>
@@ -5974,8 +6832,8 @@
         <IsClosedPosition>false</IsClosedPosition>
         <RunAfterScript>0</RunAfterScript>
       </KScript>
-      <KScript No="27">
-        <No>27</No>
+      <KScript No="26">
+        <No>26</No>
         <MouseKey>Left</MouseKey>
         <X>173</X>
         <Y>374</Y>
@@ -6000,8 +6858,8 @@
         <IsClosedPosition>false</IsClosedPosition>
         <RunAfterScript>0</RunAfterScript>
       </KScript>
-      <KScript No="28">
-        <No>28</No>
+      <KScript No="27">
+        <No>27</No>
         <MouseKey>Left</MouseKey>
         <X>218</X>
         <Y>407</Y>
@@ -6026,8 +6884,8 @@
         <IsClosedPosition>false</IsClosedPosition>
         <RunAfterScript>0</RunAfterScript>
       </KScript>
-      <KScript No="29">
-        <No>29</No>
+      <KScript No="28">
+        <No>28</No>
         <MouseKey>Left</MouseKey>
         <X>497</X>
         <Y>330</Y>
@@ -6052,8 +6910,8 @@
         <IsClosedPosition>false</IsClosedPosition>
         <RunAfterScript>0</RunAfterScript>
       </KScript>
-      <KScript No="30">
-        <No>30</No>
+      <KScript No="29">
+        <No>29</No>
         <MouseKey>Left</MouseKey>
         <X>480</X>
         <Y>155</Y>
@@ -6078,8 +6936,8 @@
         <IsClosedPosition>false</IsClosedPosition>
         <RunAfterScript>0</RunAfterScript>
       </KScript>
-      <KScript No="31">
-        <No>31</No>
+      <KScript No="30">
+        <No>30</No>
         <MouseKey>Left</MouseKey>
         <X>274</X>
         <Y>273</Y>
@@ -6104,8 +6962,8 @@
         <IsClosedPosition>false</IsClosedPosition>
         <RunAfterScript>0</RunAfterScript>
       </KScript>
-      <KScript No="32">
-        <No>32</No>
+      <KScript No="31">
+        <No>31</No>
         <MouseKey>Left</MouseKey>
         <X>226</X>
         <Y>277</Y>
@@ -6130,8 +6988,8 @@
         <IsClosedPosition>false</IsClosedPosition>
         <RunAfterScript>0</RunAfterScript>
       </KScript>
-      <KScript No="33">
-        <No>33</No>
+      <KScript No="32">
+        <No>32</No>
         <MouseKey>Left</MouseKey>
         <X>335</X>
         <Y>273</Y>
@@ -6156,8 +7014,8 @@
         <IsClosedPosition>false</IsClosedPosition>
         <RunAfterScript>0</RunAfterScript>
       </KScript>
-      <KScript No="34">
-        <No>34</No>
+      <KScript No="33">
+        <No>33</No>
         <MouseKey>Left</MouseKey>
         <X>225</X>
         <Y>336</Y>
@@ -6182,8 +7040,8 @@
         <IsClosedPosition>false</IsClosedPosition>
         <RunAfterScript>0</RunAfterScript>
       </KScript>
-      <KScript No="35">
-        <No>35</No>
+      <KScript No="34">
+        <No>34</No>
         <MouseKey>Left</MouseKey>
         <X>186</X>
         <Y>194</Y>
@@ -6208,8 +7066,8 @@
         <IsClosedPosition>false</IsClosedPosition>
         <RunAfterScript>0</RunAfterScript>
       </KScript>
-      <KScript No="36">
-        <No>36</No>
+      <KScript No="35">
+        <No>35</No>
         <MouseKey>Left</MouseKey>
         <X>384</X>
         <Y>151</Y>
@@ -6234,8 +7092,8 @@
         <IsClosedPosition>false</IsClosedPosition>
         <RunAfterScript>0</RunAfterScript>
       </KScript>
-      <KScript No="37">
-        <No>37</No>
+      <KScript No="36">
+        <No>36</No>
         <MouseKey>Left</MouseKey>
         <X>213</X>
         <Y>274</Y>
@@ -6260,8 +7118,8 @@
         <IsClosedPosition>false</IsClosedPosition>
         <RunAfterScript>0</RunAfterScript>
       </KScript>
-      <KScript No="38">
-        <No>38</No>
+      <KScript No="37">
+        <No>37</No>
         <MouseKey>Left</MouseKey>
         <X>143</X>
         <Y>283</Y>
@@ -6286,15 +7144,15 @@
         <IsClosedPosition>false</IsClosedPosition>
         <RunAfterScript>0</RunAfterScript>
       </KScript>
-      <KScript No="39">
-        <No>39</No>
+      <KScript No="38">
+        <No>38</No>
         <MouseKey>Left</MouseKey>
-        <X>206</X>
-        <Y>236</Y>
-        <Color>fff2bf30</Color>
-        <X2>79</X2>
-        <Y2>410</Y2>
-        <Color2>fff28123</Color2>
+        <X>462</X>
+        <Y>418</Y>
+        <Color>fffdcf2d</Color>
+        <X2>484</X2>
+        <Y2>414</Y2>
+        <Color2>ff674208</Color2>
         <XMoved>0</XMoved>
         <YMoved>0</YMoved>
         <ColorMoved></ColorMoved>
@@ -6305,7 +7163,137 @@
         <IsSequential>false</IsSequential>
         <IsDrag>false</IsDrag>
         <DragSlow>false</DragSlow>
-        <Description>normal</Description>
+        <Description>skip</Description>
+        <IsStartIcon>false</IsStartIcon>
+        <RunOnce>false</RunOnce>
+        <EndWholeScripts>false</EndWholeScripts>
+        <IsClosedPosition>false</IsClosedPosition>
+        <RunAfterScript>0</RunAfterScript>
+      </KScript>
+      <KScript No="39">
+        <No>39</No>
+        <MouseKey>Left</MouseKey>
+        <X>485</X>
+        <Y>50</Y>
+        <Color>ff343732</Color>
+        <X2>471</X2>
+        <Y2>47</Y2>
+        <Color2>ffededed</Color2>
+        <XMoved>0</XMoved>
+        <YMoved>0</YMoved>
+        <ColorMoved></ColorMoved>
+        <XIgnored>0</XIgnored>
+        <YIgnored>0</YIgnored>
+        <ColorIgnored></ColorIgnored>
+        <Delay>100</Delay>
+        <IsSequential>false</IsSequential>
+        <IsDrag>false</IsDrag>
+        <DragSlow>false</DragSlow>
+        <Description>close ad</Description>
+        <IsStartIcon>false</IsStartIcon>
+        <RunOnce>false</RunOnce>
+        <EndWholeScripts>false</EndWholeScripts>
+        <IsClosedPosition>false</IsClosedPosition>
+        <RunAfterScript>0</RunAfterScript>
+      </KScript>
+      <KScript No="40">
+        <No>40</No>
+        <MouseKey>Left</MouseKey>
+        <X>486</X>
+        <Y>48</Y>
+        <Color>fffbfbfb</Color>
+        <X2>473</X2>
+        <Y2>44</Y2>
+        <Color2>fff5f5f5</Color2>
+        <XMoved>0</XMoved>
+        <YMoved>0</YMoved>
+        <ColorMoved></ColorMoved>
+        <XIgnored>0</XIgnored>
+        <YIgnored>0</YIgnored>
+        <ColorIgnored></ColorIgnored>
+        <Delay>100</Delay>
+        <IsSequential>false</IsSequential>
+        <IsDrag>false</IsDrag>
+        <DragSlow>false</DragSlow>
+        <Description>close ads</Description>
+        <IsStartIcon>false</IsStartIcon>
+        <RunOnce>false</RunOnce>
+        <EndWholeScripts>false</EndWholeScripts>
+        <IsClosedPosition>false</IsClosedPosition>
+        <RunAfterScript>0</RunAfterScript>
+      </KScript>
+      <KScript No="41">
+        <No>41</No>
+        <MouseKey>Left</MouseKey>
+        <X>215</X>
+        <Y>278</Y>
+        <Color>fff08139</Color>
+        <X2>281</X2>
+        <Y2>313</Y2>
+        <Color2>ff8e3ece</Color2>
+        <XMoved>0</XMoved>
+        <YMoved>0</YMoved>
+        <ColorMoved></ColorMoved>
+        <XIgnored>0</XIgnored>
+        <YIgnored>0</YIgnored>
+        <ColorIgnored></ColorIgnored>
+        <Delay>100</Delay>
+        <IsSequential>false</IsSequential>
+        <IsDrag>false</IsDrag>
+        <DragSlow>false</DragSlow>
+        <Description>raid &amp; hidden skill</Description>
+        <IsStartIcon>false</IsStartIcon>
+        <RunOnce>false</RunOnce>
+        <EndWholeScripts>false</EndWholeScripts>
+        <IsClosedPosition>false</IsClosedPosition>
+        <RunAfterScript>0</RunAfterScript>
+      </KScript>
+      <KScript No="42">
+        <No>42</No>
+        <MouseKey>Left</MouseKey>
+        <X>130</X>
+        <Y>160</Y>
+        <Color>fffa5454</Color>
+        <X2>99</X2>
+        <Y2>298</Y2>
+        <Color2>fffdc827</Color2>
+        <XMoved>0</XMoved>
+        <YMoved>0</YMoved>
+        <ColorMoved></ColorMoved>
+        <XIgnored>0</XIgnored>
+        <YIgnored>0</YIgnored>
+        <ColorIgnored></ColorIgnored>
+        <Delay>100</Delay>
+        <IsSequential>false</IsSequential>
+        <IsDrag>false</IsDrag>
+        <DragSlow>false</DragSlow>
+        <Description>ssr raid</Description>
+        <IsStartIcon>false</IsStartIcon>
+        <RunOnce>false</RunOnce>
+        <EndWholeScripts>false</EndWholeScripts>
+        <IsClosedPosition>false</IsClosedPosition>
+        <RunAfterScript>0</RunAfterScript>
+      </KScript>
+      <KScript No="43">
+        <No>43</No>
+        <MouseKey>Left</MouseKey>
+        <X>208</X>
+        <Y>108</Y>
+        <Color>ffdb8400</Color>
+        <X2>135</X2>
+        <Y2>160</Y2>
+        <Color2>ffdd4242</Color2>
+        <XMoved>0</XMoved>
+        <YMoved>0</YMoved>
+        <ColorMoved></ColorMoved>
+        <XIgnored>0</XIgnored>
+        <YIgnored>0</YIgnored>
+        <ColorIgnored></ColorIgnored>
+        <Delay>100</Delay>
+        <IsSequential>false</IsSequential>
+        <IsDrag>false</IsDrag>
+        <DragSlow>false</DragSlow>
+        <Description>very hard raid</Description>
         <IsStartIcon>false</IsStartIcon>
         <RunOnce>false</RunOnce>
         <EndWholeScripts>false</EndWholeScripts>
@@ -6321,12 +7309,12 @@
       <KScript No="1">
         <No>1</No>
         <MouseKey>Left</MouseKey>
-        <X>415</X>
-        <Y>205</Y>
-        <Color>fffee2bc</Color>
-        <X2>428</X2>
-        <Y2>215</Y2>
-        <Color2>ff1934d3</Color2>
+        <X>417</X>
+        <Y>158</Y>
+        <Color>ff01139c</Color>
+        <X2>425</X2>
+        <Y2>155</Y2>
+        <Color2>ffbbbcbc</Color2>
         <XMoved>0</XMoved>
         <YMoved>0</YMoved>
         <ColorMoved></ColorMoved>
@@ -6347,12 +7335,12 @@
       <KScript No="2">
         <No>2</No>
         <MouseKey>Left</MouseKey>
-        <X>339</X>
-        <Y>184</Y>
-        <Color>ffffeecb</Color>
-        <X2>387</X2>
-        <Y2>310</Y2>
-        <Color2>ff0019bb</Color2>
+        <X>194</X>
+        <Y>269</Y>
+        <Color>ff91d5f1</Color>
+        <X2>340</X2>
+        <Y2>273</Y2>
+        <Color2>ff002255</Color2>
         <XMoved>0</XMoved>
         <YMoved>0</YMoved>
         <ColorMoved></ColorMoved>
@@ -6373,12 +7361,12 @@
       <KScript No="3">
         <No>3</No>
         <MouseKey>Left</MouseKey>
-        <X>373</X>
-        <Y>210</Y>
-        <Color>ffa8ee65</Color>
-        <X2>352</X2>
-        <Y2>210</Y2>
-        <Color2>ffffffff</Color2>
+        <X>336</X>
+        <Y>194</Y>
+        <Color>ff5cd724</Color>
+        <X2>415</X2>
+        <Y2>206</Y2>
+        <Color2>fff7f7f7</Color2>
         <XMoved>0</XMoved>
         <YMoved>0</YMoved>
         <ColorMoved></ColorMoved>
@@ -6399,12 +7387,12 @@
       <KScript No="4">
         <No>4</No>
         <MouseKey>Left</MouseKey>
-        <X>241</X>
-        <Y>202</Y>
+        <X>292</X>
+        <Y>183</Y>
         <Color>ff88ccec</Color>
-        <X2>295</X2>
-        <Y2>214</Y2>
-        <Color2>ff3366c0</Color2>
+        <X2>357</X2>
+        <Y2>187</Y2>
+        <Color2>ff3366bf</Color2>
         <XMoved>0</XMoved>
         <YMoved>0</YMoved>
         <ColorMoved></ColorMoved>
@@ -6425,12 +7413,12 @@
       <KScript No="5">
         <No>5</No>
         <MouseKey>Left</MouseKey>
-        <X>348</X>
-        <Y>270</Y>
-        <Color>fff3c157</Color>
-        <X2>347</X2>
-        <Y2>286</Y2>
-        <Color2>ff571010</Color2>
+        <X>386</X>
+        <Y>267</Y>
+        <Color>ffeaad45</Color>
+        <X2>216</X2>
+        <Y2>109</Y2>
+        <Color2>ffffd400</Color2>
         <XMoved>0</XMoved>
         <YMoved>0</YMoved>
         <ColorMoved></ColorMoved>
@@ -6451,12 +7439,12 @@
       <KScript No="6">
         <No>6</No>
         <MouseKey>Left</MouseKey>
-        <X>195</X>
-        <Y>227</Y>
-        <Color>ffffe755</Color>
-        <X2>337</X2>
-        <Y2>234</Y2>
-        <Color2>ffffe355</Color2>
+        <X>268</X>
+        <Y>238</Y>
+        <Color>ff2277fa</Color>
+        <X2>370</X2>
+        <Y2>183</Y2>
+        <Color2>ffffffff</Color2>
         <XMoved>0</XMoved>
         <YMoved>0</YMoved>
         <ColorMoved></ColorMoved>
@@ -6515,7 +7503,7 @@
         <XIgnored>0</XIgnored>
         <YIgnored>0</YIgnored>
         <ColorIgnored></ColorIgnored>
-        <Delay>26000</Delay>
+        <Delay>30000</Delay>
         <IsSequential>false</IsSequential>
         <IsDrag>false</IsDrag>
         <DragSlow>false</DragSlow>
@@ -6567,7 +7555,7 @@
         <XIgnored>0</XIgnored>
         <YIgnored>0</YIgnored>
         <ColorIgnored></ColorIgnored>
-        <Delay>30000</Delay>
+        <Delay>35000</Delay>
         <IsSequential>false</IsSequential>
         <IsDrag>false</IsDrag>
         <DragSlow>false</DragSlow>
@@ -6659,38 +7647,38 @@
       <KScript No="14">
         <No>14</No>
         <MouseKey>Left</MouseKey>
-        <X>484</X>
-        <Y>50</Y>
-        <Color>ff7d8391</Color>
-        <X2>485</X2>
-        <Y2>44</Y2>
-        <Color2>ffffffff</Color2>
+        <X>483</X>
+        <Y>51</Y>
+        <Color>ffcccccc</Color>
+        <X2>465</X2>
+        <Y2>47</Y2>
+        <Color2>ff000000</Color2>
         <XMoved>0</XMoved>
         <YMoved>0</YMoved>
         <ColorMoved></ColorMoved>
         <XIgnored>0</XIgnored>
         <YIgnored>0</YIgnored>
         <ColorIgnored></ColorIgnored>
-        <Delay>35000</Delay>
+        <Delay>100</Delay>
         <IsSequential>false</IsSequential>
         <IsDrag>false</IsDrag>
         <DragSlow>false</DragSlow>
-        <Description>Close ad after 35s</Description>
+        <Description>Close ad</Description>
         <IsStartIcon>false</IsStartIcon>
         <RunOnce>false</RunOnce>
         <EndWholeScripts>false</EndWholeScripts>
         <IsClosedPosition>false</IsClosedPosition>
-        <RunAfterScript>13</RunAfterScript>
+        <RunAfterScript>0</RunAfterScript>
       </KScript>
       <KScript No="15">
         <No>15</No>
         <MouseKey>Left</MouseKey>
-        <X>218</X>
-        <Y>272</Y>
-        <Color>ffa2f156</Color>
-        <X2>77</X2>
-        <Y2>410</Y2>
-        <Color2>ff794011</Color2>
+        <X>287</X>
+        <Y>277</Y>
+        <Color>ff98e94c</Color>
+        <X2>450</X2>
+        <Y2>283</Y2>
+        <Color2>ff744710</Color2>
         <XMoved>0</XMoved>
         <YMoved>0</YMoved>
         <ColorMoved></ColorMoved>
@@ -6763,32 +7751,6 @@
       <KScript No="18">
         <No>18</No>
         <MouseKey>Left</MouseKey>
-        <X>197</X>
-        <Y>372</Y>
-        <Color>ff21511f</Color>
-        <X2>321</X2>
-        <Y2>361</Y2>
-        <Color2>ff34712e</Color2>
-        <XMoved>0</XMoved>
-        <YMoved>0</YMoved>
-        <ColorMoved></ColorMoved>
-        <XIgnored>0</XIgnored>
-        <YIgnored>0</YIgnored>
-        <ColorIgnored></ColorIgnored>
-        <Delay>100</Delay>
-        <IsSequential>false</IsSequential>
-        <IsDrag>false</IsDrag>
-        <DragSlow>false</DragSlow>
-        <Description>touch screen end game</Description>
-        <IsStartIcon>false</IsStartIcon>
-        <RunOnce>false</RunOnce>
-        <EndWholeScripts>false</EndWholeScripts>
-        <IsClosedPosition>false</IsClosedPosition>
-        <RunAfterScript>0</RunAfterScript>
-      </KScript>
-      <KScript No="19">
-        <No>19</No>
-        <MouseKey>Left</MouseKey>
         <X>273</X>
         <Y>279</Y>
         <Color>ff93e547</Color>
@@ -6812,8 +7774,8 @@
         <IsClosedPosition>false</IsClosedPosition>
         <RunAfterScript>0</RunAfterScript>
       </KScript>
-      <KScript No="20">
-        <No>20</No>
+      <KScript No="19">
+        <No>19</No>
         <MouseKey>Left</MouseKey>
         <X>307</X>
         <Y>71</Y>
@@ -6838,15 +7800,15 @@
         <IsClosedPosition>false</IsClosedPosition>
         <RunAfterScript>0</RunAfterScript>
       </KScript>
-      <KScript No="21">
-        <No>21</No>
+      <KScript No="20">
+        <No>20</No>
         <MouseKey>Left</MouseKey>
-        <X>373</X>
-        <Y>287</Y>
-        <Color>ffffe68a</Color>
-        <X2>388</X2>
-        <Y2>299</Y2>
-        <Color2>ffffffff</Color2>
+        <X>377</X>
+        <Y>300</Y>
+        <Color>ffffe0aa</Color>
+        <X2>278</X2>
+        <Y2>320</Y2>
+        <Color2>ffefd545</Color2>
         <XMoved>0</XMoved>
         <YMoved>0</YMoved>
         <ColorMoved></ColorMoved>
@@ -6864,8 +7826,8 @@
         <IsClosedPosition>false</IsClosedPosition>
         <RunAfterScript>0</RunAfterScript>
       </KScript>
-      <KScript No="22">
-        <No>22</No>
+      <KScript No="21">
+        <No>21</No>
         <MouseKey>Left</MouseKey>
         <X>271</X>
         <Y>318</Y>
@@ -6890,8 +7852,8 @@
         <IsClosedPosition>false</IsClosedPosition>
         <RunAfterScript>0</RunAfterScript>
       </KScript>
-      <KScript No="23">
-        <No>23</No>
+      <KScript No="22">
+        <No>22</No>
         <MouseKey>Left</MouseKey>
         <X>238</X>
         <Y>196</Y>
@@ -6916,8 +7878,8 @@
         <IsClosedPosition>false</IsClosedPosition>
         <RunAfterScript>0</RunAfterScript>
       </KScript>
-      <KScript No="24">
-        <No>24</No>
+      <KScript No="23">
+        <No>23</No>
         <MouseKey>Left</MouseKey>
         <X>398</X>
         <Y>204</Y>
@@ -6942,8 +7904,8 @@
         <IsClosedPosition>false</IsClosedPosition>
         <RunAfterScript>0</RunAfterScript>
       </KScript>
-      <KScript No="25">
-        <No>25</No>
+      <KScript No="24">
+        <No>24</No>
         <MouseKey>Left</MouseKey>
         <X>160</X>
         <Y>339</Y>
@@ -6968,86 +7930,8 @@
         <IsClosedPosition>false</IsClosedPosition>
         <RunAfterScript>0</RunAfterScript>
       </KScript>
-      <KScript No="26">
-        <No>26</No>
-        <MouseKey>Left</MouseKey>
-        <X>139</X>
-        <Y>143</Y>
-        <Color>ffffbc11</Color>
-        <X2>407</X2>
-        <Y2>414</Y2>
-        <Color2>fff1e250</Color2>
-        <XMoved>0</XMoved>
-        <YMoved>0</YMoved>
-        <ColorMoved></ColorMoved>
-        <XIgnored>0</XIgnored>
-        <YIgnored>0</YIgnored>
-        <ColorIgnored></ColorIgnored>
-        <Delay>100</Delay>
-        <IsSequential>false</IsSequential>
-        <IsDrag>false</IsDrag>
-        <DragSlow>false</DragSlow>
-        <Description>1st event (orange)</Description>
-        <IsStartIcon>false</IsStartIcon>
-        <RunOnce>false</RunOnce>
-        <EndWholeScripts>false</EndWholeScripts>
-        <IsClosedPosition>false</IsClosedPosition>
-        <RunAfterScript>0</RunAfterScript>
-      </KScript>
-      <KScript No="27">
-        <No>27</No>
-        <MouseKey>Left</MouseKey>
-        <X>164</X>
-        <Y>376</Y>
-        <Color>ff070f05</Color>
-        <X2>320</X2>
-        <Y2>358</Y2>
-        <Color2>ff0d170a</Color2>
-        <XMoved>0</XMoved>
-        <YMoved>0</YMoved>
-        <ColorMoved></ColorMoved>
-        <XIgnored>0</XIgnored>
-        <YIgnored>0</YIgnored>
-        <ColorIgnored></ColorIgnored>
-        <Delay>100</Delay>
-        <IsSequential>false</IsSequential>
-        <IsDrag>false</IsDrag>
-        <DragSlow>false</DragSlow>
-        <Description>touch screen get reward ball</Description>
-        <IsStartIcon>false</IsStartIcon>
-        <RunOnce>false</RunOnce>
-        <EndWholeScripts>false</EndWholeScripts>
-        <IsClosedPosition>false</IsClosedPosition>
-        <RunAfterScript>0</RunAfterScript>
-      </KScript>
-      <KScript No="28">
-        <No>28</No>
-        <MouseKey>Left</MouseKey>
-        <X>191</X>
-        <Y>376</Y>
-        <Color>ff10270d</Color>
-        <X2>297</X2>
-        <Y2>361</Y2>
-        <Color2>ff1d3816</Color2>
-        <XMoved>0</XMoved>
-        <YMoved>0</YMoved>
-        <ColorMoved></ColorMoved>
-        <XIgnored>0</XIgnored>
-        <YIgnored>0</YIgnored>
-        <ColorIgnored></ColorIgnored>
-        <Delay>100</Delay>
-        <IsSequential>false</IsSequential>
-        <IsDrag>false</IsDrag>
-        <DragSlow>false</DragSlow>
-        <Description>touch screen get reward</Description>
-        <IsStartIcon>false</IsStartIcon>
-        <RunOnce>false</RunOnce>
-        <EndWholeScripts>false</EndWholeScripts>
-        <IsClosedPosition>false</IsClosedPosition>
-        <RunAfterScript>0</RunAfterScript>
-      </KScript>
-      <KScript No="29">
-        <No>29</No>
+      <KScript No="25">
+        <No>25</No>
         <MouseKey>Left</MouseKey>
         <X>354</X>
         <Y>97</Y>
@@ -7072,34 +7956,8 @@
         <IsClosedPosition>false</IsClosedPosition>
         <RunAfterScript>0</RunAfterScript>
       </KScript>
-      <KScript No="30">
-        <No>30</No>
-        <MouseKey>Left</MouseKey>
-        <X>173</X>
-        <Y>374</Y>
-        <Color>ff1e4f19</Color>
-        <X2>303</X2>
-        <Y2>361</Y2>
-        <Color2>ff34712e</Color2>
-        <XMoved>0</XMoved>
-        <YMoved>0</YMoved>
-        <ColorMoved></ColorMoved>
-        <XIgnored>0</XIgnored>
-        <YIgnored>0</YIgnored>
-        <ColorIgnored></ColorIgnored>
-        <Delay>100</Delay>
-        <IsSequential>false</IsSequential>
-        <IsDrag>false</IsDrag>
-        <DragSlow>false</DragSlow>
-        <Description>touch screen end game</Description>
-        <IsStartIcon>false</IsStartIcon>
-        <RunOnce>false</RunOnce>
-        <EndWholeScripts>false</EndWholeScripts>
-        <IsClosedPosition>false</IsClosedPosition>
-        <RunAfterScript>0</RunAfterScript>
-      </KScript>
-      <KScript No="31">
-        <No>31</No>
+      <KScript No="26">
+        <No>26</No>
         <MouseKey>Left</MouseKey>
         <X>218</X>
         <Y>407</Y>
@@ -7124,8 +7982,8 @@
         <IsClosedPosition>false</IsClosedPosition>
         <RunAfterScript>0</RunAfterScript>
       </KScript>
-      <KScript No="32">
-        <No>32</No>
+      <KScript No="27">
+        <No>27</No>
         <MouseKey>Left</MouseKey>
         <X>183</X>
         <Y>189</Y>
@@ -7150,8 +8008,8 @@
         <IsClosedPosition>false</IsClosedPosition>
         <RunAfterScript>0</RunAfterScript>
       </KScript>
-      <KScript No="33">
-        <No>33</No>
+      <KScript No="28">
+        <No>28</No>
         <MouseKey>Left</MouseKey>
         <X>307</X>
         <Y>151</Y>
@@ -7176,8 +8034,8 @@
         <IsClosedPosition>false</IsClosedPosition>
         <RunAfterScript>0</RunAfterScript>
       </KScript>
-      <KScript No="34">
-        <No>34</No>
+      <KScript No="29">
+        <No>29</No>
         <MouseKey>Left</MouseKey>
         <X>278</X>
         <Y>273</Y>
@@ -7202,8 +8060,8 @@
         <IsClosedPosition>false</IsClosedPosition>
         <RunAfterScript>0</RunAfterScript>
       </KScript>
-      <KScript No="35">
-        <No>35</No>
+      <KScript No="30">
+        <No>30</No>
         <MouseKey>Left</MouseKey>
         <X>215</X>
         <Y>340</Y>
@@ -7228,34 +8086,8 @@
         <IsClosedPosition>false</IsClosedPosition>
         <RunAfterScript>0</RunAfterScript>
       </KScript>
-      <KScript No="36">
-        <No>36</No>
-        <MouseKey>Left</MouseKey>
-        <X>284</X>
-        <Y>160</Y>
-        <Color>ffffd044</Color>
-        <X2>227</X2>
-        <Y2>163</Y2>
-        <Color2>fff4dd45</Color2>
-        <XMoved>0</XMoved>
-        <YMoved>0</YMoved>
-        <ColorMoved></ColorMoved>
-        <XIgnored>0</XIgnored>
-        <YIgnored>0</YIgnored>
-        <ColorIgnored></ColorIgnored>
-        <Delay>100</Delay>
-        <IsSequential>false</IsSequential>
-        <IsDrag>false</IsDrag>
-        <DragSlow>false</DragSlow>
-        <Description>2nd event</Description>
-        <IsStartIcon>false</IsStartIcon>
-        <RunOnce>false</RunOnce>
-        <EndWholeScripts>false</EndWholeScripts>
-        <IsClosedPosition>false</IsClosedPosition>
-        <RunAfterScript>0</RunAfterScript>
-      </KScript>
-      <KScript No="37">
-        <No>37</No>
+      <KScript No="31">
+        <No>31</No>
         <MouseKey>Left</MouseKey>
         <X>358</X>
         <Y>224</Y>
@@ -7280,8 +8112,8 @@
         <IsClosedPosition>false</IsClosedPosition>
         <RunAfterScript>0</RunAfterScript>
       </KScript>
-      <KScript No="38">
-        <No>38</No>
+      <KScript No="32">
+        <No>32</No>
         <MouseKey>Left</MouseKey>
         <X>357</X>
         <Y>263</Y>
@@ -7306,34 +8138,8 @@
         <IsClosedPosition>false</IsClosedPosition>
         <RunAfterScript>0</RunAfterScript>
       </KScript>
-      <KScript No="39">
-        <No>39</No>
-        <MouseKey>Left</MouseKey>
-        <X>484</X>
-        <Y>49</Y>
-        <Color>ff4d4d4f</Color>
-        <X2>484</X2>
-        <Y2>43</Y2>
-        <Color2>ffffffff</Color2>
-        <XMoved>0</XMoved>
-        <YMoved>0</YMoved>
-        <ColorMoved></ColorMoved>
-        <XIgnored>0</XIgnored>
-        <YIgnored>0</YIgnored>
-        <ColorIgnored></ColorIgnored>
-        <Delay>35000</Delay>
-        <IsSequential>false</IsSequential>
-        <IsDrag>false</IsDrag>
-        <DragSlow>false</DragSlow>
-        <Description>close ads</Description>
-        <IsStartIcon>false</IsStartIcon>
-        <RunOnce>false</RunOnce>
-        <EndWholeScripts>false</EndWholeScripts>
-        <IsClosedPosition>false</IsClosedPosition>
-        <RunAfterScript>13</RunAfterScript>
-      </KScript>
-      <KScript No="40">
-        <No>40</No>
+      <KScript No="33">
+        <No>33</No>
         <MouseKey>Left</MouseKey>
         <X>215</X>
         <Y>275</Y>
@@ -7358,6 +8164,630 @@
         <IsClosedPosition>false</IsClosedPosition>
         <RunAfterScript>0</RunAfterScript>
       </KScript>
+      <KScript No="34">
+        <No>34</No>
+        <MouseKey>Left</MouseKey>
+        <X>297</X>
+        <Y>331</Y>
+        <Color>ff81ca40</Color>
+        <X2>239</X2>
+        <Y2>405</Y2>
+        <Color2>ff7d7a31</Color2>
+        <XMoved>0</XMoved>
+        <YMoved>0</YMoved>
+        <ColorMoved></ColorMoved>
+        <XIgnored>0</XIgnored>
+        <YIgnored>0</YIgnored>
+        <ColorIgnored></ColorIgnored>
+        <Delay>100</Delay>
+        <IsSequential>false</IsSequential>
+        <IsDrag>false</IsDrag>
+        <DragSlow>false</DragSlow>
+        <Description>add friend</Description>
+        <IsStartIcon>false</IsStartIcon>
+        <RunOnce>false</RunOnce>
+        <EndWholeScripts>false</EndWholeScripts>
+        <IsClosedPosition>false</IsClosedPosition>
+        <RunAfterScript>0</RunAfterScript>
+      </KScript>
+      <KScript No="35">
+        <No>35</No>
+        <MouseKey>Left</MouseKey>
+        <X>427</X>
+        <Y>152</Y>
+        <Color>ff000d82</Color>
+        <X2>446</X2>
+        <Y2>155</Y2>
+        <Color2>ffad711f</Color2>
+        <XMoved>0</XMoved>
+        <YMoved>0</YMoved>
+        <ColorMoved></ColorMoved>
+        <XIgnored>0</XIgnored>
+        <YIgnored>0</YIgnored>
+        <ColorIgnored></ColorIgnored>
+        <Delay>100</Delay>
+        <IsSequential>false</IsSequential>
+        <IsDrag>false</IsDrag>
+        <DragSlow>false</DragSlow>
+        <Description>click icon to start</Description>
+        <IsStartIcon>false</IsStartIcon>
+        <RunOnce>false</RunOnce>
+        <EndWholeScripts>false</EndWholeScripts>
+        <IsClosedPosition>false</IsClosedPosition>
+        <RunAfterScript>0</RunAfterScript>
+      </KScript>
+      <KScript No="36">
+        <No>36</No>
+        <MouseKey>Left</MouseKey>
+        <X>209</X>
+        <Y>278</Y>
+        <Color>ff96e74a</Color>
+        <X2>473</X2>
+        <Y2>393</Y2>
+        <Color2>ff6c6c6c</Color2>
+        <XMoved>0</XMoved>
+        <YMoved>0</YMoved>
+        <ColorMoved></ColorMoved>
+        <XIgnored>0</XIgnored>
+        <YIgnored>0</YIgnored>
+        <ColorIgnored></ColorIgnored>
+        <Delay>100</Delay>
+        <IsSequential>false</IsSequential>
+        <IsDrag>false</IsDrag>
+        <DragSlow>false</DragSlow>
+        <Description>return title</Description>
+        <IsStartIcon>false</IsStartIcon>
+        <RunOnce>false</RunOnce>
+        <EndWholeScripts>false</EndWholeScripts>
+        <IsClosedPosition>false</IsClosedPosition>
+        <RunAfterScript>0</RunAfterScript>
+      </KScript>
+      <KScript No="37">
+        <No>37</No>
+        <MouseKey>Left</MouseKey>
+        <X>285</X>
+        <Y>160</Y>
+        <Color>ffffd758</Color>
+        <X2>247</X2>
+        <Y2>297</Y2>
+        <Color2>fffdca29</Color2>
+        <XMoved>0</XMoved>
+        <YMoved>0</YMoved>
+        <ColorMoved></ColorMoved>
+        <XIgnored>0</XIgnored>
+        <YIgnored>0</YIgnored>
+        <ColorIgnored></ColorIgnored>
+        <Delay>100</Delay>
+        <IsSequential>false</IsSequential>
+        <IsDrag>false</IsDrag>
+        <DragSlow>false</DragSlow>
+        <Description>2nd event</Description>
+        <IsStartIcon>false</IsStartIcon>
+        <RunOnce>false</RunOnce>
+        <EndWholeScripts>false</EndWholeScripts>
+        <IsClosedPosition>false</IsClosedPosition>
+        <RunAfterScript>0</RunAfterScript>
+      </KScript>
+      <KScript No="38">
+        <No>38</No>
+        <MouseKey>Left</MouseKey>
+        <X>212</X>
+        <Y>167</Y>
+        <Color>fff3c031</Color>
+        <X2>136</X2>
+        <Y2>155</Y2>
+        <Color2>ffa4ddff</Color2>
+        <XMoved>0</XMoved>
+        <YMoved>0</YMoved>
+        <ColorMoved></ColorMoved>
+        <XIgnored>0</XIgnored>
+        <YIgnored>0</YIgnored>
+        <ColorIgnored></ColorIgnored>
+        <Delay>100</Delay>
+        <IsSequential>false</IsSequential>
+        <IsDrag>false</IsDrag>
+        <DragSlow>false</DragSlow>
+        <Description>2nd drill</Description>
+        <IsStartIcon>false</IsStartIcon>
+        <RunOnce>false</RunOnce>
+        <EndWholeScripts>false</EndWholeScripts>
+        <IsClosedPosition>false</IsClosedPosition>
+        <RunAfterScript>0</RunAfterScript>
+      </KScript>
+      <KScript No="39">
+        <No>39</No>
+        <MouseKey>Left</MouseKey>
+        <X>480</X>
+        <Y>50</Y>
+        <Color>fffffffe</Color>
+        <X2>470</X2>
+        <Y2>49</Y2>
+        <Color2>fff9f9f7</Color2>
+        <XMoved>0</XMoved>
+        <YMoved>0</YMoved>
+        <ColorMoved></ColorMoved>
+        <XIgnored>0</XIgnored>
+        <YIgnored>0</YIgnored>
+        <ColorIgnored></ColorIgnored>
+        <Delay>100</Delay>
+        <IsSequential>false</IsSequential>
+        <IsDrag>false</IsDrag>
+        <DragSlow>false</DragSlow>
+        <Description>close ads</Description>
+        <IsStartIcon>false</IsStartIcon>
+        <RunOnce>false</RunOnce>
+        <EndWholeScripts>false</EndWholeScripts>
+        <IsClosedPosition>false</IsClosedPosition>
+        <RunAfterScript>0</RunAfterScript>
+      </KScript>
+      <KScript No="40">
+        <No>40</No>
+        <MouseKey>Left</MouseKey>
+        <X>291</X>
+        <Y>344</Y>
+        <Color>ffc5573f</Color>
+        <X2>238</X2>
+        <Y2>418</Y2>
+        <Color2>ff7a621a</Color2>
+        <XMoved>0</XMoved>
+        <YMoved>0</YMoved>
+        <ColorMoved></ColorMoved>
+        <XIgnored>0</XIgnored>
+        <YIgnored>0</YIgnored>
+        <ColorIgnored></ColorIgnored>
+        <Delay>100</Delay>
+        <IsSequential>false</IsSequential>
+        <IsDrag>false</IsDrag>
+        <DragSlow>false</DragSlow>
+        <Description>close</Description>
+        <IsStartIcon>false</IsStartIcon>
+        <RunOnce>false</RunOnce>
+        <EndWholeScripts>false</EndWholeScripts>
+        <IsClosedPosition>false</IsClosedPosition>
+        <RunAfterScript>0</RunAfterScript>
+      </KScript>
+      <KScript No="41">
+        <No>41</No>
+        <MouseKey>Left</MouseKey>
+        <X>358</X>
+        <Y>112</Y>
+        <Color>ffdb8400</Color>
+        <X2>141</X2>
+        <Y2>161</Y2>
+        <Color2>ffffd557</Color2>
+        <XMoved>0</XMoved>
+        <YMoved>0</YMoved>
+        <ColorMoved></ColorMoved>
+        <XIgnored>0</XIgnored>
+        <YIgnored>0</YIgnored>
+        <ColorIgnored></ColorIgnored>
+        <Delay>100</Delay>
+        <IsSequential>false</IsSequential>
+        <IsDrag>false</IsDrag>
+        <DragSlow>false</DragSlow>
+        <Description>very hard event</Description>
+        <IsStartIcon>false</IsStartIcon>
+        <RunOnce>false</RunOnce>
+        <EndWholeScripts>false</EndWholeScripts>
+        <IsClosedPosition>false</IsClosedPosition>
+        <RunAfterScript>0</RunAfterScript>
+      </KScript>
+      <KScript No="42">
+        <No>42</No>
+        <MouseKey>Left</MouseKey>
+        <X>359</X>
+        <Y>177</Y>
+        <Color>ffdb8400</Color>
+        <X2>145</X2>
+        <Y2>139</Y2>
+        <Color2>ff21a513</Color2>
+        <XMoved>0</XMoved>
+        <YMoved>0</YMoved>
+        <ColorMoved></ColorMoved>
+        <XIgnored>0</XIgnored>
+        <YIgnored>0</YIgnored>
+        <ColorIgnored></ColorIgnored>
+        <Delay>100</Delay>
+        <IsSequential>false</IsSequential>
+        <IsDrag>false</IsDrag>
+        <DragSlow>false</DragSlow>
+        <Description>very hard 2nd</Description>
+        <IsStartIcon>false</IsStartIcon>
+        <RunOnce>false</RunOnce>
+        <EndWholeScripts>false</EndWholeScripts>
+        <IsClosedPosition>false</IsClosedPosition>
+        <RunAfterScript>0</RunAfterScript>
+      </KScript>
+      <KScript No="43">
+        <No>43</No>
+        <MouseKey>Left</MouseKey>
+        <X>298</X>
+        <Y>184</Y>
+        <Color>ff3366c1</Color>
+        <X2>230</X2>
+        <Y2>179</Y2>
+        <Color2>ff88cce9</Color2>
+        <XMoved>0</XMoved>
+        <YMoved>0</YMoved>
+        <ColorMoved></ColorMoved>
+        <XIgnored>0</XIgnored>
+        <YIgnored>0</YIgnored>
+        <ColorIgnored></ColorIgnored>
+        <Delay>100</Delay>
+        <IsSequential>false</IsSequential>
+        <IsDrag>false</IsDrag>
+        <DragSlow>false</DragSlow>
+        <Description>click events</Description>
+        <IsStartIcon>false</IsStartIcon>
+        <RunOnce>false</RunOnce>
+        <EndWholeScripts>false</EndWholeScripts>
+        <IsClosedPosition>false</IsClosedPosition>
+        <RunAfterScript>0</RunAfterScript>
+      </KScript>
+      <KScript No="44">
+        <No>44</No>
+        <MouseKey>Left</MouseKey>
+        <X>142</X>
+        <Y>162</Y>
+        <Color>ffffdb55</Color>
+        <X2>97</X2>
+        <Y2>297</Y2>
+        <Color2>fffdca29</Color2>
+        <XMoved>0</XMoved>
+        <YMoved>0</YMoved>
+        <ColorMoved></ColorMoved>
+        <XIgnored>0</XIgnored>
+        <YIgnored>0</YIgnored>
+        <ColorIgnored></ColorIgnored>
+        <Delay>100</Delay>
+        <IsSequential>false</IsSequential>
+        <IsDrag>false</IsDrag>
+        <DragSlow>false</DragSlow>
+        <Description>1st event</Description>
+        <IsStartIcon>false</IsStartIcon>
+        <RunOnce>false</RunOnce>
+        <EndWholeScripts>false</EndWholeScripts>
+        <IsClosedPosition>false</IsClosedPosition>
+        <RunAfterScript>0</RunAfterScript>
+      </KScript>
+      <KScript No="45">
+        <No>45</No>
+        <MouseKey>Left</MouseKey>
+        <X>432</X>
+        <Y>106</Y>
+        <Color>ffebb225</Color>
+        <X2>136</X2>
+        <Y2>159</Y2>
+        <Color2>ffffdc5f</Color2>
+        <XMoved>0</XMoved>
+        <YMoved>0</YMoved>
+        <ColorMoved></ColorMoved>
+        <XIgnored>0</XIgnored>
+        <YIgnored>0</YIgnored>
+        <ColorIgnored></ColorIgnored>
+        <Delay>100</Delay>
+        <IsSequential>false</IsSequential>
+        <IsDrag>false</IsDrag>
+        <DragSlow>false</DragSlow>
+        <Description>extream</Description>
+        <IsStartIcon>false</IsStartIcon>
+        <RunOnce>false</RunOnce>
+        <EndWholeScripts>false</EndWholeScripts>
+        <IsClosedPosition>false</IsClosedPosition>
+        <RunAfterScript>0</RunAfterScript>
+      </KScript>
+      <KScript No="46">
+        <No>46</No>
+        <MouseKey>Left</MouseKey>
+        <X>293</X>
+        <Y>278</Y>
+        <Color>ff81ca40</Color>
+        <X2>160</X2>
+        <Y2>222</Y2>
+        <Color2>fff3f7f9</Color2>
+        <XMoved>0</XMoved>
+        <YMoved>0</YMoved>
+        <ColorMoved></ColorMoved>
+        <XIgnored>0</XIgnored>
+        <YIgnored>0</YIgnored>
+        <ColorIgnored></ColorIgnored>
+        <Delay>100</Delay>
+        <IsSequential>false</IsSequential>
+        <IsDrag>false</IsDrag>
+        <DragSlow>false</DragSlow>
+        <Description>conection orrue</Description>
+        <IsStartIcon>false</IsStartIcon>
+        <RunOnce>false</RunOnce>
+        <EndWholeScripts>false</EndWholeScripts>
+        <IsClosedPosition>false</IsClosedPosition>
+        <RunAfterScript>0</RunAfterScript>
+      </KScript>
+      <KScript No="47">
+        <No>47</No>
+        <MouseKey>Left</MouseKey>
+        <X>175</X>
+        <Y>392</Y>
+        <Color>ff144114</Color>
+        <X2>214</X2>
+        <Y2>209</Y2>
+        <Color2>ffffffff</Color2>
+        <XMoved>0</XMoved>
+        <YMoved>0</YMoved>
+        <ColorMoved></ColorMoved>
+        <XIgnored>0</XIgnored>
+        <YIgnored>0</YIgnored>
+        <ColorIgnored></ColorIgnored>
+        <Delay>100</Delay>
+        <IsSequential>false</IsSequential>
+        <IsDrag>false</IsDrag>
+        <DragSlow>false</DragSlow>
+        <Description>touch end game win</Description>
+        <IsStartIcon>false</IsStartIcon>
+        <RunOnce>false</RunOnce>
+        <EndWholeScripts>false</EndWholeScripts>
+        <IsClosedPosition>false</IsClosedPosition>
+        <RunAfterScript>0</RunAfterScript>
+      </KScript>
+      <KScript No="48">
+        <No>48</No>
+        <MouseKey>Left</MouseKey>
+        <X>123</X>
+        <Y>380</Y>
+        <Color>ff0b260d</Color>
+        <X2>170</X2>
+        <Y2>115</Y2>
+        <Color2>ff133852</Color2>
+        <XMoved>0</XMoved>
+        <YMoved>0</YMoved>
+        <ColorMoved></ColorMoved>
+        <XIgnored>0</XIgnored>
+        <YIgnored>0</YIgnored>
+        <ColorIgnored></ColorIgnored>
+        <Delay>100</Delay>
+        <IsSequential>false</IsSequential>
+        <IsDrag>false</IsDrag>
+        <DragSlow>false</DragSlow>
+        <Description>touch end game reward</Description>
+        <IsStartIcon>false</IsStartIcon>
+        <RunOnce>false</RunOnce>
+        <EndWholeScripts>false</EndWholeScripts>
+        <IsClosedPosition>false</IsClosedPosition>
+        <RunAfterScript>0</RunAfterScript>
+      </KScript>
+      <KScript No="49">
+        <No>49</No>
+        <MouseKey>Left</MouseKey>
+        <X>177</X>
+        <Y>384</Y>
+        <Color>ff204310</Color>
+        <X2>180</X2>
+        <Y2>99</Y2>
+        <Color2>ffffffff</Color2>
+        <XMoved>0</XMoved>
+        <YMoved>0</YMoved>
+        <ColorMoved></ColorMoved>
+        <XIgnored>0</XIgnored>
+        <YIgnored>0</YIgnored>
+        <ColorIgnored></ColorIgnored>
+        <Delay>100</Delay>
+        <IsSequential>false</IsSequential>
+        <IsDrag>false</IsDrag>
+        <DragSlow>false</DragSlow>
+        <Description>touch end game</Description>
+        <IsStartIcon>false</IsStartIcon>
+        <RunOnce>false</RunOnce>
+        <EndWholeScripts>false</EndWholeScripts>
+        <IsClosedPosition>false</IsClosedPosition>
+        <RunAfterScript>0</RunAfterScript>
+      </KScript>
+      <KScript No="50">
+        <No>50</No>
+        <MouseKey>Left</MouseKey>
+        <X>486</X>
+        <Y>54</Y>
+        <Color>ffd8f3f5</Color>
+        <X2>471</X2>
+        <Y2>44</Y2>
+        <Color2>fff9f9f9</Color2>
+        <XMoved>0</XMoved>
+        <YMoved>0</YMoved>
+        <ColorMoved></ColorMoved>
+        <XIgnored>0</XIgnored>
+        <YIgnored>0</YIgnored>
+        <ColorIgnored></ColorIgnored>
+        <Delay>100</Delay>
+        <IsSequential>false</IsSequential>
+        <IsDrag>false</IsDrag>
+        <DragSlow>false</DragSlow>
+        <Description>close ad</Description>
+        <IsStartIcon>false</IsStartIcon>
+        <RunOnce>false</RunOnce>
+        <EndWholeScripts>false</EndWholeScripts>
+        <IsClosedPosition>false</IsClosedPosition>
+        <RunAfterScript>0</RunAfterScript>
+      </KScript>
+      <KScript No="51">
+        <No>51</No>
+        <MouseKey>Left</MouseKey>
+        <X>165</X>
+        <Y>379</Y>
+        <Color>ff030802</Color>
+        <X2>77</X2>
+        <Y2>374</Y2>
+        <Color2>ffffe1cc</Color2>
+        <XMoved>0</XMoved>
+        <YMoved>0</YMoved>
+        <ColorMoved></ColorMoved>
+        <XIgnored>0</XIgnored>
+        <YIgnored>0</YIgnored>
+        <ColorIgnored></ColorIgnored>
+        <Delay>100</Delay>
+        <IsSequential>false</IsSequential>
+        <IsDrag>false</IsDrag>
+        <DragSlow>false</DragSlow>
+        <Description>rank up</Description>
+        <IsStartIcon>false</IsStartIcon>
+        <RunOnce>false</RunOnce>
+        <EndWholeScripts>false</EndWholeScripts>
+        <IsClosedPosition>false</IsClosedPosition>
+        <RunAfterScript>0</RunAfterScript>
+      </KScript>
+      <KScript No="52">
+        <No>52</No>
+        <MouseKey>Left</MouseKey>
+        <X>167</X>
+        <Y>273</Y>
+        <Color>ffb0b0b1</Color>
+        <X2>77</X2>
+        <Y2>424</Y2>
+        <Color2>ff642703</Color2>
+        <XMoved>0</XMoved>
+        <YMoved>0</YMoved>
+        <ColorMoved></ColorMoved>
+        <XIgnored>0</XIgnored>
+        <YIgnored>0</YIgnored>
+        <ColorIgnored></ColorIgnored>
+        <Delay>100</Delay>
+        <IsSequential>false</IsSequential>
+        <IsDrag>false</IsDrag>
+        <DragSlow>false</DragSlow>
+        <Description>view add get ball</Description>
+        <IsStartIcon>false</IsStartIcon>
+        <RunOnce>false</RunOnce>
+        <EndWholeScripts>false</EndWholeScripts>
+        <IsClosedPosition>false</IsClosedPosition>
+        <RunAfterScript>0</RunAfterScript>
+      </KScript>
+      <KScript No="53">
+        <No>53</No>
+        <MouseKey>Left</MouseKey>
+        <X>311</X>
+        <Y>384</Y>
+        <Color>ff081608</Color>
+        <X2>286</X2>
+        <Y2>102</Y2>
+        <Color2>ff4d4d4d</Color2>
+        <XMoved>0</XMoved>
+        <YMoved>0</YMoved>
+        <ColorMoved></ColorMoved>
+        <XIgnored>0</XIgnored>
+        <YIgnored>0</YIgnored>
+        <ColorIgnored></ColorIgnored>
+        <Delay>100</Delay>
+        <IsSequential>false</IsSequential>
+        <IsDrag>false</IsDrag>
+        <DragSlow>false</DragSlow>
+        <Description>rewards earn</Description>
+        <IsStartIcon>false</IsStartIcon>
+        <RunOnce>false</RunOnce>
+        <EndWholeScripts>false</EndWholeScripts>
+        <IsClosedPosition>false</IsClosedPosition>
+        <RunAfterScript>0</RunAfterScript>
+      </KScript>
+      <KScript No="54">
+        <No>54</No>
+        <MouseKey>Left</MouseKey>
+        <X>434</X>
+        <Y>112</Y>
+        <Color>ffdb8400</Color>
+        <X2>137</X2>
+        <Y2>162</Y2>
+        <Color2>ffffce4d</Color2>
+        <XMoved>0</XMoved>
+        <YMoved>0</YMoved>
+        <ColorMoved></ColorMoved>
+        <XIgnored>0</XIgnored>
+        <YIgnored>0</YIgnored>
+        <ColorIgnored></ColorIgnored>
+        <Delay>100</Delay>
+        <IsSequential>false</IsSequential>
+        <IsDrag>false</IsDrag>
+        <DragSlow>false</DragSlow>
+        <Description>extreme</Description>
+        <IsStartIcon>false</IsStartIcon>
+        <RunOnce>false</RunOnce>
+        <EndWholeScripts>false</EndWholeScripts>
+        <IsClosedPosition>false</IsClosedPosition>
+        <RunAfterScript>0</RunAfterScript>
+      </KScript>
+      <KScript No="55">
+        <No>55</No>
+        <MouseKey>Left</MouseKey>
+        <X>138</X>
+        <Y>162</Y>
+        <Color>ff7fe704</Color>
+        <X2>99</X2>
+        <Y2>300</Y2>
+        <Color2>fffdc826</Color2>
+        <XMoved>0</XMoved>
+        <YMoved>0</YMoved>
+        <ColorMoved></ColorMoved>
+        <XIgnored>0</XIgnored>
+        <YIgnored>0</YIgnored>
+        <ColorIgnored></ColorIgnored>
+        <Delay>100</Delay>
+        <IsSequential>false</IsSequential>
+        <IsDrag>false</IsDrag>
+        <DragSlow>false</DragSlow>
+        <Description>1st event</Description>
+        <IsStartIcon>false</IsStartIcon>
+        <RunOnce>false</RunOnce>
+        <EndWholeScripts>false</EndWholeScripts>
+        <IsClosedPosition>false</IsClosedPosition>
+        <RunAfterScript>0</RunAfterScript>
+      </KScript>
+      <KScript No="56">
+        <No>56</No>
+        <MouseKey>Left</MouseKey>
+        <X>396</X>
+        <Y>179</Y>
+        <Color>ffdb8400</Color>
+        <X2>102</X2>
+        <Y2>299</Y2>
+        <Color2>fffdca2a</Color2>
+        <XMoved>0</XMoved>
+        <YMoved>0</YMoved>
+        <ColorMoved></ColorMoved>
+        <XIgnored>0</XIgnored>
+        <YIgnored>0</YIgnored>
+        <ColorIgnored></ColorIgnored>
+        <Delay>100</Delay>
+        <IsSequential>false</IsSequential>
+        <IsDrag>false</IsDrag>
+        <DragSlow>false</DragSlow>
+        <Description>very hard 2</Description>
+        <IsStartIcon>false</IsStartIcon>
+        <RunOnce>false</RunOnce>
+        <EndWholeScripts>false</EndWholeScripts>
+        <IsClosedPosition>false</IsClosedPosition>
+        <RunAfterScript>0</RunAfterScript>
+      </KScript>
+      <KScript No="57">
+        <No>57</No>
+        <MouseKey>Left</MouseKey>
+        <X>281</X>
+        <Y>293</Y>
+        <Color>ff81ca40</Color>
+        <X2>335</X2>
+        <Y2>293</Y2>
+        <Color2>fff2e654</Color2>
+        <XMoved>0</XMoved>
+        <YMoved>0</YMoved>
+        <ColorMoved></ColorMoved>
+        <XIgnored>0</XIgnored>
+        <YIgnored>0</YIgnored>
+        <ColorIgnored></ColorIgnored>
+        <Delay>100</Delay>
+        <IsSequential>false</IsSequential>
+        <IsDrag>false</IsDrag>
+        <DragSlow>false</DragSlow>
+        <Description>skip ad (play)</Description>
+        <IsStartIcon>false</IsStartIcon>
+        <RunOnce>false</RunOnce>
+        <EndWholeScripts>false</EndWholeScripts>
+        <IsClosedPosition>false</IsClosedPosition>
+        <RunAfterScript>0</RunAfterScript>
+      </KScript>
     </KScripts>
   </Action>
   <Action No="1">
@@ -7367,12 +8797,12 @@
       <KScript No="1">
         <No>1</No>
         <MouseKey>Left</MouseKey>
-        <X>415</X>
-        <Y>205</Y>
-        <Color>fffee2bc</Color>
-        <X2>428</X2>
-        <Y2>215</Y2>
-        <Color2>ff1934d3</Color2>
+        <X>435</X>
+        <Y>146</Y>
+        <Color>fffeeccb</Color>
+        <X2>452</X2>
+        <Y2>156</Y2>
+        <Color2>ff1c35ce</Color2>
         <XMoved>0</XMoved>
         <YMoved>0</YMoved>
         <ColorMoved></ColorMoved>
@@ -7393,12 +8823,12 @@
       <KScript No="2">
         <No>2</No>
         <MouseKey>Left</MouseKey>
-        <X>339</X>
-        <Y>184</Y>
-        <Color>ffffeecb</Color>
-        <X2>387</X2>
-        <Y2>310</Y2>
-        <Color2>ff0019bb</Color2>
+        <X>224</X>
+        <Y>187</Y>
+        <Color>ff00058d</Color>
+        <X2>369</X2>
+        <Y2>248</Y2>
+        <Color2>ffffe3ad</Color2>
         <XMoved>0</XMoved>
         <YMoved>0</YMoved>
         <ColorMoved></ColorMoved>
@@ -7471,12 +8901,12 @@
       <KScript No="5">
         <No>5</No>
         <MouseKey>Left</MouseKey>
-        <X>349</X>
-        <Y>260</Y>
-        <Color>fff0be56</Color>
-        <X2>57</X2>
-        <Y2>415</Y2>
-        <Color2>ffe98d1e</Color2>
+        <X>391</X>
+        <Y>278</Y>
+        <Color>ffee9d2e</Color>
+        <X2>423</X2>
+        <Y2>281</Y2>
+        <Color2>ff333c42</Color2>
         <XMoved>0</XMoved>
         <YMoved>0</YMoved>
         <ColorMoved></ColorMoved>
@@ -8017,12 +9447,12 @@
       <KScript No="26">
         <No>26</No>
         <MouseKey>Left</MouseKey>
-        <X>132</X>
+        <X>344</X>
         <Y>332</Y>
-        <Color>ff597768</Color>
-        <X2>122</X2>
-        <Y2>332</Y2>
-        <Color2>ff887271</Color2>
+        <Color>ff41282d</Color>
+        <X2>325</X2>
+        <Y2>331</Y2>
+        <Color2>ff0a4414</Color2>
         <XMoved>0</XMoved>
         <YMoved>0</YMoved>
         <ColorMoved></ColorMoved>
@@ -8216,6 +9646,58 @@
         <IsDrag>false</IsDrag>
         <DragSlow>false</DragSlow>
         <Description>hidden drill</Description>
+        <IsStartIcon>false</IsStartIcon>
+        <RunOnce>false</RunOnce>
+        <EndWholeScripts>false</EndWholeScripts>
+        <IsClosedPosition>false</IsClosedPosition>
+        <RunAfterScript>0</RunAfterScript>
+      </KScript>
+      <KScript No="34">
+        <No>34</No>
+        <MouseKey>Left</MouseKey>
+        <X>496</X>
+        <Y>156</Y>
+        <Color>ff92dafc</Color>
+        <X2>459</X2>
+        <Y2>297</Y2>
+        <Color2>fffdca29</Color2>
+        <XMoved>0</XMoved>
+        <YMoved>0</YMoved>
+        <ColorMoved></ColorMoved>
+        <XIgnored>0</XIgnored>
+        <YIgnored>0</YIgnored>
+        <ColorIgnored></ColorIgnored>
+        <Delay>100</Delay>
+        <IsSequential>false</IsSequential>
+        <IsDrag>false</IsDrag>
+        <DragSlow>false</DragSlow>
+        <Description>click weekly event T</Description>
+        <IsStartIcon>false</IsStartIcon>
+        <RunOnce>false</RunOnce>
+        <EndWholeScripts>false</EndWholeScripts>
+        <IsClosedPosition>false</IsClosedPosition>
+        <RunAfterScript>0</RunAfterScript>
+      </KScript>
+      <KScript No="35">
+        <No>35</No>
+        <MouseKey>Left</MouseKey>
+        <X>365</X>
+        <Y>158</Y>
+        <Color>ffaaecff</Color>
+        <X2>327</X2>
+        <Y2>298</Y2>
+        <Color2>fffdc827</Color2>
+        <XMoved>0</XMoved>
+        <YMoved>0</YMoved>
+        <ColorMoved></ColorMoved>
+        <XIgnored>0</XIgnored>
+        <YIgnored>0</YIgnored>
+        <ColorIgnored></ColorIgnored>
+        <Delay>100</Delay>
+        <IsSequential>false</IsSequential>
+        <IsDrag>false</IsDrag>
+        <DragSlow>false</DragSlow>
+        <Description>click weekly</Description>
         <IsStartIcon>false</IsStartIcon>
         <RunOnce>false</RunOnce>
         <EndWholeScripts>false</EndWholeScripts>
